@@ -16,8 +16,16 @@
     "raising": null,
     "raisedSoFar": null,
     "founders": [
-      { "name": "Dr. Anya Sharma", "background": "4 years at Anthropic (Interpretability team), Imperial College PhD in ML, lead author on Anthropic's context-window extension research", "source": "LinkedIn" },
-      { "name": "Tom Witzel", "background": "ex-DeepMind Research Engineer, 3 published papers on memory-augmented transformers, contributor to EleutherAI", "source": "LinkedIn / GitHub" }
+      {
+        "name": "Dr. Anya Sharma",
+        "background": "4 years at Anthropic (Interpretability team), Imperial College PhD in ML, lead author on Anthropic's context-window extension research",
+        "source": "LinkedIn"
+      },
+      {
+        "name": "Tom Witzel",
+        "background": "ex-DeepMind Research Engineer, 3 published papers on memory-augmented transformers, contributor to EleutherAI",
+        "source": "LinkedIn / GitHub"
+      }
     ],
     "inceptionScore": 94,
     "thesisFit": 96,
@@ -27,10 +35,38 @@
     "warmPathSource": "firstminute LP network intelligence",
     "action": "Reach out via Guy Podjarny before this breaks out of stealth. A 20-minute call on the memory layer for agentic enterprise software. Window: 2-3 weeks before they raise.",
     "signals": [
-      { "type": "team", "source": "LinkedIn", "headline": "Both co-founders updated LinkedIn to 'Co-founder at Stealth AI Infrastructure, London' simultaneously", "date": "2026-06-27", "strength": 5, "detail": "Simultaneous stealth updates are the standard pre-emergence pattern. Both profiles removed company affiliations on the same evening (June 27, ~23:00 GMT). Tom Witzel also followed 3 firstminute portfolio founders the same week. Imminent public launch." },
-      { "type": "github", "source": "GitHub", "headline": "velar-core repository: 612 stars in 4 days, trending in AI-tools and DevOps", "date": "2026-06-25", "strength": 5, "detail": "README describes 'a lightweight, embeddable memory substrate for LLM agents — no vector database required'. Clean Go architecture, 8 external contributors already, no press coverage yet. Organic developer adoption before any announcement is the strongest early signal available." },
-      { "type": "departure", "source": "LinkedIn", "headline": "Dr. Anya Sharma's Anthropic profile went private; title changed to 'Founder'", "date": "2026-06-20", "strength": 5, "detail": "Departure from Anthropic Interpretability is rare and always meaningful. Sharma was the lead author on Anthropic's context-window extension work. Engineers at that level leave only to build. GitHub commit history shows a new private org spun up on June 21." },
-      { "type": "community", "source": "Hacker News", "headline": "Anonymous HN comment 'we are building something in this space, London-based' — 87 upvotes", "date": "2026-06-18", "strength": 3, "detail": "User handle 'axshrmn' — consistent with Sharma's typical username pattern across GitHub and X. 87 upvotes and 14 replies asking for a waitlist. Pre-announcement community seeding." }
+      {
+        "type": "team",
+        "source": "LinkedIn",
+        "headline": "Both co-founders updated LinkedIn to 'Co-founder at Stealth AI Infrastructure, London' simultaneously",
+        "date": "2026-06-27",
+        "strength": 5,
+        "detail": "Simultaneous stealth updates are the standard pre-emergence pattern. Both profiles removed company affiliations on the same evening (June 27, ~23:00 GMT). Tom Witzel also followed 3 firstminute portfolio founders the same week. Imminent public launch."
+      },
+      {
+        "type": "github",
+        "source": "GitHub",
+        "headline": "velar-core repository: 612 stars in 4 days, trending in AI-tools and DevOps",
+        "date": "2026-06-25",
+        "strength": 5,
+        "detail": "README describes 'a lightweight, embeddable memory substrate for LLM agents — no vector database required'. Clean Go architecture, 8 external contributors already, no press coverage yet. Organic developer adoption before any announcement is the strongest early signal available."
+      },
+      {
+        "type": "departure",
+        "source": "LinkedIn",
+        "headline": "Dr. Anya Sharma's Anthropic profile went private; title changed to 'Founder'",
+        "date": "2026-06-20",
+        "strength": 5,
+        "detail": "Departure from Anthropic Interpretability is rare and always meaningful. Sharma was the lead author on Anthropic's context-window extension work. Engineers at that level leave only to build. GitHub commit history shows a new private org spun up on June 21."
+      },
+      {
+        "type": "community",
+        "source": "Hacker News",
+        "headline": "Anonymous HN comment 'we are building something in this space, London-based' — 87 upvotes",
+        "date": "2026-06-18",
+        "strength": 3,
+        "detail": "User handle 'axshrmn' — consistent with Sharma's typical username pattern across GitHub and X. 87 upvotes and 14 replies asking for a waitlist. Pre-announcement community seeding."
+      }
     ]
   },
   {
@@ -50,8 +86,16 @@
     "raising": null,
     "raisedSoFar": null,
     "founders": [
-      { "name": "Katrin Vogler", "background": "6 years at BaFin (German Federal Financial Supervisory Authority), AI policy lead. Left March 2026", "source": "BaFin press release, LinkedIn" },
-      { "name": "Priya Mehta", "background": "ex-Palantir London (3 years, data infrastructure for financial regulators), ex-McKinsey FS practice", "source": "LinkedIn" }
+      {
+        "name": "Katrin Vogler",
+        "background": "6 years at BaFin (German Federal Financial Supervisory Authority), AI policy lead. Left March 2026",
+        "source": "BaFin press release, LinkedIn"
+      },
+      {
+        "name": "Priya Mehta",
+        "background": "ex-Palantir London (3 years, data infrastructure for financial regulators), ex-McKinsey FS practice",
+        "source": "LinkedIn"
+      }
     ],
     "inceptionScore": 89,
     "thesisFit": 88,
@@ -61,10 +105,38 @@
     "warmPathSource": "firstminute portfolio network (Taktile → Meridian)",
     "action": "Intro via Taktile co-founders in Q3 2026. Frame as firstminute's portfolio already navigating EU AI Act compliance — natural fit for a Berlin-based regulatory AI company.",
     "signals": [
-      { "type": "press", "source": "EU-Startups", "headline": "Katrin Vogler listed as speaker at EU AI Act implementation workshop, Berlin, July 2026", "date": "2026-06-28", "strength": 4, "detail": "Conference speakers who just left regulators and are presenting at compliance workshops are almost always building. Talk title: 'What enterprises are actually getting wrong about the AI Act'. Classic pre-announcement positioning. Speaker bio lists 'independent advisor' — typical stealth cover." },
-      { "type": "team", "source": "LinkedIn", "headline": "Senior ML engineer (ex-AWS Berlin) connected to both founders within 48 hours of each other", "date": "2026-06-22", "strength": 3, "detail": "Priya Mehta and Katrin Vogler both connected to Mehmet Yildiz (AWS ML Berlin, 5 years) within the same 48-hour window on June 22. Likely a first engineering hire in progress. Team formation accelerating." },
-      { "type": "domain", "source": "WHOIS", "headline": "meridian-ai.eu and meridian-compliance.com registered via Namecheap, privacy-protected", "date": "2026-06-15", "strength": 3, "detail": "Two domains registered same day: .eu for the product, .com for the brand. Privacy protection enabled. This is Priya Mehta's standard pattern from Palantir — they always registered customer-facing domains first. Company formation likely imminent." },
-      { "type": "departure", "source": "BaFin press office", "headline": "BaFin AI Policy Lead Katrin Vogler confirmed departure from supervisory authority", "date": "2026-06-05", "strength": 4, "detail": "BaFin press release thanked Vogler for 'her contribution to the EU AI Act implementation framework'. Regulatory insiders who depart after landmark policy completions almost always commercialise their expertise. Six-year tenure means deep institutional relationships still in place." }
+      {
+        "type": "press",
+        "source": "EU-Startups",
+        "headline": "Katrin Vogler listed as speaker at EU AI Act implementation workshop, Berlin, July 2026",
+        "date": "2026-06-28",
+        "strength": 4,
+        "detail": "Conference speakers who just left regulators and are presenting at compliance workshops are almost always building. Talk title: 'What enterprises are actually getting wrong about the AI Act'. Classic pre-announcement positioning. Speaker bio lists 'independent advisor' — typical stealth cover."
+      },
+      {
+        "type": "team",
+        "source": "LinkedIn",
+        "headline": "Senior ML engineer (ex-AWS Berlin) connected to both founders within 48 hours of each other",
+        "date": "2026-06-22",
+        "strength": 3,
+        "detail": "Priya Mehta and Katrin Vogler both connected to Mehmet Yildiz (AWS ML Berlin, 5 years) within the same 48-hour window on June 22. Likely a first engineering hire in progress. Team formation accelerating."
+      },
+      {
+        "type": "domain",
+        "source": "WHOIS",
+        "headline": "meridian-ai.eu and meridian-compliance.com registered via Namecheap, privacy-protected",
+        "date": "2026-06-15",
+        "strength": 3,
+        "detail": "Two domains registered same day: .eu for the product, .com for the brand. Privacy protection enabled. This is Priya Mehta's standard pattern from Palantir — they always registered customer-facing domains first. Company formation likely imminent."
+      },
+      {
+        "type": "departure",
+        "source": "BaFin press office",
+        "headline": "BaFin AI Policy Lead Katrin Vogler confirmed departure from supervisory authority",
+        "date": "2026-06-05",
+        "strength": 4,
+        "detail": "BaFin press release thanked Vogler for 'her contribution to the EU AI Act implementation framework'. Regulatory insiders who depart after landmark policy completions almost always commercialise their expertise. Six-year tenure means deep institutional relationships still in place."
+      }
     ]
   },
   {
@@ -83,8 +155,16 @@
     "raising": "Raising $3M seed, not yet priced",
     "raisedSoFar": "$800K angel",
     "founders": [
-      { "name": "Luca van den Berg", "background": "ex-GitHub (5 years, engineering lead on Code Review product, built GitHub's first AI-assisted review suggestion feature)", "source": "LinkedIn, GitHub" },
-      { "name": "Sofia Rossi", "background": "ex-Stripe (4 years, infra), built Stripe's internal code audit tooling used across 300+ engineers", "source": "LinkedIn" }
+      {
+        "name": "Luca van den Berg",
+        "background": "ex-GitHub (5 years, engineering lead on Code Review product, built GitHub's first AI-assisted review suggestion feature)",
+        "source": "LinkedIn, GitHub"
+      },
+      {
+        "name": "Sofia Rossi",
+        "background": "ex-Stripe (4 years, infra), built Stripe's internal code audit tooling used across 300+ engineers",
+        "source": "LinkedIn"
+      }
     ],
     "inceptionScore": 72,
     "thesisFit": 91,
@@ -94,9 +174,30 @@
     "warmPathSource": "firstminute LP database (Scott Chacon, GitHub co-founder)",
     "action": "Scott Chacon intro to Luca immediately. Seed round not yet priced. Position firstminute alongside the GitHub angel network before a tier-1 dev-tooling fund gets a look.",
     "signals": [
-      { "type": "product", "source": "Product Hunt", "headline": "Forge launched on Product Hunt: #1 Product of the Day, 847 upvotes, 200+ comments", "date": "2026-06-26", "strength": 5, "detail": "247 comments, most from working engineers describing specific pain points Forge solves. 'This is the first code review tool that actually understands what I was trying to do, not just what I changed' — top comment with 94 upvotes. Product-market fit signal before a formal fundraise." },
-      { "type": "community", "source": "Hacker News", "headline": "Show HN: Forge — we built what GitHub Copilot review should have been. 412 upvotes, front page 6 hours.", "date": "2026-06-18", "strength": 5, "detail": "412 upvotes on Show HN, 89 comments, front page for 6 hours. Top comment from a Stripe engineer: 'We've been using the beta for 3 weeks and our review cycle time dropped 40%.' Four engineering leads from Series B+ companies asking about enterprise pricing." },
-      { "type": "funding", "source": "AngelList", "headline": "AngelList syndicate closed $800K from 14 GitHub and Stripe alumni angels", "date": "2026-06-10", "strength": 4, "detail": "14 individual angels, 9 with GitHub or Stripe backgrounds. Average cheque ~$57K. No lead investor yet — filled through Luca's personal network in 11 days. Seed pricing conversation expected August 2026." }
+      {
+        "type": "product",
+        "source": "Product Hunt",
+        "headline": "Forge launched on Product Hunt: #1 Product of the Day, 847 upvotes, 200+ comments",
+        "date": "2026-06-26",
+        "strength": 5,
+        "detail": "247 comments, most from working engineers describing specific pain points Forge solves. 'This is the first code review tool that actually understands what I was trying to do, not just what I changed' — top comment with 94 upvotes. Product-market fit signal before a formal fundraise."
+      },
+      {
+        "type": "community",
+        "source": "Hacker News",
+        "headline": "Show HN: Forge — we built what GitHub Copilot review should have been. 412 upvotes, front page 6 hours.",
+        "date": "2026-06-18",
+        "strength": 5,
+        "detail": "412 upvotes on Show HN, 89 comments, front page for 6 hours. Top comment from a Stripe engineer: 'We've been using the beta for 3 weeks and our review cycle time dropped 40%.' Four engineering leads from Series B+ companies asking about enterprise pricing."
+      },
+      {
+        "type": "funding",
+        "source": "AngelList",
+        "headline": "AngelList syndicate closed $800K from 14 GitHub and Stripe alumni angels",
+        "date": "2026-06-10",
+        "strength": 4,
+        "detail": "14 individual angels, 9 with GitHub or Stripe backgrounds. Average cheque ~$57K. No lead investor yet — filled through Luca's personal network in 11 days. Seed pricing conversation expected August 2026."
+      }
     ]
   },
   {
@@ -116,8 +217,16 @@
     "raising": null,
     "raisedSoFar": null,
     "founders": [
-      { "name": "Dr. Margot Lefebvre", "background": "5 years at ESA (European Space Agency), lead on Earth observation data pipeline for climate modelling, PhD in atmospheric science", "source": "ESA press, LinkedIn" },
-      { "name": "Ravi Krishnan", "background": "ex-Palantir (4 years, climate data systems for European energy utilities), built carbon accounting pipelines for 3 national governments", "source": "LinkedIn" }
+      {
+        "name": "Dr. Margot Lefebvre",
+        "background": "5 years at ESA (European Space Agency), lead on Earth observation data pipeline for climate modelling, PhD in atmospheric science",
+        "source": "ESA press, LinkedIn"
+      },
+      {
+        "name": "Ravi Krishnan",
+        "background": "ex-Palantir (4 years, climate data systems for European energy utilities), built carbon accounting pipelines for 3 national governments",
+        "source": "LinkedIn"
+      }
     ],
     "inceptionScore": 91,
     "thesisFit": 82,
@@ -127,16 +236,44 @@
     "warmPathSource": "ESA BIC Paris programme + firstminute LP network",
     "action": "Monitor until first customer signal (Q4 2026). Intro via ESA BIC Paris programme. Flag for the Founders Forum EU climate infrastructure session.",
     "signals": [
-      { "type": "product", "source": "Twitter/X", "headline": "First public tweet from @caelum_ai: 'We're building the Bloomberg terminal for climate risk. API-first, real-time, asset-level.' — 1.2K likes", "date": "2026-06-27", "strength": 4, "detail": "Account created June 25. First tweet went semi-viral in the climate-tech and ESG data communities. 34 quote tweets from climate data professionals, 4 from financial risk managers at tier-1 banks." },
-      { "type": "team", "source": "ESA press release", "headline": "Caelum accepted into ESA BIC Paris incubator — 1 of 6 companies in the 2026 cohort", "date": "2026-06-14", "strength": 4, "detail": "ESA BIC acceptance is selective (typically 6-8% acceptance rate) and includes access to ESA proprietary satellite datasets, €50K non-dilutive grant, and introductions to ESA's commercial partner network (Airbus, Thales, etc.)." },
-      { "type": "departure", "source": "LinkedIn", "headline": "Dr. Margot Lefebvre left ESA after 5 years; Ravi Krishnan left Palantir London same week", "date": "2026-06-05", "strength": 5, "detail": "Synchronised departure from ESA and Palantir is a clear co-founding signal. Both updated profiles with 'building in stealth' on the same day." },
-      { "type": "team", "source": "LinkedIn", "headline": "4 new LinkedIn connections in 2 weeks: atmospheric scientist, 2 backend engineers (ex-Datadog, ex-Snowflake), 1 enterprise sales", "date": "2026-06-19", "strength": 3, "detail": "Classic pre-seed team assembly pattern. Enterprise sales hire with FSI background suggests early GTM focus on compliance buyers." }
+      {
+        "type": "product",
+        "source": "Twitter/X",
+        "headline": "First public tweet from @caelum_ai: 'We're building the Bloomberg terminal for climate risk. API-first, real-time, asset-level.' — 1.2K likes",
+        "date": "2026-06-27",
+        "strength": 4,
+        "detail": "Account created June 25. First tweet went semi-viral in the climate-tech and ESG data communities. 34 quote tweets from climate data professionals, 4 from financial risk managers at tier-1 banks."
+      },
+      {
+        "type": "team",
+        "source": "ESA press release",
+        "headline": "Caelum accepted into ESA BIC Paris incubator — 1 of 6 companies in the 2026 cohort",
+        "date": "2026-06-14",
+        "strength": 4,
+        "detail": "ESA BIC acceptance is selective (typically 6-8% acceptance rate) and includes access to ESA proprietary satellite datasets, €50K non-dilutive grant, and introductions to ESA's commercial partner network (Airbus, Thales, etc.)."
+      },
+      {
+        "type": "departure",
+        "source": "LinkedIn",
+        "headline": "Dr. Margot Lefebvre left ESA after 5 years; Ravi Krishnan left Palantir London same week",
+        "date": "2026-06-05",
+        "strength": 5,
+        "detail": "Synchronised departure from ESA and Palantir is a clear co-founding signal. Both updated profiles with 'building in stealth' on the same day."
+      },
+      {
+        "type": "team",
+        "source": "LinkedIn",
+        "headline": "4 new LinkedIn connections in 2 weeks: atmospheric scientist, 2 backend engineers (ex-Datadog, ex-Snowflake), 1 enterprise sales",
+        "date": "2026-06-19",
+        "strength": 3,
+        "detail": "Classic pre-seed team assembly pattern. Enterprise sales hire with FSI background suggests early GTM focus on compliance buyers."
+      }
     ]
   },
   {
     "id": "delphi",
     "name": "Delphi",
-    "website": "delphi.health",
+    "website": "",
     "stage": "seed",
     "tagline": "Voice AI for EU healthcare intake — GDPR-native, multilingual",
     "sector": "Vertical Voice AI / Health",
@@ -150,8 +287,16 @@
     "raising": null,
     "raisedSoFar": "€600K angel",
     "founders": [
-      { "name": "Dr. Jonas Weber", "background": "ex-Bupa (Head of Digital Health, 4 years), medical doctor turned product builder. Built Bupa's first automated intake triage system", "source": "LinkedIn, Bupa press" },
-      { "name": "Emre Celik", "background": "ex-Alan Health (engineering lead, 3 years), built Alan's voice symptom checker used by 120K patients monthly", "source": "LinkedIn" }
+      {
+        "name": "Dr. Jonas Weber",
+        "background": "ex-Bupa (Head of Digital Health, 4 years), medical doctor turned product builder. Built Bupa's first automated intake triage system",
+        "source": "LinkedIn, Bupa press"
+      },
+      {
+        "name": "Emre Celik",
+        "background": "ex-Alan Health (engineering lead, 3 years), built Alan's voice symptom checker used by 120K patients monthly",
+        "source": "LinkedIn"
+      }
     ],
     "inceptionScore": 68,
     "thesisFit": 86,
@@ -161,9 +306,30 @@
     "warmPathSource": "firstminute LP co-investor relationships (Kleiner, General Catalyst)",
     "action": "Direct approach via Munich LP network in Q3 2026. Reference Avoca as the US comp and position as the European entry.",
     "signals": [
-      { "type": "press", "source": "Handelsblatt", "headline": "Delphi cited in Handelsblatt deep-dive on AI in German healthcare: 'one of the most promising early-stage plays'", "date": "2026-06-28", "strength": 4, "detail": "First press mention. Handelsblatt is Germany's leading business newspaper. Three other companies in the same article have since raised rounds." },
-      { "type": "team", "source": "LinkedIn", "headline": "3 enterprise pilots confirmed: posts from 2 German GP clinics and 1 private hospital group", "date": "2026-06-17", "strength": 5, "detail": "Unprompted customer posts from three separate clinical settings within the same week. One clinic noted 'intake time reduced from 18 minutes to 6 minutes'. Product-market fit evidence before a seed round." },
-      { "type": "funding", "source": "German Startup Monitor", "headline": "€600K angel round from 8 Munich-based angels including 2 ex-Bupa board members and a health-tech founder", "date": "2026-06-03", "strength": 3, "detail": "Quiet round, no press release. Sourced via German Startup Monitor database. Backer quality is high (2 ex-Bupa board members, 1 founder of iDoctus, acquired by Springer 2021). Seed round conversation likely Q3 2026." }
+      {
+        "type": "press",
+        "source": "Handelsblatt",
+        "headline": "Delphi cited in Handelsblatt deep-dive on AI in German healthcare: 'one of the most promising early-stage plays'",
+        "date": "2026-06-28",
+        "strength": 4,
+        "detail": "First press mention. Handelsblatt is Germany's leading business newspaper. Three other companies in the same article have since raised rounds."
+      },
+      {
+        "type": "team",
+        "source": "LinkedIn",
+        "headline": "3 enterprise pilots confirmed: posts from 2 German GP clinics and 1 private hospital group",
+        "date": "2026-06-17",
+        "strength": 5,
+        "detail": "Unprompted customer posts from three separate clinical settings within the same week. One clinic noted 'intake time reduced from 18 minutes to 6 minutes'. Product-market fit evidence before a seed round."
+      },
+      {
+        "type": "funding",
+        "source": "German Startup Monitor",
+        "headline": "€600K angel round from 8 Munich-based angels including 2 ex-Bupa board members and a health-tech founder",
+        "date": "2026-06-03",
+        "strength": 3,
+        "detail": "Quiet round, no press release. Sourced via German Startup Monitor database. Backer quality is high (2 ex-Bupa board members, 1 founder of iDoctus, acquired by Springer 2021). Seed round conversation likely Q3 2026."
+      }
     ]
   },
   {
@@ -182,8 +348,16 @@
     "raising": "Raising $1.5M pre-seed, 60% committed",
     "raisedSoFar": null,
     "founders": [
-      { "name": "Ben Hartley", "background": "Snyk founding engineer (#4 hire), built Snyk's dependency vulnerability scanner, left 2025 after Snyk IPO process. 3 years at Palo Alto Networks AI Security Research", "source": "LinkedIn, Snyk founding team history" },
-      { "name": "Yuki Tanaka", "background": "ex-Cloudflare (security infrastructure, 4 years), built Cloudflare's bot detection ML system. Spoke at Black Hat 2025 on LLM prompt injection in production systems", "source": "LinkedIn, Black Hat 2025 speaker programme" }
+      {
+        "name": "Ben Hartley",
+        "background": "Snyk founding engineer (#4 hire), built Snyk's dependency vulnerability scanner, left 2025 after Snyk IPO process. 3 years at Palo Alto Networks AI Security Research",
+        "source": "LinkedIn, Snyk founding team history"
+      },
+      {
+        "name": "Yuki Tanaka",
+        "background": "ex-Cloudflare (security infrastructure, 4 years), built Cloudflare's bot detection ML system. Spoke at Black Hat 2025 on LLM prompt injection in production systems",
+        "source": "LinkedIn, Black Hat 2025 speaker programme"
+      }
     ],
     "inceptionScore": 93,
     "thesisFit": 94,
@@ -193,10 +367,38 @@
     "warmPathSource": "firstminute LP database (Guy Podjarny, Snyk co-founder)",
     "action": "Guy Podjarny to Ben Hartley directly. Pre-seed round 60% committed — window to get in is 2-3 weeks. firstminute as a strategic LP (Snyk connection) adds more value than a generic seed fund here.",
     "signals": [
-      { "type": "github", "source": "GitHub", "headline": "argus-runtime public repo: 340 stars, 12 external contributors, BSides London demo video linked", "date": "2026-06-27", "strength": 5, "detail": "The repo went public June 27 alongside a BSides London demo. 340 stars in 48 hours, almost entirely from the security community. 12 external contributors already — a security product with this kind of community pull pre-launch is rare. Readme includes a 'we are raising' section." },
-      { "type": "community", "source": "BSides London", "headline": "Yuki Tanaka presented 'Argus: Runtime guardrails for LLM agents in production' — 400 attendees, 3 FTSE 100 CISOs in audience", "date": "2026-06-25", "strength": 4, "detail": "BSides London is the practitioner security conference (not the PR circuit). A standing-room session with 400 attendees and a live demo of Argus catching a prompt injection attack in real time." },
-      { "type": "departure", "source": "LinkedIn", "headline": "Ben Hartley left Palo Alto Networks AI Security Research; LinkedIn updated to 'Founder, building in London'", "date": "2026-06-11", "strength": 5, "detail": "Hartley's departure from Palo Alto is significant — he spent 3 years post-Snyk building specific AI security research expertise before founding. LinkedIn post got 2,300 likes — the security community is watching." },
-      { "type": "funding", "source": "Network intelligence (London security community)", "headline": "Pre-seed round 60% committed: 3 Snyk alumni angels + 1 cybersecurity seed fund confirmed", "date": "2026-06-22", "strength": 4, "detail": "Sourced via mutual connection in the London security community. $1.5M pre-seed, targeting close in July. Committed: 3 Snyk founding team angels (including one partner-level), 1 specialist cybersecurity seed fund. Gap to close: ~$600K. firstminute would be the lead." }
+      {
+        "type": "github",
+        "source": "GitHub",
+        "headline": "argus-runtime public repo: 340 stars, 12 external contributors, BSides London demo video linked",
+        "date": "2026-06-27",
+        "strength": 5,
+        "detail": "The repo went public June 27 alongside a BSides London demo. 340 stars in 48 hours, almost entirely from the security community. 12 external contributors already — a security product with this kind of community pull pre-launch is rare. Readme includes a 'we are raising' section."
+      },
+      {
+        "type": "community",
+        "source": "BSides London",
+        "headline": "Yuki Tanaka presented 'Argus: Runtime guardrails for LLM agents in production' — 400 attendees, 3 FTSE 100 CISOs in audience",
+        "date": "2026-06-25",
+        "strength": 4,
+        "detail": "BSides London is the practitioner security conference (not the PR circuit). A standing-room session with 400 attendees and a live demo of Argus catching a prompt injection attack in real time."
+      },
+      {
+        "type": "departure",
+        "source": "LinkedIn",
+        "headline": "Ben Hartley left Palo Alto Networks AI Security Research; LinkedIn updated to 'Founder, building in London'",
+        "date": "2026-06-11",
+        "strength": 5,
+        "detail": "Hartley's departure from Palo Alto is significant — he spent 3 years post-Snyk building specific AI security research expertise before founding. LinkedIn post got 2,300 likes — the security community is watching."
+      },
+      {
+        "type": "funding",
+        "source": "Network intelligence (London security community)",
+        "headline": "Pre-seed round 60% committed: 3 Snyk alumni angels + 1 cybersecurity seed fund confirmed",
+        "date": "2026-06-22",
+        "strength": 4,
+        "detail": "Sourced via mutual connection in the London security community. $1.5M pre-seed, targeting close in July. Committed: 3 Snyk founding team angels (including one partner-level), 1 specialist cybersecurity seed fund. Gap to close: ~$600K. firstminute would be the lead."
+      }
     ]
   },
   {
@@ -215,8 +417,16 @@
     "raising": "Raising $4M seed",
     "raisedSoFar": "$1.2M angel",
     "founders": [
-      { "name": "Erik Lindqvist", "background": "ex-Klarna (8 years, Head of B2B Payments Product), architected Klarna's B2B checkout product used by 40K merchants", "source": "LinkedIn, Klarna press" },
-      { "name": "Amara Osei", "background": "ex-Adyen (5 years, enterprise integrations), built Adyen's ISV/SaaS embedded payments toolkit", "source": "LinkedIn" }
+      {
+        "name": "Erik Lindqvist",
+        "background": "ex-Klarna (8 years, Head of B2B Payments Product), architected Klarna's B2B checkout product used by 40K merchants",
+        "source": "LinkedIn, Klarna press"
+      },
+      {
+        "name": "Amara Osei",
+        "background": "ex-Adyen (5 years, enterprise integrations), built Adyen's ISV/SaaS embedded payments toolkit",
+        "source": "LinkedIn"
+      }
     ],
     "inceptionScore": 65,
     "thesisFit": 89,
@@ -226,15 +436,36 @@
     "warmPathSource": "firstminute portfolio (Storyblok) + Nordic LP network",
     "action": "Storyblok intro as a commercial reference first, then a capital conversation. Validates both the product and firstminute's value-add beyond the cheque. Seed round in market now.",
     "signals": [
-      { "type": "team", "source": "LinkedIn (Teamtailor post)", "headline": "First enterprise customer announced: Stockholm-based HR SaaS processing €2M/mo through Patchwork", "date": "2026-06-28", "strength": 5, "detail": "The customer (Teamtailor, Stockholm-based HR SaaS) posted on LinkedIn about Patchwork's embedded invoicing. €2M/month in payments processed in month 4 of the product. Real revenue signal before the seed round closes." },
-      { "type": "funding", "source": "Affärsvärlden", "headline": "$1.2M angel round from 11 Klarna and Adyen alumni; Stripe Atlas entity registered", "date": "2026-06-08", "strength": 4, "detail": "Affärsvärlden broke the angel round story. 11 angels from Klarna and Adyen — entirely operator-led, no institutional money yet. Stripe Atlas US entity registered alongside a Swedish AB — dual jurisdiction structure." },
-      { "type": "team", "source": "LinkedIn", "headline": "Patchwork hiring: Head of Partnerships (SaaS-focused) + Senior Backend Engineer (payments infra)", "date": "2026-06-20", "strength": 3, "detail": "Head of Partnerships role specifically mentions 'building integrations with European SaaS platforms' — signals a go-to-market motion targeting the exact same companies firstminute backs." }
+      {
+        "type": "team",
+        "source": "LinkedIn (Teamtailor post)",
+        "headline": "First enterprise customer announced: Stockholm-based HR SaaS processing €2M/mo through Patchwork",
+        "date": "2026-06-28",
+        "strength": 5,
+        "detail": "The customer (Teamtailor, Stockholm-based HR SaaS) posted on LinkedIn about Patchwork's embedded invoicing. €2M/month in payments processed in month 4 of the product. Real revenue signal before the seed round closes."
+      },
+      {
+        "type": "funding",
+        "source": "Affärsvärlden",
+        "headline": "$1.2M angel round from 11 Klarna and Adyen alumni; Stripe Atlas entity registered",
+        "date": "2026-06-08",
+        "strength": 4,
+        "detail": "Affärsvärlden broke the angel round story. 11 angels from Klarna and Adyen — entirely operator-led, no institutional money yet. Stripe Atlas US entity registered alongside a Swedish AB — dual jurisdiction structure."
+      },
+      {
+        "type": "team",
+        "source": "LinkedIn",
+        "headline": "Patchwork hiring: Head of Partnerships (SaaS-focused) + Senior Backend Engineer (payments infra)",
+        "date": "2026-06-20",
+        "strength": 3,
+        "detail": "Head of Partnerships role specifically mentions 'building integrations with European SaaS platforms' — signals a go-to-market motion targeting the exact same companies firstminute backs."
+      }
     ]
   },
   {
     "id": "nimbus",
     "name": "Nimbus",
-    "website": "nimbus.finance",
+    "website": "",
     "stage": "pre-seed",
     "tagline": "Autonomous AP/AR for European SMBs",
     "sector": "Vertical AI / Finance Automation",
@@ -248,8 +479,16 @@
     "raising": "Raising £800K pre-seed",
     "raisedSoFar": "£180K friends & family",
     "founders": [
-      { "name": "Isabel Mora", "background": "ex-Tessian (product lead, 3 years, joined pre-Series A, stayed through Proofpoint acquisition 2023). Left 2025 to explore SMB finance pain points", "source": "LinkedIn, Tessian founding history" },
-      { "name": "Kwame Asante", "background": "ex-Revolut (4 years, Senior PM on Business Accounts product, owned the SMB invoicing feature used by 800K+ businesses)", "source": "LinkedIn" }
+      {
+        "name": "Isabel Mora",
+        "background": "ex-Tessian (product lead, 3 years, joined pre-Series A, stayed through Proofpoint acquisition 2023). Left 2025 to explore SMB finance pain points",
+        "source": "LinkedIn, Tessian founding history"
+      },
+      {
+        "name": "Kwame Asante",
+        "background": "ex-Revolut (4 years, Senior PM on Business Accounts product, owned the SMB invoicing feature used by 800K+ businesses)",
+        "source": "LinkedIn"
+      }
     ],
     "inceptionScore": 87,
     "thesisFit": 85,
@@ -259,10 +498,38 @@
     "warmPathSource": "firstminute network analysis (Omnea/Tessian alumni connection)",
     "action": "Intro via Omnea founders to Isabel Mora. Pre-seed round in market at £800K. firstminute can anchor the round with LP network SMB operators as reference customers.",
     "signals": [
-      { "type": "product", "source": "LinkedIn", "headline": "'Nimbus is live — helping UK SMBs reclaim 6 hours a week on invoicing. Waitlist open.' — 1,800 likes, 312 signups in 48h", "date": "2026-06-26", "strength": 4, "detail": "Isabel Mora's LinkedIn post announcing Nimbus got 1,800 likes — driven entirely by her network from Tessian, Proofpoint, and Revolut alumni. 312 waitlist signups within 48 hours. The Tessian founder community is actively cheering this on." },
-      { "type": "departure", "source": "LinkedIn", "headline": "Kwame Asante left Revolut Business Accounts team after 4 years; updated to 'Co-founder at Nimbus'", "date": "2026-06-09", "strength": 4, "detail": "Asante's post: 'After 4 years watching SMBs struggle with the same invoicing pain, I left to fix it.' 4,200 likes, 340 comments — highest-engagement departure post in the UK fintech community this month." },
-      { "type": "domain", "source": "WHOIS / Companies House", "headline": "Nimbus Technologies Ltd registered at Companies House; nimbus.finance domain registered same day", "date": "2026-06-16", "strength": 3, "detail": "Companies House registration and domain registered June 16. Two directors listed: Mora and Asante. £1 share capital (standard UK pre-seed formation). nimbus.finance — premium domain purchase signals confidence and long-term brand intent." },
-      { "type": "community", "source": "Slack (UK Fintech Founders)", "headline": "18 SMB founders confirmed as early beta users in UK Fintech Founders Slack (2,400 members)", "date": "2026-06-23", "strength": 3, "detail": "Isabel Mora posted in the UK Fintech Founders Slack asking for beta testers. 18 SMB founders signed up within the thread, with 4 posting positive feedback publicly. This community produces the best early B2B reference customers." }
+      {
+        "type": "product",
+        "source": "LinkedIn",
+        "headline": "'Nimbus is live — helping UK SMBs reclaim 6 hours a week on invoicing. Waitlist open.' — 1,800 likes, 312 signups in 48h",
+        "date": "2026-06-26",
+        "strength": 4,
+        "detail": "Isabel Mora's LinkedIn post announcing Nimbus got 1,800 likes — driven entirely by her network from Tessian, Proofpoint, and Revolut alumni. 312 waitlist signups within 48 hours. The Tessian founder community is actively cheering this on."
+      },
+      {
+        "type": "departure",
+        "source": "LinkedIn",
+        "headline": "Kwame Asante left Revolut Business Accounts team after 4 years; updated to 'Co-founder at Nimbus'",
+        "date": "2026-06-09",
+        "strength": 4,
+        "detail": "Asante's post: 'After 4 years watching SMBs struggle with the same invoicing pain, I left to fix it.' 4,200 likes, 340 comments — highest-engagement departure post in the UK fintech community this month."
+      },
+      {
+        "type": "domain",
+        "source": "WHOIS / Companies House",
+        "headline": "Nimbus Technologies Ltd registered at Companies House; nimbus.finance domain registered same day",
+        "date": "2026-06-16",
+        "strength": 3,
+        "detail": "Companies House registration and domain registered June 16. Two directors listed: Mora and Asante. £1 share capital (standard UK pre-seed formation). nimbus.finance — premium domain purchase signals confidence and long-term brand intent."
+      },
+      {
+        "type": "community",
+        "source": "Slack (UK Fintech Founders)",
+        "headline": "18 SMB founders confirmed as early beta users in UK Fintech Founders Slack (2,400 members)",
+        "date": "2026-06-23",
+        "strength": 3,
+        "detail": "Isabel Mora posted in the UK Fintech Founders Slack asking for beta testers. 18 SMB founders signed up within the thread, with 4 posting positive feedback publicly. This community produces the best early B2B reference customers."
+      }
     ]
   }
 ]
