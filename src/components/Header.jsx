@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Building2, Radar, Network, FileText } from 'lucide-react';
+import { Building2, Radar, Network, FileText, Zap } from 'lucide-react';
 import { parseUSD, fmtUSD } from './Charts';
 import { useIsMobile } from '../hooks';
 
@@ -66,6 +66,7 @@ export default function Header({ activeTab, setActiveTab, heldCount, sourcingCou
   const tabs = [
     { id: 'held', label: 'Portfolio', count: heldCount, Icon: Building2 },
     { id: 'sourcing', label: 'Sourcing', count: sourcingCount, Icon: Radar },
+    { id: 'presignal', label: 'Pre-Signal', count: null, Icon: Zap, live: true },
     { id: 'doors', label: 'Network', count: null, Icon: Network },
     { id: 'notes', label: 'Notes', count: null, Icon: FileText },
   ];
@@ -129,7 +130,7 @@ export default function Header({ activeTab, setActiveTab, heldCount, sourcingCou
       {/* Tab bar */}
       <div style={{ padding: isMobile ? '0 16px' : '0 32px', borderTop: '1px solid var(--hairline)', overflowX: isMobile ? 'auto' : 'visible' }}>
         <div style={{ display: 'flex', alignItems: 'center', maxWidth: 1360, margin: '0 auto', minWidth: isMobile ? 'max-content' : 'auto' }}>
-          {tabs.map(({ id, label, count, Icon }) => {
+          {tabs.map(({ id, label, count, Icon, live }) => {
             const active = activeTab === id;
             return (
               <button key={id} onClick={() => setActiveTab(id)} style={{
@@ -145,6 +146,9 @@ export default function Header({ activeTab, setActiveTab, heldCount, sourcingCou
               }}>
                 <Icon size={13} strokeWidth={active ? 2.4 : 1.9} />
                 {label}
+                {live && (
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#DC2626', flexShrink: 0 }} />
+                )}
                 {count != null && (
                   <span style={{
                     background: active ? '#EEF3FF' : '#F1F4F7',

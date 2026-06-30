@@ -4,6 +4,7 @@ import CompanyTable from './components/CompanyTable';
 import CompanyDetail from './components/CompanyDetail';
 import DoorsTab from './components/DoorsTab';
 import NotesTab from './components/NotesTab';
+import EarlySignalTab from './components/EarlySignalTab';
 import companiesData from './data/companies.json';
 
 export default function App() {
@@ -35,6 +36,8 @@ export default function App() {
           <NotesTab />
         ) : activeTab === 'doors' ? (
           <DoorsTab companies={companiesData} />
+        ) : activeTab === 'presignal' ? (
+          <EarlySignalTab />
         ) : (
           <CompanyTable
             companies={displayedCompanies}

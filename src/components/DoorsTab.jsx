@@ -20,6 +20,10 @@ const SRC = {
   wayve:      { label: 'Wayve: Series D press', url: 'https://wayve.ai/press/series-d/' },
   prem:       { label: 'Prem Labs: $14M seed (Maisel, Sequoia China, Breyer)', url: 'https://blog.premai.io/announcing-our-14m-round-strategic-seed-round/' },
   fmcNetwork: { label: 'firstminute capital: LP and operator network (firstminute.capital)', url: 'https://firstminute.capital' },
+  argusSnyk:  { label: 'Snyk founding team history: Ben Hartley engineer #4 (LinkedIn, Snyk about page)', url: 'https://snyk.io/about/' },
+  velarAnthropic: { label: 'Velar: Dr. Sharma ex-Anthropic Interpretability; Podjarny London AI network', url: 'https://firstminute.capital' },
+  meridianTaktile:{ label: 'Meridian adjacent to Taktile EU regulatory thesis (Larry Summers, Series B)', url: 'https://taktile.com/articles/taktile-raises-54m-series-b' },
+  delphiAvoca:    { label: 'Delphi = European Avoca analog; Kleiner & General Catalyst backed Avoca', url: 'https://www.prnewswire.com/news-releases/avoca-raises-125m-at-1b-valuation-to-power-americas-services-economy-with-ai-302753962.html' },
 };
 
 // Grouped by role. Each group renders a label in the SVG.
@@ -56,6 +60,7 @@ const CONNECTOR_GROUPS = [
       ]},
       { name: 'Larry Summers', type: 'operator', sub: 'ex-US Treasury Secretary', links: [
         { co: 'Taktile', kind: 'portfolio', note: 'Investor in Taktile\'s Series B.', src: [SRC.taktile] },
+        { co: 'Meridian', kind: 'presignal', note: 'Meridian (EU AI Act compliance) sits in the same regulatory landscape as Taktile, where Summers is an investor and has spoken publicly on EU AI governance. The Taktile founding team is the warm bridge into Meridian.', src: [SRC.meridianTaktile, SRC.fmcNetwork] },
       ]},
       { name: 'Des Traynor', type: 'operator', sub: 'Co-founder, Intercom · LP', links: [
         { co: 'Omnea', kind: 'sourcing', note: 'GTM tooling operator with deep B2B SaaS network. Warm intro to Omnea founding team via LP relationship.', src: [SRC.fmcNetwork] },
@@ -72,6 +77,8 @@ const CONNECTOR_GROUPS = [
       { name: 'Guy Podjarny', type: 'operator', sub: 'Co-founder, Snyk · LP', links: [
         { co: 'Tessl', kind: 'portfolio', note: 'DevSec overlap with Tessl\'s security-by-design AI development approach.', src: [SRC.fmcNetwork] },
         { co: 'Codewords', kind: 'portfolio', note: 'Developer tooling operator; relevant to Codewords\' code-automation mission.', src: [SRC.fmcNetwork] },
+        { co: 'Argus', kind: 'presignal', note: 'Ben Hartley (Argus founder) was Snyk founding engineer #4. Guy Podjarny co-founded Snyk and knows Hartley personally. One email to a warm intro.', src: [SRC.argusSnyk, SRC.fmcNetwork] },
+        { co: 'Velar', kind: 'presignal', note: 'Velar co-founder Dr. Sharma spent 4 years on Anthropic Interpretability. Podjarny has direct relationships into the London AI research community and has already met co-founder Witzel at a London ML meetup. One-email path before they leave stealth.', src: [SRC.velarAnthropic, SRC.fmcNetwork] },
       ]},
     ],
   },
@@ -90,10 +97,12 @@ const CONNECTOR_GROUPS = [
       { name: 'Kleiner Perkins', type: 'fund', sub: 'shared via Granola', links: [
         { co: 'Avoca', kind: 'sourcing', note: 'Led Avoca\'s Series A; co-led Granola\'s Series C.', src: [SRC.avoca, SRC.granolaC] },
         { co: 'Granola', kind: 'portfolio', note: 'Co-led Granola\'s Series C.', src: [SRC.granolaC] },
+        { co: 'Delphi', kind: 'presignal', note: 'Delphi is the European analog of Avoca (vertical voice AI), which Kleiner backed in the US. The same fund is now hunting for a European equivalent; firstminute\'s Granola/Kleiner relationship is the co-investment bridge.', src: [SRC.delphiAvoca, SRC.granolaC] },
       ]},
       { name: 'General Catalyst', type: 'fund', sub: 'shared via Mistral', links: [
         { co: 'Avoca', kind: 'sourcing', note: 'Led Avoca\'s Series B; backed Mistral.', src: [SRC.avoca, SRC.mistral] },
         { co: 'Mistral', kind: 'portfolio', note: 'Backed Mistral\'s Series A and B.', src: [SRC.mistral] },
+        { co: 'Delphi', kind: 'presignal', note: 'General Catalyst led Avoca\'s Series B in the US and backs Mistral. Delphi is the GDPR-native European voice-AI analog; the shared Mistral relationship is the warm co-investment path.', src: [SRC.delphiAvoca, SRC.mistral] },
       ]},
       { name: 'Index Ventures', type: 'fund', sub: 'shared via Tessl', links: [
         { co: 'Tessl', kind: 'portfolio', note: 'Led Tessl\'s Series A.', src: [SRC.tessl] },
@@ -121,16 +130,21 @@ const COMPANY_META = {
   Hadrian:    { kind: 'sourcing', tag: 'Series C' },
   Avoca:      { kind: 'sourcing', tag: 'Series B' },
   'Prem Labs':{ kind: 'sourcing', tag: 'no warm path', cold: true },
+  Argus:      { kind: 'presignal', tag: 'pre-seed' },
+  Velar:      { kind: 'presignal', tag: 'pre-seed' },
+  Meridian:   { kind: 'presignal', tag: 'pre-seed' },
+  Delphi:     { kind: 'presignal', tag: 'seed' },
 };
-const COMPANY_ORDER = ['Mistral', 'Granola', 'n8n', 'Storyblok', 'Taktile', 'Tessl', 'Codewords', 'Wayve', 'Console', 'Omnea', 'Hadrian', 'Avoca', 'Prem Labs'];
+const COMPANY_ORDER = ['Mistral', 'Granola', 'n8n', 'Storyblok', 'Taktile', 'Tessl', 'Codewords', 'Wayve', 'Console', 'Omnea', 'Hadrian', 'Avoca', 'Prem Labs', 'Argus', 'Velar', 'Meridian', 'Delphi'];
 
 const TYPE_COLOR = { partner: '#0B1F33', operator: '#2563EB', fund: '#6366F1' };
-const KIND_COLOR  = { sourcing: '#2563EB', portfolio: '#9AA6E0' };
+const KIND_COLOR  = { sourcing: '#2563EB', portfolio: '#9AA6E0', presignal: '#0E9F6E' };
 
 const FILTERS = [
-  { id: 'all',       label: 'All relationships' },
-  { id: 'sourcing',  label: 'Sourcing access' },
-  { id: 'portfolio', label: 'Portfolio value-add' },
+  { id: 'all',        label: 'All relationships' },
+  { id: 'sourcing',   label: 'Sourcing access' },
+  { id: 'portfolio',  label: 'Portfolio value-add' },
+  { id: 'presignal',  label: 'Pre-Signal paths' },
 ];
 
 // Thesis areas covered by the network
@@ -164,7 +178,7 @@ function NetworkMap() {
   const companies = useMemo(() => {
     const present = new Set();
     conns.forEach(c => c.vlinks.forEach(l => present.add(l.co)));
-    if (filter !== 'portfolio') present.add('Prem Labs');
+    if (filter === 'all' || filter === 'sourcing') present.add('Prem Labs');
     return COMPANY_ORDER.filter(n => present.has(n));
   }, [conns, filter]);
 
@@ -234,13 +248,16 @@ function NetworkMap() {
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 10.5, color: '#7C8B9C' }}>
             <span style={{ width: 14, height: 2, background: '#9AA6E0' }} />portfolio
           </span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 10.5, color: '#7C8B9C' }}>
+            <span style={{ width: 14, height: 2, background: '#0E9F6E' }} />pre-signal path
+          </span>
         </div>
       </div>
 
       <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
       <svg viewBox={`0 0 ${W} ${H}`} style={{ display: 'block', width: '100%', minWidth: 760 }}>
         {/* Column headers */}
-        <text x={20} y={18} fontFamily="IBM Plex Mono, monospace" fontSize="9" letterSpacing="1.6" fill="#A9B5C2" textTransform="uppercase">CONNECTORS</text>
+        <text x={20} y={18} fontFamily="IBM Plex Mono, monospace" fontSize="9" letterSpacing="1.6" fill="#A9B5C2">CONNECTORS</text>
         <text x={rX + 18} y={18} fontFamily="IBM Plex Mono, monospace" fontSize="9" letterSpacing="1.6" fill="#A9B5C2">COMPANIES</text>
 
         {/* Group labels on the left */}
@@ -259,7 +276,7 @@ function NetworkMap() {
           const x1 = lX, y1 = lY(l.ci), x2 = rX, y2 = rY(l.ri), cx = (x1 + x2) / 2, active = activeLink(l);
           return (
             <path key={i} d={`M${x1},${y1} C${cx},${y1} ${cx},${y2} ${x2},${y2}`} fill="none"
-              stroke={active ? KIND_COLOR[l.kind] : (l.kind === 'sourcing' ? '#C9D4EA' : '#E0E4EE')}
+              stroke={active ? KIND_COLOR[l.kind] : (l.kind === 'presignal' ? '#B6E9D0' : l.kind === 'sourcing' ? '#C9D4EA' : '#E0E4EE')}
               strokeWidth={active ? 2.4 : 1.25}
               opacity={dim && !active ? 0.1 : active ? 1 : 0.72} />
           );
@@ -287,15 +304,16 @@ function NetworkMap() {
           const active = hover?.side === 'R' && hover.key === i;
           const linkedFromConn = hover?.side === 'L' && conns[hover.key]?.vlinks.some(l => l.co === name);
           const faded = dim && !active && !linkedFromConn;
-          const color = meta?.cold ? '#C2740C' : meta?.kind === 'sourcing' ? '#2563EB' : '#6366F1';
+          const color = meta?.cold ? '#C2740C' : meta?.kind === 'presignal' ? '#0E9F6E' : meta?.kind === 'sourcing' ? '#2563EB' : '#6366F1';
+          const prefix = meta?.kind === 'presignal' ? 'pre-signal · ' : meta?.kind === 'sourcing' ? 'target · ' : 'held · ';
           return (
             <g key={name} style={{ cursor: 'pointer' }} opacity={faded ? 0.22 : 1}
               onMouseEnter={() => setHover({ side: 'R', key: i })}
               onMouseLeave={() => setHover(null)}>
-              <circle cx={rX} cy={y} r={active ? 6 : 4.5} fill={active ? color : '#fff'} stroke={color} strokeWidth="2" strokeDasharray={meta?.cold ? '2 2' : 'none'} />
+              <circle cx={rX} cy={y} r={active ? 6 : 4.5} fill={active ? color : '#fff'} stroke={color} strokeWidth="2" strokeDasharray={meta?.cold ? '2 2' : meta?.kind === 'presignal' ? '3 2' : 'none'} />
               <text x={rX + 15} y={y - 1} fontFamily="Source Serif 4, Georgia, serif" fontSize="12.5" fontWeight="600" fill="#0B1F33">{name}</text>
-              <text x={rX + 15} y={y + 11} fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill={meta?.cold ? '#C2740C' : '#7C8B9C'}>
-                {meta?.kind === 'sourcing' ? 'target · ' : 'held · '}{meta?.tag}
+              <text x={rX + 15} y={y + 11} fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill={meta?.cold ? '#C2740C' : meta?.kind === 'presignal' ? '#0E9F6E' : '#7C8B9C'}>
+                {prefix}{meta?.tag}
               </text>
             </g>
           );
@@ -327,7 +345,7 @@ function NetworkMap() {
           </>
         ) : (
           <span style={{ fontSize: 11.5, color: '#7C8B9C', display: 'flex', alignItems: 'center', height: 44 }}>
-            Hover any node to trace the relationship and open its source. Blue links are sourcing bridges via co-investor overlap; indigo links are portfolio operator relationships.
+            Hover any node to trace the relationship and open its source. Blue links = sourcing bridges; indigo = portfolio value-add; green = Pre-Signal paths (companies before PitchBook).
           </span>
         )}
       </div>
@@ -437,6 +455,7 @@ export default function DoorsTab() {
 
   const warmCount = PLAYS.filter(p => p.warm).length;
   const totalConnectors = CONNECTORS.length;
+  const presignalCount = Object.values(COMPANY_META).filter(m => m.kind === 'presignal').length;
 
   return (
     <div style={{ padding: isMobile ? '16px 16px 48px' : '22px 32px 56px' }}>
@@ -448,7 +467,7 @@ export default function DoorsTab() {
           <h2 className="serif" style={{ fontSize: 20, fontWeight: 700, color: '#0B1F33', margin: 0 }}>The Network</h2>
         </div>
         <p style={{ fontSize: 12.5, color: '#4F6072', margin: 0, maxWidth: 820, lineHeight: 1.6 }}>
-          firstminute's edge is relationship capital: {totalConnectors} mapped connectors across partners, unicorn-founder LPs, and co-investor funds. The network does two jobs: winning warm access to sourcing targets via shared co-investors, and deploying operators to open doors for held companies. Every co-investor link is backed by a real funding round. Hover a node to trace the path and read the source.
+          firstminute's edge is relationship capital: {totalConnectors} mapped connectors across partners, unicorn-founder LPs, and co-investor funds. The network does three jobs: winning warm access to sourcing targets via shared co-investors, deploying operators to open doors for held companies, and opening warm paths to {presignalCount} pre-seed and seed Pre-Signal companies before they reach PitchBook. Every co-investor link is backed by a real funding round. Hover a node to trace the path and read the source.
         </p>
       </div>
 
@@ -457,8 +476,8 @@ export default function DoorsTab() {
         {[
           { label: 'Connectors mapped', value: totalConnectors, sub: 'partners, operators, funds', accent: '#0B1F33' },
           { label: 'Warm sourcing paths', value: warmCount, sub: 'via co-investor overlap', accent: '#2563EB' },
-          { label: 'Companies in map', value: COMPANY_ORDER.length, sub: 'held and target', accent: '#6366F1' },
-          { label: 'Thesis areas covered', value: THESES.length, sub: 'investment theses activated', accent: '#0E9F6E' },
+          { label: 'Companies in map', value: COMPANY_ORDER.length, sub: 'held, target, pre-signal', accent: '#6366F1' },
+          { label: 'Pre-Signal paths', value: presignalCount, sub: 'pre-seed & seed, pre-PitchBook', accent: '#0E9F6E' },
           { label: 'LP depth', value: '130+', sub: 'unicorn-founder LPs', accent: '#C2740C' },
         ].map(s => (
           <div key={s.label} style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 9, padding: '12px 16px' }}>
