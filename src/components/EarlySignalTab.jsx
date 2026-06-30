@@ -43,59 +43,17 @@ function daysSince(dateStr) { return Math.floor((new Date('2026-06-29') - new Da
 function latestSignalDate(c) { return c.signals.reduce((l, s) => s.date > l ? s.date : l, ''); }
 
 // ─── Source URL map ───────────────────────────────────────────
-const SOURCE_URLS = {
-  'EU-Startups':                'https://www.eu-startups.com',
-  'Handelsblatt':               'https://www.handelsblatt.com',
-  'German Startup Monitor':     'https://deutscherstartupmonitor.de',
-  'Affärsvärlden':              'https://www.affarsvarlden.se',
-  'BSides London':              'https://www.bsideslondon.com',
-  'ESA press release':          'https://www.esa.int/Newsroom',
-  'ESA press, LinkedIn':        'https://www.esa.int/Newsroom',
-  'BaFin press office':         'https://www.bafin.de/EN/Presse/Pressemitteilungen',
-  'BaFin press release':        'https://www.bafin.de/EN/Presse/Pressemitteilungen',
-  'Black Hat 2025 speaker programme': 'https://www.blackhat.com',
-  'LinkedIn, Black Hat 2025 speaker programme': 'https://www.blackhat.com',
-  'Snyk founding team history': 'https://snyk.io/about/',
-  'LinkedIn, Snyk founding team history': 'https://snyk.io/about/',
-  'LinkedIn, Klarna press':     'https://newsroom.klarna.com',
-  'LinkedIn, Bupa press':       'https://www.bupa.com/media-centre',
-  'WHOIS':                      'https://who.is',
-  'WHOIS / Companies House':    'https://find-and-update.company-information.service.gov.uk',
-  'Companies House':            'https://find-and-update.company-information.service.gov.uk',
-  'firstminute analysis':                                          'https://firstminute.capital',
-  'firstminute parameters':                                        'https://firstminute.capital',
-  'firstminute portfolio analysis':                                'https://firstminute.capital',
-  'firstminute portfolio analysis + ESA BIC Paris announcement':  'https://firstminute.capital',
-  'firstminute portfolio analysis + EU-Startups':                 'https://firstminute.capital',
-  'firstminute portfolio thesis + Product Hunt data + HN':        'https://firstminute.capital',
-  'firstminute portfolio thesis + BSides London demo + Argus GitHub': 'https://firstminute.capital',
-  'firstminute sourcing analysis + Affärsvärlden':               'https://firstminute.capital',
-  'firstminute sourcing analysis + Companies House + LinkedIn':   'https://firstminute.capital',
-  'firstminute sourcing thesis (Avoca comp) + Handelsblatt':     'https://firstminute.capital',
-  'firstminute LP database (Guy Podjarny, Snyk co-founder)':     'https://firstminute.capital',
-  'firstminute LP database (Scott Chacon, GitHub co-founder)':   'https://firstminute.capital',
-  'firstminute LP co-investor relationships (Kleiner, General Catalyst)': 'https://firstminute.capital',
-  'firstminute network analysis (Omnea/Tessian alumni connection)': 'https://firstminute.capital',
-  'firstminute portfolio (Storyblok) + Nordic LP network':        'https://firstminute.capital',
-  'firstminute portfolio network (Taktile → Meridian)':          'https://firstminute.capital',
-  'firstminute LP network intelligence':                          'https://firstminute.capital',
-  'ESA BIC Paris programme + firstminute LP network':            'https://firstminute.capital',
-};
-
 // ─── Micro components ────────────────────────────────────────
 function Src({ label }) {
-  const url = SOURCE_URLS[label];
-  const base = {
-    display: 'inline-flex', alignItems: 'center', gap: 3,
-    fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, fontWeight: 600,
-    letterSpacing: '0.05em', borderRadius: 4, padding: '1px 6px',
-    textDecoration: 'none', whiteSpace: 'normal', wordBreak: 'break-word', maxWidth: '100%',
-    color: url ? '#2563EB' : '#7C8B9C',
-    background: url ? '#EEF3FF' : '#F1F4F7',
-    border: `1px solid ${url ? '#D3E0FF' : '#E2E7ED'}`,
-  };
-  if (url) return <a href={url} target="_blank" rel="noreferrer" style={base}>{label} ↗</a>;
-  return <span style={base}>{label}</span>;
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 3,
+      fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, fontWeight: 600,
+      letterSpacing: '0.05em', borderRadius: 4, padding: '1px 6px',
+      whiteSpace: 'normal', wordBreak: 'break-word', maxWidth: '100%',
+      color: '#7C8B9C', background: '#F1F4F7', border: '1px solid #E2E7ED',
+    }}>{label}</span>
+  );
 }
 
 function WebLink({ website, small = false }) {
