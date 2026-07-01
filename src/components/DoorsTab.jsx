@@ -168,6 +168,10 @@ const LP_GROUPS = [
 function NetworkMap() {
   const [filter, setFilter] = useState('all');
   const [hover, setHover] = useState(null);
+  // Click pins a node so the detail strip stays open and its source links are clickable.
+  const [pinned, setPinned] = useState(null);
+  const focus = hover ?? pinned;
+  const togglePin = (side, key) => setPinned(p => (p && p.side === side && p.key === key) ? null : { side, key });
 
   const linkVisible = l => filter === 'all' || l.kind === filter;
 
@@ -196,8 +200,8 @@ function NetworkMap() {
   const links = [];
   conns.forEach((c, ci) => c.vlinks.forEach(l => { const ri = cIdx(l.co); if (ri >= 0) links.push({ ci, ri, kind: l.kind }); }));
 
-  const activeLink = l => hover ? (hover.side === 'L' ? l.ci === hover.key : l.ri === hover.key) : false;
-  const dim = hover != null;
+  const activeLink = l => focus ? (focus.side === 'L' ? l.ci === focus.key : l.ri === focus.key) : false;
+  const dim = focus != null;
 
   // Group boundary labels in SVG
   const groupBoundaries = useMemo(() => {
@@ -211,24 +215,26 @@ function NetworkMap() {
     return bounds;
   }, [conns]);
 
-  const hoveredRel = useMemo(() => {
-    if (!hover) return null;
-    if (hover.side === 'L') {
-      const c = conns[hover.key];
+  const focusedRel = useMemo(() => {
+    if (!focus) return null;
+    if (focus.side === 'L') {
+      const c = conns[focus.key];
+      if (!c) return null;
       return { title: c.name, sub: c.sub, items: c.vlinks.map(l => ({ co: l.co, note: l.note, src: l.src, kind: l.kind })) };
     }
-    const co = companies[hover.key];
+    const co = companies[focus.key];
+    if (!co) return null;
     const items = [];
     conns.forEach(c => c.vlinks.forEach(l => { if (l.co === co) items.push({ co: c.name, note: l.note, src: l.src, kind: l.kind }); }));
     return { title: co, sub: COMPANY_META[co]?.tag, items, isCompany: true };
-  }, [hover, conns, companies]);
+  }, [focus, conns, companies]);
 
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap', marginBottom: 14 }}>
         <div style={{ display: 'flex', gap: 5 }}>
           {FILTERS.map(f => (
-            <button key={f.id} onClick={() => { setFilter(f.id); setHover(null); }} style={{
+            <button key={f.id} onClick={() => { setFilter(f.id); setHover(null); setPinned(null); }} style={{
               fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 600, letterSpacing: '0.06em',
               padding: '5px 11px', borderRadius: 7, cursor: 'pointer',
               background: filter === f.id ? '#0B1F33' : '#fff', color: filter === f.id ? '#fff' : '#7C8B9C',
@@ -284,13 +290,14 @@ function NetworkMap() {
 
         {/* Left nodes: connectors */}
         {conns.map((c, i) => {
-          const y = lY(i), active = hover?.side === 'L' && hover.key === i;
-          const linkedFromCo = hover?.side === 'R' && c.vlinks.some(l => l.co === companies[hover.key]);
+          const y = lY(i), active = focus?.side === 'L' && focus.key === i;
+          const linkedFromCo = focus?.side === 'R' && c.vlinks.some(l => l.co === companies[focus.key]);
           const faded = dim && !active && !linkedFromCo;
           return (
             <g key={c.name} style={{ cursor: 'pointer' }} opacity={faded ? 0.22 : 1}
               onMouseEnter={() => setHover({ side: 'L', key: i })}
-              onMouseLeave={() => setHover(null)}>
+              onMouseLeave={() => setHover(null)}
+              onClick={() => togglePin('L', i)}>
               <text x={lX - 13} y={y - 2} textAnchor="end" fontFamily="Source Serif 4, Georgia, serif" fontSize="12.5" fontWeight="600" fill="#0B1F33">{c.name}</text>
               <text x={lX - 13} y={y + 10} textAnchor="end" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#7C8B9C">{c.sub}</text>
               <circle cx={lX} cy={y} r={active ? 6 : 4.5} fill={active ? TYPE_COLOR[c.type] : '#fff'} stroke={TYPE_COLOR[c.type]} strokeWidth="2" />
@@ -301,15 +308,16 @@ function NetworkMap() {
         {/* Right nodes: companies */}
         {companies.map((name, i) => {
           const meta = COMPANY_META[name], y = rY(i);
-          const active = hover?.side === 'R' && hover.key === i;
-          const linkedFromConn = hover?.side === 'L' && conns[hover.key]?.vlinks.some(l => l.co === name);
+          const active = focus?.side === 'R' && focus.key === i;
+          const linkedFromConn = focus?.side === 'L' && conns[focus.key]?.vlinks.some(l => l.co === name);
           const faded = dim && !active && !linkedFromConn;
           const color = meta?.cold ? '#C2740C' : meta?.kind === 'presignal' ? '#0E9F6E' : meta?.kind === 'sourcing' ? '#2563EB' : '#6366F1';
           const prefix = meta?.kind === 'presignal' ? 'pre-signal · ' : meta?.kind === 'sourcing' ? 'target · ' : 'held · ';
           return (
             <g key={name} style={{ cursor: 'pointer' }} opacity={faded ? 0.22 : 1}
               onMouseEnter={() => setHover({ side: 'R', key: i })}
-              onMouseLeave={() => setHover(null)}>
+              onMouseLeave={() => setHover(null)}
+              onClick={() => togglePin('R', i)}>
               <circle cx={rX} cy={y} r={active ? 6 : 4.5} fill={active ? color : '#fff'} stroke={color} strokeWidth="2" strokeDasharray={meta?.cold ? '2 2' : meta?.kind === 'presignal' ? '3 2' : 'none'} />
               <text x={rX + 15} y={y - 1} fontFamily="Source Serif 4, Georgia, serif" fontSize="12.5" fontWeight="600" fill="#0B1F33">{name}</text>
               <text x={rX + 15} y={y + 11} fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill={meta?.cold ? '#C2740C' : meta?.kind === 'presignal' ? '#0E9F6E' : '#7C8B9C'}>
@@ -321,16 +329,22 @@ function NetworkMap() {
       </svg>
 
       </div>
-      {/* Hover detail strip */}
-      <div style={{ marginTop: 8, minHeight: 68, background: '#FBFCFD', border: '1px solid var(--border)', borderRadius: 9, padding: '12px 16px' }}>
-        {hoveredRel ? (
+      {/* Detail strip — hover to preview, click a node to pin it open */}
+      <div style={{ marginTop: 8, minHeight: 68, background: '#FBFCFD', border: `1px solid ${pinned && !hover ? '#D3E0FF' : 'var(--border)'}`, borderRadius: 9, padding: '12px 16px' }}>
+        {focusedRel ? (
           <>
-            <div style={{ marginBottom: 9 }}>
-              <span className="serif" style={{ fontSize: 14, fontWeight: 600, color: '#0B1F33' }}>{hoveredRel.title}</span>
-              <span style={{ fontSize: 11, color: '#7C8B9C', marginLeft: 8 }}>{hoveredRel.sub}</span>
+            <div style={{ marginBottom: 9, display: 'flex', alignItems: 'center' }}>
+              <span className="serif" style={{ fontSize: 14, fontWeight: 600, color: '#0B1F33' }}>{focusedRel.title}</span>
+              <span style={{ fontSize: 11, color: '#7C8B9C', marginLeft: 8 }}>{focusedRel.sub}</span>
+              {pinned && !hover && (
+                <span style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', background: '#EEF3FF', border: '1px solid #D3E0FF', borderRadius: 4, padding: '2px 7px' }}>Pinned</span>
+                  <button onClick={() => setPinned(null)} style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 5, padding: '3px 5px', color: '#7C8B9C', cursor: 'pointer', display: 'inline-flex' }}><X size={11} /></button>
+                </span>
+              )}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-              {hoveredRel.items.map((it, i) => (
+              {focusedRel.items.map((it, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                   <span style={{ width: 7, height: 7, borderRadius: 2, background: KIND_COLOR[it.kind], flexShrink: 0, marginTop: 4 }} />
                   <span style={{ fontSize: 11.5, color: '#36475A', lineHeight: 1.5, flex: 1 }}>
@@ -345,7 +359,7 @@ function NetworkMap() {
           </>
         ) : (
           <span style={{ fontSize: 11.5, color: '#7C8B9C', display: 'flex', alignItems: 'center', height: 44 }}>
-            Hover any node to trace the relationship and open its source. Blue links = sourcing bridges; indigo = portfolio value-add; green = Pre-Signal paths (companies before PitchBook).
+            Hover any node to trace its relationships; click a node to pin them here and open the sources. Blue links = sourcing bridges; indigo = portfolio value-add; green = Pre-Signal paths (companies before PitchBook).
           </span>
         )}
       </div>
@@ -467,7 +481,7 @@ export default function DoorsTab() {
           <h2 className="serif" style={{ fontSize: 20, fontWeight: 700, color: '#0B1F33', margin: 0 }}>The Network</h2>
         </div>
         <p style={{ fontSize: 12.5, color: '#4F6072', margin: 0, maxWidth: 820, lineHeight: 1.6 }}>
-          firstminute's edge is relationship capital: {totalConnectors} mapped connectors across partners, unicorn-founder LPs, and co-investor funds. The network does three jobs: winning warm access to sourcing targets via shared co-investors, deploying operators to open doors for held companies, and opening warm paths to {presignalCount} pre-seed and seed Pre-Signal companies before they reach PitchBook. Every co-investor link is backed by a real funding round. Hover a node to trace the path and read the source.
+          firstminute's edge is relationship capital: {totalConnectors} mapped connectors across partners, unicorn-founder LPs, and co-investor funds. The network does three jobs: winning warm access to sourcing targets via shared co-investors, deploying operators to open doors for held companies, and opening warm paths to {presignalCount} pre-seed and seed Pre-Signal companies before they reach PitchBook. Every co-investor link is backed by a real funding round. Hover a node to trace the path; click it to pin the detail and open the source.
         </p>
       </div>
 

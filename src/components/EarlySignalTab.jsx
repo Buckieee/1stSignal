@@ -130,19 +130,21 @@ function toSvgY(f) { return PAD.top + ((Y_MAX - f) / (Y_MAX - Y_MIN)) * PLOT_H; 
 const ZONE_X = toSvgX(50);
 const ZONE_Y = toSvgY(88);
 
-const LABEL_OFFSETS = {
-  velar:    { dx: 0,   dy: -14 },
-  argus:    { dx: 0,   dy: -16 },
-  forge:    { dx: 20,  dy: 2   },
-  patchwork:{ dx: -18, dy: 2   },
-  nimbus:   { dx: 26,  dy: 1   },
-  meridian: { dx: 0,   dy: -14 },
-  delphi:   { dx: 24,  dy: 1   },
-  caelum:   { dx: 0,   dy: -14 },
+// Which side of the dot the name sits on; position is derived from the
+// dot radius so every label hugs its dot at the same gap.
+const LABEL_POS = {
+  velar:    'top',
+  argus:    'top',
+  forge:    'right',
+  patchwork:'left',
+  nimbus:   'right',
+  meridian: 'left',
+  delphi:   'right',
+  caelum:   'top',
 };
 
 // ─── Investment Radar (light, creative) ──────────────────────
-function InvestmentRadar({ selected, onSelect }) {
+function InvestmentRadar({ selected, onSelect, isMobile }) {
   const [tooltip, setTooltip] = useState(null);
   const svgRef = useRef(null);
 
@@ -153,7 +155,7 @@ function InvestmentRadar({ selected, onSelect }) {
   }), []);
 
   return (
-    <div style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden', boxShadow: '0 1px 3px rgba(11,31,51,0.06), 0 8px 24px rgba(11,31,51,0.05)', maxWidth: 620, margin: '0 auto' }}>
+    <div style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden', boxShadow: '0 1px 3px rgba(11,31,51,0.06), 0 8px 24px rgba(11,31,51,0.05)', maxWidth: isMobile ? 620 : 'none', margin: isMobile ? '0 auto' : 0 }}>
       <style>{`
         @keyframes dot-pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
@@ -318,10 +320,11 @@ function InvestmentRadar({ selected, onSelect }) {
             const isSel = selected === d.id;
             const isHov = tooltip?.id === d.id;
             const fade = selected && !isSel ? 0.18 : 1;
-            const off = LABEL_OFFSETS[d.id] || { dx: 0, dy: -13 };
-            const labelY = off.dy > 0 ? d.svgY + d.r + off.dy : d.svgY + off.dy;
-            const labelX = d.svgX + off.dx;
-            const anchor = off.dx > 10 ? 'start' : off.dx < -10 ? 'end' : 'middle';
+            const pos = LABEL_POS[d.id] || 'top';
+            const GAP = 5;
+            const labelX = pos === 'right' ? d.svgX + d.r + GAP : pos === 'left' ? d.svgX - d.r - GAP : d.svgX;
+            const labelY = pos === 'top' ? d.svgY - d.r - GAP : d.svgY + 3;
+            const anchor = pos === 'right' ? 'start' : pos === 'left' ? 'end' : 'middle';
             const isMoveNow = d.recommendation === 'Move Now';
             const filterMap = { '#10B981': 'f-green', '#F59E0B': 'f-amber', '#3B82F6': 'f-blue', '#94A3B8': 'f-grey' };
             const filterId = filterMap[d.color] || 'f-grey';
@@ -362,10 +365,10 @@ function InvestmentRadar({ selected, onSelect }) {
                     style={{ animation: `fade-in 0.3s ${delay} both` }}>{d.urgency}</text>
                 )}
 
-                {/* Label */}
+                {/* Label — coloured to match its dot so ownership is unambiguous */}
                 <text x={labelX} y={labelY} textAnchor={anchor}
                   fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight={isSel || isHov ? '700' : '600'}
-                  fill={isSel ? '#0B1F33' : isHov ? '#36475A' : '#7C8B9C'}
+                  fill={isSel || isHov ? '#0B1F33' : d.rec.color}
                   pointerEvents="none"
                   style={{ animation: `fade-in 0.4s ${parseFloat(delay) + 0.1}s both` }}>{d.name}</text>
               </g>
@@ -419,21 +422,22 @@ function InvestmentRadar({ selected, onSelect }) {
 }
 
 // ─── Full company brief panel ────────────────────────────────
-function CompanyBriefPanel({ company, onClose, isMobile }) {
+function CompanyBriefPanel({ company, onClose, isMobile, compact = false }) {
   const [signalsOpen, setSignalsOpen] = useState(false);
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   const stageMeta = STAGE_META[company.stage] || STAGE_META['pre-seed'];
   const lastDate = latestSignalDate(company);
+  const oneCol = isMobile || compact;
 
   return (
     <div style={{
       background: '#fff', border: `1px solid var(--border)`,
       borderTop: `3px solid ${rec.dot}`,
-      borderRadius: '0 0 14px 14px', marginTop: 0,
+      borderRadius: compact ? 14 : '0 0 14px 14px', marginTop: 0,
       boxShadow: '0 4px 24px rgba(11,31,51,0.08)',
     }}>
       {/* Header */}
-      <div style={{ padding: isMobile ? '14px 14px 12px' : '18px 24px 14px', borderBottom: '1px solid var(--hairline)' }}>
+      <div style={{ padding: oneCol ? '14px 16px 12px' : '18px 24px 14px', borderBottom: '1px solid var(--hairline)' }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 5 }}>
@@ -463,10 +467,10 @@ function CompanyBriefPanel({ company, onClose, isMobile }) {
       </div>
 
       {/* Body */}
-      <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 0 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: oneCol ? '1fr' : '1fr 1fr', gap: 0 }}>
 
         {/* Left */}
-        <div style={{ padding: isMobile ? '14px' : '18px 20px', borderRight: isMobile ? 'none' : '1px solid var(--hairline)', display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0 }}>
+        <div style={{ padding: oneCol ? '14px 16px' : '18px 20px', borderRight: oneCol ? 'none' : '1px solid var(--hairline)', display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0 }}>
           {/* Urgency */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
@@ -508,7 +512,7 @@ function CompanyBriefPanel({ company, onClose, isMobile }) {
         </div>
 
         {/* Right */}
-        <div style={{ padding: isMobile ? '14px' : '18px 20px', display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0 }}>
+        <div style={{ padding: oneCol ? '14px 16px' : '18px 20px', display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0 }}>
           {/* Why firstminute */}
           <div style={{ minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 7, flexWrap: 'wrap' }}>
@@ -681,7 +685,10 @@ function PreSignalExpand({ company, isMobile }) {
       <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.35fr 1fr', gap: isMobile ? 14 : 24, alignItems: 'start', paddingTop: 16 }}>
         {/* Left: narrative */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 13, minWidth: 0 }}>
-          <p style={{ fontSize: 12.5, color: '#4F6072', margin: 0, lineHeight: 1.5, fontStyle: 'italic' }}>{company.tagline}</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+            <p style={{ fontSize: 12.5, color: '#4F6072', margin: 0, lineHeight: 1.5, fontStyle: 'italic', flex: '1 1 240px' }}>{company.tagline}</p>
+            <WebLink website={company.website} small />
+          </div>
           <div className="tear-section tear-thesis">
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4, flexWrap: 'wrap' }}>
               <span className="field-label">Why firstminute</span><Src label={company.thesisSource} />
@@ -972,10 +979,10 @@ export default function EarlySignalTab() {
   const briefRef = useRef(null);
 
   useEffect(() => {
-    if (selectedId && briefRef.current) {
+    if (isMobile && selectedId && briefRef.current) {
       setTimeout(() => briefRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
     }
-  }, [selectedId]);
+  }, [selectedId, isMobile]);
 
   const sorted = useMemo(() =>
     [...companies]
@@ -1002,7 +1009,7 @@ export default function EarlySignalTab() {
           </span>
         </div>
         <p style={{ fontSize: 12.5, color: '#4F6072', margin: '0 0 4px', maxWidth: 820, lineHeight: 1.6 }}>
-          Pre-seed and seed companies surfaced before they appear on PitchBook. Hover any dot for a snapshot. Click to open the full brief below the chart. Source tags link directly to the original source.
+          Pre-seed and seed companies surfaced before they appear on PitchBook. Hover any dot for a snapshot, click it to open the full brief. Every signal is tagged with the source it was observed on.
         </p>
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2', letterSpacing: '0.06em' }}>
           Monitoring GitHub · LinkedIn · HN · Product Hunt · AngelList · WHOIS · {REFRESH_DATE}, {REFRESH_TIME}
@@ -1047,23 +1054,42 @@ export default function EarlySignalTab() {
         )}
       </div>
 
-      {/* Radar view */}
-      {view === 'radar' && (
+      {/* Radar view — cockpit on desktop: chart left, live brief / action queue right */}
+      {view === 'radar' && (isMobile ? (
         <div>
-          <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile={isMobile} />
+          <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile />
           {selectedCompany ? (
             <div ref={briefRef}>
-              <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={isMobile} />
+              <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile />
             </div>
           ) : (
-            <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(240px, 1fr))', gap: 8 }}>
+            <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
               {sorted.map(c => (
                 <MiniCard key={c.id} company={c} selected={selectedId === c.id} onSelect={id => setSelectedId(selectedId === id ? null : id)} />
               ))}
             </div>
           )}
         </div>
-      )}
+      ) : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.45fr) minmax(0, 1fr)', gap: 16, alignItems: 'start' }}>
+          <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile={false} />
+          {selectedCompany ? (
+            <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={false} compact />
+          ) : (
+            <div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, padding: '2px 2px 9px' }}>
+                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#36475A' }}>Action queue</span>
+                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#A9B5C2' }}>ranked by fit + urgency · click a dot or a card for the full brief</span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {sorted.map(c => (
+                  <MiniCard key={c.id} company={c} selected={selectedId === c.id} onSelect={id => setSelectedId(selectedId === id ? null : id)} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
 
       {/* Watchlist table view */}
       {view === 'table' && <PreSignalTable companies={sorted} isMobile={isMobile} />}
