@@ -248,16 +248,143 @@ export function CapBars({ rows }) {
   );
 }
 
-// ---- Momentum meter (qualitative trend) ----
+// ---- Momentum meter (qualitative trend from PitchBook web signals) ----
 export function MomentumMeter({ trend }) {
   const t = (trend || '').toLowerCase();
   const level = /rapid|sharp|strong/.test(t) ? 3 : /growth|upward/.test(t) ? 2 : 1;
   const color = level === 3 ? C.green : level === 2 ? C.blue : C.muted;
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'flex-end', gap: 2, height: 14 }}>
+    <div title={trend ? `PitchBook web-signal trend: ${trend}` : 'No trend data'}
+      style={{ display: 'inline-flex', alignItems: 'flex-end', gap: 2, height: 14, cursor: 'help' }}>
       {[6, 10, 14].map((h, i) => (
         <span key={i} style={{ width: 4, height: h, borderRadius: 1, background: i < level ? color : C.grid }} />
       ))}
+    </div>
+  );
+}
+
+// ---- Book at a glance: held positions by latest post-money ----
+export function BookGlance({ companies, onSelect }) {
+  const rows = companies
+    .map(c => ({ c, val: parseUSD(c.valuationExit?.postVal) }))
+    .filter(r => r.val)
+    .sort((a, b) => b.val - a.val);
+  if (rows.length < 2) return null;
+  const max = rows[0].val;
+  const momColor = trend => {
+    const t = (trend || '').toLowerCase();
+    return /rapid|sharp|strong/.test(t) ? C.green : /growth|upward/.test(t) ? C.blue : C.muted;
+  };
+  return (
+    <div className="card" style={{ padding: '14px 18px', marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 12, flexWrap: 'wrap' }}>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.ink }}>The book at a glance</span>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>bar = latest post-money · colour = momentum</span>
+        <span style={{ marginLeft: 'auto', display: 'inline-flex', gap: 12 }}>
+          {[[C.green, 'rapid'], [C.blue, 'growing'], [C.muted, 'stable']].map(([col, lbl]) => (
+            <span key={lbl} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#7C8B9C' }}>
+              <span style={{ width: 8, height: 8, borderRadius: 2, background: col }} />{lbl}
+            </span>
+          ))}
+        </span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+        {rows.map(({ c, val }) => (
+          <div key={c.id} onClick={() => onSelect?.(c)} title={`Open ${c.name} full sheet`}
+            style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: onSelect ? 'pointer' : 'default' }}>
+            <span className="serif" style={{ width: 92, fontSize: 12, fontWeight: 600, color: C.ink, textAlign: 'right', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</span>
+            <div style={{ flex: 1, height: 15, background: C.grid, borderRadius: 4, overflow: 'hidden' }}>
+              <div className="animate-bar" style={{ height: '100%', width: `${(val / max) * 100}%`, background: momColor(c.signals?.trend), borderRadius: 4, opacity: 0.85 }} />
+            </div>
+            <span style={{ width: 62, fontFamily: 'IBM Plex Mono, monospace', fontSize: 10.5, fontWeight: 700, color: C.ink, textAlign: 'right' }}>{fmtUSD(val)}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ---- Sourcing map: PB Opportunity Score vs funding stage ----
+const STAGE_TICKS = [['Seed', 0], ['A', 1], ['B', 2], ['C', 3]];
+function stageOrdinal(stage) {
+  const s = stage || '';
+  if (/series d/i.test(s)) return 4;
+  if (/series c/i.test(s)) return 3;
+  if (/series b/i.test(s)) return 2;
+  if (/series a in talks/i.test(s)) return 0.5;
+  if (/series a/i.test(s)) return 1;
+  return 0;
+}
+const SM_LABEL = { Console: 'top', Omnea: 'left', Avoca: 'right', Hadrian: 'top', 'Prem Labs': 'right' };
+
+export function SourcingMap({ companies, onSelect, warmSet }) {
+  const W = 520, H = 232;
+  const PAD = { left: 42, top: 18, right: 20, bottom: 34 };
+  const IW = W - PAD.left - PAD.right, IH = H - PAD.top - PAD.bottom;
+  const Y_MIN = 75, Y_MAX = 100;
+  const sx = v => PAD.left + (v / 4) * IW;
+  const sy = v => PAD.top + ((Y_MAX - v) / (Y_MAX - Y_MIN)) * IH;
+
+  let dots = companies
+    .filter(c => c.valuationExit?.opportunityScore)
+    .map(c => ({ c, x: stageOrdinal(c.stage), y: c.valuationExit.opportunityScore, warm: warmSet?.has(c.name) }));
+  // dodge exact-overlap dots sideways
+  dots.forEach((d, i) => {
+    const twin = dots.findIndex((o, j) => j < i && o.x === d.x && o.y === d.y);
+    if (twin >= 0) { d.x += 0.14; dots[twin].x -= 0.14; }
+  });
+
+  return (
+    <div className="card" style={{ padding: '14px 18px', marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.ink }}>Sourcing map</span>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>opportunity score vs stage · click a dot for the full sheet</span>
+        <span style={{ marginLeft: 'auto', display: 'inline-flex', gap: 12 }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#7C8B9C' }}>
+            <span style={{ width: 9, height: 9, borderRadius: '50%', border: `2px solid ${C.green}`, background: '#fff' }} />warm path
+          </span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#7C8B9C' }}>
+            <span style={{ width: 9, height: 9, borderRadius: '50%', border: `2px dashed ${C.amber}`, background: '#fff' }} />direct approach
+          </span>
+        </span>
+      </div>
+      <div style={{ maxWidth: 640 }}>
+        <svg viewBox={`0 0 ${W} ${H}`} style={{ display: 'block', width: '100%' }}>
+          {/* early-stage lead zone: firstminute's cheque territory */}
+          <rect x={sx(0) - 14} y={PAD.top} width={sx(1.5) - sx(0) + 14} height={IH} fill={C.blue} fillOpacity="0.045" />
+          <text x={sx(0) - 8} y={PAD.top + 11} fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="700" fill={C.blue} fillOpacity="0.6" letterSpacing="0.8">LEAD TERRITORY · FIRST CHEQUES</text>
+          {/* grid */}
+          {[80, 85, 90, 95, 100].map(v => (
+            <g key={v}>
+              <line x1={PAD.left - 14} y1={sy(v)} x2={W - PAD.right} y2={sy(v)} stroke="#EFF1F4" strokeWidth="1" />
+              <text x={PAD.left - 18} y={sy(v) + 3} textAnchor="end" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{v}</text>
+            </g>
+          ))}
+          {STAGE_TICKS.map(([lbl, v]) => (
+            <text key={lbl} x={sx(v)} y={H - 18} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{lbl}</text>
+          ))}
+          <text x={PAD.left + IW / 2} y={H - 5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fontWeight="700" fill="#94A3B8" letterSpacing="1.1">STAGE — later →</text>
+          <text transform={`translate(10,${PAD.top + IH / 2}) rotate(-90)`} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fontWeight="700" fill="#94A3B8" letterSpacing="1.1">PB SCORE →</text>
+          {/* dots */}
+          {dots.map(({ c, x, y, warm }) => {
+            const cx = sx(x), cy = sy(y);
+            const pos = SM_LABEL[c.name] || 'top';
+            const lx = pos === 'right' ? cx + 15 : pos === 'left' ? cx - 15 : cx;
+            const ly = pos === 'top' ? cy - 15 : cy + 3;
+            const anchor = pos === 'right' ? 'start' : pos === 'left' ? 'end' : 'middle';
+            return (
+              <g key={c.id} style={{ cursor: onSelect ? 'pointer' : 'default' }} onClick={() => onSelect?.(c)}>
+                <title>{`${c.name} · score ${y} · ${c.stage}${warm ? ' · warm path available' : ' · no warm path'}`}</title>
+                <circle cx={cx} cy={cy} r={14} fill="transparent" />
+                <circle cx={cx} cy={cy} r={9.5} fill={warm ? C.green : C.amber} fillOpacity="0.14"
+                  stroke={warm ? C.green : C.amber} strokeWidth="1.8" strokeDasharray={warm ? 'none' : '3 2.4'} />
+                <text x={cx} y={cy + 3} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="800" fill={warm ? C.green : C.amber}>{y}</text>
+                <text x={lx} y={ly} textAnchor={anchor} fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="600" fill="#36475A">{c.name}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
     </div>
   );
 }

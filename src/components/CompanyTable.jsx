@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Search, ChevronDown, ChevronUp, ArrowRight, AlertTriangle, Info, TrendingUp, Target, Zap, Users } from 'lucide-react';
-import { ValuationTrajectory, ExitBarMini, MomentumMeter, parseUSD, fmtUSD } from './Charts';
+import { ValuationTrajectory, ExitBarMini, MomentumMeter, Cite, BookGlance, SourcingMap, parseUSD, fmtUSD } from './Charts';
+import { WARM_PATH_COMPANIES } from './DoorsTab';
 import { useIsMobile } from '../hooks';
 
 const BADGE = {
@@ -178,9 +179,23 @@ function RowMobile({ company, onSelect }) {
   );
 }
 
+// Provenance for the valuation figure: the round it comes from + the PitchBook estimate.
+function valuationSources(company) {
+  const ve = company.valuationExit || {};
+  const last = (company.funding || [])[0];
+  const out = [];
+  if (last?.postVal) out.push({ label: `Last round: ${last.type || 'round'} ${last.date || ''} · ${last.postVal} post-money` });
+  if (ve.pbEstimate && !/not/i.test(ve.pbEstimate)) out.push({ label: `PitchBook estimate: ${ve.pbEstimate}${ve.pbConfidence ? ` · confidence ${ve.pbConfidence}` : ''}` });
+  return out;
+}
+
 // Desktop table row
-function Row({ company, onSelect }) {
-  const [open, setOpen] = useState(false);
+function Row({ company, onSelect, autoOpen }) {
+  const [open, setOpen] = useState(!!autoOpen);
+  const rowRef = useRef(null);
+  useEffect(() => {
+    if (autoOpen) setTimeout(() => rowRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+  }, [autoOpen]);
   const b = BADGE[company.rating] || BADGE.hold;
   const ve = company.valuationExit || {};
   const ts = company.tearSheet || {};
@@ -190,6 +205,7 @@ function Row({ company, onSelect }) {
   return (
     <>
       <tr
+        ref={rowRef}
         onClick={() => setOpen(v => !v)}
         style={{ cursor: 'pointer', transition: 'background 0.12s', background: open ? '#FBFCFD' : 'transparent' }}
         onMouseEnter={e => { if (!open) e.currentTarget.style.background = '#FBFCFD'; }}
@@ -224,6 +240,7 @@ function Row({ company, onSelect }) {
           <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 12.5, fontWeight: 600, color: '#2563EB' }}>
             {val ? fmtUSD(val) : '--'}
           </span>
+          {val ? <Cite sources={valuationSources(company)} /> : null}
         </td>
         <td style={{ padding: '14px 12px', textAlign: 'center' }}><ScoreChip score={ve.opportunityScore} /></td>
         <td style={{ padding: '14px 12px' }}><ExitBarMini ipo={ve.ipoProb || 0} ma={ve.maProb || 0} noExit={ve.noExitProb || 0} /></td>
@@ -325,27 +342,34 @@ const TONE = {
   indigo: { dot: '#6366F1', bg: 'var(--indigo-bg)', border: 'var(--indigo-border)' },
 };
 
+// Provenance chip on each radar callout: where the claim comes from and whether it still needs a human check.
+const STATUS_CHIP = {
+  unverified: { label: 'unverified · check internally', color: '#C2740C', tip: 'Sourced from press or network intelligence; not yet confirmed by the fund.' },
+  pitchbook:  { label: 'pitchbook data', color: '#2563EB', tip: 'Computed directly from PitchBook fields in this dataset.' },
+  fund:       { label: 'fund records', color: '#0E9F6E', tip: 'From firstminute\'s own records or published materials.' },
+};
+
 function buildRadar(companies, tab) {
   const set = companies.filter(c => c.type === (tab === 'held' ? 'held' : 'sourcing'));
   const out = [];
   if (tab === 'held') {
     set.forEach(c => (c.alerts || []).forEach(a => {
-      if (a.type === 'warning') out.push({ tone: 'amber', label: 'Act', name: c.name, text: a.message });
+      if (a.type === 'warning') out.push({ tone: 'amber', label: 'Act', name: c.name, text: a.message, status: 'unverified' });
     }));
     const scored = set.filter(c => c.valuationExit?.opportunityScore).sort((a, b) => b.valuationExit.opportunityScore - a.valuationExit.opportunityScore)[0];
-    if (scored) out.push({ tone: 'blue', label: 'Top conviction', name: scored.name, text: `PitchBook Opportunity Score ${scored.valuationExit.opportunityScore}/100, the highest in the held book.` });
+    if (scored) out.push({ tone: 'blue', label: 'Top conviction', name: scored.name, text: `PitchBook Opportunity Score ${scored.valuationExit.opportunityScore}/100, the highest in the held book.`, status: 'pitchbook' });
     const byOwn = set.map(c => ({ c, pct: parseFloat(c.firstminute?.ownership) })).filter(x => !isNaN(x.pct)).sort((a, b) => b.pct - a.pct)[0];
-    if (byOwn) out.push({ tone: 'green', label: 'Biggest stake', name: byOwn.c.name, text: `firstminute holds ${byOwn.c.firstminute.ownership}, the largest position in the portfolio.` });
+    if (byOwn) out.push({ tone: 'green', label: 'Biggest stake', name: byOwn.c.name, text: `firstminute holds ${byOwn.c.firstminute.ownership}, the largest position in the portfolio.`, status: 'fund' });
   } else {
     const scored = set.filter(c => c.valuationExit?.opportunityScore).sort((a, b) => b.valuationExit.opportunityScore - a.valuationExit.opportunityScore)[0];
-    if (scored) out.push({ tone: 'blue', label: 'Highest score', name: scored.name, text: `Opportunity Score ${scored.valuationExit.opportunityScore}/100, top of the sourcing radar.` });
+    if (scored) out.push({ tone: 'blue', label: 'Highest score', name: scored.name, text: `Opportunity Score ${scored.valuationExit.opportunityScore}/100, top of the sourcing radar.`, status: 'pitchbook' });
     set.forEach(c => {
       if (/talks|raising/i.test(c.stage || '') || (c.alerts || []).some(a => /window|closing|in discussions|moving fast/i.test(a.message))) {
-        out.push({ tone: 'amber', label: 'Window open', name: c.name, text: (c.alerts?.[0]?.message) || `${c.stage}: approach window is live.` });
+        out.push({ tone: 'amber', label: 'Window open', name: c.name, text: (c.alerts?.[0]?.message) || `${c.stage}: approach window is live.`, status: 'unverified' });
       }
     });
     set.forEach(c => {
-      if ((c.alerts || []).some(a => /2026 predictions/i.test(a.message))) out.push({ tone: 'green', label: 'On thesis', name: c.name, text: 'Named in firstminute’s published 2026 predictions.' });
+      if ((c.alerts || []).some(a => /2026 predictions/i.test(a.message))) out.push({ tone: 'green', label: 'On thesis', name: c.name, text: 'Named in firstminute’s published 2026 predictions.', status: 'fund' });
     });
   }
   return out.slice(0, 4);
@@ -372,14 +396,22 @@ function RadarBanner({ items, tab, isMobile }) {
       <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: isMobile ? 8 : 12 }}>
         {items.map((it, i) => {
           const t = TONE[it.tone] || TONE.blue;
+          const st = STATUS_CHIP[it.status];
           return (
-            <div key={i} style={{ background: t.bg, border: `1px solid ${t.border}`, borderRadius: 9, padding: isMobile ? '9px 11px' : '11px 13px' }}>
+            <div key={i} style={{ background: t.bg, border: `1px solid ${t.border}`, borderRadius: 9, padding: isMobile ? '9px 11px' : '11px 13px', display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 5 : 7, marginBottom: 6, flexWrap: 'wrap' }}>
                 <span style={{ width: 7, height: 7, borderRadius: '50%', background: t.dot, flexShrink: 0 }} />
                 <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.dot }}>{it.label}</span>
                 <span className="serif" style={{ fontSize: isMobile ? 12 : 13, fontWeight: 600, color: '#0B1F33', marginLeft: isMobile ? 0 : 'auto' }}>{it.name}</span>
               </div>
               <p style={{ fontSize: isMobile ? 11 : 11.5, color: '#36475A', lineHeight: 1.5, margin: 0 }}>{it.text}</p>
+              {st && (
+                <span title={st.tip} style={{
+                  alignSelf: 'flex-start', marginTop: 8, cursor: 'help',
+                  fontFamily: 'IBM Plex Mono, monospace', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+                  color: st.color, background: '#FFFFFFAA', border: `1px solid ${st.color}33`, borderRadius: 4, padding: '2px 6px',
+                }}>{st.label}</span>
+              )}
             </div>
           );
         })}
@@ -391,15 +423,15 @@ function RadarBanner({ items, tab, isMobile }) {
 const COLS = [
   { w: 270, label: 'Company', align: 'left' },
   { w: 180, label: 'Sector / HQ', align: 'left' },
-  { w: 100, label: 'Raised', align: 'right' },
-  { w: 110, label: 'Valuation', align: 'right' },
-  { w: 70, label: 'Score', align: 'center' },
-  { w: 150, label: 'Exit Model', align: 'left' },
-  { w: 80, label: 'Momentum', align: 'center' },
+  { w: 100, label: 'Raised', align: 'right', tip: 'Total disclosed funding to date (PitchBook)' },
+  { w: 110, label: 'Valuation', align: 'right', tip: 'Latest post-money. Hover the dot next to each figure for the round it comes from.' },
+  { w: 70, label: 'Score', align: 'center', tip: 'PitchBook Opportunity Score, 0-100' },
+  { w: 150, label: 'Exit Model', align: 'left', tip: 'PitchBook exit-path probabilities. IPO / M&A / X = no exit.' },
+  { w: 80, label: 'Momentum', align: 'center', tip: 'Qualitative trend from PitchBook web signals (traffic, hiring). Hover a meter for the underlying label.' },
   { w: 110, label: '', align: 'right' },
 ];
 
-export default function CompanyTable({ companies, onSelectCompany, tab }) {
+export default function CompanyTable({ companies, onSelectCompany, tab, jump }) {
   const [search, setSearch] = useState('');
   const isMobile = useIsMobile();
 
@@ -424,6 +456,10 @@ export default function CompanyTable({ companies, onSelectCompany, tab }) {
   return (
     <div style={{ padding: isMobile ? '16px 16px 48px' : '22px 32px 48px' }}>
       <RadarBanner items={radar} tab={tab} isMobile={isMobile} />
+
+      {tab === 'held'
+        ? <BookGlance companies={companies} onSelect={onSelectCompany} />
+        : <SourcingMap companies={companies} onSelect={onSelectCompany} warmSet={WARM_PATH_COMPANIES} />}
 
       {/* Toolbar */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
@@ -454,10 +490,12 @@ export default function CompanyTable({ companies, onSelectCompany, tab }) {
           <thead>
             <tr>
               {COLS.map((c, i) => (
-                <th key={i} style={{
+                <th key={i} title={c.tip} style={{
                   padding: '0 12px 9px', paddingLeft: i === 0 ? 22 : 12,
                   textAlign: c.align, fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5,
-                  fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#A9B5C2'
+                  fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#A9B5C2',
+                  cursor: c.tip ? 'help' : 'default',
+                  textDecoration: c.tip ? 'underline dotted #D6DBE2' : 'none', textUnderlineOffset: 3,
                 }}>{c.label}</th>
               ))}
             </tr>
@@ -495,7 +533,7 @@ export default function CompanyTable({ companies, onSelectCompany, tab }) {
                   {items.map((c, i) => (
                     <React.Fragment key={c.id}>
                       {i > 0 && <tr><td colSpan={8} style={{ padding: 0 }}><div style={{ height: 1, background: 'var(--hairline)' }} /></td></tr>}
-                      <Row company={c} onSelect={onSelectCompany} />
+                      <Row company={c} onSelect={onSelectCompany} autoOpen={jump?.openCompany === c.name} />
                     </React.Fragment>
                   ))}
                 </tbody>

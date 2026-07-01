@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Send, X, Network, GitBranch, Sparkles, ArrowUpRight, Check, ShieldQuestion, Users, Layers, Target } from 'lucide-react';
 import { Cite } from './Charts';
 import { useIsMobile } from '../hooks';
@@ -116,6 +116,9 @@ const CONNECTOR_GROUPS = [
 // Flatten connectors for the SVG
 const CONNECTORS = CONNECTOR_GROUPS.flatMap(g => g.items.map(c => ({ ...c, group: g.group })));
 
+// Name/role list for the global command palette
+export const CONNECTOR_INDEX = CONNECTORS.map(c => ({ name: c.name, sub: c.sub }));
+
 const COMPANY_META = {
   Mistral:    { kind: 'held', tag: 'Foundation models' },
   Granola:    { kind: 'held', tag: 'Enterprise GTM' },
@@ -136,6 +139,14 @@ const COMPANY_META = {
   Delphi:     { kind: 'presignal', tag: 'seed' },
 };
 const COMPANY_ORDER = ['Mistral', 'Granola', 'n8n', 'Storyblok', 'Taktile', 'Tessl', 'Codewords', 'Wayve', 'Console', 'Omnea', 'Hadrian', 'Avoca', 'Prem Labs', 'Argus', 'Velar', 'Meridian', 'Delphi'];
+
+// Companies visible with the 'all' filter — used to resolve a jump-pin index.
+const ALL_FILTER_COMPANIES = (() => {
+  const present = new Set();
+  CONNECTORS.forEach(c => c.links.forEach(l => present.add(l.co)));
+  present.add('Prem Labs');
+  return COMPANY_ORDER.filter(n => present.has(n));
+})();
 
 const TYPE_COLOR = { partner: '#0B1F33', operator: '#2563EB', fund: '#6366F1' };
 const KIND_COLOR  = { sourcing: '#2563EB', portfolio: '#9AA6E0', presignal: '#0E9F6E' };
@@ -165,13 +176,24 @@ const LP_GROUPS = [
   { label: 'Policy / Finance', color: '#C2740C', count: '10+', examples: ['Larry Summers (ex-Treasury)', 'Lenny Rachitsky (PLG Substack)'] },
 ];
 
-function NetworkMap() {
+function NetworkMap({ jump, onJump }) {
   const [filter, setFilter] = useState('all');
   const [hover, setHover] = useState(null);
   // Click pins a node so the detail strip stays open and its source links are clickable.
   const [pinned, setPinned] = useState(null);
   const focus = hover ?? pinned;
   const togglePin = (side, key) => setPinned(p => (p && p.side === side && p.key === key) ? null : { side, key });
+
+  // Cross-tab jump: pin the named company or connector node
+  useEffect(() => {
+    if (jump?.pinCompany) {
+      const idx = ALL_FILTER_COMPANIES.indexOf(jump.pinCompany);
+      if (idx >= 0) { setFilter('all'); setPinned({ side: 'R', key: idx }); }
+    } else if (jump?.pinConnector) {
+      const idx = CONNECTORS.findIndex(c => c.name === jump.pinConnector);
+      if (idx >= 0) { setFilter('all'); setPinned({ side: 'L', key: idx }); }
+    }
+  }, [jump]);
 
   const linkVisible = l => filter === 'all' || l.kind === filter;
 
@@ -336,12 +358,22 @@ function NetworkMap() {
             <div style={{ marginBottom: 9, display: 'flex', alignItems: 'center' }}>
               <span className="serif" style={{ fontSize: 14, fontWeight: 600, color: '#0B1F33' }}>{focusedRel.title}</span>
               <span style={{ fontSize: 11, color: '#7C8B9C', marginLeft: 8 }}>{focusedRel.sub}</span>
-              {pinned && !hover && (
-                <span style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', background: '#EEF3FF', border: '1px solid #D3E0FF', borderRadius: 4, padding: '2px 7px' }}>Pinned</span>
-                  <button onClick={() => setPinned(null)} style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 5, padding: '3px 5px', color: '#7C8B9C', cursor: 'pointer', display: 'inline-flex' }}><X size={11} /></button>
-                </span>
-              )}
+              <span style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                {focusedRel.isCompany && COMPANY_META[focusedRel.title]?.kind === 'presignal' && onJump && (
+                  <button onClick={() => onJump('presignal', { companyId: focusedRel.title.toLowerCase() })} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: 4,
+                    fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, fontWeight: 700, letterSpacing: '0.05em',
+                    color: '#0E9F6E', background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 5,
+                    padding: '3px 8px', cursor: 'pointer',
+                  }}>Open Pre-Signal brief <ArrowUpRight size={10} /></button>
+                )}
+                {pinned && !hover && (
+                  <>
+                    <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', background: '#EEF3FF', border: '1px solid #D3E0FF', borderRadius: 4, padding: '2px 7px' }}>Pinned</span>
+                    <button onClick={() => setPinned(null)} style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 5, padding: '3px 5px', color: '#7C8B9C', cursor: 'pointer', display: 'inline-flex' }}><X size={11} /></button>
+                  </>
+                )}
+              </span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
               {focusedRel.items.map((it, i) => (
@@ -453,7 +485,18 @@ const PLAYS = [
     ask: 'Direct founder outreach on sovereignty angle, ahead of the $100M Series A.' },
 ];
 
-export default function DoorsTab() {
+// Sourcing companies with a verified warm path (consumed by the Sourcing map chart)
+export const WARM_PATH_COMPANIES = new Set(PLAYS.filter(p => p.warm).map(p => p.company));
+
+// Held companies that anchor each play's warm bridge (names as they appear in companies.json)
+const PLAY_PORTFOLIO_BRIDGE = {
+  console: ['Mistral AI'],
+  omnea: ['n8n'],
+  hadrian: ['Mistral AI'],
+  avoca: ['Granola', 'Mistral AI'],
+};
+
+export default function DoorsTab({ jump, onJump }) {
   const [modal, setModal] = useState(null);
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState({});
@@ -508,7 +551,7 @@ export default function DoorsTab() {
           <GitBranch size={13} style={{ color: '#2563EB' }} />
           <span className="field-label">Relationship Map: who can open which door</span>
         </div>
-        <NetworkMap />
+        <NetworkMap jump={jump} onJump={onJump} />
       </div>
 
       {/* Thesis coverage grid */}
@@ -558,6 +601,19 @@ export default function DoorsTab() {
                   <span style={{ marginLeft: 'auto' }}><Cite sources={play.bridge.sources} /></span>
                 </div>
                 <p style={{ fontSize: 11.5, color: '#36475A', lineHeight: 1.55, margin: 0 }}>{play.bridge.detail}</p>
+                {onJump && PLAY_PORTFOLIO_BRIDGE[play.id] && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', marginTop: 8 }}>
+                    <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#7C8B9C' }}>Portfolio anchor:</span>
+                    {PLAY_PORTFOLIO_BRIDGE[play.id].map(name => (
+                      <button key={name} onClick={() => onJump('held', { openCompany: name })} style={{
+                        display: 'inline-flex', alignItems: 'center', gap: 4,
+                        fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 700,
+                        color: '#2563EB', background: '#fff', border: '1px solid #D3E0FF', borderRadius: 5,
+                        padding: '3px 8px', cursor: 'pointer',
+                      }}>{name} <ArrowUpRight size={9} /></button>
+                    ))}
+                  </div>
+                )}
               </div>
               <div style={{ marginBottom: 13 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6 }}>

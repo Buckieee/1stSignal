@@ -1,15 +1,27 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Header from './components/Header';
 import CompanyTable from './components/CompanyTable';
 import CompanyDetail from './components/CompanyDetail';
 import DoorsTab from './components/DoorsTab';
 import NotesTab from './components/NotesTab';
 import EarlySignalTab from './components/EarlySignalTab';
+import CommandPalette from './components/CommandPalette';
 import companiesData from './data/companies.json';
 
+const VALID_TABS = ['held', 'sourcing', 'presignal', 'doors', 'notes'];
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState('held');
+  // Tab survives refresh / can be shared via the URL hash
+  const [activeTab, setActiveTab] = useState(() => {
+    const h = window.location.hash.slice(1);
+    return VALID_TABS.includes(h) ? h : 'held';
+  });
   const [selectedCompany, setSelectedCompany] = useState(null);
+  useEffect(() => { window.history.replaceState(null, '', `#${activeTab}`); }, [activeTab]);
+  // Cross-tab jump: carries a payload (companyId, pinCompany, openCompany) to the target tab.
+  const [jump, setJump] = useState(null);
+  const doJump = (tab, payload = {}) => { setJump({ ...payload, n: Date.now() }); setActiveTab(tab); };
+  const switchTab = tab => { setJump(null); setActiveTab(tab); };
 
   const counts = useMemo(() => ({
     held: companiesData.filter(c => c.type === 'held').length,
@@ -26,26 +38,31 @@ export default function App() {
     <div style={{ minHeight: '100vh', background: '#F6F7F9', color: '#36475A' }}>
       <Header
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={switchTab}
         heldCount={counts.held}
         sourcingCount={counts.sourcing}
         companies={companiesData}
       />
       <main style={{ maxWidth: 1360, margin: '0 auto' }}>
-        {activeTab === 'notes' ? (
-          <NotesTab />
-        ) : activeTab === 'doors' ? (
-          <DoorsTab companies={companiesData} />
-        ) : activeTab === 'presignal' ? (
-          <EarlySignalTab />
-        ) : (
-          <CompanyTable
-            companies={displayedCompanies}
-            onSelectCompany={setSelectedCompany}
-            tab={activeTab}
-          />
-        )}
+        <div key={activeTab} className="tab-fade">
+          {activeTab === 'notes' ? (
+            <NotesTab />
+          ) : activeTab === 'doors' ? (
+            <DoorsTab companies={companiesData} jump={jump} onJump={doJump} />
+          ) : activeTab === 'presignal' ? (
+            <EarlySignalTab jump={jump} onJump={doJump} />
+          ) : (
+            <CompanyTable
+              companies={displayedCompanies}
+              onSelectCompany={setSelectedCompany}
+              tab={activeTab}
+              jump={jump}
+            />
+          )}
+        </div>
       </main>
+
+      <CommandPalette onJump={doJump} />
 
       <footer style={{ borderTop: '1px solid var(--border)', background: '#FFFFFF', marginTop: 8 }}>
         <div style={{ maxWidth: 1360, margin: '0 auto', padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>

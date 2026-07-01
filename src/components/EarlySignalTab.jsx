@@ -2,10 +2,11 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { GitBranch, Users, Zap, TrendingUp, Globe, FileText, ArrowUpRight, ChevronDown, ChevronUp, Layers, Target, ArrowRight, Radar, X } from 'lucide-react';
 import { useIsMobile } from '../hooks';
 import companies from '../data/earlySignals.json';
+import { BUILD_DATE, BUILD_DATE_LABEL, BUILD_TIME_LABEL } from '../constants';
 
 // ─── Constants ───────────────────────────────────────────────
-const REFRESH_DATE = 'Mon 29 Jun 2026';
-const REFRESH_TIME = '09:14 GMT';
+const REFRESH_DATE = `Mon ${BUILD_DATE_LABEL}`;
+const REFRESH_TIME = BUILD_TIME_LABEL;
 
 const SIGNAL_META = {
   departure:  { label: 'Founder Departure', Icon: ArrowUpRight, color: '#EF4444', bg: '#FEF2F2', border: '#FECACA' },
@@ -32,14 +33,14 @@ const STAGE_META = {
 
 // ─── Helpers ─────────────────────────────────────────────────
 function relativeDate(dateStr) {
-  const diff = Math.floor((new Date('2026-06-29') - new Date(dateStr)) / 86400000);
+  const diff = Math.floor((new Date(BUILD_DATE) - new Date(dateStr)) / 86400000);
   if (diff === 0) return 'today';
   if (diff === 1) return 'yesterday';
   if (diff < 7) return `${diff}d ago`;
   if (diff < 14) return '1 week ago';
   return `${Math.floor(diff / 7)}w ago`;
 }
-function daysSince(dateStr) { return Math.floor((new Date('2026-06-29') - new Date(dateStr)) / 86400000); }
+function daysSince(dateStr) { return Math.floor((new Date(BUILD_DATE) - new Date(dateStr)) / 86400000); }
 function latestSignalDate(c) { return c.signals.reduce((l, s) => s.date > l ? s.date : l, ''); }
 
 // ─── Source URL map ───────────────────────────────────────────
@@ -68,6 +69,23 @@ function WebLink({ website, small = false }) {
     }}>
       <Globe size={small ? 9 : 10} />{website}
     </a>
+  );
+}
+
+// Pre-signal companies that exist as nodes in the Network map
+const NETWORK_IDS = new Set(['argus', 'velar', 'meridian', 'delphi']);
+
+function TraceInNetwork({ company, onJump }) {
+  if (!onJump || !NETWORK_IDS.has(company.id)) return null;
+  return (
+    <button onClick={() => onJump('doors', { pinCompany: company.name })} style={{
+      display: 'inline-flex', alignItems: 'center', gap: 5, marginTop: 8,
+      fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.05em',
+      color: '#2563EB', background: '#fff', border: '1px solid #D3E0FF', borderRadius: 6,
+      padding: '5px 10px', cursor: 'pointer',
+    }}>
+      <GitBranch size={11} /> Trace in Network <ArrowRight size={10} />
+    </button>
   );
 }
 
@@ -143,6 +161,41 @@ const LABEL_POS = {
   caelum:   'top',
 };
 
+// ─── Signal pulse: 30-day histogram of observed signals ──────
+function SignalPulse() {
+  const days = useMemo(() => {
+    const counts = {};
+    companies.forEach(c => c.signals.forEach(s => { counts[s.date] = (counts[s.date] || 0) + 1; }));
+    const end = new Date(BUILD_DATE);
+    const out = [];
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date(end); d.setDate(end.getDate() - i);
+      const key = d.toISOString().slice(0, 10);
+      out.push({ key, n: counts[key] || 0, recent: i <= 6 });
+    }
+    return out;
+  }, []);
+  const max = Math.max(...days.map(d => d.n), 1);
+  const total = days.reduce((s, d) => s + d.n, 0);
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '9px 16px 11px', borderTop: '1px solid #F1F4F7' }}>
+      <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8, fontWeight: 700, letterSpacing: '0.12em', color: '#A9B5C2', flexShrink: 0 }}>SIGNAL PULSE · 30D</span>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'flex-end', gap: 2, height: 22 }}>
+        {days.map(d => (
+          <div key={d.key} title={`${d.key}: ${d.n} signal${d.n === 1 ? '' : 's'}`} style={{
+            flex: 1, borderRadius: 1.5, cursor: 'help', minHeight: 2,
+            height: d.n ? `${Math.max(18 * (d.n / max), 5)}px` : '2px',
+            background: d.n ? (d.recent ? '#10B981' : '#93C5FD') : '#EDF0F4',
+          }} />
+        ))}
+      </div>
+      <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#7C8B9C', flexShrink: 0 }}>
+        {total} signals · <span style={{ color: '#0E9F6E', fontWeight: 700 }}>green = last 7d</span>
+      </span>
+    </div>
+  );
+}
+
 // ─── Investment Radar (light, creative) ──────────────────────
 function InvestmentRadar({ selected, onSelect, isMobile }) {
   const [tooltip, setTooltip] = useState(null);
@@ -151,7 +204,8 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
   const dots = useMemo(() => companies.map(c => {
     const rec = REC_META[c.recommendation] || REC_META['Monitor'];
     const r = 8 + (c.chequeMaxK / 2000) * 8;
-    return { ...c, svgX: toSvgX(c.urgency), svgY: toSvgY(c.thesisFit), r, color: rec.dot, glow: rec.glow, rec };
+    const fresh = daysSince(latestSignalDate(c)) <= 1;
+    return { ...c, svgX: toSvgX(c.urgency), svgY: toSvgY(c.thesisFit), r, color: rec.dot, glow: rec.glow, rec, fresh };
   }), []);
 
   return (
@@ -194,7 +248,7 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
           ))}
         </div>
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#A9B5C2', letterSpacing: '0.05em' }}>
-          bigger dot = bigger cheque · number = urgency
+          bigger dot = bigger cheque · number = urgency · ring = signal in 24h
         </span>
       </div>
 
@@ -349,6 +403,12 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
                     fill={d.color} fillOpacity="0.1" />
                 )}
 
+                {/* Freshness ring: a signal was observed in the last 24h */}
+                {d.fresh && (
+                  <circle cx={d.svgX} cy={d.svgY} r={d.r + 3.5} fill="none"
+                    stroke={d.color} strokeWidth="1.3" strokeOpacity="0.55" />
+                )}
+
                 {/* Main dot — staggered entrance */}
                 <circle cx={d.svgX} cy={d.svgY} r={d.r}
                   fill={d.color}
@@ -417,12 +477,14 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
           );
         })()}
       </div>
+
+      <SignalPulse />
     </div>
   );
 }
 
 // ─── Full company brief panel ────────────────────────────────
-function CompanyBriefPanel({ company, onClose, isMobile, compact = false }) {
+function CompanyBriefPanel({ company, onClose, isMobile, compact = false, onJump }) {
   const [signalsOpen, setSignalsOpen] = useState(false);
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   const stageMeta = STAGE_META[company.stage] || STAGE_META['pre-seed'];
@@ -529,6 +591,7 @@ function CompanyBriefPanel({ company, onClose, isMobile, compact = false }) {
               <Src label={company.warmPathSource} />
             </div>
             <p style={{ fontSize: 12, color: '#36475A', lineHeight: 1.6, margin: 0 }}>{company.warmPath}</p>
+            <TraceInNetwork company={company} onJump={onJump} />
           </div>
 
           {/* Next action */}
@@ -678,7 +741,7 @@ function Metric3({ label, value }) {
 }
 
 // Shared expanded detail (tear-sheet left, deal facts right)
-function PreSignalExpand({ company, isMobile }) {
+function PreSignalExpand({ company, isMobile, onJump }) {
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   return (
     <div style={{ padding: isMobile ? '0 16px 18px' : '4px 22px 22px', borderTop: isMobile ? '1px solid var(--hairline)' : 'none', background: '#FBFCFD' }}>
@@ -700,6 +763,7 @@ function PreSignalExpand({ company, isMobile }) {
               <span className="field-label">Warm path</span><Src label={company.warmPathSource} />
             </div>
             <p style={{ color: '#36475A', fontSize: 12.5, lineHeight: 1.6, margin: 0 }}>{company.warmPath}</p>
+            <TraceInNetwork company={company} onJump={onJump} />
           </div>
           <div className="tear-section tear-signal">
             <span className="field-label" style={{ display: 'block', marginBottom: 8 }}>Signal log · {company.signals.length} · last {relativeDate(latestSignalDate(company))}</span>
@@ -778,7 +842,7 @@ function PreSignalExpand({ company, isMobile }) {
 }
 
 // Desktop table row
-function PreSignalRow({ company }) {
+function PreSignalRow({ company, onJump }) {
   const [open, setOpen] = useState(false);
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   return (
@@ -825,14 +889,14 @@ function PreSignalRow({ company }) {
         </td>
       </tr>
       {open && (
-        <tr><td colSpan={8} style={{ padding: 0 }}><PreSignalExpand company={company} isMobile={false} /></td></tr>
+        <tr><td colSpan={8} style={{ padding: 0 }}><PreSignalExpand company={company} isMobile={false} onJump={onJump} /></td></tr>
       )}
     </>
   );
 }
 
 // Mobile card row
-function PreSignalRowMobile({ company }) {
+function PreSignalRowMobile({ company, onJump }) {
   const [open, setOpen] = useState(false);
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   return (
@@ -859,12 +923,12 @@ function PreSignalRowMobile({ company }) {
           </div>
         </div>
       </div>
-      {open && <PreSignalExpand company={company} isMobile />}
+      {open && <PreSignalExpand company={company} isMobile onJump={onJump} />}
     </div>
   );
 }
 
-function PreSignalTable({ companies, isMobile }) {
+function PreSignalTable({ companies, isMobile, onJump }) {
   const groups = REC_ORDER
     .map(r => ({ rec: r, items: companies.filter(c => c.recommendation === r) }))
     .filter(g => g.items.length);
@@ -896,7 +960,7 @@ function PreSignalTable({ companies, isMobile }) {
             </div>
             {isMobile ? (
               <div className="card" style={{ overflow: 'hidden' }}>
-                {items.map(c => <PreSignalRowMobile key={c.id} company={c} />)}
+                {items.map(c => <PreSignalRowMobile key={c.id} company={c} onJump={onJump} />)}
               </div>
             ) : (
               <div className="card" style={{ overflow: 'hidden' }}>
@@ -906,7 +970,7 @@ function PreSignalTable({ companies, isMobile }) {
                     {items.map((c, i) => (
                       <React.Fragment key={c.id}>
                         {i > 0 && <tr><td colSpan={8} style={{ padding: 0 }}><div style={{ height: 1, background: 'var(--hairline)' }} /></td></tr>}
-                        <PreSignalRow company={c} />
+                        <PreSignalRow company={c} onJump={onJump} />
                       </React.Fragment>
                     ))}
                   </tbody>
@@ -970,13 +1034,22 @@ const SIGNAL_FILTERS = [
   { id: 'team', label: 'Team' }, { id: 'product', label: 'Product' }, { id: 'press', label: 'Press' },
 ];
 
-export default function EarlySignalTab() {
+export default function EarlySignalTab({ jump, onJump }) {
   const isMobile = useIsMobile();
   const [view, setView] = useState('radar');
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(() =>
+    jump?.companyId && companies.some(c => c.id === jump.companyId) ? jump.companyId : null);
   const [typeFilter, setTypeFilter] = useState('all');
   const [stageFilter, setStageFilter] = useState('all');
   const briefRef = useRef(null);
+
+  // Subsequent jumps while this tab is already mounted
+  useEffect(() => {
+    if (jump?.companyId && companies.some(c => c.id === jump.companyId)) {
+      setView('radar');
+      setSelectedId(jump.companyId);
+    }
+  }, [jump]);
 
   useEffect(() => {
     if (isMobile && selectedId && briefRef.current) {
@@ -1060,7 +1133,7 @@ export default function EarlySignalTab() {
           <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile />
           {selectedCompany ? (
             <div ref={briefRef}>
-              <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile />
+              <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile onJump={onJump} />
             </div>
           ) : (
             <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
@@ -1074,7 +1147,7 @@ export default function EarlySignalTab() {
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.45fr) minmax(0, 1fr)', gap: 16, alignItems: 'start' }}>
           <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile={false} />
           {selectedCompany ? (
-            <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={false} compact />
+            <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={false} compact onJump={onJump} />
           ) : (
             <div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, padding: '2px 2px 9px' }}>
@@ -1092,7 +1165,7 @@ export default function EarlySignalTab() {
       ))}
 
       {/* Watchlist table view */}
-      {view === 'table' && <PreSignalTable companies={sorted} isMobile={isMobile} />}
+      {view === 'table' && <PreSignalTable companies={sorted} isMobile={isMobile} onJump={onJump} />}
 
       {/* Feed view */}
       {view === 'feed' && <SignalFeed items={sorted} typeFilter={typeFilter} />}

@@ -138,3 +138,19 @@ input::placeholder, textarea::placeholder { color: var(--faint); }
 
 @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
 
+/* Tab switch transition */
+@keyframes tabFade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+.tab-fade { animation: tabFade 0.18s ease both; }
+
+/* Print: clean one-pager of whichever tab is open */
+@media print {
+  body { background: #fff; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header { position: static !important; }
+  header > div:last-child, /* tab bar */
+  footer,
+  button,
+  input { display: none !important; }
+  .card { box-shadow: none !important; break-inside: avoid; }
+}
+

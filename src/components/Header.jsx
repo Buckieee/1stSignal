@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Building2, Radar, Network, FileText, Zap } from 'lucide-react';
 import { parseUSD, fmtUSD } from './Charts';
 import { useIsMobile } from '../hooks';
+import { BUILD_DATE_LABEL } from '../constants';
 
 function KpiBand({ items, isMobile }) {
   if (isMobile) {
@@ -165,7 +166,7 @@ export default function Header({ activeTab, setActiveTab, heldCount, sourcingCou
                 1stSignal · firstminute capital · prepared for B. Hoberman
               </div>
               <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, color: '#A9B5C2', letterSpacing: '0.06em' }}>
-                18 Jun 2026 · illustrative draft
+                {BUILD_DATE_LABEL} · illustrative draft · ⌘K search
               </div>
             </div>
           )}
