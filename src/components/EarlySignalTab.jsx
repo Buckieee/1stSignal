@@ -238,17 +238,27 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
         .chart-fade { animation: fade-in 0.4s ease both; }
       `}</style>
 
-      {/* Chart header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px 0', borderBottom: '1px solid #F1F4F7', paddingBottom: 10, flexWrap: 'wrap', gap: 8 }}>
-        <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-          {Object.entries(REC_META).map(([k, v]) => (
-            <span key={k} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#36475A', letterSpacing: '0.04em' }}>
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: v.dot, flexShrink: 0 }} />{k}
-            </span>
-          ))}
+      {/* Chart header — count chips per verdict, reference-minimal */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px 10px', borderBottom: '1px solid #F1F4F7', flexWrap: 'wrap', gap: 8 }}>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {Object.entries(REC_META).map(([k, v], i) => {
+            const n = companies.filter(c => c.recommendation === k).length;
+            if (!n) return null;
+            return (
+              <span key={k} className="animate-fade" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 600,
+                letterSpacing: '0.07em', textTransform: 'uppercase',
+                color: v.color, background: v.bg, borderRadius: 999, padding: '4px 11px',
+                animationDelay: `${i * 0.06}s`,
+              }}>
+                <strong style={{ fontWeight: 800 }}>{n}</strong>{k}
+              </span>
+            );
+          })}
         </div>
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#A9B5C2', letterSpacing: '0.05em' }}>
-          bigger dot = bigger cheque · number = urgency · ring = signal in 24h
+          bigger dot = bigger cheque · green ring = signal in 24h
         </span>
       </div>
 
@@ -256,118 +266,38 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
       <div style={{ position: 'relative' }}>
         <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} style={{ display: 'block', width: '100%' }}>
           <defs>
-            {/* Subtle glow filters */}
-            <filter id="f-green" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
-              <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.063  0 0 0 0 0.627  0 0 0 0 0.506  0 0 0 0.7 0" result="colored" />
-              <feMerge><feMergeNode in="colored" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
-            <filter id="f-amber" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
-              <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.96  0 0 0 0 0.62  0 0 0 0 0.043  0 0 0 0.7 0" result="colored" />
-              <feMerge><feMergeNode in="colored" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
-            <filter id="f-blue" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur" />
-              <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.231  0 0 0 0 0.510  0 0 0 0 0.965  0 0 0 0.7 0" result="colored" />
-              <feMerge><feMergeNode in="colored" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
-            <filter id="f-grey" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
-              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
-            {/* Ideal corner gradient */}
-            <radialGradient id="ideal-glow" cx="100%" cy="0%" r="70%">
-              <stop offset="0%" stopColor="#10B981" stopOpacity="0.07" />
-              <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
-            </radialGradient>
-            {/* Zone backgrounds */}
-            <linearGradient id="zone-movenow" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#F0FDF4" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#DCFCE7" stopOpacity="0.6" />
-            </linearGradient>
-            <linearGradient id="zone-watch" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#FFFBEB" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#FEF3C7" stopOpacity="0.5" />
-            </linearGradient>
-            <linearGradient id="zone-build" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#EEF3FF" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="#DBEAFE" stopOpacity="0.4" />
-            </linearGradient>
             <clipPath id="plot-clip">
               <rect x={PAD.left} y={PAD.top} width={PLOT_W} height={PLOT_H} />
             </clipPath>
           </defs>
 
-          {/* Zone fills */}
-          <rect x={ZONE_X} y={PAD.top} width={PAD.left + PLOT_W - ZONE_X} height={ZONE_Y - PAD.top} fill="url(#zone-movenow)" />
-          <rect x={ZONE_X} y={ZONE_Y} width={PAD.left + PLOT_W - ZONE_X} height={PAD.top + PLOT_H - ZONE_Y} fill="url(#zone-watch)" />
-          <rect x={PAD.left} y={PAD.top} width={ZONE_X - PAD.left} height={ZONE_Y - PAD.top} fill="url(#zone-build)" />
-          <rect x={PAD.left} y={ZONE_Y} width={ZONE_X - PAD.left} height={PAD.top + PLOT_H - ZONE_Y} fill="none" />
+          {/* Bullseye rings radiating from the ideal corner (fit 100 · urgency 100) */}
+          <g clipPath="url(#plot-clip)">
+            {[60, 130, 210, 300].map(r => (
+              <circle key={r} cx={IDEAL_X} cy={IDEAL_Y} r={r} fill="none"
+                stroke="#D6DBE2" strokeWidth="1" strokeDasharray="4 5" />
+            ))}
+          </g>
 
-          {/* Ideal corner radial glow */}
-          <rect x={PAD.left} y={PAD.top} width={PLOT_W} height={PLOT_H} fill="url(#ideal-glow)" />
+          {/* Quadrant crosshair */}
+          <line x1={ZONE_X} y1={PAD.top} x2={ZONE_X} y2={PAD.top + PLOT_H} stroke="#E7EAEE" strokeWidth="1" />
+          <line x1={PAD.left} y1={ZONE_Y} x2={PAD.left + PLOT_W} y2={ZONE_Y} stroke="#E7EAEE" strokeWidth="1" />
 
-          {/* Grid lines */}
-          {[20, 40, 60, 80].map(v => (
-            <line key={`gx${v}`} x1={toSvgX(v)} y1={PAD.top} x2={toSvgX(v)} y2={PAD.top + PLOT_H}
-              stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 5" />
-          ))}
-          {[82, 84, 86, 90, 92, 94, 96, 98].map(v => (
-            <line key={`gy${v}`} x1={PAD.left} y1={toSvgY(v)} x2={PAD.left + PLOT_W} y2={toSvgY(v)}
-              stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 5" />
-          ))}
+          {/* Quiet quadrant names */}
+          <text x={PAD.left + PLOT_W - 8} y={PAD.top + 14} textAnchor="end" fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="700" fill="#9CB8A9" letterSpacing="1.4">MOVE NOW</text>
+          <text x={PAD.left + PLOT_W - 8} y={PAD.top + PLOT_H - 8} textAnchor="end" fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="600" fill="#C9BB9E" letterSpacing="1.4">WATCH</text>
+          <text x={PAD.left + 8} y={PAD.top + 14} fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="600" fill="#A9B8D4" letterSpacing="1.4">BUILD RELATION</text>
+          <text x={PAD.left + 8} y={PAD.top + PLOT_H - 8} fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="600" fill="#B6C0CB" letterSpacing="1.4">MONITOR</text>
 
-          {/* Zone dividers */}
-          <line x1={ZONE_X} y1={PAD.top} x2={ZONE_X} y2={PAD.top + PLOT_H} stroke="#CBD5E1" strokeWidth="1" strokeDasharray="6 4" />
-          <line x1={PAD.left} y1={ZONE_Y} x2={PAD.left + PLOT_W} y2={ZONE_Y} stroke="#CBD5E1" strokeWidth="1" strokeDasharray="6 4" />
-
-          {/* Plot border */}
-          <rect x={PAD.left} y={PAD.top} width={PLOT_W} height={PLOT_H} fill="none" stroke="#E2E8F0" strokeWidth="1" rx="2" />
-
-          {/* Zone corner labels — title + plain-language meaning */}
-          {/* Move Now (top-right) */}
-          <rect x={ZONE_X + 8} y={PAD.top + 7} width={64} height={15} rx="5" fill="#10B981" fillOpacity="0.12" stroke="#10B981" strokeWidth="0.8" strokeOpacity="0.45" />
-          <text x={ZONE_X + 40} y={PAD.top + 17.5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="700" fill="#0E9F6E" letterSpacing="0.6">MOVE NOW</text>
-          <text x={ZONE_X + 8} y={PAD.top + 33} fontFamily="IBM Plex Mono, monospace" fontSize="7" fill="#0E9F6E" fillOpacity="0.75">great fit · window open</text>
-
-          {/* Watch (bottom-right) */}
-          <rect x={ZONE_X + 8} y={PAD.top + PLOT_H - 32} width={46} height={15} rx="5" fill="#F59E0B" fillOpacity="0.12" stroke="#F59E0B" strokeWidth="0.8" strokeOpacity="0.45" />
-          <text x={ZONE_X + 31} y={PAD.top + PLOT_H - 21.5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="700" fill="#C2740C" letterSpacing="0.6">WATCH</text>
-          <text x={ZONE_X + 8} y={PAD.top + PLOT_H - 7} fontFamily="IBM Plex Mono, monospace" fontSize="7" fill="#C2740C" fillOpacity="0.75">urgent · lower fit</text>
-
-          {/* Build Relationship (top-left) */}
-          <rect x={PAD.left + 8} y={PAD.top + 7} width={92} height={15} rx="5" fill="#3B82F6" fillOpacity="0.1" stroke="#3B82F6" strokeWidth="0.8" strokeOpacity="0.35" />
-          <text x={PAD.left + 54} y={PAD.top + 17.5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="700" fill="#2563EB" letterSpacing="0.6">BUILD RELATION</text>
-          <text x={PAD.left + 8} y={PAD.top + 33} fontFamily="IBM Plex Mono, monospace" fontSize="7" fill="#2563EB" fillOpacity="0.7">great fit · still early</text>
-
-          {/* Monitor (bottom-left) */}
-          <rect x={PAD.left + 8} y={PAD.top + PLOT_H - 32} width={52} height={15} rx="5" fill="#94A3B8" fillOpacity="0.14" />
-          <text x={PAD.left + 34} y={PAD.top + PLOT_H - 21.5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="600" fill="#7C8B9C" letterSpacing="0.6">MONITOR</text>
-          <text x={PAD.left + 8} y={PAD.top + PLOT_H - 7} fontFamily="IBM Plex Mono, monospace" fontSize="7" fill="#94A3B8">early · lower fit</text>
-
-          {/* Axes labels */}
-          {[0, 25, 50, 75, 100].map(v => {
-            const x = toSvgX(v);
-            return (
-              <g key={v}>
-                <line x1={x} y1={PAD.top + PLOT_H} x2={x} y2={PAD.top + PLOT_H + 4} stroke="#CBD5E1" strokeWidth="1" />
-                <text x={x} y={PAD.top + PLOT_H + 13} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{v}</text>
-              </g>
-            );
-          })}
-          {[80, 85, 90, 95, 100].map(v => {
-            const y = toSvgY(v);
-            return (
-              <g key={v}>
-                <line x1={PAD.left - 4} y1={y} x2={PAD.left} y2={y} stroke="#CBD5E1" strokeWidth="1" />
-                <text x={PAD.left - 7} y={y + 3.5} textAnchor="end" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{v}</text>
-              </g>
-            );
-          })}
-
-          <text x={PAD.left + PLOT_W / 2} y={H - 7} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="700" fill="#94A3B8" letterSpacing="1.2">URGENCY — window closing →</text>
-          <text transform={`translate(11,${PAD.top + PLOT_H / 2}) rotate(-90)`} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="700" fill="#94A3B8" letterSpacing="1.2">THESIS FIT — stronger →</text>
+          {/* Axis pills */}
+          <g>
+            <rect x={PAD.left + PLOT_W / 2 - 52} y={H - 20} width={104} height={17} rx="8.5" fill="#F4F6F8" stroke="#E7EAEE" strokeWidth="1" />
+            <text x={PAD.left + PLOT_W / 2} y={H - 8.5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="700" fill="#7C8B9C" letterSpacing="1.6">URGENCY →</text>
+          </g>
+          <g transform={`translate(13,${PAD.top + PLOT_H / 2}) rotate(-90)`}>
+            <rect x={-56} y={-12} width={112} height={17} rx="8.5" fill="#F4F6F8" stroke="#E7EAEE" strokeWidth="1" />
+            <text x={0} y={0} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="700" fill="#7C8B9C" letterSpacing="1.6">THESIS FIT →</text>
+          </g>
 
           {/* Company dots */}
           {dots.map((d, idx) => {
@@ -380,8 +310,6 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
             const labelY = pos === 'top' ? d.svgY - d.r - GAP : d.svgY + 3;
             const anchor = pos === 'right' ? 'start' : pos === 'left' ? 'end' : 'middle';
             const isMoveNow = d.recommendation === 'Move Now';
-            const filterMap = { '#10B981': 'f-green', '#F59E0B': 'f-amber', '#3B82F6': 'f-blue', '#94A3B8': 'f-grey' };
-            const filterId = filterMap[d.color] || 'f-grey';
             const delay = `${idx * 0.07}s`;
             return (
               <g key={d.id} style={{ cursor: 'pointer' }} opacity={fade}
@@ -399,21 +327,18 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
 
                 {/* Selection / hover halo */}
                 {(isSel || isHov) && (
-                  <circle cx={d.svgX} cy={d.svgY} r={d.r + 11}
+                  <circle cx={d.svgX} cy={d.svgY} r={d.r + 12}
                     fill={d.color} fillOpacity="0.1" />
                 )}
 
-                {/* Freshness ring: a signal was observed in the last 24h */}
-                {d.fresh && (
-                  <circle cx={d.svgX} cy={d.svgY} r={d.r + 3.5} fill="none"
-                    stroke={d.color} strokeWidth="1.3" strokeOpacity="0.55" />
-                )}
+                {/* Halo: white gap + thin ring · green ring = signal in 24h */}
+                <circle cx={d.svgX} cy={d.svgY} r={d.r + 4} fill="#fff"
+                  stroke={d.fresh ? '#10B981' : '#C9D2DC'} strokeWidth={d.fresh ? 1.8 : 1.4}
+                  className="dot-enter" style={{ animationDelay: delay }} />
 
                 {/* Main dot — staggered entrance */}
                 <circle cx={d.svgX} cy={d.svgY} r={d.r}
                   fill={d.color}
-                  filter={isSel || isHov ? `url(#${filterId})` : undefined}
-                  stroke="#fff" strokeWidth={isSel ? 2.5 : 1.5}
                   className={`dot-enter${isMoveNow ? ' dot-movenow' : ''}`}
                   style={{ animationDelay: delay }} />
 
@@ -493,7 +418,8 @@ function CompanyBriefPanel({ company, onClose, isMobile, compact = false, onJump
 
   return (
     <div style={{
-      background: '#fff', border: `1px solid var(--border)`,
+      background: '#fff',
+      borderRight: '1px solid var(--border)', borderBottom: '1px solid var(--border)', borderLeft: '1px solid var(--border)',
       borderTop: `3px solid ${rec.dot}`,
       borderRadius: compact ? 14 : '0 0 14px 14px', marginTop: 0,
       boxShadow: '0 4px 24px rgba(11,31,51,0.08)',
@@ -649,10 +575,12 @@ function MiniCard({ company, selected, onSelect }) {
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   const isHot = daysSince(latestSignalDate(company)) <= 7;
   return (
-    <div onClick={() => onSelect(company.id)} style={{
+    <div onClick={() => onSelect(company.id)} className="card-hover" style={{
       padding: '11px 14px', cursor: 'pointer', borderRadius: 10,
       background: selected ? rec.bg : '#fff',
-      border: `1px solid ${selected ? rec.border : 'var(--border)'}`,
+      borderTop: `1px solid ${selected ? rec.border : 'var(--border)'}`,
+      borderRight: `1px solid ${selected ? rec.border : 'var(--border)'}`,
+      borderBottom: `1px solid ${selected ? rec.border : 'var(--border)'}`,
       borderLeft: `3px solid ${rec.dot}`,
       transition: 'all 0.15s',
     }}>
@@ -1041,8 +969,6 @@ export default function EarlySignalTab({ jump, onJump }) {
     jump?.companyId && companies.some(c => c.id === jump.companyId) ? jump.companyId : null);
   const [typeFilter, setTypeFilter] = useState('all');
   const [stageFilter, setStageFilter] = useState('all');
-  const briefRef = useRef(null);
-
   // Subsequent jumps while this tab is already mounted
   useEffect(() => {
     if (jump?.companyId && companies.some(c => c.id === jump.companyId)) {
@@ -1051,11 +977,12 @@ export default function EarlySignalTab({ jump, onJump }) {
     }
   }, [jump]);
 
+  // ESC closes the brief drawer
   useEffect(() => {
-    if (isMobile && selectedId && briefRef.current) {
-      setTimeout(() => briefRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-    }
-  }, [selectedId, isMobile]);
+    const onKey = e => { if (e.key === 'Escape') setSelectedId(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   const sorted = useMemo(() =>
     [...companies]
@@ -1127,40 +1054,30 @@ export default function EarlySignalTab({ jump, onJump }) {
         )}
       </div>
 
-      {/* Radar view — cockpit on desktop: chart left, live brief / action queue right */}
+      {/* Radar view — chart left, action queue right; the full brief opens as a side drawer */}
       {view === 'radar' && (isMobile ? (
         <div>
           <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile />
-          {selectedCompany ? (
-            <div ref={briefRef}>
-              <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile onJump={onJump} />
-            </div>
-          ) : (
-            <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
-              {sorted.map(c => (
-                <MiniCard key={c.id} company={c} selected={selectedId === c.id} onSelect={id => setSelectedId(selectedId === id ? null : id)} />
-              ))}
-            </div>
-          )}
+          <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
+            {sorted.map(c => (
+              <MiniCard key={c.id} company={c} selected={selectedId === c.id} onSelect={id => setSelectedId(selectedId === id ? null : id)} />
+            ))}
+          </div>
         </div>
       ) : (
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.45fr) minmax(0, 1fr)', gap: 16, alignItems: 'start' }}>
           <InvestmentRadar selected={selectedId} onSelect={setSelectedId} isMobile={false} />
-          {selectedCompany ? (
-            <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={false} compact onJump={onJump} />
-          ) : (
-            <div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, padding: '2px 2px 9px' }}>
-                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#36475A' }}>Action queue</span>
-                <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#A9B5C2' }}>ranked by fit + urgency · click a dot or a card for the full brief</span>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {sorted.map(c => (
-                  <MiniCard key={c.id} company={c} selected={selectedId === c.id} onSelect={id => setSelectedId(selectedId === id ? null : id)} />
-                ))}
-              </div>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, padding: '2px 2px 9px' }}>
+              <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#36475A' }}>Action queue</span>
+              <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#A9B5C2' }}>ranked by fit + urgency · click a dot or a card for the full brief</span>
             </div>
-          )}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {sorted.map(c => (
+                <MiniCard key={c.id} company={c} selected={selectedId === c.id} onSelect={id => setSelectedId(selectedId === id ? null : id)} />
+              ))}
+            </div>
+          </div>
         </div>
       ))}
 
@@ -1169,6 +1086,16 @@ export default function EarlySignalTab({ jump, onJump }) {
 
       {/* Feed view */}
       {view === 'feed' && <SignalFeed items={sorted} typeFilter={typeFilter} />}
+
+      {/* Full brief — side drawer, same pattern as the Portfolio/Sourcing full sheet */}
+      {selectedCompany && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 60, display: 'flex', justifyContent: 'flex-end', background: 'rgba(11,31,51,0.32)', backdropFilter: 'blur(2px)' }}>
+          {!isMobile && <div style={{ flex: 1 }} onClick={() => setSelectedId(null)} />}
+          <div className="slide-in" style={{ width: '100%', maxWidth: isMobile ? '100%' : 640, background: '#F6F7F9', height: '100%', overflowY: 'auto', boxShadow: '-24px 0 64px rgba(11,31,51,0.18)', padding: isMobile ? 10 : 14, boxSizing: 'border-box' }}>
+            <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={isMobile} compact onJump={onJump} />
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <div style={{ marginTop: 36, padding: '13px 16px', background: '#F8FAFC', border: '1px solid var(--border)', borderRadius: 10 }}>

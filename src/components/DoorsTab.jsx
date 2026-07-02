@@ -351,8 +351,16 @@ function NetworkMap({ jump, onJump }) {
       </svg>
 
       </div>
-      {/* Detail strip — hover to preview, click a node to pin it open */}
-      <div style={{ marginTop: 8, minHeight: 68, background: '#FBFCFD', border: `1px solid ${pinned && !hover ? '#D3E0FF' : 'var(--border)'}`, borderRadius: 9, padding: '12px 16px' }}>
+      {/* Detail strip — hover to preview, click a node to pin it open.
+          Sticky so it floats into view even when the map extends below the fold. */}
+      <div style={{
+        position: 'sticky', bottom: 12, zIndex: 6,
+        marginTop: 8, minHeight: 68, background: '#fff',
+        border: `1px solid ${pinned && !hover ? '#D3E0FF' : 'var(--border)'}`,
+        borderRadius: 9, padding: '12px 16px',
+        boxShadow: focusedRel ? '0 10px 32px rgba(11,31,51,0.14)' : '0 2px 8px rgba(11,31,51,0.05)',
+        transition: 'box-shadow 0.2s',
+      }}>
         {focusedRel ? (
           <>
             <div style={{ marginBottom: 9, display: 'flex', alignItems: 'center' }}>

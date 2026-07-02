@@ -263,42 +263,88 @@ export function MomentumMeter({ trend }) {
   );
 }
 
-// ---- Book at a glance: held positions by latest post-money ----
+// ---- Shared minimal chip for chart footers ----
+function ChartChip({ n, label, color, bg, delay = 0 }) {
+  return (
+    <span className="animate-fade" style={{
+      display: 'inline-flex', alignItems: 'center', gap: 6,
+      fontFamily: 'IBM Plex Mono, monospace', fontSize: 9.5, fontWeight: 600,
+      letterSpacing: '0.07em', textTransform: 'uppercase',
+      color, background: bg, borderRadius: 999, padding: '4px 11px',
+      animationDelay: `${delay}s`,
+    }}>
+      <strong style={{ fontWeight: 800 }}>{n}</strong>{label}
+    </span>
+  );
+}
+
+// ---- Book at a glance: held positions on a log valuation scale ----
 export function BookGlance({ companies, onSelect }) {
   const rows = companies
     .map(c => ({ c, val: parseUSD(c.valuationExit?.postVal) }))
     .filter(r => r.val)
     .sort((a, b) => b.val - a.val);
   if (rows.length < 2) return null;
-  const max = rows[0].val;
-  const momColor = trend => {
+
+  const momLevel = trend => {
     const t = (trend || '').toLowerCase();
-    return /rapid|sharp|strong/.test(t) ? C.green : /growth|upward/.test(t) ? C.blue : C.muted;
+    return /rapid|sharp|strong/.test(t) ? 'rapid' : /growth|upward/.test(t) ? 'growing' : 'stable';
   };
+  const MOM = {
+    rapid:   { color: C.green, bg: 'var(--green-bg)' },
+    growing: { color: C.blue,  bg: 'var(--blue-bg)' },
+    stable:  { color: C.muted, bg: '#F1F4F7' },
+  };
+  const counts = { rapid: 0, growing: 0, stable: 0 };
+  rows.forEach(r => counts[momLevel(r.c.signals?.trend)]++);
+
+  const W = 720, H = 148;
+  const PADL = 30, PADR = 46, MID = 74;
+  const LOG_MIN = Math.log10(30), LOG_MAX = Math.log10(16000); // $30M → $16B
+  const x = v => PADL + ((Math.log10(v) - LOG_MIN) / (LOG_MAX - LOG_MIN)) * (W - PADL - PADR);
+
   return (
-    <div className="card" style={{ padding: '14px 18px', marginBottom: 20 }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 12, flexWrap: 'wrap' }}>
+    <div className="card" style={{ padding: '14px 18px 10px', marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 4, flexWrap: 'wrap' }}>
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.ink }}>The book at a glance</span>
-        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>bar = latest post-money · colour = momentum</span>
-        <span style={{ marginLeft: 'auto', display: 'inline-flex', gap: 12 }}>
-          {[[C.green, 'rapid'], [C.blue, 'growing'], [C.muted, 'stable']].map(([col, lbl]) => (
-            <span key={lbl} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#7C8B9C' }}>
-              <span style={{ width: 8, height: 8, borderRadius: 2, background: col }} />{lbl}
-            </span>
-          ))}
-        </span>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>latest post-money, log scale · colour = momentum · click a dot for the full sheet</span>
+        <span style={{ marginLeft: 'auto', fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>{rows.length} of {companies.length} disclosed</span>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-        {rows.map(({ c, val }) => (
-          <div key={c.id} onClick={() => onSelect?.(c)} title={`Open ${c.name} full sheet`}
-            style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: onSelect ? 'pointer' : 'default' }}>
-            <span className="serif" style={{ width: 92, fontSize: 12, fontWeight: 600, color: C.ink, textAlign: 'right', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</span>
-            <div style={{ flex: 1, height: 15, background: C.grid, borderRadius: 4, overflow: 'hidden' }}>
-              <div className="animate-bar" style={{ height: '100%', width: `${(val / max) * 100}%`, background: momColor(c.signals?.trend), borderRadius: 4, opacity: 0.85 }} />
-            </div>
-            <span style={{ width: 62, fontFamily: 'IBM Plex Mono, monospace', fontSize: 10.5, fontWeight: 700, color: C.ink, textAlign: 'right' }}>{fmtUSD(val)}</span>
-          </div>
-        ))}
+      <div style={{ maxWidth: 860, margin: '0 auto' }}>
+        <svg viewBox={`0 0 ${W} ${H}`} style={{ display: 'block', width: '100%' }}>
+          {/* log gridlines */}
+          {[100, 1000, 10000].map(v => (
+            <g key={v}>
+              <line x1={x(v)} y1={16} x2={x(v)} y2={H - 30} stroke="#D6DBE2" strokeWidth="1" strokeDasharray="4 5" />
+              <text x={x(v)} y={H - 18} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fill="#A9B5C2">{v >= 1000 ? `$${v / 1000}B` : `$${v}M`}</text>
+            </g>
+          ))}
+          {/* baseline */}
+          <line x1={PADL - 10} y1={MID} x2={W - PADR + 20} y2={MID} stroke="#E7EAEE" strokeWidth="1" />
+          {rows.map(({ c, val }, i) => {
+            const cx = x(val), above = i % 2 === 0;
+            const m = MOM[momLevel(c.signals?.trend)];
+            return (
+              <g key={c.id} style={{ cursor: onSelect ? 'pointer' : 'default' }} onClick={() => onSelect?.(c)}>
+                <title>{`${c.name} · ${fmtUSD(val)} · ${c.signals?.trend || 'no trend data'}`}</title>
+                <circle cx={cx} cy={MID} r={16} fill="transparent" />
+                <circle cx={cx} cy={MID} r={12.5} fill="#fff" stroke="#C9D2DC" strokeWidth="1.4"
+                  className="dot-pop" style={{ animationDelay: `${i * 0.06}s` }} />
+                <circle cx={cx} cy={MID} r={8.5} fill={m.color}
+                  className="dot-pop" style={{ animationDelay: `${i * 0.06}s` }} />
+                <text x={cx} y={above ? MID - 24 : MID + 31} textAnchor="middle"
+                  fontFamily="Source Serif 4, Georgia, serif" fontSize="11.5" fontWeight="600" fill={C.ink}>{c.name}</text>
+                <text x={cx} y={above ? MID - 39 : MID + 45} textAnchor="middle"
+                  fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="700" fill={m.color}>{fmtUSD(val)}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', paddingTop: 8, borderTop: '1px solid var(--hairline)' }}>
+        {['rapid', 'growing', 'stable'].map((k, i) => counts[k] ? (
+          <ChartChip key={k} n={counts[k]} label={k} color={MOM[k].color} bg={MOM[k].bg} delay={i * 0.06} />
+        ) : null)}
       </div>
     </div>
   );
@@ -315,11 +361,11 @@ function stageOrdinal(stage) {
   if (/series a/i.test(s)) return 1;
   return 0;
 }
-const SM_LABEL = { Console: 'top', Omnea: 'left', Avoca: 'right', Hadrian: 'top', 'Prem Labs': 'right' };
+const SM_LABEL = { Console: 'right', Omnea: 'left', Avoca: 'right', Hadrian: 'top', 'Prem Labs': 'right' };
 
 export function SourcingMap({ companies, onSelect, warmSet }) {
-  const W = 520, H = 232;
-  const PAD = { left: 42, top: 18, right: 20, bottom: 34 };
+  const W = 560, H = 250;
+  const PAD = { left: 46, top: 20, right: 24, bottom: 40 };
   const IW = W - PAD.left - PAD.right, IH = H - PAD.top - PAD.bottom;
   const Y_MIN = 75, Y_MAX = 100;
   const sx = v => PAD.left + (v / 4) * IW;
@@ -331,59 +377,76 @@ export function SourcingMap({ companies, onSelect, warmSet }) {
   // dodge exact-overlap dots sideways
   dots.forEach((d, i) => {
     const twin = dots.findIndex((o, j) => j < i && o.x === d.x && o.y === d.y);
-    if (twin >= 0) { d.x += 0.14; dots[twin].x -= 0.14; }
+    if (twin >= 0) { d.x += 0.16; dots[twin].x -= 0.16; }
   });
+  const warmCount = dots.filter(d => d.warm).length;
 
   return (
-    <div className="card" style={{ padding: '14px 18px', marginBottom: 20 }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
+    <div className="card" style={{ padding: '14px 18px 10px', marginBottom: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 4, flexWrap: 'wrap' }}>
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.ink }}>Sourcing map</span>
-        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>opportunity score vs stage · click a dot for the full sheet</span>
-        <span style={{ marginLeft: 'auto', display: 'inline-flex', gap: 12 }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#7C8B9C' }}>
-            <span style={{ width: 9, height: 9, borderRadius: '50%', border: `2px solid ${C.green}`, background: '#fff' }} />warm path
-          </span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 9.5, color: '#7C8B9C' }}>
-            <span style={{ width: 9, height: 9, borderRadius: '50%', border: `2px dashed ${C.amber}`, background: '#fff' }} />direct approach
-          </span>
-        </span>
+        <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>opportunity score vs stage · rings = distance to the lead-cheque sweet spot · click a dot for the full sheet</span>
       </div>
-      <div style={{ maxWidth: 640 }}>
+      <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <svg viewBox={`0 0 ${W} ${H}`} style={{ display: 'block', width: '100%' }}>
-          {/* early-stage lead zone: firstminute's cheque territory */}
-          <rect x={sx(0) - 14} y={PAD.top} width={sx(1.5) - sx(0) + 14} height={IH} fill={C.blue} fillOpacity="0.045" />
-          <text x={sx(0) - 8} y={PAD.top + 11} fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="700" fill={C.blue} fillOpacity="0.6" letterSpacing="0.8">LEAD TERRITORY · FIRST CHEQUES</text>
-          {/* grid */}
-          {[80, 85, 90, 95, 100].map(v => (
-            <g key={v}>
-              <line x1={PAD.left - 14} y1={sy(v)} x2={W - PAD.right} y2={sy(v)} stroke="#EFF1F4" strokeWidth="1" />
-              <text x={PAD.left - 18} y={sy(v) + 3} textAnchor="end" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{v}</text>
-            </g>
-          ))}
+          <defs>
+            <clipPath id="sm-clip"><rect x={PAD.left} y={PAD.top} width={IW} height={IH} /></clipPath>
+          </defs>
+
+          {/* Bullseye rings from the ideal corner: high score, early stage */}
+          <g clipPath="url(#sm-clip)">
+            {[65, 140, 225, 320].map(r => (
+              <circle key={r} cx={sx(0)} cy={sy(100)} r={r} fill="none"
+                stroke="#D6DBE2" strokeWidth="1" strokeDasharray="4 5" />
+            ))}
+          </g>
+
+          {/* Quiet corner label */}
+          <text x={PAD.left + 8} y={PAD.top + 14} fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="700" fill="#A9B8D4" letterSpacing="1.4">LEAD ZONE</text>
+
+          {/* Stage ticks */}
           {STAGE_TICKS.map(([lbl, v]) => (
-            <text key={lbl} x={sx(v)} y={H - 18} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{lbl}</text>
+            <text key={lbl} x={sx(v)} y={H - 26} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fill="#A9B5C2">{lbl}</text>
           ))}
-          <text x={PAD.left + IW / 2} y={H - 5} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fontWeight="700" fill="#94A3B8" letterSpacing="1.1">STAGE — later →</text>
-          <text transform={`translate(10,${PAD.top + IH / 2}) rotate(-90)`} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8.5" fontWeight="700" fill="#94A3B8" letterSpacing="1.1">PB SCORE →</text>
+
+          {/* Axis pills */}
+          <g>
+            <rect x={PAD.left + IW / 2 - 46} y={H - 19} width={92} height={16} rx="8" fill="#F4F6F8" stroke="#E7EAEE" strokeWidth="1" />
+            <text x={PAD.left + IW / 2} y={H - 8} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="700" fill="#7C8B9C" letterSpacing="1.5">STAGE →</text>
+          </g>
+          <g transform={`translate(14,${PAD.top + IH / 2}) rotate(-90)`}>
+            <rect x={-48} y={-11} width={96} height={16} rx="8" fill="#F4F6F8" stroke="#E7EAEE" strokeWidth="1" />
+            <text x={0} y={1} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="7.5" fontWeight="700" fill="#7C8B9C" letterSpacing="1.5">PB SCORE →</text>
+          </g>
+
           {/* dots */}
-          {dots.map(({ c, x, y, warm }) => {
+          {dots.map(({ c, x, y, warm }, i) => {
             const cx = sx(x), cy = sy(y);
             const pos = SM_LABEL[c.name] || 'top';
-            const lx = pos === 'right' ? cx + 15 : pos === 'left' ? cx - 15 : cx;
-            const ly = pos === 'top' ? cy - 15 : cy + 3;
+            const lx = pos === 'right' ? cx + 19 : pos === 'left' ? cx - 19 : cx;
+            const ly = pos === 'top' ? cy - 19 : cy + 3.5;
             const anchor = pos === 'right' ? 'start' : pos === 'left' ? 'end' : 'middle';
+            const col = warm ? C.green : C.amber;
             return (
               <g key={c.id} style={{ cursor: onSelect ? 'pointer' : 'default' }} onClick={() => onSelect?.(c)}>
                 <title>{`${c.name} · score ${y} · ${c.stage}${warm ? ' · warm path available' : ' · no warm path'}`}</title>
-                <circle cx={cx} cy={cy} r={14} fill="transparent" />
-                <circle cx={cx} cy={cy} r={9.5} fill={warm ? C.green : C.amber} fillOpacity="0.14"
-                  stroke={warm ? C.green : C.amber} strokeWidth="1.8" strokeDasharray={warm ? 'none' : '3 2.4'} />
-                <text x={cx} y={cy + 3} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="800" fill={warm ? C.green : C.amber}>{y}</text>
-                <text x={lx} y={ly} textAnchor={anchor} fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="600" fill="#36475A">{c.name}</text>
+                <circle cx={cx} cy={cy} r={17} fill="transparent" />
+                <circle cx={cx} cy={cy} r={13.5} fill="#fff" stroke={col} strokeWidth="1.5"
+                  strokeDasharray={warm ? 'none' : '3 2.6'}
+                  className="dot-pop" style={{ animationDelay: `${i * 0.07}s` }} />
+                <circle cx={cx} cy={cy} r={9.5} fill={col}
+                  className="dot-pop" style={{ animationDelay: `${i * 0.07}s` }} />
+                <text x={cx} y={cy + 3} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="800" fill="#fff" pointerEvents="none">{y}</text>
+                <text x={lx} y={ly} textAnchor={anchor} fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="600" fill="#36475A" pointerEvents="none">{c.name}</text>
               </g>
             );
           })}
         </svg>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', paddingTop: 8, borderTop: '1px solid var(--hairline)' }}>
+        <ChartChip n={warmCount} label="warm path" color={C.green} bg="var(--green-bg)" />
+        <ChartChip n={dots.length - warmCount} label="direct approach" color={C.amber} bg="var(--amber-bg)" delay={0.06} />
+        <span style={{ marginLeft: 'auto', fontFamily: 'IBM Plex Mono, monospace', fontSize: 8.5, color: '#A9B5C2' }}>dashed ring = no warm path yet</span>
       </div>
     </div>
   );
