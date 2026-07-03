@@ -1,4 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+// ---- Count-up number: animates from 0 to the value on mount ----
+// Pass a number (or numeric string); prefix/suffix render around it untouched.
+export function CountUp({ value, duration = 700, prefix = '', suffix = '' }) {
+  const target = typeof value === 'number' ? value : parseFloat(value);
+  const [display, setDisplay] = useState(0);
+  const raf = useRef(null);
+  useEffect(() => {
+    if (isNaN(target)) return;
+    const start = performance.now();
+    const decimals = String(target).includes('.') ? String(target).split('.')[1].length : 0;
+    const tick = now => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplay(parseFloat((target * eased).toFixed(decimals)));
+      if (t < 1) raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf.current);
+  }, [target, duration]);
+  if (isNaN(target)) return <>{value}</>;
+  return <>{prefix}{display}{suffix}</>;
+}
 
 // ---- Source citation dot ----
 // sources: array of { label, url? }. Renders a small dot; hover reveals sources + links.
@@ -331,7 +354,7 @@ export function BookGlance({ companies, onSelect }) {
                 <circle cx={cx} cy={MID} r={12.5} fill="#fff" stroke="#C9D2DC" strokeWidth="1.4"
                   className="dot-pop" style={{ animationDelay: `${i * 0.06}s` }} />
                 <circle cx={cx} cy={MID} r={8.5} fill={m.color}
-                  className="dot-pop" style={{ animationDelay: `${i * 0.06}s` }} />
+                  className="dot-pop dot-hover" style={{ animationDelay: `${i * 0.06}s` }} />
                 <text x={cx} y={above ? MID - 24 : MID + 31} textAnchor="middle"
                   fontFamily="Source Serif 4, Georgia, serif" fontSize="11.5" fontWeight="600" fill={C.ink}>{c.name}</text>
                 <text x={cx} y={above ? MID - 39 : MID + 45} textAnchor="middle"
@@ -435,7 +458,7 @@ export function SourcingMap({ companies, onSelect, warmSet }) {
                   strokeDasharray={warm ? 'none' : '3 2.6'}
                   className="dot-pop" style={{ animationDelay: `${i * 0.07}s` }} />
                 <circle cx={cx} cy={cy} r={9.5} fill={col}
-                  className="dot-pop" style={{ animationDelay: `${i * 0.07}s` }} />
+                  className="dot-pop dot-hover" style={{ animationDelay: `${i * 0.07}s` }} />
                 <text x={cx} y={cy + 3} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="8" fontWeight="800" fill="#fff" pointerEvents="none">{y}</text>
                 <text x={lx} y={ly} textAnchor={anchor} fontFamily="IBM Plex Mono, monospace" fontSize="9" fontWeight="600" fill="#36475A" pointerEvents="none">{c.name}</text>
               </g>

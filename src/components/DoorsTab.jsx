@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Send, X, Network, GitBranch, Sparkles, ArrowUpRight, Check, ShieldQuestion, Users, Layers, Target } from 'lucide-react';
-import { Cite } from './Charts';
+import { Cite, CountUp } from './Charts';
 import { useIsMobile } from '../hooks';
 
 const SRC = {
@@ -544,10 +544,12 @@ export default function DoorsTab({ jump, onJump }) {
           { label: 'Companies in map', value: COMPANY_ORDER.length, sub: 'held, target, pre-signal', accent: '#6366F1' },
           { label: 'Pre-Signal paths', value: presignalCount, sub: 'pre-seed & seed, pre-PitchBook', accent: '#0E9F6E' },
           { label: 'LP depth', value: '130+', sub: 'unicorn-founder LPs', accent: '#C2740C' },
-        ].map(s => (
-          <div key={s.label} style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 9, padding: '12px 16px' }}>
+        ].map((s, i) => (
+          <div key={s.label} className="stat-card" style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 9, padding: '12px 16px', animationDelay: `${i * 0.06}s` }}>
             <span className="field-label">{s.label}</span>
-            <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 20, fontWeight: 700, color: s.accent, lineHeight: 1.2, margin: '4px 0 2px' }}>{s.value}</div>
+            <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 20, fontWeight: 700, color: s.accent, lineHeight: 1.2, margin: '4px 0 2px' }}>
+              {typeof s.value === 'number' ? <CountUp value={s.value} /> : s.value}
+            </div>
             <span style={{ fontSize: 10, color: '#7C8B9C' }}>{s.sub}</span>
           </div>
         ))}

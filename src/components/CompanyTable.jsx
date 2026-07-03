@@ -262,7 +262,7 @@ function Row({ company, onSelect, autoOpen }) {
       {open && (
         <tr>
           <td colSpan={8} style={{ padding: 0, background: '#FBFCFD' }}>
-            <div style={{ padding: '4px 22px 22px', borderTop: '1px solid var(--hairline)' }}>
+            <div className="expand-in" style={{ padding: '4px 22px 22px', borderTop: '1px solid var(--hairline)' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr', gap: 24, alignItems: 'start' }}>
                 {/* Left: tear sheet */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 13, paddingTop: 16 }}>
@@ -398,7 +398,7 @@ function RadarBanner({ items, tab, isMobile }) {
           const t = TONE[it.tone] || TONE.blue;
           const st = STATUS_CHIP[it.status];
           return (
-            <div key={i} style={{ background: t.bg, border: `1px solid ${t.border}`, borderRadius: 9, padding: isMobile ? '9px 11px' : '11px 13px', display: 'flex', flexDirection: 'column' }}>
+            <div key={i} className="stat-card" style={{ background: t.bg, border: `1px solid ${t.border}`, borderRadius: 9, padding: isMobile ? '9px 11px' : '11px 13px', display: 'flex', flexDirection: 'column', animationDelay: `${i * 0.07}s` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 5 : 7, marginBottom: 6, flexWrap: 'wrap' }}>
                 <span style={{ width: 7, height: 7, borderRadius: '50%', background: t.dot, flexShrink: 0 }} />
                 <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: t.dot }}>{it.label}</span>

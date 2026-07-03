@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { GitBranch, Users, Zap, TrendingUp, Globe, FileText, ArrowUpRight, ChevronDown, ChevronUp, Layers, Target, ArrowRight, Radar, X } from 'lucide-react';
 import { useIsMobile } from '../hooks';
+import { CountUp } from './Charts';
 import companies from '../data/earlySignals.json';
 import { BUILD_DATE, BUILD_DATE_LABEL, BUILD_TIME_LABEL } from '../constants';
 
@@ -234,7 +235,7 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
         .dot-movenow { animation: dot-pulse 2.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
         .ring-1 { animation: ring-expand 2.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }
         .ring-2 { animation: ring-expand 2.4s ease-out 1.2s infinite; transform-box: fill-box; transform-origin: center; }
-        .dot-enter { animation: dot-in 0.5s cubic-bezier(0.34,1.56,0.64,1) both; transform-box: fill-box; transform-origin: center; }
+        .dot-enter { animation: dot-in 0.5s cubic-bezier(0.34,1.56,0.64,1) backwards; transform-box: fill-box; transform-origin: center; }
         .chart-fade { animation: fade-in 0.4s ease both; }
       `}</style>
 
@@ -336,10 +337,10 @@ function InvestmentRadar({ selected, onSelect, isMobile }) {
                   stroke={d.fresh ? '#10B981' : '#C9D2DC'} strokeWidth={d.fresh ? 1.8 : 1.4}
                   className="dot-enter" style={{ animationDelay: delay }} />
 
-                {/* Main dot — staggered entrance */}
+                {/* Main dot — staggered entrance, grows under the cursor */}
                 <circle cx={d.svgX} cy={d.svgY} r={d.r}
                   fill={d.color}
-                  className={`dot-enter${isMoveNow ? ' dot-movenow' : ''}`}
+                  className={`dot-enter${isMoveNow ? ' dot-movenow' : ' dot-hover'}`}
                   style={{ animationDelay: delay }} />
 
                 {/* Urgency number */}
@@ -575,7 +576,7 @@ function MiniCard({ company, selected, onSelect }) {
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   const isHot = daysSince(latestSignalDate(company)) <= 7;
   return (
-    <div onClick={() => onSelect(company.id)} className="card-hover" style={{
+    <div onClick={() => onSelect(company.id)} className="hover-lift" style={{
       padding: '11px 14px', cursor: 'pointer', borderRadius: 10,
       background: selected ? rec.bg : '#fff',
       borderTop: `1px solid ${selected ? rec.border : 'var(--border)'}`,
@@ -672,7 +673,7 @@ function Metric3({ label, value }) {
 function PreSignalExpand({ company, isMobile, onJump }) {
   const rec = REC_META[company.recommendation] || REC_META['Monitor'];
   return (
-    <div style={{ padding: isMobile ? '0 16px 18px' : '4px 22px 22px', borderTop: isMobile ? '1px solid var(--hairline)' : 'none', background: '#FBFCFD' }}>
+    <div className="expand-in" style={{ padding: isMobile ? '0 16px 18px' : '4px 22px 22px', borderTop: isMobile ? '1px solid var(--hairline)' : 'none', background: '#FBFCFD' }}>
       <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.35fr 1fr', gap: isMobile ? 14 : 24, alignItems: 'start', paddingTop: 16 }}>
         {/* Left: narrative */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 13, minWidth: 0 }}>
@@ -1004,7 +1005,7 @@ export default function EarlySignalTab({ jump, onJump }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 5 }}>
           <Radar size={18} style={{ color: '#2563EB' }} />
           <h2 className="serif" style={{ fontSize: 22, fontWeight: 700, color: '#0B1F33', margin: 0 }}>Pre-Signal Radar</h2>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#DC2626', background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 5, padding: '3px 8px' }}>
+          <span className="live-shimmer" style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#DC2626', background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 5, padding: '3px 8px' }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#DC2626', animation: 'ping 1.5s ease-in-out infinite' }} />Live
           </span>
         </div>
@@ -1024,10 +1025,12 @@ export default function EarlySignalTab({ jump, onJump }) {
           { label: 'Hot this week',     value: hotCount,         accent: '#0E9F6E', sub: 'signal in 7 days' },
           { label: 'Move Now',          value: moveNow,          accent: '#DC2626', sub: 'open window' },
           { label: 'Raising now',       value: raising,          accent: '#C2740C', sub: 'live rounds' },
-        ].map(s => (
-          <div key={s.label} style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 10, padding: '12px 14px' }}>
+        ].map((s, i) => (
+          <div key={s.label} className="stat-card" style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 10, padding: '12px 14px', animationDelay: `${i * 0.06}s` }}>
             <span className="field-label" style={{ fontSize: 8.5 }}>{s.label}</span>
-            <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 22, fontWeight: 800, color: s.accent, lineHeight: 1.15, margin: '3px 0 2px' }}>{s.value}</div>
+            <div style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 22, fontWeight: 800, color: s.accent, lineHeight: 1.15, margin: '3px 0 2px' }}>
+              <CountUp value={s.value} />
+            </div>
             {s.sub && <span style={{ fontSize: 9.5, color: '#A9B5C2' }}>{s.sub}</span>}
           </div>
         ))}

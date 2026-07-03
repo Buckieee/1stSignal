@@ -1,8 +1,16 @@
 import React, { useMemo } from 'react';
 import { Building2, Radar, Network, FileText, Zap } from 'lucide-react';
-import { parseUSD, fmtUSD } from './Charts';
+import { parseUSD, fmtUSD, CountUp } from './Charts';
 import { useIsMobile } from '../hooks';
 import { BUILD_DATE_LABEL } from '../constants';
+
+// Animates the numeric part of a KPI, keeping any prefix/suffix ("$27.6B+")
+function StatValue({ value }) {
+  if (typeof value === 'number') return <CountUp value={value} />;
+  const m = String(value).match(/^([^0-9]*)([0-9.]+)(.*)$/);
+  if (!m) return value;
+  return <CountUp value={parseFloat(m[2])} prefix={m[1]} suffix={m[3]} />;
+}
 
 function KpiBand({ items, isMobile }) {
   if (isMobile) {
@@ -20,7 +28,7 @@ function KpiBand({ items, isMobile }) {
             borderTop: i >= 2 ? '1px solid var(--hairline)' : 'none',
           }}>
             <span className="field-label" style={{ fontSize: 8.5 }}>{it.label}</span>
-            <span className="stat-num" style={{ fontSize: 18, color: it.accent || '#0B1F33' }}>{it.value}</span>
+            <span className="stat-num" style={{ fontSize: 18, color: it.accent || '#0B1F33' }}><StatValue value={it.value} /></span>
             <span style={{ fontSize: 9, color: '#7C8B9C' }}>{it.sub}</span>
           </div>
         ))}
@@ -41,7 +49,7 @@ function KpiBand({ items, isMobile }) {
           minWidth: 96,
         }}>
           <span className="field-label">{it.label}</span>
-          <span className="stat-num" style={{ fontSize: 22, color: it.accent || '#0B1F33' }}>{it.value}</span>
+          <span className="stat-num" style={{ fontSize: 22, color: it.accent || '#0B1F33' }}><StatValue value={it.value} /></span>
           <span style={{ fontSize: 10, color: '#7C8B9C' }}>{it.sub}</span>
         </div>
       ))}
