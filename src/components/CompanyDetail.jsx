@@ -115,9 +115,14 @@ export default function CompanyDetail({ company, onClose }) {
   ];
 
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: 50, display: 'flex', justifyContent: 'flex-end', background: 'rgba(11,31,51,0.32)', backdropFilter: 'blur(2px)' }}>
-      {!isMobile && <div style={{ flex: 1 }} onClick={onClose} />}
-      <div className="slide-in" style={{ width: '100%', maxWidth: isMobile ? '100%' : 720, background: '#F6F7F9', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '-24px 0 64px rgba(11,31,51,0.18)' }}>
+    <div style={{ position: 'fixed', inset: 0, zIndex: 50 }}>
+      {/* Blur layer overshoots the viewport on every side so the blur kernel has
+          pixels to sample past the edge — without this, the boundary row/column
+          renders under-blurred (a faint unblurred seam along the viewport edge). */}
+      <div style={{ position: 'absolute', inset: -32, background: 'rgba(11,31,51,0.45)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }} />
+      <div style={{ position: 'relative', height: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+        {!isMobile && <div style={{ flex: 1 }} onClick={onClose} />}
+        <div className="slide-in" style={{ width: '100%', maxWidth: isMobile ? '100%' : 720, background: '#F6F7F9', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '-24px 0 64px rgba(11,31,51,0.18)' }}>
 
         {/* Header */}
         <div style={{ padding: isMobile ? '14px 16px 0' : '18px 22px 0', background: '#fff', borderBottom: '1px solid var(--border)' }}>
@@ -600,6 +605,7 @@ export default function CompanyDetail({ company, onClose }) {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

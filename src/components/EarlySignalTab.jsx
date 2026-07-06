@@ -1092,10 +1092,16 @@ export default function EarlySignalTab({ jump, onJump }) {
 
       {/* Full brief — side drawer, same pattern as the Portfolio/Sourcing full sheet */}
       {selectedCompany && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 60, display: 'flex', justifyContent: 'flex-end', background: 'rgba(11,31,51,0.32)', backdropFilter: 'blur(2px)' }}>
-          {!isMobile && <div style={{ flex: 1 }} onClick={() => setSelectedId(null)} />}
-          <div className="slide-in" style={{ width: '100%', maxWidth: isMobile ? '100%' : 640, background: '#F6F7F9', height: '100%', overflowY: 'auto', boxShadow: '-24px 0 64px rgba(11,31,51,0.18)', padding: isMobile ? 10 : 14, boxSizing: 'border-box' }}>
-            <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={isMobile} compact onJump={onJump} />
+        <div style={{ position: 'fixed', inset: 0, zIndex: 60 }}>
+          {/* Blur layer overshoots the viewport on every side so the blur kernel has
+              pixels to sample past the edge — otherwise the boundary row/column
+              renders under-blurred (a faint unblurred seam along the viewport edge). */}
+          <div style={{ position: 'absolute', inset: -32, background: 'rgba(11,31,51,0.45)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }} />
+          <div style={{ position: 'relative', height: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+            {!isMobile && <div style={{ flex: 1 }} onClick={() => setSelectedId(null)} />}
+            <div className="slide-in" style={{ width: '100%', maxWidth: isMobile ? '100%' : 640, background: '#F6F7F9', height: '100%', overflowY: 'auto', boxShadow: '-24px 0 64px rgba(11,31,51,0.18)', padding: isMobile ? 10 : 14, boxSizing: 'border-box' }}>
+              <CompanyBriefPanel company={selectedCompany} onClose={() => setSelectedId(null)} isMobile={isMobile} compact onJump={onJump} />
+            </div>
           </div>
         </div>
       )}

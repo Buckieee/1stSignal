@@ -645,7 +645,12 @@ export default function DoorsTab({ jump, onJump }) {
       </div>
 
       {modal && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(11,31,51,0.4)', backdropFilter: 'blur(2px)', padding: isMobile ? 0 : 20 }}>
+        <div style={{ position: 'fixed', inset: 0, zIndex: 60 }}>
+          {/* Blur layer overshoots the viewport on every side so the blur kernel has
+              pixels to sample past the edge — otherwise the boundary row/column
+              renders under-blurred (a faint unblurred seam along the viewport edge). */}
+          <div style={{ position: 'absolute', inset: -32, background: 'rgba(11,31,51,0.5)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }} />
+          <div style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: isMobile ? 0 : 20, boxSizing: 'border-box' }}>
           <div className="card slide-in" style={{ width: '100%', maxWidth: 520, boxShadow: '0 24px 64px rgba(11,31,51,0.25)', margin: isMobile ? 0 : 'auto', height: isMobile ? '100%' : 'auto', display: 'flex', flexDirection: 'column', borderRadius: isMobile ? 0 : undefined }}>
             <div style={{ padding: '16px 18px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
@@ -662,6 +667,7 @@ export default function DoorsTab({ jump, onJump }) {
               <button onClick={() => setModal(null)} style={{ padding: '8px 16px', background: '#fff', border: '1px solid var(--border)', borderRadius: 7, color: '#7C8B9C', fontSize: 12, cursor: 'pointer' }}>Cancel</button>
               <button onClick={submit} style={{ padding: '8px 16px', background: '#2563EB', border: 'none', borderRadius: 7, color: '#fff', fontSize: 12, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}><Send size={12} /> Save draft</button>
             </div>
+          </div>
           </div>
         </div>
       )}
