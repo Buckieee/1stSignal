@@ -64,14 +64,10 @@ export default function CommandPalette({ onJump }) {
   if (!open) return null;
 
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: 80 }}>
-      {/* Blur layer overshoots the viewport on every side so the blur kernel has
-          pixels to sample past the edge — otherwise the boundary row/column
-          renders under-blurred (a faint unblurred seam along the viewport edge). */}
-      <div style={{ position: 'absolute', inset: -32, background: 'rgba(11,31,51,0.35)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }} />
-      <div onClick={() => setOpen(false)} style={{
-        position: 'relative', height: '100%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '14vh',
-      }}>
+    <div onClick={() => setOpen(false)} style={{
+      position: 'fixed', inset: 0, zIndex: 80, background: 'rgba(11,31,51,0.35)',
+      backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '14vh',
+    }}>
       <div onClick={e => e.stopPropagation()} className="card" style={{ width: '92%', maxWidth: 520, overflow: 'hidden', boxShadow: '0 24px 64px rgba(11,31,51,0.3)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '13px 16px', borderBottom: '1px solid var(--hairline)' }}>
           <Search size={15} style={{ color: '#A9B5C2', flexShrink: 0 }} />
@@ -115,7 +111,6 @@ export default function CommandPalette({ onJump }) {
         <div style={{ padding: '8px 16px', borderTop: '1px solid var(--hairline)', display: 'flex', gap: 14, fontFamily: 'IBM Plex Mono, monospace', fontSize: 9, color: '#A9B5C2' }}>
           <span>↑↓ navigate</span><span>↵ open</span><span>esc close</span>
         </div>
-      </div>
       </div>
     </div>
   );

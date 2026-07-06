@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Send, X, Network, GitBranch, Sparkles, ArrowUpRight, Check, ShieldQuestion, Users, Layers, Target } from 'lucide-react';
 import { Cite, CountUp } from './Charts';
 import { useIsMobile } from '../hooks';
@@ -644,13 +645,8 @@ export default function DoorsTab({ jump, onJump }) {
         })}
       </div>
 
-      {modal && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 60 }}>
-          {/* Blur layer overshoots the viewport on every side so the blur kernel has
-              pixels to sample past the edge — otherwise the boundary row/column
-              renders under-blurred (a faint unblurred seam along the viewport edge). */}
-          <div style={{ position: 'absolute', inset: -32, background: 'rgba(11,31,51,0.5)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }} />
-          <div style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: isMobile ? 0 : 20, boxSizing: 'border-box' }}>
+      {modal && createPortal(
+        <div style={{ position: 'fixed', inset: 0, zIndex: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(11,31,51,0.5)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)', padding: isMobile ? 0 : 20 }}>
           <div className="card slide-in" style={{ width: '100%', maxWidth: 520, boxShadow: '0 24px 64px rgba(11,31,51,0.25)', margin: isMobile ? 0 : 'auto', height: isMobile ? '100%' : 'auto', display: 'flex', flexDirection: 'column', borderRadius: isMobile ? 0 : undefined }}>
             <div style={{ padding: '16px 18px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
@@ -668,8 +664,8 @@ export default function DoorsTab({ jump, onJump }) {
               <button onClick={submit} style={{ padding: '8px 16px', background: '#2563EB', border: 'none', borderRadius: 7, color: '#fff', fontSize: 12, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}><Send size={12} /> Save draft</button>
             </div>
           </div>
-          </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
