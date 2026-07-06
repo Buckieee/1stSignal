@@ -20,8 +20,11 @@ export default function App() {
   useEffect(() => { window.history.replaceState(null, '', `#${activeTab}`); }, [activeTab]);
   // Cross-tab jump: carries a payload (companyId, pinCompany, openCompany) to the target tab.
   const [jump, setJump] = useState(null);
-  const doJump = (tab, payload = {}) => { setJump({ ...payload, n: Date.now() }); setActiveTab(tab); };
-  const switchTab = tab => { setJump(null); setActiveTab(tab); };
+  // The Portfolio/Sourcing "Full sheet" drawer is rendered outside the tab switch below,
+  // so it must be explicitly closed whenever the active tab changes — otherwise it stays
+  // mounted (and its backdrop blur) over whatever tab you navigate to next.
+  const doJump = (tab, payload = {}) => { setJump({ ...payload, n: Date.now() }); setSelectedCompany(null); setActiveTab(tab); };
+  const switchTab = tab => { setJump(null); setSelectedCompany(null); setActiveTab(tab); };
 
   const counts = useMemo(() => ({
     held: companiesData.filter(c => c.type === 'held').length,
