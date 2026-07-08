@@ -54,7 +54,7 @@ export default function NotesTab() {
           A working idea, not a finished product.
         </h1>
         <p style={{ fontSize: 14, color: '#7C8B9C', margin: 0, lineHeight: 1.6 }}>
-          Prepared for a quick call with Brent Hoberman · 1stSignal · June 2026
+          Prepared for Brent Hoberman · 1stSignal · July 2026
         </p>
       </div>
 

@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Send, X, Network, GitBranch, Sparkles, ArrowUpRight, Check, ShieldQuestion, Users, Layers, Target } from 'lucide-react';
 import { Cite, CountUp } from './Charts';
+import Constellation from './Constellation';
 import { useIsMobile } from '../hooks';
 
 const SRC = {
@@ -25,6 +26,7 @@ const SRC = {
   velarAnthropic: { label: 'Velar: Dr. Sharma ex-Anthropic Interpretability; Podjarny London AI network', url: 'https://firstminute.capital' },
   meridianTaktile:{ label: 'Meridian adjacent to Taktile EU regulatory thesis (Larry Summers, Series B)', url: 'https://taktile.com/articles/taktile-raises-54m-series-b' },
   delphiAvoca:    { label: 'Delphi = European Avoca analog; Kleiner & General Catalyst backed Avoca', url: 'https://www.prnewswire.com/news-releases/avoca-raises-125m-at-1b-valuation-to-power-americas-services-economy-with-ai-302753962.html' },
+  pbRoster:   { label: 'PitchBook company capture, All Columns export, 8 Jul 2026 (active investor roster)', url: 'https://pitchbook.com' },
 };
 
 // Grouped by role. Each group renders a label in the SVG.
@@ -70,6 +72,15 @@ const CONNECTOR_GROUPS = [
       { name: 'Scott Chacon', type: 'operator', sub: 'Co-founder, GitHub · LP', links: [
         { co: 'Tessl', kind: 'portfolio', note: 'Developer platform expertise from GitHub. Natural advisor to Tessl\'s AI-native dev environment.', src: [SRC.fmcNetwork] },
         { co: 'Console', kind: 'sourcing', note: 'IT and dev-tooling background maps directly onto Console\'s mission. Can open the founding team.', src: [SRC.fmcNetwork] },
+        { co: 'Taktile', kind: 'portfolio', note: 'Named on Taktile\'s active investor roster alongside firstminute — a direct, verified line into the founding team.', src: [SRC.pbRoster] },
+      ]},
+      { name: 'Olivier Pomel', type: 'operator', sub: 'Co-founder & CEO, Datadog', links: [
+        { co: 'Taktile', kind: 'portfolio', note: 'Active investor in Taktile per the PitchBook roster — enterprise-infrastructure GTM counsel from the Datadog playbook.', src: [SRC.pbRoster] },
+        { co: 'Codewords', kind: 'portfolio', note: 'Active investor in Codewords per the PitchBook roster (May 2026 seed).', src: [SRC.pbRoster] },
+      ]},
+      { name: 'Ilkka Paananen', type: 'operator', sub: 'Co-founder & CEO, Supercell', links: [
+        { co: 'n8n', kind: 'portfolio', note: 'Active investor in n8n per the PitchBook roster — consumer-grade product instincts for a developer-led company.', src: [SRC.pbRoster] },
+        { co: 'Codewords', kind: 'portfolio', note: 'Active investor in Codewords per the PitchBook roster (May 2026 seed).', src: [SRC.pbRoster] },
       ]},
       { name: 'Lenny Rachitsky', type: 'operator', sub: 'PLG Substack, ex-Airbnb · LP', links: [
         { co: 'Granola', kind: 'portfolio', note: 'PLG community reach; Granola is a textbook PLG product.', src: [SRC.fmcNetwork] },
@@ -88,6 +99,19 @@ const CONNECTOR_GROUPS = [
     items: [
       { name: 'DST Global', type: 'fund', sub: 'shared via Mistral', links: [
         { co: 'Console', kind: 'sourcing', note: 'Led Console\'s Series A and co-invested in Mistral. The warm co-investor bridge.', src: [SRC.console, SRC.mistral] },
+        { co: 'Codewords', kind: 'portfolio', note: 'DST Global appears on Codewords\' active investor roster (May 2026 seed) — a second live DST link inside the portfolio.', src: [SRC.pbRoster] },
+      ]},
+      { name: 'Goldman Sachs AM', type: 'fund', sub: 'shared via Taktile', links: [
+        { co: 'Taktile', kind: 'portfolio', note: 'Led Taktile\'s $110M Series C (24 Jun 2026).', src: [SRC.pbRoster] },
+        { co: 'Templum', kind: 'portfolio', note: 'Invested in Templum\'s $13.5M Series A-5 (16 Apr 2026) — the same desk now sits on two firstminute cap tables.', src: [SRC.pbRoster] },
+      ]},
+      { name: 'Nvidia / NVentures', type: 'fund', sub: 'shared via n8n', links: [
+        { co: 'n8n', kind: 'portfolio', note: 'NVentures is on n8n\'s active investor roster.', src: [SRC.pbRoster] },
+        { co: 'Verse', kind: 'portfolio', note: 'Nvidia participated in Verse\'s $54M Series B (Apr 2026) — strategic capital in the data-center power layer.', src: [SRC.pbRoster] },
+      ]},
+      { name: 'Atomico', type: 'fund', sub: 'shared via Codewords', links: [
+        { co: 'Codewords', kind: 'portfolio', note: 'On Codewords\' active investor roster.', src: [SRC.pbRoster] },
+        { co: 'Frontier AI', kind: 'portfolio', note: 'Led Frontier AI\'s GBP 12.37M seed (18 Jun 2026) with firstminute participating.', src: [SRC.pbRoster] },
       ]},
       { name: 'Accel', type: 'fund', sub: 'shared via n8n', links: [
         { co: 'Omnea', kind: 'sourcing', note: 'Backed Omnea\'s Series B and led n8n\'s Series C.', src: [SRC.omnea, SRC.n8n] },
@@ -134,12 +158,15 @@ const COMPANY_META = {
   Hadrian:    { kind: 'sourcing', tag: 'Series C' },
   Avoca:      { kind: 'sourcing', tag: 'Series B' },
   'Prem Labs':{ kind: 'sourcing', tag: 'no warm path', cold: true },
+  'Frontier AI': { kind: 'held', tag: 'Seed, Jun 2026' },
+  Verse:      { kind: 'held', tag: 'Data-center power' },
+  Templum:    { kind: 'held', tag: 'Private markets' },
   Argus:      { kind: 'presignal', tag: 'pre-seed' },
   Velar:      { kind: 'presignal', tag: 'pre-seed' },
   Meridian:   { kind: 'presignal', tag: 'pre-seed' },
   Delphi:     { kind: 'presignal', tag: 'seed' },
 };
-const COMPANY_ORDER = ['Mistral', 'Granola', 'n8n', 'Storyblok', 'Taktile', 'Tessl', 'Codewords', 'Wayve', 'Console', 'Omnea', 'Hadrian', 'Avoca', 'Prem Labs', 'Argus', 'Velar', 'Meridian', 'Delphi'];
+const COMPANY_ORDER = ['Mistral', 'Granola', 'n8n', 'Storyblok', 'Taktile', 'Tessl', 'Codewords', 'Wayve', 'Frontier AI', 'Verse', 'Templum', 'Console', 'Omnea', 'Hadrian', 'Avoca', 'Prem Labs', 'Argus', 'Velar', 'Meridian', 'Delphi'];
 
 // Companies visible with the 'all' filter — used to resolve a jump-pin index.
 const ALL_FILTER_COMPANIES = (() => {
@@ -435,13 +462,23 @@ function ThesisCoverage() {
 }
 
 // LP ecosystem section
-function LPEcosystem() {
+function LPEcosystem({ onOpenConstellation }) {
   return (
     <div style={{ background: '#FBFCFD', border: '1px solid var(--border)', borderRadius: 11, padding: '18px 20px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4, flexWrap: 'wrap' }}>
         <Users size={14} style={{ color: '#2563EB' }} />
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#0B1F33' }}>LP Ecosystem Depth</span>
         <span style={{ fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, color: '#7C8B9C', marginLeft: 4 }}>130+ unicorn-founder LPs</span>
+        <button onClick={onOpenConstellation} className="hover-lift" style={{
+          marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8,
+          fontFamily: 'IBM Plex Mono, monospace', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
+          color: '#E8EAED', background: 'linear-gradient(135deg, #101318 0%, #1C222B 100%)',
+          border: '1px solid #2A313B', borderRadius: 999, padding: '8px 16px', cursor: 'pointer',
+          boxShadow: '0 4px 14px rgba(11,31,51,0.25)',
+        }}>
+          <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#C24435', boxShadow: '0 0 8px rgba(194,68,53,0.8)' }} />
+          Open the constellation
+        </button>
       </div>
       <p style={{ fontSize: 11.5, color: '#4F6072', margin: '0 0 14px', lineHeight: 1.55, maxWidth: 720 }}>
         Beyond the mapped connectors, firstminute's LP base gives it a second-degree network that few seed funds can match. Every LP is a potential warm path to a sector, a geography, or a founder community.
@@ -507,6 +544,7 @@ const PLAY_PORTFOLIO_BRIDGE = {
 
 export default function DoorsTab({ jump, onJump }) {
   const [modal, setModal] = useState(null);
+  const [constellationOpen, setConstellationOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState({});
   const isMobile = useIsMobile();
@@ -577,7 +615,8 @@ export default function DoorsTab({ jump, onJump }) {
 
       {/* LP Ecosystem */}
       <div style={{ marginBottom: 28 }}>
-        <LPEcosystem />
+        <LPEcosystem onOpenConstellation={() => setConstellationOpen(true)} />
+        <Constellation open={constellationOpen} onClose={() => setConstellationOpen(false)} />
       </div>
 
       {/* Sourcing plays */}

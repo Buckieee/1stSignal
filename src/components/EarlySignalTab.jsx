@@ -7,7 +7,7 @@ import companies from '../data/earlySignals.json';
 import { BUILD_DATE, BUILD_DATE_LABEL, BUILD_TIME_LABEL } from '../constants';
 
 // ─── Constants ───────────────────────────────────────────────
-const REFRESH_DATE = `Mon ${BUILD_DATE_LABEL}`;
+const REFRESH_DATE = BUILD_DATE_LABEL;
 const REFRESH_TIME = BUILD_TIME_LABEL;
 
 const SIGNAL_META = {
@@ -185,7 +185,7 @@ function SignalPulse() {
       <div style={{ flex: 1, display: 'flex', alignItems: 'flex-end', gap: 2, height: 22 }}>
         {days.map(d => (
           <div key={d.key} title={`${d.key}: ${d.n} signal${d.n === 1 ? '' : 's'}`} style={{
-            flex: 1, borderRadius: 1.5, cursor: 'help', minHeight: 2,
+            flex: 1, borderRadius: 1.5, cursor: 'pointer', minHeight: 2,
             height: d.n ? `${Math.max(18 * (d.n / max), 5)}px` : '2px',
             background: d.n ? (d.recent ? '#10B981' : '#93C5FD') : '#EDF0F4',
           }} />

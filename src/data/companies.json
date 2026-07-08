@@ -1,1007 +1,3240 @@
 [
-  {
-    "id": "wayve",
-    "name": "Wayve",
-    "type": "held",
-    "section": "flagship",
-    "rating": "overweight",
-    "conviction": 5,
-    "stage": "Series D",
-    "founded": 2017,
-    "hq": "London, United Kingdom",
-    "employees": 1000,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Autonomous Driving / Physical AI",
-    "legalName": "Wayve Technologies Ltd.",
-    "website": "wayve.ai",
-    "verticals": ["Physical AI", "Autonomous Vehicles", "Embodied AI", "Robotaxi"],
-    "customers": ["Uber", "Stellantis", "Nissan", "Mercedes-Benz"],
-    "growth": "Series D round of $1.2B+ closed Feb 2026; valuation 3x in under two years",
-    "tearSheet": {
-      "thesis": "The flagship expression of firstminute's top 2026 conviction: embodied and physical AI. Wayve has crossed from research credibility to commercial deployment, with OEM partnerships confirmed and a Series D that closed at roughly $1.5B in early 2026.",
-      "edge": "End-to-end learning that generalises across new cities without HD maps, a fundamental architectural advantage over rule-based competitors. The Uber and Stellantis global L4 robotaxi alliance plus a Nissan production deal confirm the commercial thesis.",
-      "signal": "On thesis. Directly named as the flagship embodied AI bet in the firstminute portfolio. Nvidia, Microsoft, SoftBank, Uber, and three automakers on the cap table is board-level validation.",
-      "risk": "Capital intensity: burning roughly $77M per year. The live ownership question is dilution in mega-rounds, not relevance. The road to scaled commercial revenue is long, and Waymo outspends by a wide margin.",
-      "action": "Defend ownership. Exercise full pro-rata and pursue super pro-rata where the round structure allows. The seed stake at 5.80% is the position to protect."
-    },
-    "alerts": [],
-    "founders": [
-      { "name": "Alex Kendall Ph.D", "title": "Co-Founder and CEO", "background": "Ph.D. Cambridge, Computer Vision and Robotics. Pioneer of end-to-end deep learning for autonomous vehicles. Founded Wayve in 2017.", "ownership": "8.21%" },
-      { "name": "Amar Shah", "title": "Co-Founder", "background": "Co-founder, also an angel in CodeWords (another portfolio company).", "ownership": "4.93%" }
-    ],
-    "funding": [
-      { "date": "Feb 2026", "type": "Series D", "amount": "$1.2B+", "raisedToDate": "$2.59B", "preVal": "$7.40B", "postVal": "$8.66B", "leads": "Financial investors; Nvidia, Microsoft, Uber, Stellantis, Mercedes-Benz, Nissan", "fmc": false },
-      { "date": "May 2024", "type": "Series C", "amount": "$1.05B", "raisedToDate": "$1.33B", "preVal": "$1.77B", "postVal": "$2.81B", "leads": "SoftBank, Nvidia, Eclipse Ventures", "fmc": false },
-      { "date": "Jun 2023", "type": "Series B (follow-on)", "amount": "Undisclosed", "raisedToDate": "$291.98M", "preVal": null, "postVal": null, "leads": "Stemar Capital, Reference Capital, firstminute Capital", "fmc": true },
-      { "date": "Jan 2022", "type": "Series B", "amount": "$232.52M", "raisedToDate": "$291.98M", "preVal": "$407.61M", "postVal": "$640.13M", "leads": "Eclipse Ventures", "fmc": false },
-      { "date": "Jun 2020", "type": "Series A", "amount": "$43.68M", "raisedToDate": "$45.76M", "preVal": "$24.13M", "postVal": "$67.82M", "leads": "Eclipse Ventures", "fmc": true },
-      { "date": "Sep 2017", "type": "Seed", "amount": "$2.08M", "raisedToDate": "$2.08M", "preVal": "$5.49M", "postVal": "$7.57M", "leads": "Fly Ventures, Compound, firstminute Capital", "fmc": true }
-    ],
-    "totalRaised": "$2.59B",
-    "firstminute": {
-      "entryRound": "Seed (Sep 2017)",
-      "role": "One of three seed investors in the original $2.08M round",
-      "ownership": "5.80%",
-      "ownershipNote": "679,419 seed shares as of Aug 2024",
-      "followOns": ["Series A (Jun 2020)", "Series B follow-on (Jun 2023)"],
-      "leadPartner": "Brent Hoberman (angel, Series A)"
-    },
-    "valuationExit": {
-      "postVal": "$8.66B", "pbEstimate": "$9.40B", "pbConfidence": "Very High",
-      "opportunityScore": 88, "exitType": "IPO", "successProb": 98,
-      "ipoProb": 90, "maProb": 8, "noExitProb": 2
-    },
-    "financials": {
-      "revenue": "Pre-commercial scale (pilot stage)",
-      "ebitda2024": "(77,166)", "netIncome2024": "(77,863)",
-      "totalAssets2024": "1,193,014", "totalEquity2024": "1,175,311", "totalDebt2024": "1",
-      "notes": "Burning roughly $77M/yr but holds a fortress balance sheet of about $1.19B in assets post-Series D, with effectively zero debt. Capital intensity is real; the balance sheet absorbs it."
-    },
-    "capTable": [
-      { "name": "SVF II Strategic Investments (SoftBank)", "pct": "34.95%" },
-      { "name": "Alex Kendall (Founder)", "pct": "8.21%" },
-      { "name": "Eclipse Fund III", "pct": "8.13%" },
-      { "name": "Trident Trust", "pct": "5.84%" },
-      { "name": "firstminute Capital (Seed)", "pct": "5.80%" },
-      { "name": "Amar Shah (Co-Founder)", "pct": "4.93%" }
-    ],
-    "totalInvestors": 54,
-    "competitors": [
-      { "name": "Waymo", "hq": "Mountain View, CA", "employees": "2,500", "raised": "$27.10B", "postVal": "$126.00B", "notes": "Dominant US player, far larger budget" },
-      { "name": "Applied Intuition", "hq": "Mountain View, CA", "employees": "1,360", "raised": "$1.20B", "postVal": "$15.00B" },
-      { "name": "Oxa Autonomy", "hq": "Oxford, UK", "employees": "382", "raised": "$362.02M", "postVal": "$223.33M", "notes": "Nearest European comparable" }
-    ],
-    "signals": {
-      "referringDomains": "1,200+", "trend": "Stable",
-      "detail": "Press-driven traffic from global OEM partnership announcements. Seven global offices, 11 patent families."
-    },
-    "news": [
-      { "headline": "Wayve secures $1.5B to deploy its global autonomy platform", "source": "Wayve", "date": "Feb 2026", "type": "funding", "url": "https://wayve.ai/press/series-d/" },
-      { "headline": "Self-driving startup Wayve raises $1.2B from Nvidia, Uber, and three automakers", "source": "TechCrunch", "date": "24 Feb 2026", "type": "major", "url": "https://techcrunch.com/2026/02/24/self-driving-tech-startup-wayve-raises-1-2b-from-nvidia-uber-and-three-automakers/" },
-      { "headline": "Stellantis, Wayve and Uber partner to scale global L4 robotaxis", "source": "Stellantis", "date": "Jun 2026", "type": "major", "url": "https://www.stocktitan.net/news/STLA/stellantis-wayve-and-uber-partner-to-scale-robotaxis-81pc2srfs3dh.html" },
-      { "headline": "Wayve and Uber to launch L4 autonomy trials in London", "source": "Wayve", "date": "Jun 2025", "type": "product", "url": "https://wayve.ai/press/wayve-uber-l4-autonomy-trials/" }
-    ]
+ {
+  "id": "wayve",
+  "name": "Wayve",
+  "type": "held",
+  "section": "flagship",
+  "rating": "overweight",
+  "conviction": 5,
+  "stage": "Series D",
+  "founded": 2017,
+  "hq": "London, United Kingdom",
+  "employees": 1000,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Autonomous Driving / Physical AI",
+  "legalName": "Wayve Technologies Ltd.",
+  "website": "wayve.ai",
+  "verticals": [
+   "Physical AI",
+   "Autonomous Vehicles",
+   "Embodied AI",
+   "Robotaxi"
+  ],
+  "customers": [
+   "Uber",
+   "Stellantis",
+   "Nissan",
+   "Mercedes-Benz"
+  ],
+  "growth": "Series D round of $1.2B+ closed Feb 2026; valuation 3x in under two years",
+  "tearSheet": {
+   "thesis": "The flagship expression of firstminute's top 2026 conviction: embodied and physical AI. Wayve has crossed from research credibility to commercial deployment, with OEM partnerships confirmed and a Series D that closed at roughly $1.5B in early 2026.",
+   "edge": "End-to-end learning that generalises across new cities without HD maps, a fundamental architectural advantage over rule-based competitors. The Uber and Stellantis global L4 robotaxi alliance plus a Nissan production deal confirm the commercial thesis.",
+   "signal": "On thesis. Directly named as the flagship embodied AI bet in the firstminute portfolio. Nvidia, Microsoft, SoftBank, Uber, and three automakers on the cap table is board-level validation.",
+   "risk": "Capital intensity: burning roughly $77M per year. The live ownership question is dilution in mega-rounds, not relevance. The road to scaled commercial revenue is long, and Waymo outspends by a wide margin.",
+   "action": "Defend ownership. Exercise full pro-rata and pursue super pro-rata where the round structure allows. The seed stake at 5.80% is the position to protect."
   },
-  {
-    "id": "mistral-ai",
-    "name": "Mistral AI",
-    "type": "held",
-    "section": "flagship",
-    "rating": "overweight",
-    "conviction": 4,
-    "stage": "Series C",
-    "founded": 2023,
-    "hq": "Paris, France",
-    "employees": 350,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Foundation Models / Sovereign AI",
-    "legalName": "Mistral AI SAS",
-    "website": "mistral.ai",
-    "verticals": ["Foundation Models", "Generative AI", "Sovereign AI", "Enterprise LLMs"],
-    "customers": ["Enterprise via Le Chat", "Codestral developers", "EU public sector"],
-    "growth": "Annualised revenue run-rate passed $400M in 2025; in talks to raise EUR 3B at EUR 20B",
-    "tearSheet": {
-      "thesis": "Europe's foundation-model champion and the single strongest sovereignty asset in the portfolio. Backed at seed in Jun 2023 for $113M, one of the largest European seed rounds ever. The company is now in talks to roughly double its valuation to EUR 20B.",
-      "edge": "Three ex-DeepMind and ex-Meta AI co-founders who collectively hold the majority of shares, maintaining near-total control. The EU AI Act and data-residency rules create structural, non-discretionary demand for a credible European model provider.",
-      "signal": "On thesis. firstminute's published commentary names Mistral as a core European AI holding. The $830M debt raise for GPU procurement and persistent Apple acquisition talks signal the company is at an inflection.",
-      "risk": "Brutal compute and capital intensity competing with OpenAI, Anthropic, and Google. The debate is margin economics, not relevance. A 54% M&A probability means an exit may come before an IPO.",
-      "action": "Treat as a strategic anchor position. Protect pro-rata on principle, beyond the return math alone. The Apple acquisition signal warrants a board-level conversation about preferred exit path."
-    },
-    "alerts": [
-      { "type": "info", "message": "In talks to raise EUR 3B at a EUR 20B valuation (Jun 2026), nearly double the Sep 2025 Series C price. Apple acquisition interest reported on and off since 2025." }
-    ],
-    "founders": [
-      { "name": "Arthur Mensch", "title": "Co-Founder and CEO", "background": "Ex-Google DeepMind. Architect of the Mistral 7B open-weight model. Leads commercial strategy.", "ownership": "~31.8%" },
-      { "name": "Timothee Lacroix", "title": "Co-Founder and CTO", "background": "Ex-Meta AI (FAIR). Deep expertise in large-scale distributed training systems.", "ownership": "~31.8%" },
-      { "name": "Guillaume Lample", "title": "Co-Founder and Chief Scientist", "background": "Ex-Meta AI (FAIR), lead author of LLaMA. One of the most cited ML researchers in Europe.", "ownership": "~31.8%" }
-    ],
-    "funding": [
-      { "date": "Jun 2026 (in talks)", "type": "Later Stage VC", "amount": "EUR 3B (rumored)", "raisedToDate": "--", "preVal": null, "postVal": "EUR 20B", "leads": "Undisclosed", "fmc": false },
-      { "date": "Mar 2026", "type": "Debt", "amount": "$830M", "raisedToDate": "$4.01B", "preVal": null, "postVal": null, "leads": "BNP Paribas, Bpifrance", "fmc": false },
-      { "date": "Sep 2025", "type": "Series C", "amount": "EUR 1.7B", "raisedToDate": "$3.18B", "preVal": null, "postVal": "EUR 11.7B", "leads": "ASML (lead, ~11% stake), Nvidia, DST Global, a16z", "fmc": false },
-      { "date": "Jun 2024", "type": "Series B", "amount": "$650.61M", "raisedToDate": "$1.19B", "preVal": "$6.00B", "postVal": "$6.51B", "leads": "General Catalyst, DST Global", "fmc": false },
-      { "date": "Feb 2024", "type": "Series A", "amount": "$431.30M", "raisedToDate": "$544.30M", "preVal": "$1.57B", "postVal": "$2.00B", "leads": "Lightspeed, General Catalyst, a16z", "fmc": false },
-      { "date": "Jun 2023", "type": "Seed", "amount": "$113M", "raisedToDate": "$113M", "preVal": "$147M", "postVal": "$260M", "leads": "Lightspeed Venture Partners", "fmc": true }
-    ],
-    "totalRaised": "$4.01B",
-    "firstminute": {
-      "entryRound": "Seed (Jun 2023)",
-      "role": "Seed investor, one of many in the $113M seed",
-      "ownership": "Minority (undisclosed %)",
-      "followOns": [],
-      "leadPartner": "Portfolio team"
-    },
-    "valuationExit": {
-      "postVal": "EUR 11.7B", "pbEstimate": "$22.04B", "pbConfidence": "Medium",
-      "opportunityScore": 79, "exitType": "M&A", "successProb": 80,
-      "ipoProb": 26, "maProb": 54, "noExitProb": 20
-    },
-    "financials": {
-      "revenue": "~$400M annualised run-rate (2025)",
-      "notes": "Run-rate passed $400M in 2025. The $830M debt was raised specifically to fund Mistral Compute, targeting up to 200MW of capacity by 2027 and 1GW by 2030. The three co-founders retain majority control."
-    },
-    "acquisitions": ["Koyeb (AI infrastructure)"],
-    "competitors": [
-      { "name": "OpenAI", "hq": "San Francisco, CA", "employees": "4,500", "raised": "$185.92B", "postVal": "$500B+" },
-      { "name": "Anthropic", "hq": "San Francisco, CA", "employees": "5,000", "raised": "$161.25B", "postVal": "$350B+" },
-      { "name": "Cohere", "hq": "Toronto, Canada", "employees": "450", "raised": "$1.64B", "postVal": "$7B" },
-      { "name": "Aleph Alpha", "hq": "Heidelberg, Germany", "notes": "European sovereign AI direct competitor" }
-    ],
-    "signals": {
-      "weeklyVisitors": "598K", "referringDomains": "19,200", "trend": "Strong Growth",
-      "detail": "Roughly 598K unique weekly visitors and 19.2K referring domains. Codestral and Le Chat are driving enterprise adoption."
-    },
-    "news": [
-      { "headline": "Mistral AI in funding talks at a EUR 20B valuation", "source": "The Next Web", "date": "Jun 2026", "type": "funding", "url": "https://thenextweb.com/news/mistral-funding-talks-20-billion-valuation" },
-      { "headline": "Mistral AI raises EUR 1.7B Series C; ASML takes ~11% stake for EUR 1.3B", "source": "Mistral AI", "date": "Sep 2025", "type": "major", "url": "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/" },
-      { "headline": "Mistral nearly doubles valuation to EUR 20B as Europe's AI race heats up", "source": "Tech Funding News", "date": "Jun 2026", "type": "major", "url": "https://techfundingnews.com/mistral-ai-3b-euro-20b-valuation-data-centres/" }
-    ]
+  "alerts": [],
+  "founders": [
+   {
+    "name": "Alex Kendall Ph.D",
+    "title": "Co-Founder and CEO",
+    "background": "Ph.D. Cambridge, Computer Vision and Robotics. Pioneer of end-to-end deep learning for autonomous vehicles. Founded Wayve in 2017.",
+    "ownership": "8.21%"
+   },
+   {
+    "name": "Amar Shah",
+    "title": "Co-Founder",
+    "background": "Co-founder, also an angel in CodeWords (another portfolio company).",
+    "ownership": "4.93%"
+   }
+  ],
+  "funding": [
+   {
+    "date": "Feb 2026",
+    "type": "Series D",
+    "amount": "$1.2B+",
+    "raisedToDate": "$2.59B",
+    "preVal": "$7.40B",
+    "postVal": "$8.66B",
+    "leads": "Financial investors; Nvidia, Microsoft, Uber, Stellantis, Mercedes-Benz, Nissan",
+    "fmc": false
+   },
+   {
+    "date": "May 2024",
+    "type": "Series C",
+    "amount": "$1.05B",
+    "raisedToDate": "$1.33B",
+    "preVal": "$1.77B",
+    "postVal": "$2.81B",
+    "leads": "SoftBank, Nvidia, Eclipse Ventures",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2023",
+    "type": "Series B (follow-on)",
+    "amount": "Undisclosed",
+    "raisedToDate": "$291.98M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Stemar Capital, Reference Capital, firstminute Capital",
+    "fmc": true
+   },
+   {
+    "date": "Jan 2022",
+    "type": "Series B",
+    "amount": "$232.52M",
+    "raisedToDate": "$291.98M",
+    "preVal": "$407.61M",
+    "postVal": "$640.13M",
+    "leads": "Eclipse Ventures",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2020",
+    "type": "Series A",
+    "amount": "$43.68M",
+    "raisedToDate": "$45.76M",
+    "preVal": "$24.13M",
+    "postVal": "$67.82M",
+    "leads": "Eclipse Ventures",
+    "fmc": true
+   },
+   {
+    "date": "Sep 2017",
+    "type": "Seed",
+    "amount": "$2.08M",
+    "raisedToDate": "$2.08M",
+    "preVal": "$5.49M",
+    "postVal": "$7.57M",
+    "leads": "Fly Ventures, Compound, firstminute Capital",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$2.59B",
+  "firstminute": {
+   "entryRound": "Seed (Sep 2017)",
+   "role": "One of three seed investors in the original $2.08M round",
+   "ownership": "5.80%",
+   "ownershipNote": "679,419 seed shares as of Aug 2024",
+   "followOns": [
+    "Series A (Jun 2020)",
+    "Series B follow-on (Jun 2023)"
+   ],
+   "leadPartner": "Brent Hoberman (angel, Series A)"
   },
-  {
-    "id": "n8n",
-    "name": "n8n",
-    "type": "held",
-    "section": "flagship",
-    "rating": "overweight",
-    "conviction": 4,
-    "stage": "Series C",
-    "founded": 2019,
+  "valuationExit": {
+   "postVal": "$8.66B",
+   "pbEstimate": "$9.40B",
+   "pbConfidence": "Very High",
+   "opportunityScore": 88,
+   "exitType": "IPO",
+   "successProb": 98,
+   "ipoProb": 90,
+   "maProb": 8,
+   "noExitProb": 2
+  },
+  "financials": {
+   "revenue": "Pre-commercial scale (pilot stage)",
+   "ebitda2024": "(77,166)",
+   "netIncome2024": "(77,863)",
+   "totalAssets2024": "1,193,014",
+   "totalEquity2024": "1,175,311",
+   "totalDebt2024": "1",
+   "notes": "Burning roughly $77M/yr but holds a fortress balance sheet of about $1.19B in assets post-Series D, with effectively zero debt. Capital intensity is real; the balance sheet absorbs it."
+  },
+  "capTable": [
+   {
+    "name": "SVF II Strategic Investments (SoftBank)",
+    "pct": "34.95%"
+   },
+   {
+    "name": "Alex Kendall (Founder)",
+    "pct": "8.21%"
+   },
+   {
+    "name": "Eclipse Fund III",
+    "pct": "8.13%"
+   },
+   {
+    "name": "Trident Trust",
+    "pct": "5.84%"
+   },
+   {
+    "name": "firstminute Capital (Seed)",
+    "pct": "5.80%"
+   },
+   {
+    "name": "Amar Shah (Co-Founder)",
+    "pct": "4.93%"
+   }
+  ],
+  "totalInvestors": 54,
+  "competitors": [
+   {
+    "name": "Waymo",
+    "hq": "Mountain View, CA",
+    "employees": "2,500",
+    "raised": "$27.10B",
+    "postVal": "$126.00B",
+    "notes": "Dominant US player, far larger budget"
+   },
+   {
+    "name": "Applied Intuition",
+    "hq": "Mountain View, CA",
+    "employees": "1,360",
+    "raised": "$1.20B",
+    "postVal": "$15.00B"
+   },
+   {
+    "name": "Oxa Autonomy",
+    "hq": "Oxford, UK",
+    "employees": "382",
+    "raised": "$362.02M",
+    "postVal": "$223.33M",
+    "notes": "Nearest European comparable"
+   }
+  ],
+  "signals": {
+   "referringDomains": "1,200+",
+   "trend": "Stable",
+   "detail": "Press-driven traffic from global OEM partnership announcements. Seven global offices, 11 patent families."
+  },
+  "news": [
+   {
+    "headline": "Wayve secures $1.5B to deploy its global autonomy platform",
+    "source": "Wayve",
+    "date": "Feb 2026",
+    "type": "funding",
+    "url": "https://wayve.ai/press/series-d/"
+   },
+   {
+    "headline": "Self-driving startup Wayve raises $1.2B from Nvidia, Uber, and three automakers",
+    "source": "TechCrunch",
+    "date": "24 Feb 2026",
+    "type": "major",
+    "url": "https://techcrunch.com/2026/02/24/self-driving-tech-startup-wayve-raises-1-2b-from-nvidia-uber-and-three-automakers/"
+   },
+   {
+    "headline": "Stellantis, Wayve and Uber partner to scale global L4 robotaxis",
+    "source": "Stellantis",
+    "date": "Jun 2026",
+    "type": "major",
+    "url": "https://www.stocktitan.net/news/STLA/stellantis-wayve-and-uber-partner-to-scale-robotaxis-81pc2srfs3dh.html"
+   },
+   {
+    "headline": "Wayve and Uber to launch L4 autonomy trials in London",
+    "source": "Wayve",
+    "date": "Jun 2025",
+    "type": "product",
+    "url": "https://wayve.ai/press/wayve-uber-l4-autonomy-trials/"
+   }
+  ]
+ },
+ {
+  "id": "mistral-ai",
+  "name": "Mistral AI",
+  "type": "held",
+  "section": "flagship",
+  "rating": "overweight",
+  "conviction": 4,
+  "stage": "Series C",
+  "founded": 2023,
+  "hq": "Paris, France",
+  "employees": 350,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Foundation Models / Sovereign AI",
+  "legalName": "Mistral AI SAS",
+  "website": "mistral.ai",
+  "verticals": [
+   "Foundation Models",
+   "Generative AI",
+   "Sovereign AI",
+   "Enterprise LLMs"
+  ],
+  "customers": [
+   "Enterprise via Le Chat",
+   "Codestral developers",
+   "EU public sector"
+  ],
+  "growth": "Annualised revenue run-rate passed $400M in 2025; in talks to raise EUR 3B at EUR 20B",
+  "tearSheet": {
+   "thesis": "Europe's foundation-model champion and the single strongest sovereignty asset in the portfolio. Backed at seed in Jun 2023 for $113M, one of the largest European seed rounds ever. The company is now in talks to roughly double its valuation to EUR 20B.",
+   "edge": "Three ex-DeepMind and ex-Meta AI co-founders who collectively hold the majority of shares, maintaining near-total control. The EU AI Act and data-residency rules create structural, non-discretionary demand for a credible European model provider.",
+   "signal": "On thesis. firstminute's published commentary names Mistral as a core European AI holding. The $830M debt raise for GPU procurement and persistent Apple acquisition talks signal the company is at an inflection.",
+   "risk": "Brutal compute and capital intensity competing with OpenAI, Anthropic, and Google. The debate is margin economics, not relevance. A 54% M&A probability means an exit may come before an IPO.",
+   "action": "Treat as a strategic anchor position. Protect pro-rata on principle, beyond the return math alone. The Apple acquisition signal warrants a board-level conversation about preferred exit path."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "In talks to raise EUR 3B at a EUR 20B valuation (Jun 2026), nearly double the Sep 2025 Series C price. Apple acquisition interest reported on and off since 2025."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Arthur Mensch",
+    "title": "Co-Founder and CEO",
+    "background": "Ex-Google DeepMind. Architect of the Mistral 7B open-weight model. Leads commercial strategy.",
+    "ownership": "~31.8%"
+   },
+   {
+    "name": "Timothee Lacroix",
+    "title": "Co-Founder and CTO",
+    "background": "Ex-Meta AI (FAIR). Deep expertise in large-scale distributed training systems.",
+    "ownership": "~31.8%"
+   },
+   {
+    "name": "Guillaume Lample",
+    "title": "Co-Founder and Chief Scientist",
+    "background": "Ex-Meta AI (FAIR), lead author of LLaMA. One of the most cited ML researchers in Europe.",
+    "ownership": "~31.8%"
+   }
+  ],
+  "funding": [
+   {
+    "date": "Jun 2026 (in talks)",
+    "type": "Later Stage VC",
+    "amount": "EUR 3B (rumored)",
+    "raisedToDate": "--",
+    "preVal": null,
+    "postVal": "EUR 20B",
+    "leads": "Undisclosed",
+    "fmc": false
+   },
+   {
+    "date": "Mar 2026",
+    "type": "Debt",
+    "amount": "$830M",
+    "raisedToDate": "$4.01B",
+    "preVal": null,
+    "postVal": null,
+    "leads": "BNP Paribas, Bpifrance",
+    "fmc": false
+   },
+   {
+    "date": "Sep 2025",
+    "type": "Series C",
+    "amount": "EUR 1.7B",
+    "raisedToDate": "$3.18B",
+    "preVal": null,
+    "postVal": "EUR 11.7B",
+    "leads": "ASML (lead, ~11% stake), Nvidia, DST Global, a16z",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2024",
+    "type": "Series B",
+    "amount": "$650.61M",
+    "raisedToDate": "$1.19B",
+    "preVal": "$6.00B",
+    "postVal": "$6.51B",
+    "leads": "General Catalyst, DST Global",
+    "fmc": false
+   },
+   {
+    "date": "Feb 2024",
+    "type": "Series A",
+    "amount": "$431.30M",
+    "raisedToDate": "$544.30M",
+    "preVal": "$1.57B",
+    "postVal": "$2.00B",
+    "leads": "Lightspeed, General Catalyst, a16z",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2023",
+    "type": "Seed",
+    "amount": "$113M",
+    "raisedToDate": "$113M",
+    "preVal": "$147M",
+    "postVal": "$260M",
+    "leads": "Lightspeed Venture Partners",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$4.01B",
+  "firstminute": {
+   "entryRound": "Seed (Jun 2023)",
+   "role": "Seed investor, one of many in the $113M seed",
+   "ownership": "Minority (undisclosed %)",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "EUR 11.7B",
+   "pbEstimate": "$22.04B",
+   "pbConfidence": "Medium",
+   "opportunityScore": 79,
+   "exitType": "M&A",
+   "successProb": 80,
+   "ipoProb": 26,
+   "maProb": 54,
+   "noExitProb": 20
+  },
+  "financials": {
+   "revenue": "~$400M annualised run-rate (2025)",
+   "notes": "Run-rate passed $400M in 2025. The $830M debt was raised specifically to fund Mistral Compute, targeting up to 200MW of capacity by 2027 and 1GW by 2030. The three co-founders retain majority control."
+  },
+  "acquisitions": [
+   "Koyeb (AI infrastructure)"
+  ],
+  "competitors": [
+   {
+    "name": "OpenAI",
+    "hq": "San Francisco, CA",
+    "employees": "4,500",
+    "raised": "$185.92B",
+    "postVal": "$500B+"
+   },
+   {
+    "name": "Anthropic",
+    "hq": "San Francisco, CA",
+    "employees": "5,000",
+    "raised": "$161.25B",
+    "postVal": "$350B+"
+   },
+   {
+    "name": "Cohere",
+    "hq": "Toronto, Canada",
+    "employees": "450",
+    "raised": "$1.64B",
+    "postVal": "$7B"
+   },
+   {
+    "name": "Aleph Alpha",
+    "hq": "Heidelberg, Germany",
+    "notes": "European sovereign AI direct competitor"
+   }
+  ],
+  "signals": {
+   "weeklyVisitors": "598K",
+   "referringDomains": "19,200",
+   "trend": "Strong Growth",
+   "detail": "Roughly 598K unique weekly visitors and 19.2K referring domains. Codestral and Le Chat are driving enterprise adoption."
+  },
+  "news": [
+   {
+    "headline": "Mistral AI in funding talks at a EUR 20B valuation",
+    "source": "The Next Web",
+    "date": "Jun 2026",
+    "type": "funding",
+    "url": "https://thenextweb.com/news/mistral-funding-talks-20-billion-valuation"
+   },
+   {
+    "headline": "Mistral AI raises EUR 1.7B Series C; ASML takes ~11% stake for EUR 1.3B",
+    "source": "Mistral AI",
+    "date": "Sep 2025",
+    "type": "major",
+    "url": "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/"
+   },
+   {
+    "headline": "Mistral nearly doubles valuation to EUR 20B as Europe's AI race heats up",
+    "source": "Tech Funding News",
+    "date": "Jun 2026",
+    "type": "major",
+    "url": "https://techfundingnews.com/mistral-ai-3b-euro-20b-valuation-data-centres/"
+   }
+  ]
+ },
+ {
+  "id": "n8n",
+  "name": "n8n",
+  "type": "held",
+  "section": "flagship",
+  "rating": "overweight",
+  "conviction": 4,
+  "stage": "Series C",
+  "founded": 2019,
+  "hq": "Berlin, Germany",
+  "employees": 109,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Agentic Workflow Automation",
+  "legalName": "n8n GmbH",
+  "website": "n8n.io",
+  "verticals": [
+   "LLM Agents",
+   "Workflow Automation",
+   "Open Source",
+   "Enterprise SaaS"
+  ],
+  "customers": [
+   "Mercedes-Benz",
+   "Deutsche Telekom",
+   "Cisco"
+  ],
+  "growth": "6x user growth and 10x revenue growth in 2025; became a unicorn in six years",
+  "tearSheet": {
+   "thesis": "firstminute's most recent unicorn, reached after the original $1.49M seed co-led with Sequoia. Open-source, agent-native workflow automation now at $5.2B post-money after SAP's strategic investment in May 2026.",
+   "edge": "About 1.9M weekly unique visitors driven by a developer community. The open-source model compounds: every integration the community builds strengthens the platform moat. SAP's investment confirms the strategic-acquirer profile.",
+   "signal": "Strongest beneficiary of AI agent orchestration becoming critical enterprise infrastructure. 6x user and 10x revenue growth in 2025, plus Mercedes-Benz and SAP partnerships, confirm enterprise-tier adoption.",
+   "risk": "Sam Endacott, the lead partner who championed n8n at firstminute, left the firm in June 2026 to join Northzone. That is a material relationship-continuity risk. M&A probability sits at 71%, with SAP the likely buyer.",
+   "action": "Exercise full pro-rata into growth rounds. A high-confidence compounding position. Resolve the internal relationship-continuity question before the next board interaction."
+  },
+  "alerts": [
+   {
+    "type": "warning",
+    "message": "Per the company capture, Sam Endacott (the firstminute partner who led n8n) is reported to have moved to Northzone in 2026. Verify internally; if accurate, the lead-partner relationship has changed."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Jan Oberhauser",
+    "title": "Founder, CEO and Managing Director",
+    "background": "Single founder. His holding entity Oberhauser Ventures owns 46.20%, plus 1.95% personally, for total founder control of about 48%.",
+    "ownership": "48.15% combined"
+   }
+  ],
+  "funding": [
+   {
+    "date": "May 2026",
+    "type": "Strategic VC",
+    "amount": "EUR 60M+",
+    "raisedToDate": "$253.49M",
+    "preVal": null,
+    "postVal": "$5.20B",
+    "leads": "SAP SE",
+    "fmc": false
+   },
+   {
+    "date": "Oct 2025",
+    "type": "Series C",
+    "amount": "$180M",
+    "raisedToDate": "$253.49M",
+    "preVal": "$2.32B",
+    "postVal": "$2.50B",
+    "leads": "Accel (NVentures, Meritech, Redpoint)",
+    "fmc": false
+   },
+   {
+    "date": "Mar 2025",
+    "type": "Series B",
+    "amount": "$60M",
+    "raisedToDate": "$73.49M",
+    "preVal": "$210M",
+    "postVal": "$270M",
+    "leads": "Highland Europe",
+    "fmc": true
+   },
+   {
+    "date": "Apr 2021",
+    "type": "Series A",
+    "amount": "$12M",
+    "raisedToDate": "$13.49M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Felicis Ventures",
+    "fmc": true
+   },
+   {
+    "date": "Mar 2020",
+    "type": "Seed",
+    "amount": "$1.49M",
+    "raisedToDate": "$1.49M",
+    "preVal": "$3.85M",
+    "postVal": "$5.33M",
+    "leads": "firstminute Capital, Sequoia Capital",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$253.49M",
+  "firstminute": {
+   "entryRound": "Seed (Mar 2020)",
+   "role": "Seed co-lead alongside Sequoia Capital",
+   "ownership": "3.63%",
+   "ownershipNote": "Firstminute Capital I LP as of Dec 2024",
+   "followOns": [
+    "Series A (Apr 2021)",
+    "Series B (Mar 2025)"
+   ],
+   "leadPartner": "Sam Endacott (departed Jun 2026)"
+  },
+  "valuationExit": {
+   "postVal": "$5.20B",
+   "pbEstimate": "$5.38B",
+   "pbConfidence": "Very High",
+   "opportunityScore": 76,
+   "exitType": "M&A",
+   "successProb": 78,
+   "ipoProb": 7,
+   "maProb": 71,
+   "noExitProb": 22
+  },
+  "financials": {
+   "revenue": "10x revenue growth in 2025",
+   "totalAssets2024": "7,012",
+   "totalEquity2024": "4,025",
+   "totalDebt2024": "0",
+   "notes": "Extremely capital-efficient open-source model. Only about $7M in total assets despite a $5.2B valuation, reflecting near-zero infrastructure spend. The Series B-to-C step-up was roughly 8.6x in seven months."
+  },
+  "capTable": [
+   {
+    "name": "Oberhauser Ventures (Founder)",
+    "pct": "46.20%"
+   },
+   {
+    "name": "Felicis Ventures VII",
+    "pct": "11.04%"
+   },
+   {
+    "name": "HE Holdco V (Highland Europe)",
+    "pct": "10.49%"
+   },
+   {
+    "name": "Sequoia Capital Scout Fund III",
+    "pct": "7.81%"
+   },
+   {
+    "name": "Accel Leaders 4",
+    "pct": "6.08%"
+   },
+   {
+    "name": "firstminute Capital I LP",
+    "pct": "3.63%"
+   },
+   {
+    "name": "SAP SE",
+    "pct": "1.28%"
+   }
+  ],
+  "competitors": [
+   {
+    "name": "Zapier",
+    "hq": "San Francisco, CA",
+    "employees": "800",
+    "postVal": "$4.60B"
+   },
+   {
+    "name": "Lovable",
+    "hq": "Stockholm, Sweden",
+    "employees": "200",
+    "raised": "$647.51M",
+    "postVal": "$6.94B"
+   },
+   {
+    "name": "Make (Integromat)",
+    "hq": "Prague, CZ"
+   }
+  ],
+  "signals": {
+   "weeklyVisitors": "1.90M",
+   "referringDomains": "1,100+",
+   "trend": "Stable (1.8M-2.3M range)",
+   "detail": "Stable in the 1.8M to 2.3M weekly range. Mercedes-Benz partnership on an AI workflow platform; Deutsche Telekom fast-track to AI agents."
+  },
+  "news": [
+   {
+    "headline": "SAP bets big on AI, invests in n8n at a $5.2B valuation",
+    "source": "Trending Topics",
+    "date": "May 2026",
+    "type": "major",
+    "url": "https://www.trendingtopics.eu/sap-bets-big-on-ai-invests-in-n8n-at-a-5-2-billion-valuation/"
+   },
+   {
+    "headline": "Nvidia backs $180M round for n8n at $2.5B valuation",
+    "source": "SiliconANGLE",
+    "date": "Oct 2025",
+    "type": "funding",
+    "url": "https://siliconangle.com/2025/10/09/nvidia-backs-180m-round-workflow-automation-startup-n8n/"
+   },
+   {
+    "headline": "Fair-code pioneer n8n raises $60M for AI-powered workflow automation",
+    "source": "TechCrunch",
+    "date": "Mar 2025",
+    "type": "funding",
+    "url": "https://techcrunch.com/2025/03/24/fair-code-pioneer-n8n-raises-60m-for-ai-powered-workflow-automation/"
+   }
+  ]
+ },
+ {
+  "id": "granola",
+  "name": "Granola",
+  "type": "held",
+  "section": "accelerating",
+  "rating": "add",
+  "conviction": 4,
+  "stage": "Series C",
+  "founded": 2023,
+  "hq": "London / San Francisco (Delaware incorporated)",
+  "employees": 55,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "AI Meeting Notes / Enterprise Knowledge",
+  "legalName": "Granola, Inc.",
+  "website": "granola.ai",
+  "verticals": [
+   "Consumer AI",
+   "Enterprise SaaS",
+   "Knowledge Management",
+   "Productivity"
+  ],
+  "customers": [
+   "Vanta",
+   "Gusto",
+   "Thumbtack",
+   "Asana",
+   "Mistral AI"
+  ],
+  "growth": "Seed to $1.5B unicorn in under three years; Series B to C was 6x in ten months",
+  "tearSheet": {
+   "thesis": "Held since the $4.25M seed in April 2023. Granola reached unicorn status at $1.5B in March 2026, seed to unicorn in under three years. It is at the inflection from a beloved individual tool to an enterprise platform, now backed by Index Ventures and Kleiner Perkins.",
+   "edge": "The strongest angel syndicate in the portfolio: Tobi Lutke, Guillermo Rauch, Amjad Masad, Mike Krieger. These are active product advocates inside their own organisations. Enterprise logos now include Vanta, Gusto, Asana, and Mistral.",
+   "signal": "Opportunity Score 93/100, the highest in the entire portfolio, above Wayve and Tessl. Competitors are explicitly copying the approach: Fathom added a bot-less mode in a direct bid to replicate Granola's UX.",
+   "risk": "firstminute did not participate in Series B ($43M) or Series C ($125M). The window to maintain meaningful ownership is closing, and with Index and Kleiner now on the cap table the next round will be even more competitive.",
+   "action": "Pre-commit reserve and signal intent to Index and Kleiner before the next round is visible to the market. The window narrows weekly. The 93/100 score justifies the highest reserve allocation in the portfolio."
+  },
+  "alerts": [
+   {
+    "type": "warning",
+    "message": "firstminute did NOT participate in Series B (May 2025, $43M) or Series C (Mar 2026, $125M). Ownership has diluted from the seed. Reserve a position now before the next round prices competitively."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Chris Pedregal",
+    "title": "Co-Founder and CEO",
+    "background": "Led product at Google (Google Assistant). Driving the prosumer-to-enterprise transition."
+   },
+   {
+    "name": "Sam Stephenson",
+    "title": "Co-Founder",
+    "background": "Known for exceptional design sensibility, architect of the product aesthetic."
+   }
+  ],
+  "angels": [
+   {
+    "name": "Tobi Lutke",
+    "knownFor": "CEO and Founder, Shopify"
+   },
+   {
+    "name": "Guillermo Rauch",
+    "knownFor": "CEO and Founder, Vercel"
+   },
+   {
+    "name": "Amjad Masad",
+    "knownFor": "CEO and Founder, Replit"
+   },
+   {
+    "name": "Mike Krieger",
+    "knownFor": "Co-Founder, Instagram"
+   },
+   {
+    "name": "Des Traynor",
+    "knownFor": "Co-Founder, Intercom"
+   },
+   {
+    "name": "Nat Friedman and Daniel Gross",
+    "knownFor": "NFDG, ex-GitHub CEO, led Series B"
+   }
+  ],
+  "funding": [
+   {
+    "date": "Mar 2026",
+    "type": "Series C",
+    "amount": "$125M",
+    "raisedToDate": "$192.25M",
+    "preVal": "$1.375B",
+    "postVal": "$1.50B",
+    "leads": "Index Ventures (Danny Rimer), Kleiner Perkins (Mamoon Hamid)",
+    "fmc": false
+   },
+   {
+    "date": "May 2025",
+    "type": "Series B",
+    "amount": "$43M",
+    "raisedToDate": "$67.25M",
+    "preVal": "$207M",
+    "postVal": "$250M",
+    "leads": "NFDG (Nat Friedman, Daniel Gross)",
+    "fmc": false
+   },
+   {
+    "date": "Oct 2024",
+    "type": "Series A",
+    "amount": "$20M",
+    "raisedToDate": "$24.25M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Spark Capital",
+    "fmc": true
+   },
+   {
+    "date": "Apr 2023",
+    "type": "Seed",
+    "amount": "$4.25M",
+    "raisedToDate": "$4.25M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Lightspeed Venture Partners",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$192.25M",
+  "firstminute": {
+   "entryRound": "Seed (Apr 2023)",
+   "role": "Seed investor alongside Lightspeed (lead) and Sequoia",
+   "ownership": "Diluted (missed Series B and C)",
+   "followOns": [
+    "Series A (Oct 2024)"
+   ],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$1.50B",
+   "pbEstimate": "$1.70B",
+   "pbConfidence": "Very High",
+   "opportunityScore": 93,
+   "exitType": "M&A / IPO",
+   "successProb": 98,
+   "ipoProb": 36,
+   "maProb": 62,
+   "noExitProb": 2
+  },
+  "financials": {
+   "revenue": "Undisclosed; strong growth signal from Series C at $1.5B",
+   "notes": "Seed to unicorn in under three years. The Series B to C step-up was 6x ($250M to $1.5B) in ten months, the fastest valuation trajectory in the portfolio."
+  },
+  "competitors": [
+   {
+    "name": "Otter.ai",
+    "hq": "Mountain View, CA",
+    "raised": "$50M"
+   },
+   {
+    "name": "Fathom Video",
+    "hq": "San Francisco, CA",
+    "raised": "$17M",
+    "notes": "Added a bot-less mode to compete with Granola (Apr 2026)"
+   },
+   {
+    "name": "Fireflies.ai",
+    "hq": "Pleasanton, CA"
+   }
+  ],
+  "signals": {
+   "weeklyVisitors": "600K+",
+   "referringDomains": "3,270",
+   "trend": "Rapid growth",
+   "detail": "Traffic grew from about 200K/wk to 600K+ in six months. Referring domains roughly tripled in the same period. Opened a San Francisco office in 14 days as US expansion accelerates."
+  },
+  "news": [
+   {
+    "headline": "Granola raises $125M, hits $1.5B valuation as it expands to an enterprise AI app",
+    "source": "TechCrunch",
+    "date": "25 Mar 2026",
+    "type": "major",
+    "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/"
+   },
+   {
+    "headline": "Granola raises $125M to put your company's context to work",
+    "source": "Granola",
+    "date": "Mar 2026",
+    "type": "funding",
+    "url": "https://www.granola.ai/blog/series-c"
+   },
+   {
+    "headline": "AI note-taking app Granola raises $43M at $250M valuation",
+    "source": "TechCrunch",
+    "date": "14 May 2025",
+    "type": "funding",
+    "url": "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features/"
+   }
+  ]
+ },
+ {
+  "id": "tessl",
+  "name": "Tessl",
+  "type": "held",
+  "section": "accelerating",
+  "rating": "add",
+  "conviction": 3,
+  "stage": "Series A",
+  "founded": 2024,
+  "hq": "London, United Kingdom",
+  "employees": 34,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "AI-Native Software Development Platform",
+  "legalName": "Tessl AI Ltd",
+  "website": "tessl.io",
+  "verticals": [
+   "DevTools",
+   "AI-Native Development",
+   "Spec-Driven Development",
+   "LLM Agents"
+  ],
+  "customers": [
+   "Open-source maintainers",
+   "Enterprise design partners"
+  ],
+  "growth": "Spec Registry launched pre-populated with 10,000+ usage specs for popular libraries",
+  "tearSheet": {
+   "thesis": "A direct play on the agentic-coding wave, built by Guy Podjarny, founder of Snyk ($8.6B developer security company). Tessl translates natural-language specifications into secure, modular code. A $125M round for a company under a year old is the repeat-founder premium.",
+   "edge": "Podjarny's second act. He has already built one of Europe's largest developer-tools companies. The spec-driven development paradigm positions Tessl above the model layer: the defensible asset is the specification, not the underlying LLM.",
+   "signal": "PitchBook Opportunity Score 92/100, second-highest in the portfolio behind only Granola. Tessl was valued between $500M and $750M even before general release, and the Spec Registry already holds 10,000+ usage specs.",
+   "risk": "A crowded, fast-moving AI coding category with well-funded competitors (Cursor, Replit, GitHub Copilot). Differentiation must be the specification layer. A 27% no-exit probability reflects the pre-PMF nature of the bet.",
+   "action": "Confirm pro-rata terms ahead of the next round. Watch enterprise design-partner conversions as the leading indicator. A new fundraise is likely given the early-stage balance sheet."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Guy Podjarny is reported to have re-engaged with Snyk's board alongside his Tessl CEO role (2026); Tessl Registry uses Snyk for security scoring. Verify the board detail before relying on it."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Guy Podjarny",
+    "title": "Founder and CEO",
+    "background": "Founder of Snyk ($8.6B developer security platform). Repeat founder with a proven track record in developer tooling.",
+    "ownership": null
+   }
+  ],
+  "funding": [
+   {
+    "date": "Nov 2024",
+    "type": "Series A",
+    "amount": "$100M",
+    "raisedToDate": "$125M",
+    "preVal": "$400M",
+    "postVal": "$500M-750M (est.)",
+    "leads": "Index Ventures (Accel, GV, boldstart)",
+    "fmc": true
+   },
+   {
+    "date": "Apr 2024",
+    "type": "Seed",
+    "amount": "$25M",
+    "raisedToDate": "$25M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "GV, Boldstart Ventures",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$125M",
+  "firstminute": {
+   "entryRound": "Series A (Nov 2024)",
+   "role": "Participant in the $125M round alongside Index (lead), Accel, GV",
+   "ownership": "Minority (allocation in large round)",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$500M-750M (est.)",
+   "pbEstimate": "$1.26B",
+   "pbConfidence": "Low",
+   "opportunityScore": 92,
+   "exitType": "M&A",
+   "successProb": 73,
+   "ipoProb": 2,
+   "maProb": 71,
+   "noExitProb": 27
+  },
+  "financials": {
+   "totalAssets2025": "12,517",
+   "totalDebt2025": "0",
+   "totalEquity2025": "(3,368)",
+   "notes": "Negative equity of about -$3.4M despite raising $125M, reflecting aggressive early burn. Zero debt. A follow-on raise is likely."
+  },
+  "competitors": [
+   {
+    "name": "Cursor (Anysphere)",
+    "hq": "San Francisco, CA",
+    "postVal": "$60B",
+    "notes": "Dominant AI coding IDE"
+   },
+   {
+    "name": "Replit",
+    "hq": "Foster City, CA",
+    "raised": "$400M"
+   },
+   {
+    "name": "Snyk",
+    "hq": "Boston, MA",
+    "notes": "Podjarny's prior company, now an integration partner"
+   }
+  ],
+  "signals": {
+   "referringDomains": "936",
+   "trend": "Strong growth",
+   "detail": "Referring domains grew from near-zero to 936 in roughly five months. Presenting at CityJS London and AI Engineer Europe."
+  },
+  "news": [
+   {
+    "headline": "Tessl raises $125M for autonomous coding and AI-native development",
+    "source": "Maginative",
+    "date": "Nov 2024",
+    "type": "funding",
+    "url": "https://www.maginative.com/article/tessl-raises-125m-to-build-ai-native-software-development-platform/"
+   },
+   {
+    "headline": "How Tessl's products pioneer spec-driven development",
+    "source": "Tessl",
+    "date": "2026",
+    "type": "product",
+    "url": "https://tessl.io/blog/how-tessls-products-pioneer-spec-driven-development/"
+   },
+   {
+    "headline": "Snyk founder Guy Podjarny unveils Tessl's vision for AI-driven software",
+    "source": "CTech",
+    "date": "2025",
+    "type": "major",
+    "url": "https://www.calcalistech.com/ctechnews/article/i7ucn8teu"
+   }
+  ]
+ },
+ {
+  "id": "storyblok",
+  "name": "Storyblok",
+  "type": "held",
+  "section": "steady",
+  "rating": "hold",
+  "conviction": 3,
+  "stage": "Series C",
+  "founded": 2017,
+  "hq": "Linz, Austria",
+  "employees": 280,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Headless CMS / Content Infrastructure",
+  "legalName": "Storyblok GmbH",
+  "website": "storyblok.com",
+  "verticals": [
+   "Headless CMS",
+   "Content Management",
+   "Enterprise SaaS",
+   "DACH Tech"
+  ],
+  "customers": [
+   "Adidas",
+   "T-Mobile",
+   "Renault",
+   "Oatly"
+  ],
+  "growth": "200,000+ developers and marketers in the community; $80M Series C closed Jun 2024",
+  "tearSheet": {
+   "thesis": "Brent Hoberman personally led this deal in December 2019. firstminute owns 13.32% of Storyblok, the largest ownership stake in any portfolio company, ahead of Wayve and n8n. PitchBook explicitly flags it as a likely acquisition target with 81% M&A probability.",
+   "edge": "A tight cap table of eight investors. firstminute is the third-largest shareholder, behind Mubadala and Brighton Park Capital and ahead of both co-founders individually. Contentful was valued at $3B in 2021, so even a discounted exit returns a strong multiple on a roughly $2.5M initial investment.",
+   "signal": "PitchBook acquisition-target flag, 88/100 Opportunity Score (matching Wayve), and 91% exit-success probability. Customers include Adidas, T-Mobile, and Renault across a 200,000-strong developer community.",
+   "risk": "No valuation disclosed since the $80M Series C in June 2024. A mature headless-CMS category with credible competitors. Growth is share gain, not category creation.",
+   "action": "Hold the position. Do not initiate fresh conviction, but do not underweight the 13.32% exposure, the most economically significant position in the portfolio on a per-share basis."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "PitchBook flags Storyblok as a likely acquisition target (81% M&A probability). This is firstminute's largest single stake at 13.32%, a deal Brent led personally."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Dominik Angerer",
+    "title": "Co-Founder and CEO",
+    "background": "Built Storyblok from Linz, Austria into a global headless-CMS leader.",
+    "ownership": "11.83%"
+   },
+   {
+    "name": "Alexander Feiglstorfer",
+    "title": "Co-Founder and CTO",
+    "background": "Technical architect of the component-based content model.",
+    "ownership": "11.83%"
+   }
+  ],
+  "funding": [
+   {
+    "date": "Jun 2024",
+    "type": "Series C",
+    "amount": "$80M",
+    "raisedToDate": "$138.18M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Brighton Park Capital (HV Capital, Mubadala, 3VC, firstminute)",
+    "fmc": true
+   },
+   {
+    "date": "May 2022",
+    "type": "Series B",
+    "amount": "$47M",
+    "raisedToDate": "$58.04M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "HV Capital, Mubadala Capital",
+    "fmc": true
+   },
+   {
+    "date": "Feb 2021",
+    "type": "Series A",
+    "amount": "$8.5M",
+    "raisedToDate": "$11.04M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Mubadala Capital-Ventures",
+    "fmc": true
+   },
+   {
+    "date": "Dec 2019",
+    "type": "Early Stage VC",
+    "amount": "$2.54M",
+    "raisedToDate": "$2.54M",
+    "preVal": null,
+    "postVal": "$12.71M",
+    "leads": "Capital300, firstminute Capital",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$138.18M",
+  "firstminute": {
+   "entryRound": "Early Stage VC (Dec 2019)",
+   "role": "One of three investors in the original $2.54M round",
+   "ownership": "13.32% combined",
+   "ownershipNote": "Firstminute Capital I LP (11.29%) plus Firstminute Linz SPV LP (2.03%). Third-largest shareholder overall.",
+   "followOns": [
+    "Series A (Feb 2021)",
+    "Series B (May 2022)",
+    "Series C (Jun 2024)"
+   ],
+   "leadPartner": "Brent Hoberman (personally led this deal)"
+  },
+  "valuationExit": {
+   "postVal": "Not disclosed since Series C",
+   "pbEstimate": "Not available",
+   "pbConfidence": "N/A",
+   "opportunityScore": 88,
+   "exitType": "M&A",
+   "successProb": 91,
+   "ipoProb": 10,
+   "maProb": 81,
+   "noExitProb": 9,
+   "acquisitionTargetFlag": true
+  },
+  "financials": {
+   "totalAssets2024": "55,959",
+   "totalEquity2024": "49,623",
+   "totalDebt2024": "0",
+   "notes": "Healthy: about 3x growth in assets year-on-year, driven by the Series C. Equity of $49.6M with low liabilities. Contentful, the key comparable, was valued at $3B in 2021."
+  },
+  "capTable": [
+   {
+    "name": "Mubadala (MIC Capital Partners)",
+    "pct": "17.23%"
+   },
+   {
+    "name": "Brighton Park Capital",
+    "pct": "14.84%"
+   },
+   {
+    "name": "firstminute Capital (combined)",
+    "pct": "13.32%"
+   },
+   {
+    "name": "HV Capital",
+    "pct": "11.98%"
+   },
+   {
+    "name": "Dominik Angerer (Founder)",
+    "pct": "11.83%"
+   },
+   {
+    "name": "Alexander Feiglstorfer (Founder)",
+    "pct": "11.83%"
+   }
+  ],
+  "competitors": [
+   {
+    "name": "Contentful",
     "hq": "Berlin, Germany",
-    "employees": 109,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Agentic Workflow Automation",
-    "legalName": "n8n GmbH",
-    "website": "n8n.io",
-    "verticals": ["LLM Agents", "Workflow Automation", "Open Source", "Enterprise SaaS"],
-    "customers": ["Mercedes-Benz", "Deutsche Telekom", "Cisco"],
-    "growth": "6x user growth and 10x revenue growth in 2025; became a unicorn in six years",
-    "tearSheet": {
-      "thesis": "firstminute's most recent unicorn, reached after the original $1.49M seed co-led with Sequoia. Open-source, agent-native workflow automation now at $5.2B post-money after SAP's strategic investment in May 2026.",
-      "edge": "About 1.9M weekly unique visitors driven by a developer community. The open-source model compounds: every integration the community builds strengthens the platform moat. SAP's investment confirms the strategic-acquirer profile.",
-      "signal": "Strongest beneficiary of AI agent orchestration becoming critical enterprise infrastructure. 6x user and 10x revenue growth in 2025, plus Mercedes-Benz and SAP partnerships, confirm enterprise-tier adoption.",
-      "risk": "Sam Endacott, the lead partner who championed n8n at firstminute, left the firm in June 2026 to join Northzone. That is a material relationship-continuity risk. M&A probability sits at 71%, with SAP the likely buyer.",
-      "action": "Exercise full pro-rata into growth rounds. A high-confidence compounding position. Resolve the internal relationship-continuity question before the next board interaction."
-    },
-    "alerts": [
-      { "type": "warning", "message": "Per the company capture, Sam Endacott (the firstminute partner who led n8n) is reported to have moved to Northzone in 2026. Verify internally; if accurate, the lead-partner relationship has changed." }
-    ],
-    "founders": [
-      { "name": "Jan Oberhauser", "title": "Founder, CEO and Managing Director", "background": "Single founder. His holding entity Oberhauser Ventures owns 46.20%, plus 1.95% personally, for total founder control of about 48%.", "ownership": "48.15% combined" }
-    ],
-    "funding": [
-      { "date": "May 2026", "type": "Strategic VC", "amount": "EUR 60M+", "raisedToDate": "$253.49M", "preVal": null, "postVal": "$5.20B", "leads": "SAP SE", "fmc": false },
-      { "date": "Oct 2025", "type": "Series C", "amount": "$180M", "raisedToDate": "$253.49M", "preVal": "$2.32B", "postVal": "$2.50B", "leads": "Accel (NVentures, Meritech, Redpoint)", "fmc": false },
-      { "date": "Mar 2025", "type": "Series B", "amount": "$60M", "raisedToDate": "$73.49M", "preVal": "$210M", "postVal": "$270M", "leads": "Highland Europe", "fmc": true },
-      { "date": "Apr 2021", "type": "Series A", "amount": "$12M", "raisedToDate": "$13.49M", "preVal": null, "postVal": null, "leads": "Felicis Ventures", "fmc": true },
-      { "date": "Mar 2020", "type": "Seed", "amount": "$1.49M", "raisedToDate": "$1.49M", "preVal": "$3.85M", "postVal": "$5.33M", "leads": "firstminute Capital, Sequoia Capital", "fmc": true }
-    ],
-    "totalRaised": "$253.49M",
-    "firstminute": {
-      "entryRound": "Seed (Mar 2020)",
-      "role": "Seed co-lead alongside Sequoia Capital",
-      "ownership": "3.63%",
-      "ownershipNote": "Firstminute Capital I LP as of Dec 2024",
-      "followOns": ["Series A (Apr 2021)", "Series B (Mar 2025)"],
-      "leadPartner": "Sam Endacott (departed Jun 2026)"
-    },
-    "valuationExit": {
-      "postVal": "$5.20B", "pbEstimate": "$5.38B", "pbConfidence": "Very High",
-      "opportunityScore": 76, "exitType": "M&A", "successProb": 78,
-      "ipoProb": 7, "maProb": 71, "noExitProb": 22
-    },
-    "financials": {
-      "revenue": "10x revenue growth in 2025",
-      "totalAssets2024": "7,012", "totalEquity2024": "4,025", "totalDebt2024": "0",
-      "notes": "Extremely capital-efficient open-source model. Only about $7M in total assets despite a $5.2B valuation, reflecting near-zero infrastructure spend. The Series B-to-C step-up was roughly 8.6x in seven months."
-    },
-    "capTable": [
-      { "name": "Oberhauser Ventures (Founder)", "pct": "46.20%" },
-      { "name": "Felicis Ventures VII", "pct": "11.04%" },
-      { "name": "HE Holdco V (Highland Europe)", "pct": "10.49%" },
-      { "name": "Sequoia Capital Scout Fund III", "pct": "7.81%" },
-      { "name": "Accel Leaders 4", "pct": "6.08%" },
-      { "name": "firstminute Capital I LP", "pct": "3.63%" },
-      { "name": "SAP SE", "pct": "1.28%" }
-    ],
-    "competitors": [
-      { "name": "Zapier", "hq": "San Francisco, CA", "employees": "800", "postVal": "$4.60B" },
-      { "name": "Lovable", "hq": "Stockholm, Sweden", "employees": "200", "raised": "$647.51M", "postVal": "$6.94B" },
-      { "name": "Make (Integromat)", "hq": "Prague, CZ" }
-    ],
-    "signals": {
-      "weeklyVisitors": "1.90M", "referringDomains": "1,100+", "trend": "Stable (1.8M-2.3M range)",
-      "detail": "Stable in the 1.8M to 2.3M weekly range. Mercedes-Benz partnership on an AI workflow platform; Deutsche Telekom fast-track to AI agents."
-    },
-    "news": [
-      { "headline": "SAP bets big on AI, invests in n8n at a $5.2B valuation", "source": "Trending Topics", "date": "May 2026", "type": "major", "url": "https://www.trendingtopics.eu/sap-bets-big-on-ai-invests-in-n8n-at-a-5-2-billion-valuation/" },
-      { "headline": "Nvidia backs $180M round for n8n at $2.5B valuation", "source": "SiliconANGLE", "date": "Oct 2025", "type": "funding", "url": "https://siliconangle.com/2025/10/09/nvidia-backs-180m-round-workflow-automation-startup-n8n/" },
-      { "headline": "Fair-code pioneer n8n raises $60M for AI-powered workflow automation", "source": "TechCrunch", "date": "Mar 2025", "type": "funding", "url": "https://techcrunch.com/2025/03/24/fair-code-pioneer-n8n-raises-60m-for-ai-powered-workflow-automation/" }
-    ]
-  },
-  {
-    "id": "granola",
-    "name": "Granola",
-    "type": "held",
-    "section": "accelerating",
-    "rating": "add",
-    "conviction": 4,
-    "stage": "Series C",
-    "founded": 2023,
-    "hq": "London / San Francisco (Delaware incorporated)",
-    "employees": 55,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "AI Meeting Notes / Enterprise Knowledge",
-    "legalName": "Granola, Inc.",
-    "website": "granola.ai",
-    "verticals": ["Consumer AI", "Enterprise SaaS", "Knowledge Management", "Productivity"],
-    "customers": ["Vanta", "Gusto", "Thumbtack", "Asana", "Mistral AI"],
-    "growth": "Seed to $1.5B unicorn in under three years; Series B to C was 6x in ten months",
-    "tearSheet": {
-      "thesis": "Held since the $4.25M seed in April 2023. Granola reached unicorn status at $1.5B in March 2026, seed to unicorn in under three years. It is at the inflection from a beloved individual tool to an enterprise platform, now backed by Index Ventures and Kleiner Perkins.",
-      "edge": "The strongest angel syndicate in the portfolio: Tobi Lutke, Guillermo Rauch, Amjad Masad, Mike Krieger. These are active product advocates inside their own organisations. Enterprise logos now include Vanta, Gusto, Asana, and Mistral.",
-      "signal": "Opportunity Score 93/100, the highest in the entire portfolio, above Wayve and Tessl. Competitors are explicitly copying the approach: Fathom added a bot-less mode in a direct bid to replicate Granola's UX.",
-      "risk": "firstminute did not participate in Series B ($43M) or Series C ($125M). The window to maintain meaningful ownership is closing, and with Index and Kleiner now on the cap table the next round will be even more competitive.",
-      "action": "Pre-commit reserve and signal intent to Index and Kleiner before the next round is visible to the market. The window narrows weekly. The 93/100 score justifies the highest reserve allocation in the portfolio."
-    },
-    "alerts": [
-      { "type": "warning", "message": "firstminute did NOT participate in Series B (May 2025, $43M) or Series C (Mar 2026, $125M). Ownership has diluted from the seed. Reserve a position now before the next round prices competitively." }
-    ],
-    "founders": [
-      { "name": "Chris Pedregal", "title": "Co-Founder and CEO", "background": "Led product at Google (Google Assistant). Driving the prosumer-to-enterprise transition." },
-      { "name": "Sam Stephenson", "title": "Co-Founder", "background": "Known for exceptional design sensibility, architect of the product aesthetic." }
-    ],
-    "angels": [
-      { "name": "Tobi Lutke", "knownFor": "CEO and Founder, Shopify" },
-      { "name": "Guillermo Rauch", "knownFor": "CEO and Founder, Vercel" },
-      { "name": "Amjad Masad", "knownFor": "CEO and Founder, Replit" },
-      { "name": "Mike Krieger", "knownFor": "Co-Founder, Instagram" },
-      { "name": "Des Traynor", "knownFor": "Co-Founder, Intercom" },
-      { "name": "Nat Friedman and Daniel Gross", "knownFor": "NFDG, ex-GitHub CEO, led Series B" }
-    ],
-    "funding": [
-      { "date": "Mar 2026", "type": "Series C", "amount": "$125M", "raisedToDate": "$192.25M", "preVal": "$1.375B", "postVal": "$1.50B", "leads": "Index Ventures (Danny Rimer), Kleiner Perkins (Mamoon Hamid)", "fmc": false },
-      { "date": "May 2025", "type": "Series B", "amount": "$43M", "raisedToDate": "$67.25M", "preVal": "$207M", "postVal": "$250M", "leads": "NFDG (Nat Friedman, Daniel Gross)", "fmc": false },
-      { "date": "Oct 2024", "type": "Series A", "amount": "$20M", "raisedToDate": "$24.25M", "preVal": null, "postVal": null, "leads": "Spark Capital", "fmc": true },
-      { "date": "Apr 2023", "type": "Seed", "amount": "$4.25M", "raisedToDate": "$4.25M", "preVal": null, "postVal": null, "leads": "Lightspeed Venture Partners", "fmc": true }
-    ],
-    "totalRaised": "$192.25M",
-    "firstminute": {
-      "entryRound": "Seed (Apr 2023)",
-      "role": "Seed investor alongside Lightspeed (lead) and Sequoia",
-      "ownership": "Diluted (missed Series B and C)",
-      "followOns": ["Series A (Oct 2024)"],
-      "leadPartner": "Portfolio team"
-    },
-    "valuationExit": {
-      "postVal": "$1.50B", "pbEstimate": "$1.70B", "pbConfidence": "Very High",
-      "opportunityScore": 93, "exitType": "M&A / IPO", "successProb": 98,
-      "ipoProb": 36, "maProb": 62, "noExitProb": 2
-    },
-    "financials": {
-      "revenue": "Undisclosed; strong growth signal from Series C at $1.5B",
-      "notes": "Seed to unicorn in under three years. The Series B to C step-up was 6x ($250M to $1.5B) in ten months, the fastest valuation trajectory in the portfolio."
-    },
-    "competitors": [
-      { "name": "Otter.ai", "hq": "Mountain View, CA", "raised": "$50M" },
-      { "name": "Fathom Video", "hq": "San Francisco, CA", "raised": "$17M", "notes": "Added a bot-less mode to compete with Granola (Apr 2026)" },
-      { "name": "Fireflies.ai", "hq": "Pleasanton, CA" }
-    ],
-    "signals": {
-      "weeklyVisitors": "600K+", "referringDomains": "3,270", "trend": "Rapid growth",
-      "detail": "Traffic grew from about 200K/wk to 600K+ in six months. Referring domains roughly tripled in the same period. Opened a San Francisco office in 14 days as US expansion accelerates."
-    },
-    "news": [
-      { "headline": "Granola raises $125M, hits $1.5B valuation as it expands to an enterprise AI app", "source": "TechCrunch", "date": "25 Mar 2026", "type": "major", "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/" },
-      { "headline": "Granola raises $125M to put your company's context to work", "source": "Granola", "date": "Mar 2026", "type": "funding", "url": "https://www.granola.ai/blog/series-c" },
-      { "headline": "AI note-taking app Granola raises $43M at $250M valuation", "source": "TechCrunch", "date": "14 May 2025", "type": "funding", "url": "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features/" }
-    ]
-  },
-  {
-    "id": "tessl",
-    "name": "Tessl",
-    "type": "held",
-    "section": "accelerating",
-    "rating": "add",
-    "conviction": 3,
-    "stage": "Series A",
-    "founded": 2024,
-    "hq": "London, United Kingdom",
-    "employees": 34,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "AI-Native Software Development Platform",
-    "legalName": "Tessl AI Ltd",
-    "website": "tessl.io",
-    "verticals": ["DevTools", "AI-Native Development", "Spec-Driven Development", "LLM Agents"],
-    "customers": ["Open-source maintainers", "Enterprise design partners"],
-    "growth": "Spec Registry launched pre-populated with 10,000+ usage specs for popular libraries",
-    "tearSheet": {
-      "thesis": "A direct play on the agentic-coding wave, built by Guy Podjarny, founder of Snyk ($8.6B developer security company). Tessl translates natural-language specifications into secure, modular code. A $125M round for a company under a year old is the repeat-founder premium.",
-      "edge": "Podjarny's second act. He has already built one of Europe's largest developer-tools companies. The spec-driven development paradigm positions Tessl above the model layer: the defensible asset is the specification, not the underlying LLM.",
-      "signal": "PitchBook Opportunity Score 92/100, second-highest in the portfolio behind only Granola. Tessl was valued between $500M and $750M even before general release, and the Spec Registry already holds 10,000+ usage specs.",
-      "risk": "A crowded, fast-moving AI coding category with well-funded competitors (Cursor, Replit, GitHub Copilot). Differentiation must be the specification layer. A 27% no-exit probability reflects the pre-PMF nature of the bet.",
-      "action": "Confirm pro-rata terms ahead of the next round. Watch enterprise design-partner conversions as the leading indicator. A new fundraise is likely given the early-stage balance sheet."
-    },
-    "alerts": [
-      { "type": "info", "message": "Guy Podjarny is reported to have re-engaged with Snyk's board alongside his Tessl CEO role (2026); Tessl Registry uses Snyk for security scoring. Verify the board detail before relying on it." }
-    ],
-    "founders": [
-      { "name": "Guy Podjarny", "title": "Founder and CEO", "background": "Founder of Snyk ($8.6B developer security platform). Repeat founder with a proven track record in developer tooling.", "ownership": null }
-    ],
-    "funding": [
-      { "date": "Nov 2024", "type": "Series A", "amount": "$100M", "raisedToDate": "$125M", "preVal": "$400M", "postVal": "$500M-750M (est.)", "leads": "Index Ventures (Accel, GV, boldstart)", "fmc": true },
-      { "date": "Apr 2024", "type": "Seed", "amount": "$25M", "raisedToDate": "$25M", "preVal": null, "postVal": null, "leads": "GV, Boldstart Ventures", "fmc": false }
-    ],
-    "totalRaised": "$125M",
-    "firstminute": {
-      "entryRound": "Series A (Nov 2024)",
-      "role": "Participant in the $125M round alongside Index (lead), Accel, GV",
-      "ownership": "Minority (allocation in large round)",
-      "followOns": [],
-      "leadPartner": "Portfolio team"
-    },
-    "valuationExit": {
-      "postVal": "$500M-750M (est.)", "pbEstimate": "$1.26B", "pbConfidence": "Low",
-      "opportunityScore": 92, "exitType": "M&A", "successProb": 73,
-      "ipoProb": 2, "maProb": 71, "noExitProb": 27
-    },
-    "financials": {
-      "totalAssets2025": "12,517", "totalDebt2025": "0", "totalEquity2025": "(3,368)",
-      "notes": "Negative equity of about -$3.4M despite raising $125M, reflecting aggressive early burn. Zero debt. A follow-on raise is likely."
-    },
-    "competitors": [
-      { "name": "Cursor (Anysphere)", "hq": "San Francisco, CA", "postVal": "$60B", "notes": "Dominant AI coding IDE" },
-      { "name": "Replit", "hq": "Foster City, CA", "raised": "$400M" },
-      { "name": "Snyk", "hq": "Boston, MA", "notes": "Podjarny's prior company, now an integration partner" }
-    ],
-    "signals": {
-      "referringDomains": "936", "trend": "Strong growth",
-      "detail": "Referring domains grew from near-zero to 936 in roughly five months. Presenting at CityJS London and AI Engineer Europe."
-    },
-    "news": [
-      { "headline": "Tessl raises $125M for autonomous coding and AI-native development", "source": "Maginative", "date": "Nov 2024", "type": "funding", "url": "https://www.maginative.com/article/tessl-raises-125m-to-build-ai-native-software-development-platform/" },
-      { "headline": "How Tessl's products pioneer spec-driven development", "source": "Tessl", "date": "2026", "type": "product", "url": "https://tessl.io/blog/how-tessls-products-pioneer-spec-driven-development/" },
-      { "headline": "Snyk founder Guy Podjarny unveils Tessl's vision for AI-driven software", "source": "CTech", "date": "2025", "type": "major", "url": "https://www.calcalistech.com/ctechnews/article/i7ucn8teu" }
-    ]
-  },
-  {
-    "id": "storyblok",
-    "name": "Storyblok",
-    "type": "held",
-    "section": "steady",
-    "rating": "hold",
-    "conviction": 3,
-    "stage": "Series C",
-    "founded": 2017,
-    "hq": "Linz, Austria",
-    "employees": 280,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Headless CMS / Content Infrastructure",
-    "legalName": "Storyblok GmbH",
-    "website": "storyblok.com",
-    "verticals": ["Headless CMS", "Content Management", "Enterprise SaaS", "DACH Tech"],
-    "customers": ["Adidas", "T-Mobile", "Renault", "Oatly"],
-    "growth": "200,000+ developers and marketers in the community; $80M Series C closed Jun 2024",
-    "tearSheet": {
-      "thesis": "Brent Hoberman personally led this deal in December 2019. firstminute owns 13.32% of Storyblok, the largest ownership stake in any portfolio company, ahead of Wayve and n8n. PitchBook explicitly flags it as a likely acquisition target with 81% M&A probability.",
-      "edge": "A tight cap table of eight investors. firstminute is the third-largest shareholder, behind Mubadala and Brighton Park Capital and ahead of both co-founders individually. Contentful was valued at $3B in 2021, so even a discounted exit returns a strong multiple on a roughly $2.5M initial investment.",
-      "signal": "PitchBook acquisition-target flag, 88/100 Opportunity Score (matching Wayve), and 91% exit-success probability. Customers include Adidas, T-Mobile, and Renault across a 200,000-strong developer community.",
-      "risk": "No valuation disclosed since the $80M Series C in June 2024. A mature headless-CMS category with credible competitors. Growth is share gain, not category creation.",
-      "action": "Hold the position. Do not initiate fresh conviction, but do not underweight the 13.32% exposure, the most economically significant position in the portfolio on a per-share basis."
-    },
-    "alerts": [
-      { "type": "info", "message": "PitchBook flags Storyblok as a likely acquisition target (81% M&A probability). This is firstminute's largest single stake at 13.32%, a deal Brent led personally." }
-    ],
-    "founders": [
-      { "name": "Dominik Angerer", "title": "Co-Founder and CEO", "background": "Built Storyblok from Linz, Austria into a global headless-CMS leader.", "ownership": "11.83%" },
-      { "name": "Alexander Feiglstorfer", "title": "Co-Founder and CTO", "background": "Technical architect of the component-based content model.", "ownership": "11.83%" }
-    ],
-    "funding": [
-      { "date": "Jun 2024", "type": "Series C", "amount": "$80M", "raisedToDate": "$138.18M", "preVal": null, "postVal": null, "leads": "Brighton Park Capital (HV Capital, Mubadala, 3VC, firstminute)", "fmc": true },
-      { "date": "May 2022", "type": "Series B", "amount": "$47M", "raisedToDate": "$58.04M", "preVal": null, "postVal": null, "leads": "HV Capital, Mubadala Capital", "fmc": true },
-      { "date": "Feb 2021", "type": "Series A", "amount": "$8.5M", "raisedToDate": "$11.04M", "preVal": null, "postVal": null, "leads": "Mubadala Capital-Ventures", "fmc": true },
-      { "date": "Dec 2019", "type": "Early Stage VC", "amount": "$2.54M", "raisedToDate": "$2.54M", "preVal": null, "postVal": "$12.71M", "leads": "Capital300, firstminute Capital", "fmc": true }
-    ],
-    "totalRaised": "$138.18M",
-    "firstminute": {
-      "entryRound": "Early Stage VC (Dec 2019)",
-      "role": "One of three investors in the original $2.54M round",
-      "ownership": "13.32% combined",
-      "ownershipNote": "Firstminute Capital I LP (11.29%) plus Firstminute Linz SPV LP (2.03%). Third-largest shareholder overall.",
-      "followOns": ["Series A (Feb 2021)", "Series B (May 2022)", "Series C (Jun 2024)"],
-      "leadPartner": "Brent Hoberman (personally led this deal)"
-    },
-    "valuationExit": {
-      "postVal": "Not disclosed since Series C", "pbEstimate": "Not available", "pbConfidence": "N/A",
-      "opportunityScore": 88, "exitType": "M&A", "successProb": 91,
-      "ipoProb": 10, "maProb": 81, "noExitProb": 9, "acquisitionTargetFlag": true
-    },
-    "financials": {
-      "totalAssets2024": "55,959", "totalEquity2024": "49,623", "totalDebt2024": "0",
-      "notes": "Healthy: about 3x growth in assets year-on-year, driven by the Series C. Equity of $49.6M with low liabilities. Contentful, the key comparable, was valued at $3B in 2021."
-    },
-    "capTable": [
-      { "name": "Mubadala (MIC Capital Partners)", "pct": "17.23%" },
-      { "name": "Brighton Park Capital", "pct": "14.84%" },
-      { "name": "firstminute Capital (combined)", "pct": "13.32%" },
-      { "name": "HV Capital", "pct": "11.98%" },
-      { "name": "Dominik Angerer (Founder)", "pct": "11.83%" },
-      { "name": "Alexander Feiglstorfer (Founder)", "pct": "11.83%" }
-    ],
-    "competitors": [
-      { "name": "Contentful", "hq": "Berlin, Germany", "employees": "987", "raised": "$338.66M", "postVal": "$3.00B", "notes": "Valued at $3B in 2021, the key comparable for exit pricing" },
-      { "name": "Sanity", "hq": "San Francisco, CA", "employees": "246", "raised": "$170.84M" },
-      { "name": "Contentstack", "hq": "San Francisco, CA", "employees": "705", "raised": "$178.63M" }
-    ],
-    "signals": {
-      "referringDomains": "13,200", "trend": "Stable (13K-23K range)",
-      "detail": "One of the most active conference presences in the portfolio. Brands include Adidas, T-Mobile, Renault, and Oatly across 200,000+ community members."
-    },
-    "news": [
-      { "headline": "Storyblok raises $80M Series C led by Brighton Park Capital", "source": "Storyblok", "date": "Jun 2024", "type": "funding", "url": "https://www.storyblok.com/mp/series-c-press" },
-      { "headline": "Storyblok raises $80M to add more AI to its headless CMS", "source": "TechCrunch", "date": "4 Jun 2024", "type": "major", "url": "https://techcrunch.com/2024/06/04/storyblok-raises-80m-to-bring-more-ai-into-its-headless-cms-aimed-at-non-technical-people/" },
-      { "headline": "Storyblok unveils CMS innovations to keep brands visible on the new web", "source": "Yahoo Finance", "date": "2026", "type": "product", "url": "https://finance.yahoo.com/news/storyblok-unveils-cms-innovations-enable-135000560.html" }
-    ]
-  },
-  {
-    "id": "taktile",
-    "name": "Taktile",
-    "type": "held",
-    "section": "steady",
-    "rating": "hold",
-    "conviction": 3,
-    "stage": "Series B",
-    "founded": 2020,
-    "hq": "New York / Berlin / London",
-    "employees": 185,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Automated Risk Decisioning for Financial Services",
-    "legalName": "Taktile GmbH",
-    "website": "taktile.com",
-    "verticals": ["Fintech Infrastructure", "Risk Decisioning", "AI Decision Engine", "Credit Automation"],
-    "customers": ["Mercury", "Zilch", "Allianz", "Rakuten Bank", "Kueski"],
-    "growth": "ARR up 3.5x year-on-year in 2024; customers across 24 markets",
-    "tearSheet": {
-      "thesis": "A platform for building automated risk and credit decisions, sold into banks and lenders. YC S20 alum. $79M+ raised, with a $54M Series B led by Balderton in Feb 2025. ARR grew 3.5x year-on-year and the product serves 24 markets.",
-      "edge": "A best-in-class advisor roster: Daniel Dines (UiPath), Olivier Pomel (Datadog), Scott Chacon (GitHub), and Larry Summers (ex-US Treasury, OpenAI board, invested at Series B). Once embedded in a credit pipeline the product is sticky, with regulatory and operational switching costs.",
-      "signal": "Customers now include Mercury, Zilch, Allianz, and Rakuten Bank. G2 Leader for multiple consecutive quarters, the product signal in a category governed by procurement rather than virality.",
-      "risk": "Long enterprise procurement cycles in financial services. firstminute invested at seed but did not follow on at Series A or B. Growth depends on named reference accounts, not virality.",
-      "action": "Hold. A tier-one lender reference would be the catalyst to revisit conviction upward. The one introduction that changes the story is a risk leader at a bulge-bracket bank."
-    },
-    "alerts": [],
-    "founders": [
-      { "name": "Maik Wehmeyer", "title": "Co-Founder and CEO", "background": "Based in New York, leading US expansion and the enterprise sales motion." },
-      { "name": "Maximilian Eber Ph.D", "title": "Co-Founder and CPTO", "background": "Product and engineering leadership for the Taktile decision engine." }
-    ],
-    "advisors": [
-      { "name": "Daniel Dines", "role": "Advisor", "knownFor": "Founder and CEO, UiPath" },
-      { "name": "Olivier Pomel", "role": "Advisor", "knownFor": "CEO, Datadog" },
-      { "name": "Scott Chacon", "role": "Advisor", "knownFor": "Co-Founder, GitHub" },
-      { "name": "Larry Summers", "role": "Investor (Series B)", "knownFor": "Former US Treasury Secretary, OpenAI board" }
-    ],
-    "funding": [
-      { "date": "Feb 2025", "type": "Series B", "amount": "$54M", "raisedToDate": "$81.68M", "preVal": null, "postVal": null, "leads": "Balderton Capital (Index, Tiger Global, Prosus, Larry Summers)", "fmc": false },
-      { "date": "Nov 2022", "type": "Series A", "amount": "$20M", "raisedToDate": "$27.68M", "preVal": null, "postVal": null, "leads": "Index Ventures, Tiger Global", "fmc": false },
-      { "date": "Aug 2021", "type": "Seed", "amount": "$7.53M", "raisedToDate": "$7.68M", "preVal": null, "postVal": null, "leads": "Index Ventures, firstminute Capital, Crew Capital", "fmc": true },
-      { "date": "Jun 2020", "type": "YC S20", "amount": "$150K", "raisedToDate": "$150K", "preVal": null, "postVal": "$2.14M", "leads": "Y Combinator", "fmc": false }
-    ],
-    "totalRaised": "$81.68M",
-    "firstminute": {
-      "entryRound": "Seed (Aug 2021)",
-      "role": "Seed co-investor alongside Index Ventures and Crew Capital",
-      "ownership": "Minority (did not follow on Series A or B)",
-      "followOns": [],
-      "leadPartner": "Portfolio team"
-    },
-    "valuationExit": {
-      "postVal": "Not disclosed", "pbEstimate": "Not available", "pbConfidence": "N/A",
-      "opportunityScore": 84, "exitType": "M&A", "successProb": 83,
-      "ipoProb": 2, "maProb": 81, "noExitProb": 17
-    },
-    "financials": {
-      "revenue": "ARR up 3.5x year-on-year (2024)",
-      "totalAssets2024": "6,196", "totalEquity2024": "4,966", "totalDebt2024": "0",
-      "notes": "Nearly 3x growth in assets year-on-year on a lean balance sheet with low liabilities. The $54M Series B will significantly expand the 2025 balance sheet."
-    },
-    "competitors": [
-      { "name": "DataRobot", "hq": "Boston, MA" },
-      { "name": "Zest AI", "hq": "Burbank, CA", "postVal": "$350M" },
-      { "name": "SEON", "hq": "Budapest, Hungary" }
-    ],
-    "signals": {
-      "weeklyVisitors": "6,130", "referringDomains": "684", "trend": "Stable",
-      "detail": "Modest but consistent traffic typical of vertical enterprise SaaS. G2 Leader for multiple consecutive quarters is the more meaningful signal. Customers across 24 markets."
-    },
-    "news": [
-      { "headline": "Taktile raises $54M Series B led by Balderton to enable AI risk decisioning", "source": "Taktile", "date": "27 Feb 2025", "type": "funding", "url": "https://taktile.com/articles/taktile-raises-54m-series-b" },
-      { "headline": "Taktile helps fintechs build automated decision-making workflows", "source": "TechCrunch", "date": "27 Feb 2025", "type": "major", "url": "https://techcrunch.com/2025/02/27/taktile-helps-fintechs-build-automated-decision-making-workflows/" },
-      { "headline": "Prosus Ventures backs Taktile's $54M Series B for AI-powered risk decisioning", "source": "Prosus", "date": "2025", "type": "funding", "url": "https://www.prosus.com/news-insights/group-updates/2025/prosus-ventures-backs-taktiles-54m-series-b-to-drive-ai-powered-risk-decisioning" }
-    ]
-  },
-  {
-    "id": "corvera",
-    "name": "Corvera",
-    "type": "held",
-    "section": "new2026",
-    "rating": "new",
-    "conviction": 3,
-    "stage": "Seed",
-    "founded": 2025,
+    "employees": "987",
+    "raised": "$338.66M",
+    "postVal": "$3.00B",
+    "notes": "Valued at $3B in 2021, the key comparable for exit pricing"
+   },
+   {
+    "name": "Sanity",
     "hq": "San Francisco, CA",
-    "employees": 8,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Agentic Supply Chain Operations for CPG Brands",
-    "legalName": "Sarah AI Inc.",
-    "website": "corvera.ai",
-    "verticals": ["CPG Tech", "Supply Chain", "LLM Agents", "Vertical AI", "YC W26"],
-    "customers": ["12+ CPG brands signed within five weeks of first onboarding"],
-    "growth": "Signed more than a dozen CPG brands within five weeks of onboarding its first customer",
-    "tearSheet": {
-      "thesis": "A hands-free command centre automating supply chains and operations for fast-growing US and UK consumer-goods brands. YC W26. firstminute was the company's first investor, leading the $2M pre-seed in January 2026 before the $4.2M seed led by 6 Degrees Capital.",
-      "edge": "CEO Chris Kong spent seven years in UK FMCG, scaling Better Nature to 5,000 stores before stepping back, and is a Forbes 30 Under 30 Europe honoree. CTO Dirk Breeuwer was Data and AI Lead at Google, leading AI transformation for Pixel.",
-      "signal": "Referring domains climbed sharply alongside the May 2026 seed. The company signed more than a dozen CPG brands within five weeks of onboarding its first customer, an unusually fast early commercial signal.",
-      "risk": "Earliest stage: eight employees, no historical financials, unproven at scale. Competitors Simple AI and Lance AI are at a similar stage. The next milestone is logo retention through a full operating cycle.",
-      "action": "Track the first renewal cohort as the proof point ahead of any follow-on. Introduce to a scaled CPG operating partner; a reference buyer is the primary missing asset."
-    },
-    "alerts": [
-      { "type": "info", "message": "firstminute was Corvera's FIRST investor, leading the $2M pre-seed in Jan 2026. Lorcan Delaney (Principal) is the deal lead. High-ownership early position." }
-    ],
-    "founders": [
-      { "name": "Chris Kong", "title": "Co-Founder and CEO", "background": "2x founder. Built Better Nature into a leading European tempeh brand, scaling to 5,000 stores before stepping back in 2025. Forbes 30 Under 30 Europe 2025. Relocated to San Francisco to build Corvera." },
-      { "name": "Dirk Breeuwer", "title": "Co-Founder and CTO", "background": "Former Data and AI Lead at Google; led AI transformation for Google Pixel and built data infrastructure at Google scale." }
-    ],
-    "funding": [
-      { "date": "May 2026", "type": "Seed", "amount": "$4.2M (GBP 3M)", "raisedToDate": "$6.2M (GBP 4.5M)", "preVal": null, "postVal": null, "leads": "6 Degrees Capital (20VC, Rebel Fund, Duke Capital)", "fmc": true },
-      { "date": "Jan 2026", "type": "Pre-Seed", "amount": "$2M (GBP 1.5M)", "raisedToDate": "$2M", "preVal": null, "postVal": null, "leads": "firstminute Capital (lead), Y Combinator", "fmc": true }
-    ],
-    "totalRaised": "$6.2M (GBP 4.5M)",
-    "firstminute": {
-      "entryRound": "Pre-Seed (Jan 2026)",
-      "role": "First investor; led the $2M pre-seed",
-      "ownership": "Major (pre-seed lead)",
-      "followOns": ["Seed (May 2026)"],
-      "leadPartner": "Lorcan Delaney (Principal)"
-    },
-    "valuationExit": {
-      "postVal": "Not disclosed", "pbEstimate": "Not available", "pbConfidence": "N/A",
-      "opportunityScore": null, "exitType": "TBD", "successProb": null,
-      "ipoProb": null, "maProb": null, "noExitProb": null
-    },
-    "financials": {
-      "notes": "Generating revenue at seed stage with no historical financials. Integrates with Shopify, Amazon Seller Central, NetSuite, and Snowflake. A voice-enabled agentic operating system for CPG supply chains."
-    },
-    "competitors": [
-      { "name": "Simple AI", "hq": "San Francisco, CA", "employees": "11", "raised": "$14.50M" },
-      { "name": "Lance AI", "hq": "San Francisco, CA", "employees": "9", "raised": "$5.50M" },
-      { "name": "Midship", "hq": "San Francisco, CA", "employees": "6", "raised": "$4.70M" }
-    ],
-    "signals": {
-      "referringDomains": "73", "trend": "Sharp upward inflection",
-      "detail": "Referring domains stepped up from 20 to 73 across Apr-Jun 2026, matching the seed announcement. City AM interview with Chris Kong drove UK press."
-    },
-    "news": [
-      { "headline": "London-founded Corvera raises $4.2M to bring agentic AI to CPG supply chains", "source": "Tech.eu", "date": "5 May 2026", "type": "funding", "url": "https://tech.eu/2026/05/05/london-founded-corvera-raises-42m-to-bring-agentic-ai-to-cpg-supply-chains/" },
-      { "headline": "We've raised $4.2M to build the agentic operating system for CPG brands", "source": "Corvera", "date": "5 May 2026", "type": "major", "url": "https://www.corvera.ai/news/corvera-seed-round" },
-      { "headline": "Agentic supply chains specialist Corvera lands GBP 3M in seed funding", "source": "Retail Technology Innovation Hub", "date": "May 2026", "type": "funding", "url": "https://retailtechinnovationhub.com/home/2026/5/5/agentic-supply-chains-specialist-corvera-lands-3-million-in-seed-funding-to-scale-its-platform" }
-    ]
-  },
-  {
-    "id": "codewords",
-    "name": "Codewords",
-    "type": "held",
-    "section": "new2026",
-    "rating": "new",
-    "conviction": 3,
-    "stage": "Seed",
-    "founded": 2023,
-    "hq": "London, United Kingdom",
-    "employees": 14,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Chat-Based Workflow Automation Builder",
-    "legalName": "Agemo AI Ltd",
-    "website": "codewords.ai",
-    "verticals": ["LLM Agents", "Workflow Automation", "Generative AI", "No-Code / Low-Code"],
-    "customers": ["Non-technical teams", "Agencies", "Go-to-market operators"],
-    "growth": "Cody runs roughly 500,000 workflows per month; web traffic 4x in five months",
-    "tearSheet": {
-      "thesis": "Natural-language prompts build automations across CRM and business tools. firstminute co-led the original $4.23M seed in January 2024 and followed on in the $9M May 2026 seed extension. Current ownership is 10.26%, the second-largest institutional stake.",
-      "edge": "Francois Chollet (Google AI, creator of Keras) is an angel in both rounds, alongside Amar Shah (Wayve co-founder). The core product, Cody, autonomously writes Python automations in plain English, distinct from visual no-code boxes, and already runs around 500K workflows a month.",
-      "signal": "Opportunity Score 90/100, above Wayve and Mistral. Web traffic grew roughly 4x in five months. Angels include Miro's Andrey Khusid, ElevenLabs' Mati Staniszewski, and Supercell's Ilkka Paananen.",
-      "risk": "Sits adjacent to n8n's category inside the same book. Worth a clean view on whether the two compound or compete for internal attention and resources. A 29% no-exit probability at a $45M post-money seed-stage valuation.",
-      "action": "Map the overlap with n8n explicitly. Decide whether this is portfolio diversification or internal overlap before the next cheque. The 10.26% stake and 90/100 score justify holding."
-    },
-    "alerts": [
-      { "type": "info", "message": "10.26% ownership makes firstminute the second-largest institutional shareholder. Sits in the same workflow-automation lane as n8n; internal overlap worth addressing explicitly." }
-    ],
-    "founders": [
-      { "name": "Aymeric Zhuo", "title": "Co-Founder and CEO", "background": "Former engineer and product roles at Microsoft, Palantir, Meta, and PolyAI." },
-      { "name": "Osman Ramadan", "title": "Co-Founder and CTO", "background": "Extensive AI and engineering background from startups and deep tech." }
-    ],
-    "angels": [
-      { "name": "Francois Chollet", "knownFor": "Google AI, creator of Keras (both rounds)" },
-      { "name": "Andrey Khusid", "knownFor": "CEO and Founder, Miro" },
-      { "name": "Mati Staniszewski", "knownFor": "CEO and Co-founder, ElevenLabs" },
-      { "name": "Ilkka Paananen", "knownFor": "CEO and Co-founder, Supercell" },
-      { "name": "Mike Knoop", "knownFor": "Co-founder, Zapier (Zapier also invested)" },
-      { "name": "Amar Shah", "knownFor": "Co-founder, Wayve (portfolio connection)" }
-    ],
-    "funding": [
-      { "date": "May 2026", "type": "Seed Extension", "amount": "$9M (EUR 7.6M)", "raisedToDate": "$13.30M", "preVal": "$36.46M", "postVal": "$45.53M", "leads": "Visionaries Club (firstminute, Sequel, Illusian)", "fmc": true },
-      { "date": "Jan 2024", "type": "Seed", "amount": "$4.23M", "raisedToDate": "$4.23M", "preVal": "$15.47M", "postVal": "$19.70M", "leads": "Fly Ventures, firstminute Capital", "fmc": true }
-    ],
-    "totalRaised": "$13.30M",
-    "firstminute": {
-      "entryRound": "Seed (Jan 2024)",
-      "role": "Seed co-lead alongside Fly Ventures",
-      "ownership": "10.26%",
-      "ownershipNote": "Firstminute Capital III GP LLP. Second-largest institutional investor behind Visionaries Club.",
-      "followOns": ["Seed Extension (May 2026)"],
-      "leadPartner": "Portfolio team"
-    },
-    "valuationExit": {
-      "postVal": "$45.53M", "pbEstimate": null, "pbConfidence": "N/A",
-      "opportunityScore": 90, "exitType": "M&A", "successProb": 71,
-      "ipoProb": 1, "maProb": 70, "noExitProb": 29
-    },
-    "financials": {
-      "totalAssets2024": "2,579", "totalEquity2024": "2,507", "totalDebt2024": "0",
-      "notes": "Very clean balance sheet with zero debt. Well-capitalised after the $9M extension. Pivoted from developer tools (Agemo) to business workflow automation."
-    },
-    "competitors": [
-      { "name": "Zapier", "hq": "San Francisco, CA", "employees": "800", "postVal": "$4.60B", "notes": "Competitor that also invested" },
-      { "name": "n8n", "hq": "Berlin, Germany", "employees": "109", "raised": "$253.49M", "postVal": "$5.20B", "notes": "Portfolio company in the same lane" }
-    ],
-    "signals": {
-      "weeklyVisitors": "11,000+", "referringDomains": "250", "trend": "Strong growth (4x in 5 months)",
-      "detail": "Traffic grew from about 2.5K/wk to 11K+ across Dec 2025-May 2026. Cody, the AI automation assistant, is driving product awareness and runs ~500K workflows monthly."
-    },
-    "news": [
-      { "headline": "CodeWords raises $9M to develop AI agents that automate before you ask", "source": "SiliconANGLE", "date": "7 May 2026", "type": "funding", "url": "https://siliconangle.com/2026/05/07/codewords-raises-9m-develop-ai-agents-automate-ask/" },
-      { "headline": "Can't code? This startup just raised $9M to make you a workflow automation genius", "source": "Sifted", "date": "May 2026", "type": "major", "url": "https://sifted.eu/articles/startup-raised-9m-workflow-automation-genius" },
-      { "headline": "Visionaries back CodeWords' $9M seed to put AI agents in the hands of non-coders", "source": "Tech Funding News", "date": "May 2026", "type": "funding", "url": "https://techfundingnews.com/codewords-9m-seed-visionaries-ai-agents-workflow-automation/" }
-    ]
-  },
-  {
-    "id": "console",
-    "name": "Console",
-    "type": "sourcing",
-    "section": "initiate",
-    "rating": "initiate",
-    "conviction": 4,
-    "stage": "Series A",
-    "founded": 2024,
+    "employees": "246",
+    "raised": "$170.84M"
+   },
+   {
+    "name": "Contentstack",
     "hq": "San Francisco, CA",
-    "employees": 15,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Agentic IT Service Management",
-    "legalName": "Console Incorporated",
-    "website": "console.com",
-    "verticals": ["LLM Agents", "ITSM", "Enterprise IT", "Generative AI"],
-    "customers": ["Ramp", "Flock Safety", "Scale AI", "Webflow", "Zip", "Calendly"],
-    "growth": "Resolves over 50% of IT tickets autonomously; 4.7x valuation step-up in three months",
-    "tearSheet": {
-      "thesis": "AI agents that resolve IT tickets end-to-end are unbundling ServiceNow at the highest-volume, most measurable corner of a very large incumbent. Named directly in firstminute's published 2026 tech predictions, the strongest possible on-thesis signal.",
-      "edge": "Ticket deflection has hard, board-visible ROI, and every resolved ticket is training data, so the moat compounds with scale. CEO Andrei Serban is a repeat founder who was previously an operator at Rippling. Customers already include Ramp, Scale AI, and Webflow.",
-      "signal": "Opportunity Score 99/100, the single highest in the tracked dataset, placing Console in the top 1% globally. A 4.7x step-up from seed to Series A in three months, backed by Thrive and DST, with angels including Aaron Levie and Nikesh Arora.",
-      "risk": "A crowded lane with credible challengers and ServiceNow shipping its own agents. The edge is execution and proprietary resolution data, not the idea. A 90% M&A probability suggests the acquirer is likely ServiceNow or a major IT platform.",
-      "action": "Approach now, while still pre-consensus. Diligence the data flywheel and a named enterprise reference. Verify current round status: a 4.7x step-up in three months signals this is moving fast."
-    },
-    "alerts": [
-      { "type": "info", "message": "99/100 Opportunity Score, the highest in the entire tracked dataset. firstminute named this exact category in its published 2026 predictions." }
-    ],
-    "founders": [
-      { "name": "Andrei Serban", "title": "Co-Founder and CEO", "background": "Repeat founder; previously an operator at Rippling and earlier co-founded Fuzzbuzz. Brings enterprise relationships." },
-      { "name": "Neal Chandra", "title": "Co-Founder and CTO", "background": "Cyber and systems engineer. Previously co-founded CySecure. Developer of LLM inference tooling." }
-    ],
-    "funding": [
-      { "date": "Sep 2025", "type": "Series A", "amount": "$23M", "raisedToDate": "$29.20M", "preVal": "$134M", "postVal": "$157M", "leads": "DST Global, Thrive Capital (SV Angel, Abstract)", "fmc": false },
-      { "date": "Jun 2025", "type": "Seed", "amount": "$6.20M", "raisedToDate": "$6.20M", "preVal": "$27M", "postVal": "$33.20M", "leads": "Thrive Capital", "fmc": false }
-    ],
-    "totalRaised": "$29.20M",
-    "firstminute": {
-      "entryRound": "None (sourcing candidate)",
-      "role": "Sourcing candidate, no current relationship",
-      "ownership": null, "followOns": []
-    },
-    "valuationExit": {
-      "postVal": "$157M", "pbEstimate": "$262.01M", "pbConfidence": "Medium",
-      "opportunityScore": 99, "exitType": "M&A", "successProb": 91,
-      "ipoProb": 1, "maProb": 90, "noExitProb": 9
-    },
-    "financials": {
-      "notes": "Generating revenue and resolving over 50% of IT requests autonomously. A 4.7x valuation step-up from seed ($33.2M) to Series A ($157M) in only three months signals strong early commercial traction. Angels include Box CEO Aaron Levie, Palo Alto Networks CEO Nikesh Arora, and Quora CEO Adam D'Angelo."
-    },
-    "competitors": [
-      { "name": "Serval", "hq": "San Francisco, CA", "postVal": "$1B (est.)", "notes": "Direct competitor in agentic ITSM" },
-      { "name": "ServiceNow", "hq": "Santa Clara, CA", "postVal": "Public ($100B+)", "notes": "The legacy incumbent being disrupted" },
-      { "name": "Zendesk", "hq": "San Francisco, CA", "postVal": "Private Equity", "notes": "Legacy customer support incumbent" }
-    ],
-    "signals": {
-      "referringDomains": "333", "trend": "Steady growth",
-      "detail": "Referring domains grew from 225 to 333 across Dec 2025-May 2026. Presented at the 2026 Gartner Digital Workplace Summit Americas. Customers include Ramp, Flock Safety, Scale AI, Webflow, Zip, and Calendly."
-    },
-    "news": [
-      { "headline": "Console raises $22M Series A from DST and Thrive for AI-for-IT", "source": "Upstarts Media", "date": "Sep 2025", "type": "funding", "url": "https://www.upstartsmedia.com/p/console-ai-for-it-raises-series-a" },
-      { "headline": "Console raises $6.2M from Thrive to free IT teams from mundane tasks with AI", "source": "TechCrunch", "date": "2 Jun 2025", "type": "major", "url": "https://techcrunch.com/2025/06/02/console-raises-6-2m-from-thrive-to-free-it-teams-from-mundane-tasks-with-ai/" }
-    ]
+    "employees": "705",
+    "raised": "$178.63M"
+   }
+  ],
+  "signals": {
+   "referringDomains": "13,200",
+   "trend": "Stable (13K-23K range)",
+   "detail": "One of the most active conference presences in the portfolio. Brands include Adidas, T-Mobile, Renault, and Oatly across 200,000+ community members."
   },
-  {
-    "id": "omnea",
-    "name": "Omnea",
-    "type": "sourcing",
-    "section": "initiate",
-    "rating": "initiate",
-    "conviction": 4,
-    "stage": "Series B",
-    "founded": 2022,
-    "hq": "London, United Kingdom",
-    "employees": 170,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Procurement Orchestration and Compliance AI",
-    "legalName": "Omnea Limited",
-    "website": "omnea.co",
-    "verticals": ["Procurement AI", "Compliance AI", "Enterprise SaaS", "Fintech Infrastructure"],
-    "customers": ["Spotify", "Wise", "MongoDB", "Monzo", "Adecco", "Albertsons"],
-    "growth": "Revenue up 5x and headcount more than tripled in the past 12 months",
-    "tearSheet": {
-      "thesis": "Procurement is a large, manual back-office function that legacy suites digitised but never made intelligent, and AI-native is the rebuild. A $50M Series B in Sep 2025 led by Insight Partners and Khosla maps directly to firstminute's published call that compliance AI hits production at major institutions in 2026.",
-      "edge": "The core team is a high-profile reunion of Tessian leadership: CEO, CFO, and CRO all from Tessian, which Proofpoint acquired. The GTM engine that built one successful B2B enterprise company has reassembled, and an industry-first MCP server brings live supplier data into Claude and ChatGPT.",
-      "signal": "Opportunity Score 94/100. Revenue grew 5x with headcount more than tripling in twelve months. G2 Spring 2026 Leader in Procurement Orchestration. Customers include Spotify, Wise, MongoDB, and Monzo.",
-      "risk": "Long enterprise sales cycles against entrenched incumbents (Coupa, SAP Ariba). It needs a sharp wedge workflow, not a full-suite assault on day one. An 87% M&A probability, with ZipHQ the category-defining US comparable.",
-      "action": "First cheque. Underwrite the wedge workflow and early logo quality, not the eventual platform story. UK-founded, inside the fund's core geography, and the Tessian team has done this before."
-    },
-    "alerts": [],
-    "founders": [
-      { "name": "Benjamin Freeman", "title": "Co-Founder and CEO", "background": "Former Head of US and International Growth at Tessian (acquired by Proofpoint). Built Tessian's enterprise GTM." },
-      { "name": "Sabrina Castiglione", "title": "CFO", "background": "Former CFO at Tessian and COO at Pento. Named to Most Influential Women in UK Tech." },
-      { "name": "Abhirukt Sapru", "title": "CCO", "background": "Former Employee 2 and CRO at Tessian. VP Sales at Snowplow. Ex-Citi investment banker." }
-    ],
-    "funding": [
-      { "date": "Sep 2025", "type": "Series B", "amount": "$50M", "raisedToDate": "$74.55M", "preVal": "$248.63M", "postVal": "$298.31M", "leads": "Insight Partners, Khosla Ventures (Accel, Point Nine, Prosus)", "fmc": false },
-      { "date": "Jun 2024", "type": "Series A", "amount": "$20M", "raisedToDate": "$24.87M", "preVal": "$70.26M", "postVal": "$90.27M", "leads": "Accel", "fmc": false },
-      { "date": "Sep 2022", "type": "Seed", "amount": "$4.86M", "raisedToDate": "$4.87M", "preVal": "$14.07M", "postVal": "$18.93M", "leads": "First Round Capital, Point Nine Capital", "fmc": false }
-    ],
-    "totalRaised": "$74.55M",
-    "firstminute": {
-      "entryRound": "None (sourcing candidate)",
-      "role": "Sourcing candidate, no current relationship",
-      "ownership": null, "followOns": []
-    },
-    "valuationExit": {
-      "postVal": "$298.31M", "pbEstimate": "$506.85M", "pbConfidence": "Medium",
-      "opportunityScore": 94, "exitType": "M&A", "successProb": 95,
-      "ipoProb": 8, "maProb": 87, "noExitProb": 5
-    },
-    "financials": {
-      "revenue": "Revenue up 5x in the past 12 months",
-      "notes": "Series A to Series B step-up of about 3.3x ($90M to $298M). PitchBook estimates roughly $507M current valuation. An industry-first MCP server for procurement launched in 2026."
-    },
-    "competitors": [
-      { "name": "ZipHQ", "hq": "San Francisco, CA", "employees": "700", "raised": "$370.75M", "postVal": "$2.20B", "notes": "Category-defining US comparable" },
-      { "name": "ORO Labs", "hq": "Palo Alto, CA", "employees": "270", "raised": "$160.00M", "postVal": "$570.00M" },
-      { "name": "Coupa Software", "hq": "Foster City, CA", "postVal": "Private Equity", "notes": "Legacy incumbent" }
-    ],
-    "signals": {
-      "referringDomains": "501", "trend": "Strong growth",
-      "detail": "Referring domains grew from 350 to 501 over five months. G2 Spring 2026 Leader in Procurement Orchestration. Customers include Spotify, Wise, MongoDB, Monzo, Adecco, and Albertsons."
-    },
-    "news": [
-      { "headline": "Omnea raises $50M Series B to make procurement every CFO's competitive advantage", "source": "PR Newswire", "date": "17 Sep 2025", "type": "funding", "url": "https://www.prnewswire.com/news-releases/omnea-raises-50m-to-make-procurement-every-cfos-competitive-advantage-302559153.html" },
-      { "headline": "Insight Partners leads Series B investment in Omnea", "source": "Insight Partners", "date": "Sep 2025", "type": "major", "url": "https://www.insightpartners.com/ideas/omnea-raises-50m-to-make-procurement-every-cfos-competitive-advantage/" }
-    ]
+  "news": [
+   {
+    "headline": "Storyblok raises $80M Series C led by Brighton Park Capital",
+    "source": "Storyblok",
+    "date": "Jun 2024",
+    "type": "funding",
+    "url": "https://www.storyblok.com/mp/series-c-press"
+   },
+   {
+    "headline": "Storyblok raises $80M to add more AI to its headless CMS",
+    "source": "TechCrunch",
+    "date": "4 Jun 2024",
+    "type": "major",
+    "url": "https://techcrunch.com/2024/06/04/storyblok-raises-80m-to-bring-more-ai-into-its-headless-cms-aimed-at-non-technical-people/"
+   },
+   {
+    "headline": "Storyblok unveils CMS innovations to keep brands visible on the new web",
+    "source": "Yahoo Finance",
+    "date": "2026",
+    "type": "product",
+    "url": "https://finance.yahoo.com/news/storyblok-unveils-cms-innovations-enable-135000560.html"
+   }
+  ]
+ },
+ {
+  "id": "taktile",
+  "name": "Taktile",
+  "type": "held",
+  "section": "steady",
+  "rating": "hold",
+  "conviction": 3,
+  "stage": "Series C",
+  "founded": 2020,
+  "hq": "New York / Berlin / London",
+  "employees": 224,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Automated Risk Decisioning for Financial Services",
+  "legalName": "Taktile GmbH",
+  "website": "taktile.com",
+  "verticals": [
+   "Fintech Infrastructure",
+   "Risk Decisioning",
+   "AI Decision Engine",
+   "Credit Automation"
+  ],
+  "customers": [
+   "Mercury",
+   "Zilch",
+   "Allianz",
+   "Rakuten Bank",
+   "Kueski"
+  ],
+  "growth": "ARR up 3.5x year-on-year in 2024; customers across 24 markets",
+  "tearSheet": {
+   "thesis": "A platform for building automated risk and credit decisions, sold into banks and lenders. YC S20 alum. $79M+ raised, with a $54M Series B led by Balderton in Feb 2025. ARR grew 3.5x year-on-year and the product serves 24 markets.",
+   "edge": "A best-in-class advisor roster: Daniel Dines (UiPath), Olivier Pomel (Datadog), Scott Chacon (GitHub), and Larry Summers (ex-US Treasury, OpenAI board, invested at Series B). Once embedded in a credit pipeline the product is sticky, with regulatory and operational switching costs.",
+   "signal": "Customers now include Mercury, Zilch, Allianz, and Rakuten Bank. G2 Leader for multiple consecutive quarters, the product signal in a category governed by procurement rather than virality.",
+   "risk": "Long enterprise procurement cycles in financial services. firstminute invested at seed but did not follow on at Series A or B. Growth depends on named reference accounts, not virality.",
+   "action": "Hold. A tier-one lender reference would be the catalyst to revisit conviction upward. The one introduction that changes the story is a risk leader at a bulge-bracket bank."
   },
-  {
-    "id": "hadrian",
-    "name": "Hadrian",
-    "type": "sourcing",
-    "section": "initiate",
-    "rating": "initiate",
-    "conviction": 3,
-    "stage": "Series C",
-    "founded": 2020,
-    "hq": "Torrance, CA (factories in CA, AZ, AL)",
-    "employees": 346,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Autonomous Factories / Defense Manufacturing",
-    "legalName": "Hadrian Automation, Inc.",
-    "website": "hadrian.co",
-    "verticals": ["DefenseTech", "Physical AI", "Robotics", "Aerospace Manufacturing", "National Security"],
-    "customers": ["Aerospace and defense primes", "Space and satellite manufacturers"],
-    "growth": "10x year-on-year growth since the Series B; revenue grew from $3M (2023) to $30M (2024)",
-    "tearSheet": {
-      "thesis": "Software-defined autonomous factories producing high-precision metal parts for rockets, submarines, and satellites. Revenue grew roughly 10x year-on-year, and the company reached a $1.6B valuation in late 2025. It plays directly into the defence and physical-AI reindustrialisation thesis.",
-      "edge": "Opus, a proprietary software stack that automates quoting, programming, machining, and inspection. Three semi-autonomous factories are operational, with a new Mesa, AZ site and a submarine-parts facility in Alabama targeting the Columbia and Virginia-class programmes.",
-      "signal": "A rare IPO-skewed exit profile at 56% IPO probability, reflecting the heavy asset base. The $260M Series C was led by Founders Fund and Lux Capital, with a16z and Altimeter participating, and a PitchBook estimate of $1.96B at very high confidence.",
-      "risk": "Capital-intensive physical infrastructure: over $600M raised, including a large Series C. Defence supply chains carry high trust and liability bars. Primarily US-centric, which sits outside firstminute's lead geography, so a financial co-lead would be needed.",
-      "action": "Initiate at measured size. Verify current round status and capitalisation. Confirm whether a European defence-manufacturing equivalent exists; the reindustrialisation thesis is compelling but the geography and capital scale require a co-lead."
-    },
-    "alerts": [],
-    "founders": [
-      { "name": "Christopher Power", "title": "Founder and CEO", "background": "Originally from Australia. Identified the bottleneck in the aging US precision-manufacturing base and founded Hadrian in late 2020 to rebuild it with software." }
-    ],
-    "funding": [
-      { "date": "Dec 2025", "type": "Series C extension", "amount": "$131M", "raisedToDate": "$611.28M", "preVal": "$1.21B", "postVal": "$1.60B", "leads": "Existing investors (9 participants)", "fmc": false },
-      { "date": "Jul 2025", "type": "Series C", "amount": "$260M", "raisedToDate": "$480M", "preVal": null, "postVal": null, "leads": "Founders Fund, Lux Capital (a16z, Altimeter); Morgan Stanley debt", "fmc": false },
-      { "date": "Jan 2024", "type": "Series B", "amount": "$117M", "raisedToDate": "$219.97M", "preVal": "$483.77M", "postVal": "$594.00M", "leads": "RTX Ventures, Bracket Capital", "fmc": false },
-      { "date": "Mar 2022", "type": "Series A", "amount": "$90M", "raisedToDate": "$102.97M", "preVal": "$200.00M", "postVal": "$275.74M", "leads": "Lux Capital, Andreessen Horowitz", "fmc": false },
-      { "date": "Jul 2021", "type": "Seed", "amount": "$9.50M", "raisedToDate": "$9.50M", "preVal": "$10.00M", "postVal": "$16.23M", "leads": "Construct Capital, Founders Fund, Lux Capital", "fmc": false }
-    ],
-    "totalRaised": "$611.28M",
-    "firstminute": {
-      "entryRound": "None (sourcing candidate)",
-      "role": "Sourcing candidate, no current relationship",
-      "ownership": null, "followOns": []
-    },
-    "valuationExit": {
-      "postVal": "$1.60B", "pbEstimate": "$1.96B", "pbConfidence": "Very High",
-      "opportunityScore": 84, "exitType": "IPO", "successProb": 85,
-      "ipoProb": 56, "maProb": 29, "noExitProb": 15
-    },
-    "financials": {
-      "revenue2023": "$3M", "revenue2024": "$30M",
-      "notes": "Revenue grew from $3M (2023) to $30M (2024), roughly 10x. Founders Fund and Lux led the $260M Series C in Jul 2025, with a $131M extension in Dec 2025 bringing the valuation to $1.6B. A rare IPO-skewed exit profile reflects the heavy asset base."
-    },
-    "competitors": [
-      { "name": "Anduril Industries", "hq": "Costa Mesa, CA", "employees": "7,000", "raised": "$11.87B", "postVal": "$61.00B", "notes": "Autonomous defense hardware and software" },
-      { "name": "Saronic", "hq": "Austin, TX", "employees": "1,600", "raised": "$2.59B", "postVal": "$9.25B", "notes": "Unmanned maritime surface vehicles" },
-      { "name": "Varda Space Industries", "hq": "El Segundo, CA", "employees": "198", "raised": "$578.29M", "postVal": "$1.60B" }
-    ],
-    "signals": {
-      "referringDomains": "522", "trend": "Stable (500-540 range)",
-      "detail": "Referring domains stable at 500-540. Factory 3 in Mesa, AZ opened in early 2026; an Alabama submarine-parts facility targets the Columbia and Virginia-class nuclear submarine programmes."
-    },
-    "news": [
-      { "headline": "Hadrian raises $260M to build out automated factories for space and defense parts", "source": "TechCrunch", "date": "17 Jul 2025", "type": "funding", "url": "https://techcrunch.com/2025/07/17/hadrian-raises-260m-to-build-out-automated-factories-for-space-and-defense-parts/" },
-      { "headline": "Defense manufacturing startup Hadrian closes $260M round led by Founders Fund", "source": "CNBC", "date": "17 Jul 2025", "type": "major", "url": "https://www.cnbc.com/2025/07/17/hadrian-funding-round-thiel-founders-fund.html" },
-      { "headline": "Hadrian raises additional funding, bringing valuation to $1.6B", "source": "The Robot Report", "date": "Dec 2025", "type": "funding", "url": "https://www.therobotreport.com/hadrian-brings-in-additional-funding-bringing-its-valuation-to-1-6b/" }
-    ]
+  "alerts": [
+   {
+    "type": "info",
+    "message": "New: $110M Series C closed 24 Jun 2026 led by Goldman Sachs AM; Scott Chacon and Larry Summers both confirmed on the active investor roster. Headcount 224, up 82% YoY (PitchBook)."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Maik Wehmeyer",
+    "title": "Co-Founder and CEO",
+    "background": "Based in New York, leading US expansion and the enterprise sales motion."
+   },
+   {
+    "name": "Maximilian Eber Ph.D",
+    "title": "Co-Founder and CPTO",
+    "background": "Product and engineering leadership for the Taktile decision engine."
+   }
+  ],
+  "advisors": [
+   {
+    "name": "Daniel Dines",
+    "role": "Advisor",
+    "knownFor": "Founder and CEO, UiPath"
+   },
+   {
+    "name": "Olivier Pomel",
+    "role": "Advisor",
+    "knownFor": "CEO, Datadog"
+   },
+   {
+    "name": "Scott Chacon",
+    "role": "Advisor",
+    "knownFor": "Co-Founder, GitHub"
+   },
+   {
+    "name": "Larry Summers",
+    "role": "Investor (Series B)",
+    "knownFor": "Former US Treasury Secretary, OpenAI board"
+   }
+  ],
+  "funding": [
+   {
+    "date": "Jun 2026",
+    "type": "Series C",
+    "amount": "$110M",
+    "raisedToDate": "$191.68M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Goldman Sachs Asset Management; Index Ventures, DIG, Tiger Global, Balderton, Y Combinator participated",
+    "fmc": false
+   },
+   {
+    "date": "Feb 2025",
+    "type": "Series B",
+    "amount": "$54M",
+    "raisedToDate": "$81.68M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Balderton Capital (Index, Tiger Global, Prosus, Larry Summers)",
+    "fmc": false
+   },
+   {
+    "date": "Nov 2022",
+    "type": "Series A",
+    "amount": "$20M",
+    "raisedToDate": "$27.68M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Index Ventures, Tiger Global",
+    "fmc": false
+   },
+   {
+    "date": "Aug 2021",
+    "type": "Seed",
+    "amount": "$7.53M",
+    "raisedToDate": "$7.68M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Index Ventures, firstminute Capital, Crew Capital",
+    "fmc": true
+   },
+   {
+    "date": "Jun 2020",
+    "type": "YC S20",
+    "amount": "$150K",
+    "raisedToDate": "$150K",
+    "preVal": null,
+    "postVal": "$2.14M",
+    "leads": "Y Combinator",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$191.68M",
+  "firstminute": {
+   "entryRound": "Seed (Aug 2021)",
+   "role": "Seed co-investor alongside Index Ventures and Crew Capital",
+   "ownership": "Minority (did not follow on Series A or B)",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
   },
-  {
-    "id": "prem-labs",
-    "name": "Prem Labs",
-    "type": "sourcing",
-    "section": "initiate",
-    "rating": "initiate",
-    "conviction": 3,
-    "stage": "Seed (Series A in talks)",
-    "founded": 2023,
-    "hq": "Lugano, Switzerland",
-    "employees": 105,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Sovereign AI Infrastructure / Self-Hosted LLMs",
-    "legalName": "Prem Labs SA",
-    "website": "premai.io",
-    "verticals": ["Sovereign AI", "AI Infrastructure", "Enterprise LLMs", "Data Privacy", "Confidential Compute"],
-    "customers": ["Healthcare", "Finance", "Defense", "Government"],
-    "growth": "Grew to roughly 105 employees by 2026; reportedly in talks for a $100M Series A",
-    "tearSheet": {
-      "thesis": "Secure, self-sovereign deployment of language models for organisations that cannot send data to a hyperscaler: banks, government, healthcare, and defence. The EU AI Act and data-residency rules create durable, non-discretionary demand. It sits directly on the speed, scale, and sovereignty thread from Brent's London Tech Week conversation with Peter Kyle.",
-      "edge": "Confidential compute, cryptographic attestation, and zero vendor lock-in, running frontier models inside hardware-sealed Trusted Execution Environments. European-native is an advantage with the regulated buyer, not a constraint. David Maisel, founder of Marvel Studios, is an advisor and investor.",
-      "signal": "Referring domains roughly doubled in five months, a strong backlink and developer-adoption signal. Bloomberg reports the company is in discussions to raise a $100M Series A, with Index Ventures and Sequoia Capital China already on the cap table.",
-      "risk": "Capital-intensive infrastructure contested by Aleph Alpha and private hyperscaler offerings. A 41% no-exit probability reflects the crowded early enterprise-tooling state. Only about $19.5M raised so far.",
-      "action": "First cheque, on thesis and on narrative. Pressure-test gross margin and the wedge customer. The $100M Series A in discussions is the timing signal: approach before it closes."
-    },
-    "alerts": [
-      { "type": "info", "message": "Reportedly in discussions to raise a $100M Series A. The approach window is open but closing. Index Ventures and Sequoia Capital China already on the cap table." }
-    ],
-    "founders": [
-      { "name": "Simone Giacomelli", "title": "Co-Founder and CEO", "background": "Serial entrepreneur. Co-founded SingularityNET with Ben Goertzel and founded Vulpem Ventures. Active in decentralised systems since 2013." }
-    ],
-    "funding": [
-      { "date": "Nov 2025", "type": "Early Stage VC", "amount": "$5.51M", "raisedToDate": "$19.51M", "preVal": null, "postVal": null, "leads": "Scientifica, Breyer Capital, Index Ventures, Sequoia Capital China", "fmc": false },
-      { "date": "Apr 2024", "type": "Strategic Seed", "amount": "$14M", "raisedToDate": "$14M", "preVal": null, "postVal": null, "leads": "David Maisel, Alan Lipschitz, Fan Zhang", "fmc": false }
-    ],
-    "totalRaised": "$19.51M",
-    "firstminute": {
-      "entryRound": "None (sourcing candidate)",
-      "role": "Sourcing candidate, no current relationship",
-      "ownership": null, "followOns": []
-    },
-    "valuationExit": {
-      "postVal": "Not disclosed", "pbEstimate": "Not available", "pbConfidence": "N/A",
-      "opportunityScore": 79, "exitType": "M&A", "successProb": 59,
-      "ipoProb": 1, "maProb": 58, "noExitProb": 41
-    },
-    "financials": {
-      "notes": "About $19.5M raised to date across two rounds. Reportedly in discussions for a $100M Series A (Bloomberg). Index Ventures and Sequoia Capital China in the Nov 2025 round provide institutional credibility. Gross margin and the wedge customer are the key diligence questions."
-    },
-    "competitors": [
-      { "name": "Aleph Alpha", "hq": "Heidelberg, Germany", "notes": "Direct European sovereign-AI competitor" },
-      { "name": "DataRobot", "hq": "Boston, MA", "postVal": "Private", "notes": "Enterprise ML lifecycle" },
-      { "name": "H2O.ai", "hq": "Mountain View, CA", "postVal": "Private" }
-    ],
-    "signals": {
-      "referringDomains": "648", "trend": "Strong growth (doubled in 5 months)",
-      "detail": "Referring domains grew from about 300 to 648 over five months. Regulated industries run frontier models inside hardware-sealed Trusted Execution Environments."
-    },
-    "news": [
-      { "headline": "Prem Labs announces its $14M strategic seed round", "source": "Prem", "date": "Apr 2024", "type": "funding", "url": "https://blog.premai.io/announcing-our-14m-round-strategic-seed-round/" },
-      { "headline": "Prem Labs seeks to revolutionise proprietary AI, backed by the founder of Marvel Studios", "source": "Yahoo Finance", "date": "Apr 2024", "type": "major", "url": "https://finance.yahoo.com/news/prem-labs-seeks-revolutionize-proprietary-141600958.html" }
-    ]
+  "valuationExit": {
+   "postVal": "Not disclosed",
+   "pbEstimate": "Not available",
+   "pbConfidence": "N/A",
+   "opportunityScore": 84,
+   "exitType": "M&A",
+   "successProb": 83,
+   "ipoProb": 2,
+   "maProb": 81,
+   "noExitProb": 17
   },
-  {
-    "id": "avoca",
-    "name": "Avoca",
-    "type": "sourcing",
-    "section": "watchlist",
-    "rating": "watch",
-    "conviction": 3,
-    "stage": "Series B",
-    "founded": 2022,
-    "hq": "New York, NY",
-    "employees": 158,
-    "businessStatus": "Generating Revenue",
-    "primaryIndustry": "Vertical AI Voice Agents for Home Services",
-    "legalName": "Alphablock Labs Inc.",
-    "website": "avoca.ai",
-    "verticals": ["Vertical AI", "Voice AI", "Home Services", "LLM Agents", "SMB SaaS"],
-    "customers": ["Turnpoint", "1-800-GOT-JUNK?", "Goettl"],
-    "growth": "Surpassed eight figures in ARR in 2025; on track to book $1B in jobs",
-    "tearSheet": {
-      "thesis": "Voice AI agents automating inbound calls, scheduling, dispatch, and follow-up for HVAC, plumbing, electrical, and roofing trades. A $125M+ raise at a $1B valuation in April 2026, led by Meritech and General Catalyst, is a 4.4x step-up from Series A. Named directly in firstminute's 2026 tech predictions.",
-      "edge": "The founding insight: a missed restaurant booking costs $50, but a single missed HVAC emergency call loses a $30,000-40,000 installation. The MIT founders co-designed in the field with a Dallas contractor before scaling, with Kleiner Perkins and General Catalyst on the cap table, plus ServiceTitan and Nexstar partnerships.",
-      "signal": "Opportunity Score 94/100. A 4.4x valuation step-up in ten months and eight-figure ARR, on track to book $1B in jobs. Customers include Turnpoint, 1-800-GOT-JUNK, and Goettl.",
-      "risk": "US-centric, outside the fund's lead geography of Europe and the UK. If pursued, this is likely a follow-on rather than a lead. Confirm whether a European or UK equivalent better fits the mandate.",
-      "action": "Watch list. Do not initiate a lead position without a clear European mandate. Confirm whether a European home-services AI equivalent exists. If pursuing, treat it as a follow-on ticket, not a lead."
-    },
-    "alerts": [
-      { "type": "info", "message": "Named by firstminute in its published 2026 predictions, but US-centric. Confirm a European mandate or equivalent before approach; likely a follow-on, not a lead." }
-    ],
-    "founders": [
-      { "name": "Tyson Chen", "title": "Co-Founder", "background": "MIT graduate. Board includes Leigh Marie Braswell (Kleiner Perkins) and Vedant Suri (General Catalyst)." },
-      { "name": "Apurva Shrivastava", "title": "Co-Founder", "background": "MIT graduate. Deep product and systems background." }
-    ],
-    "funding": [
-      { "date": "Apr 2026", "type": "Series B", "amount": "$125M", "raisedToDate": "$125.50M", "preVal": "$875M", "postVal": "$1.00B", "leads": "General Catalyst, Meritech Capital Partners", "fmc": false },
-      { "date": "Jun 2025", "type": "Series A", "amount": "$37M", "raisedToDate": "$47.80M", "preVal": "$188.00M", "postVal": "$225.00M", "leads": "Kleiner Perkins", "fmc": false },
-      { "date": "Oct 2024", "type": "Seed", "amount": "$10.30M", "raisedToDate": "$10.80M", "preVal": "$49.70M", "postVal": "$60.00M", "leads": "Y Combinator", "fmc": false }
-    ],
-    "totalRaised": "$125.50M",
-    "firstminute": {
-      "entryRound": "None (sourcing candidate)",
-      "role": "Sourcing candidate, no current relationship",
-      "ownership": null, "followOns": []
-    },
-    "valuationExit": {
-      "postVal": "$1.00B", "pbEstimate": "$1.15B", "pbConfidence": "Very High",
-      "opportunityScore": 94, "exitType": "M&A", "successProb": 94,
-      "ipoProb": 14, "maProb": 80, "noExitProb": 6
-    },
-    "financials": {
-      "revenue": "Eight-figure ARR (2025)",
-      "notes": "Seed to $1B unicorn in about 18 months. The Series A to Series B step-up was 4.4x in ten months. On track to book $1B in jobs, with partnerships across ServiceTitan, Nexstar, and Clover."
-    },
-    "competitors": [
-      { "name": "Sameday", "hq": "Pleasant Grove, UT", "employees": "49", "raised": "$0.13M" },
-      { "name": "Happyrobot", "hq": "San Francisco, CA", "employees": "114", "raised": "$60.24M", "postVal": "$500M" },
-      { "name": "Harvey", "hq": "San Francisco, CA", "employees": "960", "raised": "$1.19B", "postVal": "$11.00B", "notes": "Vertical AI for legal, the category comparable" }
-    ],
-    "signals": {
-      "referringDomains": "349", "trend": "Strong growth",
-      "detail": "Referring domains grew from 200 to 349 over five months. Customers include Turnpoint, 1-800-GOT-JUNK, and Goettl; partnerships with ServiceTitan, Nexstar, and Clover."
-    },
-    "news": [
-      { "headline": "Avoca raises $125M+ at $1B valuation to power America's services economy with AI", "source": "PR Newswire", "date": "27 Apr 2026", "type": "funding", "url": "https://www.prnewswire.com/news-releases/avoca-raises-125m-at-1b-valuation-to-power-americas-services-economy-with-ai-302753962.html" },
-      { "headline": "AI voice agents conquer the trades: Avoca hits $1B", "source": "AI Automation Global", "date": "Apr 2026", "type": "major", "url": "https://aiautomationglobal.com/blog/avoca-ai-voice-agent-trades-unicorn-2026" }
-    ]
-  }
+  "financials": {
+   "revenue": "ARR up 3.5x year-on-year (2024)",
+   "totalAssets2024": "6,196",
+   "totalEquity2024": "4,966",
+   "totalDebt2024": "0",
+   "notes": "Nearly 3x growth in assets year-on-year on a lean balance sheet with low liabilities. The $54M Series B will significantly expand the 2025 balance sheet."
+  },
+  "competitors": [
+   {
+    "name": "DataRobot",
+    "hq": "Boston, MA"
+   },
+   {
+    "name": "Zest AI",
+    "hq": "Burbank, CA",
+    "postVal": "$350M"
+   },
+   {
+    "name": "SEON",
+    "hq": "Budapest, Hungary"
+   }
+  ],
+  "signals": {
+   "weeklyVisitors": "6,130",
+   "referringDomains": "684",
+   "trend": "Stable",
+   "detail": "Modest but consistent traffic typical of vertical enterprise SaaS. G2 Leader for multiple consecutive quarters is the more meaningful signal. Customers across 24 markets."
+  },
+  "news": [
+   {
+    "headline": "Taktile raises $110M Series C led by Goldman Sachs Asset Management to scale AI decisioning across US, EMEA and LATAM",
+    "source": "PitchBook financing status note",
+    "date": "24 Jun 2026",
+    "type": "major"
+   },
+   {
+    "headline": "Taktile raises $54M Series B led by Balderton to enable AI risk decisioning",
+    "source": "Taktile",
+    "date": "27 Feb 2025",
+    "type": "funding",
+    "url": "https://taktile.com/articles/taktile-raises-54m-series-b"
+   },
+   {
+    "headline": "Taktile helps fintechs build automated decision-making workflows",
+    "source": "TechCrunch",
+    "date": "27 Feb 2025",
+    "type": "major",
+    "url": "https://techcrunch.com/2025/02/27/taktile-helps-fintechs-build-automated-decision-making-workflows/"
+   },
+   {
+    "headline": "Prosus Ventures backs Taktile's $54M Series B for AI-powered risk decisioning",
+    "source": "Prosus",
+    "date": "2025",
+    "type": "funding",
+    "url": "https://www.prosus.com/news-insights/group-updates/2025/prosus-ventures-backs-taktiles-54m-series-b-to-drive-ai-powered-risk-decisioning"
+   }
+  ]
+ },
+ {
+  "id": "corvera",
+  "name": "Corvera",
+  "type": "held",
+  "section": "new2026",
+  "rating": "new",
+  "conviction": 3,
+  "stage": "Seed",
+  "founded": 2025,
+  "hq": "San Francisco, CA",
+  "employees": 8,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Agentic Supply Chain Operations for CPG Brands",
+  "legalName": "Sarah AI Inc.",
+  "website": "corvera.ai",
+  "verticals": [
+   "CPG Tech",
+   "Supply Chain",
+   "LLM Agents",
+   "Vertical AI",
+   "YC W26"
+  ],
+  "customers": [
+   "12+ CPG brands signed within five weeks of first onboarding"
+  ],
+  "growth": "Signed more than a dozen CPG brands within five weeks of onboarding its first customer",
+  "tearSheet": {
+   "thesis": "A hands-free command centre automating supply chains and operations for fast-growing US and UK consumer-goods brands. YC W26. firstminute was the company's first investor, leading the $2M pre-seed in January 2026 before the $4.2M seed led by 6 Degrees Capital.",
+   "edge": "CEO Chris Kong spent seven years in UK FMCG, scaling Better Nature to 5,000 stores before stepping back, and is a Forbes 30 Under 30 Europe honoree. CTO Dirk Breeuwer was Data and AI Lead at Google, leading AI transformation for Pixel.",
+   "signal": "Referring domains climbed sharply alongside the May 2026 seed. The company signed more than a dozen CPG brands within five weeks of onboarding its first customer, an unusually fast early commercial signal.",
+   "risk": "Earliest stage: eight employees, no historical financials, unproven at scale. Competitors Simple AI and Lance AI are at a similar stage. The next milestone is logo retention through a full operating cycle.",
+   "action": "Track the first renewal cohort as the proof point ahead of any follow-on. Introduce to a scaled CPG operating partner; a reference buyer is the primary missing asset."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "firstminute was Corvera's FIRST investor, leading the $2M pre-seed in Jan 2026. Lorcan Delaney (Principal) is the deal lead. High-ownership early position."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Chris Kong",
+    "title": "Co-Founder and CEO",
+    "background": "2x founder. Built Better Nature into a leading European tempeh brand, scaling to 5,000 stores before stepping back in 2025. Forbes 30 Under 30 Europe 2025. Relocated to San Francisco to build Corvera."
+   },
+   {
+    "name": "Dirk Breeuwer",
+    "title": "Co-Founder and CTO",
+    "background": "Former Data and AI Lead at Google; led AI transformation for Google Pixel and built data infrastructure at Google scale."
+   }
+  ],
+  "funding": [
+   {
+    "date": "May 2026",
+    "type": "Seed",
+    "amount": "$4.2M (GBP 3M)",
+    "raisedToDate": "$6.2M (GBP 4.5M)",
+    "preVal": null,
+    "postVal": null,
+    "leads": "6 Degrees Capital (20VC, Rebel Fund, Duke Capital)",
+    "fmc": true
+   },
+   {
+    "date": "Jan 2026",
+    "type": "Pre-Seed",
+    "amount": "$2M (GBP 1.5M)",
+    "raisedToDate": "$2M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "firstminute Capital (lead), Y Combinator",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$6.2M (GBP 4.5M)",
+  "firstminute": {
+   "entryRound": "Pre-Seed (Jan 2026)",
+   "role": "First investor; led the $2M pre-seed",
+   "ownership": "Major (pre-seed lead)",
+   "followOns": [
+    "Seed (May 2026)"
+   ],
+   "leadPartner": "Lorcan Delaney (Principal)"
+  },
+  "valuationExit": {
+   "postVal": "Not disclosed",
+   "pbEstimate": "Not available",
+   "pbConfidence": "N/A",
+   "opportunityScore": null,
+   "exitType": "TBD",
+   "successProb": null,
+   "ipoProb": null,
+   "maProb": null,
+   "noExitProb": null
+  },
+  "financials": {
+   "notes": "Generating revenue at seed stage with no historical financials. Integrates with Shopify, Amazon Seller Central, NetSuite, and Snowflake. A voice-enabled agentic operating system for CPG supply chains."
+  },
+  "competitors": [
+   {
+    "name": "Simple AI",
+    "hq": "San Francisco, CA",
+    "employees": "11",
+    "raised": "$14.50M"
+   },
+   {
+    "name": "Lance AI",
+    "hq": "San Francisco, CA",
+    "employees": "9",
+    "raised": "$5.50M"
+   },
+   {
+    "name": "Midship",
+    "hq": "San Francisco, CA",
+    "employees": "6",
+    "raised": "$4.70M"
+   }
+  ],
+  "signals": {
+   "referringDomains": "73",
+   "trend": "Sharp upward inflection",
+   "detail": "Referring domains stepped up from 20 to 73 across Apr-Jun 2026, matching the seed announcement. City AM interview with Chris Kong drove UK press."
+  },
+  "news": [
+   {
+    "headline": "London-founded Corvera raises $4.2M to bring agentic AI to CPG supply chains",
+    "source": "Tech.eu",
+    "date": "5 May 2026",
+    "type": "funding",
+    "url": "https://tech.eu/2026/05/05/london-founded-corvera-raises-42m-to-bring-agentic-ai-to-cpg-supply-chains/"
+   },
+   {
+    "headline": "We've raised $4.2M to build the agentic operating system for CPG brands",
+    "source": "Corvera",
+    "date": "5 May 2026",
+    "type": "major",
+    "url": "https://www.corvera.ai/news/corvera-seed-round"
+   },
+   {
+    "headline": "Agentic supply chains specialist Corvera lands GBP 3M in seed funding",
+    "source": "Retail Technology Innovation Hub",
+    "date": "May 2026",
+    "type": "funding",
+    "url": "https://retailtechinnovationhub.com/home/2026/5/5/agentic-supply-chains-specialist-corvera-lands-3-million-in-seed-funding-to-scale-its-platform"
+   }
+  ]
+ },
+ {
+  "id": "codewords",
+  "name": "Codewords",
+  "type": "held",
+  "section": "new2026",
+  "rating": "new",
+  "conviction": 3,
+  "stage": "Seed",
+  "founded": 2023,
+  "hq": "London, United Kingdom",
+  "employees": 14,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Chat-Based Workflow Automation Builder",
+  "legalName": "Agemo AI Ltd",
+  "website": "codewords.ai",
+  "verticals": [
+   "LLM Agents",
+   "Workflow Automation",
+   "Generative AI",
+   "No-Code / Low-Code"
+  ],
+  "customers": [
+   "Non-technical teams",
+   "Agencies",
+   "Go-to-market operators"
+  ],
+  "growth": "Cody runs roughly 500,000 workflows per month; web traffic 4x in five months",
+  "tearSheet": {
+   "thesis": "Natural-language prompts build automations across CRM and business tools. firstminute co-led the original $4.23M seed in January 2024 and followed on in the $9M May 2026 seed extension. Current ownership is 10.26%, the second-largest institutional stake.",
+   "edge": "Francois Chollet (Google AI, creator of Keras) is an angel in both rounds, alongside Amar Shah (Wayve co-founder). The core product, Cody, autonomously writes Python automations in plain English, distinct from visual no-code boxes, and already runs around 500K workflows a month.",
+   "signal": "Opportunity Score 90/100, above Wayve and Mistral. Web traffic grew roughly 4x in five months. Angels include Miro's Andrey Khusid, ElevenLabs' Mati Staniszewski, and Supercell's Ilkka Paananen.",
+   "risk": "Sits adjacent to n8n's category inside the same book. Worth a clean view on whether the two compound or compete for internal attention and resources. A 29% no-exit probability at a $45M post-money seed-stage valuation.",
+   "action": "Map the overlap with n8n explicitly. Decide whether this is portfolio diversification or internal overlap before the next cheque. The 10.26% stake and 90/100 score justify holding."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "10.26% ownership makes firstminute the second-largest institutional shareholder. Sits in the same workflow-automation lane as n8n; internal overlap worth addressing explicitly."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Aymeric Zhuo",
+    "title": "Co-Founder and CEO",
+    "background": "Former engineer and product roles at Microsoft, Palantir, Meta, and PolyAI."
+   },
+   {
+    "name": "Osman Ramadan",
+    "title": "Co-Founder and CTO",
+    "background": "Extensive AI and engineering background from startups and deep tech."
+   }
+  ],
+  "angels": [
+   {
+    "name": "Francois Chollet",
+    "knownFor": "Google AI, creator of Keras (both rounds)"
+   },
+   {
+    "name": "Andrey Khusid",
+    "knownFor": "CEO and Founder, Miro"
+   },
+   {
+    "name": "Mati Staniszewski",
+    "knownFor": "CEO and Co-founder, ElevenLabs"
+   },
+   {
+    "name": "Ilkka Paananen",
+    "knownFor": "CEO and Co-founder, Supercell"
+   },
+   {
+    "name": "Mike Knoop",
+    "knownFor": "Co-founder, Zapier (Zapier also invested)"
+   },
+   {
+    "name": "Amar Shah",
+    "knownFor": "Co-founder, Wayve (portfolio connection)"
+   }
+  ],
+  "funding": [
+   {
+    "date": "May 2026",
+    "type": "Seed Extension",
+    "amount": "$9M (EUR 7.6M)",
+    "raisedToDate": "$13.30M",
+    "preVal": "$36.46M",
+    "postVal": "$45.53M",
+    "leads": "Visionaries Club (firstminute, Sequel, Illusian)",
+    "fmc": true
+   },
+   {
+    "date": "Jan 2024",
+    "type": "Seed",
+    "amount": "$4.23M",
+    "raisedToDate": "$4.23M",
+    "preVal": "$15.47M",
+    "postVal": "$19.70M",
+    "leads": "Fly Ventures, firstminute Capital",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$13.30M",
+  "firstminute": {
+   "entryRound": "Seed (Jan 2024)",
+   "role": "Seed co-lead alongside Fly Ventures",
+   "ownership": "10.26%",
+   "ownershipNote": "Firstminute Capital III GP LLP. Second-largest institutional investor behind Visionaries Club.",
+   "followOns": [
+    "Seed Extension (May 2026)"
+   ],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$45.53M",
+   "pbEstimate": null,
+   "pbConfidence": "N/A",
+   "opportunityScore": 90,
+   "exitType": "M&A",
+   "successProb": 71,
+   "ipoProb": 1,
+   "maProb": 70,
+   "noExitProb": 29
+  },
+  "financials": {
+   "totalAssets2024": "2,579",
+   "totalEquity2024": "2,507",
+   "totalDebt2024": "0",
+   "notes": "Very clean balance sheet with zero debt. Well-capitalised after the $9M extension. Pivoted from developer tools (Agemo) to business workflow automation."
+  },
+  "competitors": [
+   {
+    "name": "Zapier",
+    "hq": "San Francisco, CA",
+    "employees": "800",
+    "postVal": "$4.60B",
+    "notes": "Competitor that also invested"
+   },
+   {
+    "name": "n8n",
+    "hq": "Berlin, Germany",
+    "employees": "109",
+    "raised": "$253.49M",
+    "postVal": "$5.20B",
+    "notes": "Portfolio company in the same lane"
+   }
+  ],
+  "signals": {
+   "weeklyVisitors": "11,000+",
+   "referringDomains": "250",
+   "trend": "Strong growth (4x in 5 months)",
+   "detail": "Traffic grew from about 2.5K/wk to 11K+ across Dec 2025-May 2026. Cody, the AI automation assistant, is driving product awareness and runs ~500K workflows monthly."
+  },
+  "news": [
+   {
+    "headline": "CodeWords raises $9M to develop AI agents that automate before you ask",
+    "source": "SiliconANGLE",
+    "date": "7 May 2026",
+    "type": "funding",
+    "url": "https://siliconangle.com/2026/05/07/codewords-raises-9m-develop-ai-agents-automate-ask/"
+   },
+   {
+    "headline": "Can't code? This startup just raised $9M to make you a workflow automation genius",
+    "source": "Sifted",
+    "date": "May 2026",
+    "type": "major",
+    "url": "https://sifted.eu/articles/startup-raised-9m-workflow-automation-genius"
+   },
+   {
+    "headline": "Visionaries back CodeWords' $9M seed to put AI agents in the hands of non-coders",
+    "source": "Tech Funding News",
+    "date": "May 2026",
+    "type": "funding",
+    "url": "https://techfundingnews.com/codewords-9m-seed-visionaries-ai-agents-workflow-automation/"
+   }
+  ]
+ },
+ {
+  "id": "console",
+  "name": "Console",
+  "type": "sourcing",
+  "section": "initiate",
+  "rating": "initiate",
+  "conviction": 4,
+  "stage": "Series A",
+  "founded": 2024,
+  "hq": "San Francisco, CA",
+  "employees": 15,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Agentic IT Service Management",
+  "legalName": "Console Incorporated",
+  "website": "console.com",
+  "verticals": [
+   "LLM Agents",
+   "ITSM",
+   "Enterprise IT",
+   "Generative AI"
+  ],
+  "customers": [
+   "Ramp",
+   "Flock Safety",
+   "Scale AI",
+   "Webflow",
+   "Zip",
+   "Calendly"
+  ],
+  "growth": "Resolves over 50% of IT tickets autonomously; 4.7x valuation step-up in three months",
+  "tearSheet": {
+   "thesis": "AI agents that resolve IT tickets end-to-end are unbundling ServiceNow at the highest-volume, most measurable corner of a very large incumbent. Named directly in firstminute's published 2026 tech predictions, the strongest possible on-thesis signal.",
+   "edge": "Ticket deflection has hard, board-visible ROI, and every resolved ticket is training data, so the moat compounds with scale. CEO Andrei Serban is a repeat founder who was previously an operator at Rippling. Customers already include Ramp, Scale AI, and Webflow.",
+   "signal": "Opportunity Score 99/100, the single highest in the tracked dataset, placing Console in the top 1% globally. A 4.7x step-up from seed to Series A in three months, backed by Thrive and DST, with angels including Aaron Levie and Nikesh Arora.",
+   "risk": "A crowded lane with credible challengers and ServiceNow shipping its own agents. The edge is execution and proprietary resolution data, not the idea. A 90% M&A probability suggests the acquirer is likely ServiceNow or a major IT platform.",
+   "action": "Approach now, while still pre-consensus. Diligence the data flywheel and a named enterprise reference. Verify current round status: a 4.7x step-up in three months signals this is moving fast."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "99/100 Opportunity Score, the highest in the entire tracked dataset. firstminute named this exact category in its published 2026 predictions."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Andrei Serban",
+    "title": "Co-Founder and CEO",
+    "background": "Repeat founder; previously an operator at Rippling and earlier co-founded Fuzzbuzz. Brings enterprise relationships."
+   },
+   {
+    "name": "Neal Chandra",
+    "title": "Co-Founder and CTO",
+    "background": "Cyber and systems engineer. Previously co-founded CySecure. Developer of LLM inference tooling."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Sep 2025",
+    "type": "Series A",
+    "amount": "$23M",
+    "raisedToDate": "$29.20M",
+    "preVal": "$134M",
+    "postVal": "$157M",
+    "leads": "DST Global, Thrive Capital (SV Angel, Abstract)",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2025",
+    "type": "Seed",
+    "amount": "$6.20M",
+    "raisedToDate": "$6.20M",
+    "preVal": "$27M",
+    "postVal": "$33.20M",
+    "leads": "Thrive Capital",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$29.20M",
+  "firstminute": {
+   "entryRound": "None (sourcing candidate)",
+   "role": "Sourcing candidate, no current relationship",
+   "ownership": null,
+   "followOns": []
+  },
+  "valuationExit": {
+   "postVal": "$157M",
+   "pbEstimate": "$262.01M",
+   "pbConfidence": "Medium",
+   "opportunityScore": 99,
+   "exitType": "M&A",
+   "successProb": 91,
+   "ipoProb": 1,
+   "maProb": 90,
+   "noExitProb": 9
+  },
+  "financials": {
+   "notes": "Generating revenue and resolving over 50% of IT requests autonomously. A 4.7x valuation step-up from seed ($33.2M) to Series A ($157M) in only three months signals strong early commercial traction. Angels include Box CEO Aaron Levie, Palo Alto Networks CEO Nikesh Arora, and Quora CEO Adam D'Angelo."
+  },
+  "competitors": [
+   {
+    "name": "Serval",
+    "hq": "San Francisco, CA",
+    "postVal": "$1B (est.)",
+    "notes": "Direct competitor in agentic ITSM"
+   },
+   {
+    "name": "ServiceNow",
+    "hq": "Santa Clara, CA",
+    "postVal": "Public ($100B+)",
+    "notes": "The legacy incumbent being disrupted"
+   },
+   {
+    "name": "Zendesk",
+    "hq": "San Francisco, CA",
+    "postVal": "Private Equity",
+    "notes": "Legacy customer support incumbent"
+   }
+  ],
+  "signals": {
+   "referringDomains": "333",
+   "trend": "Steady growth",
+   "detail": "Referring domains grew from 225 to 333 across Dec 2025-May 2026. Presented at the 2026 Gartner Digital Workplace Summit Americas. Customers include Ramp, Flock Safety, Scale AI, Webflow, Zip, and Calendly."
+  },
+  "news": [
+   {
+    "headline": "Console raises $22M Series A from DST and Thrive for AI-for-IT",
+    "source": "Upstarts Media",
+    "date": "Sep 2025",
+    "type": "funding",
+    "url": "https://www.upstartsmedia.com/p/console-ai-for-it-raises-series-a"
+   },
+   {
+    "headline": "Console raises $6.2M from Thrive to free IT teams from mundane tasks with AI",
+    "source": "TechCrunch",
+    "date": "2 Jun 2025",
+    "type": "major",
+    "url": "https://techcrunch.com/2025/06/02/console-raises-6-2m-from-thrive-to-free-it-teams-from-mundane-tasks-with-ai/"
+   }
+  ]
+ },
+ {
+  "id": "omnea",
+  "name": "Omnea",
+  "type": "sourcing",
+  "section": "initiate",
+  "rating": "initiate",
+  "conviction": 4,
+  "stage": "Series B",
+  "founded": 2022,
+  "hq": "London, United Kingdom",
+  "employees": 170,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Procurement Orchestration and Compliance AI",
+  "legalName": "Omnea Limited",
+  "website": "omnea.co",
+  "verticals": [
+   "Procurement AI",
+   "Compliance AI",
+   "Enterprise SaaS",
+   "Fintech Infrastructure"
+  ],
+  "customers": [
+   "Spotify",
+   "Wise",
+   "MongoDB",
+   "Monzo",
+   "Adecco",
+   "Albertsons"
+  ],
+  "growth": "Revenue up 5x and headcount more than tripled in the past 12 months",
+  "tearSheet": {
+   "thesis": "Procurement is a large, manual back-office function that legacy suites digitised but never made intelligent, and AI-native is the rebuild. A $50M Series B in Sep 2025 led by Insight Partners and Khosla maps directly to firstminute's published call that compliance AI hits production at major institutions in 2026.",
+   "edge": "The core team is a high-profile reunion of Tessian leadership: CEO, CFO, and CRO all from Tessian, which Proofpoint acquired. The GTM engine that built one successful B2B enterprise company has reassembled, and an industry-first MCP server brings live supplier data into Claude and ChatGPT.",
+   "signal": "Opportunity Score 94/100. Revenue grew 5x with headcount more than tripling in twelve months. G2 Spring 2026 Leader in Procurement Orchestration. Customers include Spotify, Wise, MongoDB, and Monzo.",
+   "risk": "Long enterprise sales cycles against entrenched incumbents (Coupa, SAP Ariba). It needs a sharp wedge workflow, not a full-suite assault on day one. An 87% M&A probability, with ZipHQ the category-defining US comparable.",
+   "action": "First cheque. Underwrite the wedge workflow and early logo quality, not the eventual platform story. UK-founded, inside the fund's core geography, and the Tessian team has done this before."
+  },
+  "alerts": [],
+  "founders": [
+   {
+    "name": "Benjamin Freeman",
+    "title": "Co-Founder and CEO",
+    "background": "Former Head of US and International Growth at Tessian (acquired by Proofpoint). Built Tessian's enterprise GTM."
+   },
+   {
+    "name": "Sabrina Castiglione",
+    "title": "CFO",
+    "background": "Former CFO at Tessian and COO at Pento. Named to Most Influential Women in UK Tech."
+   },
+   {
+    "name": "Abhirukt Sapru",
+    "title": "CCO",
+    "background": "Former Employee 2 and CRO at Tessian. VP Sales at Snowplow. Ex-Citi investment banker."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Sep 2025",
+    "type": "Series B",
+    "amount": "$50M",
+    "raisedToDate": "$74.55M",
+    "preVal": "$248.63M",
+    "postVal": "$298.31M",
+    "leads": "Insight Partners, Khosla Ventures (Accel, Point Nine, Prosus)",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2024",
+    "type": "Series A",
+    "amount": "$20M",
+    "raisedToDate": "$24.87M",
+    "preVal": "$70.26M",
+    "postVal": "$90.27M",
+    "leads": "Accel",
+    "fmc": false
+   },
+   {
+    "date": "Sep 2022",
+    "type": "Seed",
+    "amount": "$4.86M",
+    "raisedToDate": "$4.87M",
+    "preVal": "$14.07M",
+    "postVal": "$18.93M",
+    "leads": "First Round Capital, Point Nine Capital",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$74.55M",
+  "firstminute": {
+   "entryRound": "None (sourcing candidate)",
+   "role": "Sourcing candidate, no current relationship",
+   "ownership": null,
+   "followOns": []
+  },
+  "valuationExit": {
+   "postVal": "$298.31M",
+   "pbEstimate": "$506.85M",
+   "pbConfidence": "Medium",
+   "opportunityScore": 94,
+   "exitType": "M&A",
+   "successProb": 95,
+   "ipoProb": 8,
+   "maProb": 87,
+   "noExitProb": 5
+  },
+  "financials": {
+   "revenue": "Revenue up 5x in the past 12 months",
+   "notes": "Series A to Series B step-up of about 3.3x ($90M to $298M). PitchBook estimates roughly $507M current valuation. An industry-first MCP server for procurement launched in 2026."
+  },
+  "competitors": [
+   {
+    "name": "ZipHQ",
+    "hq": "San Francisco, CA",
+    "employees": "700",
+    "raised": "$370.75M",
+    "postVal": "$2.20B",
+    "notes": "Category-defining US comparable"
+   },
+   {
+    "name": "ORO Labs",
+    "hq": "Palo Alto, CA",
+    "employees": "270",
+    "raised": "$160.00M",
+    "postVal": "$570.00M"
+   },
+   {
+    "name": "Coupa Software",
+    "hq": "Foster City, CA",
+    "postVal": "Private Equity",
+    "notes": "Legacy incumbent"
+   }
+  ],
+  "signals": {
+   "referringDomains": "501",
+   "trend": "Strong growth",
+   "detail": "Referring domains grew from 350 to 501 over five months. G2 Spring 2026 Leader in Procurement Orchestration. Customers include Spotify, Wise, MongoDB, Monzo, Adecco, and Albertsons."
+  },
+  "news": [
+   {
+    "headline": "Omnea raises $50M Series B to make procurement every CFO's competitive advantage",
+    "source": "PR Newswire",
+    "date": "17 Sep 2025",
+    "type": "funding",
+    "url": "https://www.prnewswire.com/news-releases/omnea-raises-50m-to-make-procurement-every-cfos-competitive-advantage-302559153.html"
+   },
+   {
+    "headline": "Insight Partners leads Series B investment in Omnea",
+    "source": "Insight Partners",
+    "date": "Sep 2025",
+    "type": "major",
+    "url": "https://www.insightpartners.com/ideas/omnea-raises-50m-to-make-procurement-every-cfos-competitive-advantage/"
+   }
+  ]
+ },
+ {
+  "id": "hadrian",
+  "name": "Hadrian",
+  "type": "sourcing",
+  "section": "initiate",
+  "rating": "initiate",
+  "conviction": 3,
+  "stage": "Series C",
+  "founded": 2020,
+  "hq": "Torrance, CA (factories in CA, AZ, AL)",
+  "employees": 346,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Autonomous Factories / Defense Manufacturing",
+  "legalName": "Hadrian Automation, Inc.",
+  "website": "hadrian.co",
+  "verticals": [
+   "DefenseTech",
+   "Physical AI",
+   "Robotics",
+   "Aerospace Manufacturing",
+   "National Security"
+  ],
+  "customers": [
+   "Aerospace and defense primes",
+   "Space and satellite manufacturers"
+  ],
+  "growth": "10x year-on-year growth since the Series B; revenue grew from $3M (2023) to $30M (2024)",
+  "tearSheet": {
+   "thesis": "Software-defined autonomous factories producing high-precision metal parts for rockets, submarines, and satellites. Revenue grew roughly 10x year-on-year, and the company reached a $1.6B valuation in late 2025. It plays directly into the defence and physical-AI reindustrialisation thesis.",
+   "edge": "Opus, a proprietary software stack that automates quoting, programming, machining, and inspection. Three semi-autonomous factories are operational, with a new Mesa, AZ site and a submarine-parts facility in Alabama targeting the Columbia and Virginia-class programmes.",
+   "signal": "A rare IPO-skewed exit profile at 56% IPO probability, reflecting the heavy asset base. The $260M Series C was led by Founders Fund and Lux Capital, with a16z and Altimeter participating, and a PitchBook estimate of $1.96B at very high confidence.",
+   "risk": "Capital-intensive physical infrastructure: over $600M raised, including a large Series C. Defence supply chains carry high trust and liability bars. Primarily US-centric, which sits outside firstminute's lead geography, so a financial co-lead would be needed.",
+   "action": "Initiate at measured size. Verify current round status and capitalisation. Confirm whether a European defence-manufacturing equivalent exists; the reindustrialisation thesis is compelling but the geography and capital scale require a co-lead."
+  },
+  "alerts": [],
+  "founders": [
+   {
+    "name": "Christopher Power",
+    "title": "Founder and CEO",
+    "background": "Originally from Australia. Identified the bottleneck in the aging US precision-manufacturing base and founded Hadrian in late 2020 to rebuild it with software."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Dec 2025",
+    "type": "Series C extension",
+    "amount": "$131M",
+    "raisedToDate": "$611.28M",
+    "preVal": "$1.21B",
+    "postVal": "$1.60B",
+    "leads": "Existing investors (9 participants)",
+    "fmc": false
+   },
+   {
+    "date": "Jul 2025",
+    "type": "Series C",
+    "amount": "$260M",
+    "raisedToDate": "$480M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Founders Fund, Lux Capital (a16z, Altimeter); Morgan Stanley debt",
+    "fmc": false
+   },
+   {
+    "date": "Jan 2024",
+    "type": "Series B",
+    "amount": "$117M",
+    "raisedToDate": "$219.97M",
+    "preVal": "$483.77M",
+    "postVal": "$594.00M",
+    "leads": "RTX Ventures, Bracket Capital",
+    "fmc": false
+   },
+   {
+    "date": "Mar 2022",
+    "type": "Series A",
+    "amount": "$90M",
+    "raisedToDate": "$102.97M",
+    "preVal": "$200.00M",
+    "postVal": "$275.74M",
+    "leads": "Lux Capital, Andreessen Horowitz",
+    "fmc": false
+   },
+   {
+    "date": "Jul 2021",
+    "type": "Seed",
+    "amount": "$9.50M",
+    "raisedToDate": "$9.50M",
+    "preVal": "$10.00M",
+    "postVal": "$16.23M",
+    "leads": "Construct Capital, Founders Fund, Lux Capital",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$611.28M",
+  "firstminute": {
+   "entryRound": "None (sourcing candidate)",
+   "role": "Sourcing candidate, no current relationship",
+   "ownership": null,
+   "followOns": []
+  },
+  "valuationExit": {
+   "postVal": "$1.60B",
+   "pbEstimate": "$1.96B",
+   "pbConfidence": "Very High",
+   "opportunityScore": 84,
+   "exitType": "IPO",
+   "successProb": 85,
+   "ipoProb": 56,
+   "maProb": 29,
+   "noExitProb": 15
+  },
+  "financials": {
+   "revenue2023": "$3M",
+   "revenue2024": "$30M",
+   "notes": "Revenue grew from $3M (2023) to $30M (2024), roughly 10x. Founders Fund and Lux led the $260M Series C in Jul 2025, with a $131M extension in Dec 2025 bringing the valuation to $1.6B. A rare IPO-skewed exit profile reflects the heavy asset base."
+  },
+  "competitors": [
+   {
+    "name": "Anduril Industries",
+    "hq": "Costa Mesa, CA",
+    "employees": "7,000",
+    "raised": "$11.87B",
+    "postVal": "$61.00B",
+    "notes": "Autonomous defense hardware and software"
+   },
+   {
+    "name": "Saronic",
+    "hq": "Austin, TX",
+    "employees": "1,600",
+    "raised": "$2.59B",
+    "postVal": "$9.25B",
+    "notes": "Unmanned maritime surface vehicles"
+   },
+   {
+    "name": "Varda Space Industries",
+    "hq": "El Segundo, CA",
+    "employees": "198",
+    "raised": "$578.29M",
+    "postVal": "$1.60B"
+   }
+  ],
+  "signals": {
+   "referringDomains": "522",
+   "trend": "Stable (500-540 range)",
+   "detail": "Referring domains stable at 500-540. Factory 3 in Mesa, AZ opened in early 2026; an Alabama submarine-parts facility targets the Columbia and Virginia-class nuclear submarine programmes."
+  },
+  "news": [
+   {
+    "headline": "Hadrian raises $260M to build out automated factories for space and defense parts",
+    "source": "TechCrunch",
+    "date": "17 Jul 2025",
+    "type": "funding",
+    "url": "https://techcrunch.com/2025/07/17/hadrian-raises-260m-to-build-out-automated-factories-for-space-and-defense-parts/"
+   },
+   {
+    "headline": "Defense manufacturing startup Hadrian closes $260M round led by Founders Fund",
+    "source": "CNBC",
+    "date": "17 Jul 2025",
+    "type": "major",
+    "url": "https://www.cnbc.com/2025/07/17/hadrian-funding-round-thiel-founders-fund.html"
+   },
+   {
+    "headline": "Hadrian raises additional funding, bringing valuation to $1.6B",
+    "source": "The Robot Report",
+    "date": "Dec 2025",
+    "type": "funding",
+    "url": "https://www.therobotreport.com/hadrian-brings-in-additional-funding-bringing-its-valuation-to-1-6b/"
+   }
+  ]
+ },
+ {
+  "id": "prem-labs",
+  "name": "Prem Labs",
+  "type": "sourcing",
+  "section": "initiate",
+  "rating": "initiate",
+  "conviction": 3,
+  "stage": "Seed (Series A in talks)",
+  "founded": 2023,
+  "hq": "Lugano, Switzerland",
+  "employees": 105,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Sovereign AI Infrastructure / Self-Hosted LLMs",
+  "legalName": "Prem Labs SA",
+  "website": "premai.io",
+  "verticals": [
+   "Sovereign AI",
+   "AI Infrastructure",
+   "Enterprise LLMs",
+   "Data Privacy",
+   "Confidential Compute"
+  ],
+  "customers": [
+   "Healthcare",
+   "Finance",
+   "Defense",
+   "Government"
+  ],
+  "growth": "Grew to roughly 105 employees by 2026; reportedly in talks for a $100M Series A",
+  "tearSheet": {
+   "thesis": "Secure, self-sovereign deployment of language models for organisations that cannot send data to a hyperscaler: banks, government, healthcare, and defence. The EU AI Act and data-residency rules create durable, non-discretionary demand. It sits directly on the speed, scale, and sovereignty thread from Brent's London Tech Week conversation with Peter Kyle.",
+   "edge": "Confidential compute, cryptographic attestation, and zero vendor lock-in, running frontier models inside hardware-sealed Trusted Execution Environments. European-native is an advantage with the regulated buyer, not a constraint. David Maisel, founder of Marvel Studios, is an advisor and investor.",
+   "signal": "Referring domains roughly doubled in five months, a strong backlink and developer-adoption signal. Bloomberg reports the company is in discussions to raise a $100M Series A, with Index Ventures and Sequoia Capital China already on the cap table.",
+   "risk": "Capital-intensive infrastructure contested by Aleph Alpha and private hyperscaler offerings. A 41% no-exit probability reflects the crowded early enterprise-tooling state. Only about $19.5M raised so far.",
+   "action": "First cheque, on thesis and on narrative. Pressure-test gross margin and the wedge customer. The $100M Series A in discussions is the timing signal: approach before it closes."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Reportedly in discussions to raise a $100M Series A. The approach window is open but closing. Index Ventures and Sequoia Capital China already on the cap table."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Simone Giacomelli",
+    "title": "Co-Founder and CEO",
+    "background": "Serial entrepreneur. Co-founded SingularityNET with Ben Goertzel and founded Vulpem Ventures. Active in decentralised systems since 2013."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Nov 2025",
+    "type": "Early Stage VC",
+    "amount": "$5.51M",
+    "raisedToDate": "$19.51M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Scientifica, Breyer Capital, Index Ventures, Sequoia Capital China",
+    "fmc": false
+   },
+   {
+    "date": "Apr 2024",
+    "type": "Strategic Seed",
+    "amount": "$14M",
+    "raisedToDate": "$14M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "David Maisel, Alan Lipschitz, Fan Zhang",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$19.51M",
+  "firstminute": {
+   "entryRound": "None (sourcing candidate)",
+   "role": "Sourcing candidate, no current relationship",
+   "ownership": null,
+   "followOns": []
+  },
+  "valuationExit": {
+   "postVal": "Not disclosed",
+   "pbEstimate": "Not available",
+   "pbConfidence": "N/A",
+   "opportunityScore": 79,
+   "exitType": "M&A",
+   "successProb": 59,
+   "ipoProb": 1,
+   "maProb": 58,
+   "noExitProb": 41
+  },
+  "financials": {
+   "notes": "About $19.5M raised to date across two rounds. Reportedly in discussions for a $100M Series A (Bloomberg). Index Ventures and Sequoia Capital China in the Nov 2025 round provide institutional credibility. Gross margin and the wedge customer are the key diligence questions."
+  },
+  "competitors": [
+   {
+    "name": "Aleph Alpha",
+    "hq": "Heidelberg, Germany",
+    "notes": "Direct European sovereign-AI competitor"
+   },
+   {
+    "name": "DataRobot",
+    "hq": "Boston, MA",
+    "postVal": "Private",
+    "notes": "Enterprise ML lifecycle"
+   },
+   {
+    "name": "H2O.ai",
+    "hq": "Mountain View, CA",
+    "postVal": "Private"
+   }
+  ],
+  "signals": {
+   "referringDomains": "648",
+   "trend": "Strong growth (doubled in 5 months)",
+   "detail": "Referring domains grew from about 300 to 648 over five months. Regulated industries run frontier models inside hardware-sealed Trusted Execution Environments."
+  },
+  "news": [
+   {
+    "headline": "Prem Labs announces its $14M strategic seed round",
+    "source": "Prem",
+    "date": "Apr 2024",
+    "type": "funding",
+    "url": "https://blog.premai.io/announcing-our-14m-round-strategic-seed-round/"
+   },
+   {
+    "headline": "Prem Labs seeks to revolutionise proprietary AI, backed by the founder of Marvel Studios",
+    "source": "Yahoo Finance",
+    "date": "Apr 2024",
+    "type": "major",
+    "url": "https://finance.yahoo.com/news/prem-labs-seeks-revolutionize-proprietary-141600958.html"
+   }
+  ]
+ },
+ {
+  "id": "avoca",
+  "name": "Avoca",
+  "type": "sourcing",
+  "section": "watchlist",
+  "rating": "watch",
+  "conviction": 3,
+  "stage": "Series B",
+  "founded": 2022,
+  "hq": "New York, NY",
+  "employees": 158,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Vertical AI Voice Agents for Home Services",
+  "legalName": "Alphablock Labs Inc.",
+  "website": "avoca.ai",
+  "verticals": [
+   "Vertical AI",
+   "Voice AI",
+   "Home Services",
+   "LLM Agents",
+   "SMB SaaS"
+  ],
+  "customers": [
+   "Turnpoint",
+   "1-800-GOT-JUNK?",
+   "Goettl"
+  ],
+  "growth": "Surpassed eight figures in ARR in 2025; on track to book $1B in jobs",
+  "tearSheet": {
+   "thesis": "Voice AI agents automating inbound calls, scheduling, dispatch, and follow-up for HVAC, plumbing, electrical, and roofing trades. A $125M+ raise at a $1B valuation in April 2026, led by Meritech and General Catalyst, is a 4.4x step-up from Series A. Named directly in firstminute's 2026 tech predictions.",
+   "edge": "The founding insight: a missed restaurant booking costs $50, but a single missed HVAC emergency call loses a $30,000-40,000 installation. The MIT founders co-designed in the field with a Dallas contractor before scaling, with Kleiner Perkins and General Catalyst on the cap table, plus ServiceTitan and Nexstar partnerships.",
+   "signal": "Opportunity Score 94/100. A 4.4x valuation step-up in ten months and eight-figure ARR, on track to book $1B in jobs. Customers include Turnpoint, 1-800-GOT-JUNK, and Goettl.",
+   "risk": "US-centric, outside the fund's lead geography of Europe and the UK. If pursued, this is likely a follow-on rather than a lead. Confirm whether a European or UK equivalent better fits the mandate.",
+   "action": "Watch list. Do not initiate a lead position without a clear European mandate. Confirm whether a European home-services AI equivalent exists. If pursuing, treat it as a follow-on ticket, not a lead."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Named by firstminute in its published 2026 predictions, but US-centric. Confirm a European mandate or equivalent before approach; likely a follow-on, not a lead."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Tyson Chen",
+    "title": "Co-Founder",
+    "background": "MIT graduate. Board includes Leigh Marie Braswell (Kleiner Perkins) and Vedant Suri (General Catalyst)."
+   },
+   {
+    "name": "Apurva Shrivastava",
+    "title": "Co-Founder",
+    "background": "MIT graduate. Deep product and systems background."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Apr 2026",
+    "type": "Series B",
+    "amount": "$125M",
+    "raisedToDate": "$125.50M",
+    "preVal": "$875M",
+    "postVal": "$1.00B",
+    "leads": "General Catalyst, Meritech Capital Partners",
+    "fmc": false
+   },
+   {
+    "date": "Jun 2025",
+    "type": "Series A",
+    "amount": "$37M",
+    "raisedToDate": "$47.80M",
+    "preVal": "$188.00M",
+    "postVal": "$225.00M",
+    "leads": "Kleiner Perkins",
+    "fmc": false
+   },
+   {
+    "date": "Oct 2024",
+    "type": "Seed",
+    "amount": "$10.30M",
+    "raisedToDate": "$10.80M",
+    "preVal": "$49.70M",
+    "postVal": "$60.00M",
+    "leads": "Y Combinator",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$125.50M",
+  "firstminute": {
+   "entryRound": "None (sourcing candidate)",
+   "role": "Sourcing candidate, no current relationship",
+   "ownership": null,
+   "followOns": []
+  },
+  "valuationExit": {
+   "postVal": "$1.00B",
+   "pbEstimate": "$1.15B",
+   "pbConfidence": "Very High",
+   "opportunityScore": 94,
+   "exitType": "M&A",
+   "successProb": 94,
+   "ipoProb": 14,
+   "maProb": 80,
+   "noExitProb": 6
+  },
+  "financials": {
+   "revenue": "Eight-figure ARR (2025)",
+   "notes": "Seed to $1B unicorn in about 18 months. The Series A to Series B step-up was 4.4x in ten months. On track to book $1B in jobs, with partnerships across ServiceTitan, Nexstar, and Clover."
+  },
+  "competitors": [
+   {
+    "name": "Sameday",
+    "hq": "Pleasant Grove, UT",
+    "employees": "49",
+    "raised": "$0.13M"
+   },
+   {
+    "name": "Happyrobot",
+    "hq": "San Francisco, CA",
+    "employees": "114",
+    "raised": "$60.24M",
+    "postVal": "$500M"
+   },
+   {
+    "name": "Harvey",
+    "hq": "San Francisco, CA",
+    "employees": "960",
+    "raised": "$1.19B",
+    "postVal": "$11.00B",
+    "notes": "Vertical AI for legal, the category comparable"
+   }
+  ],
+  "signals": {
+   "referringDomains": "349",
+   "trend": "Strong growth",
+   "detail": "Referring domains grew from 200 to 349 over five months. Customers include Turnpoint, 1-800-GOT-JUNK, and Goettl; partnerships with ServiceTitan, Nexstar, and Clover."
+  },
+  "news": [
+   {
+    "headline": "Avoca raises $125M+ at $1B valuation to power America's services economy with AI",
+    "source": "PR Newswire",
+    "date": "27 Apr 2026",
+    "type": "funding",
+    "url": "https://www.prnewswire.com/news-releases/avoca-raises-125m-at-1b-valuation-to-power-americas-services-economy-with-ai-302753962.html"
+   },
+   {
+    "headline": "AI voice agents conquer the trades: Avoca hits $1B",
+    "source": "AI Automation Global",
+    "date": "Apr 2026",
+    "type": "major",
+    "url": "https://aiautomationglobal.com/blog/avoca-ai-voice-agent-trades-unicorn-2026"
+   }
+  ]
+ },
+ {
+  "id": "circeus",
+  "name": "Circeus",
+  "type": "held",
+  "section": "accelerating",
+  "rating": "add",
+  "conviction": 4,
+  "stage": "Later Stage VC",
+  "founded": 2021,
+  "hq": "London, United Kingdom",
+  "employees": null,
+  "businessStatus": "Profitable",
+  "primaryIndustry": "AI Enterprise Software / Vertical SaaS Roll-up",
+  "legalName": "Shop Circle Ltd (operating as Circeus, formerly Shop Circle)",
+  "website": "shopcircle.co",
+  "verticals": [
+   "Artificial Intelligence & Machine Learning",
+   "SaaS"
+  ],
+  "customers": [
+   "LG (via Aiden)",
+   "Prenatal (via Aiden)",
+   "Intersport (via Aiden)"
+  ],
+  "growth": "ARR ~$45M (May 2026), CEO targeting $60-70M by year-end; 16 acquisitions in four years",
+  "tearSheet": {
+   "thesis": "A profitable, revenue-generating AI software consolidator: central AI infrastructure layered over acquired vertical software businesses that power commerce and specialist industries. One of the few positions in the book that combines venture-scale upside with actual EBITDA.",
+   "edge": "Sixteen acquisitions in four years — including Aiden (AI guided-selling used by LG, Prenatal, Intersport) and KrakenD (high-performance API gateway) — layered under one central AI capability. Every round has priced higher than the last, and the register now spans QED, NFX, Notion, Endeavor Catalyst and EBRD VCIP.",
+   "signal": "Opportunity Score 84/100 with a rare IPO-leaning exit model (52% IPO vs 34% M&A). ARR reached ~$45M by May 2026 with a stated target of $60-70M by year-end — roughly 100% growth from acquisitions plus organic. FY2024 accounts filed: $18.95M revenue, +70.3%, already profitable.",
+   "risk": "Roll-up economics depend on acquisition discipline; integration risk compounds with each deal. Leverage on the balance sheet ($100M+ debt) cuts both ways if software multiples compress.",
+   "action": "Hold and support. Track acquisition cadence quarterly; the Jun 2026 round was raised specifically to fund further vertical software acquisitions."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "New financing: undisclosed venture round led by EBRD Venture Capital Investment Programme closed 29 Jun 2026 to fund the central AI capability and further acquisitions (PitchBook)."
+   },
+   {
+    "type": "info",
+    "message": "Entity note: PitchBook now lists the company as Circeus; all press to date is under the Shop Circle brand (rebrand assumed 2026). Same PBId 481948-48."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Luca Cartechini",
+    "title": "Co-Founder, CEO & Board Member",
+    "background": "Leads the buy-and-build strategy across vertical commerce software; company profitable at FY2024."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Jun 2026",
+    "type": "Later Stage VC",
+    "amount": "Undisclosed",
+    "raisedToDate": "$283.01M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "EBRD Venture Capital Investment Programme; Nextalia SGR and 5 others participated",
+    "fmc": false
+   },
+   {
+    "date": "Dec 2025",
+    "type": "Debt",
+    "amount": "$100M",
+    "raisedToDate": null,
+    "preVal": null,
+    "postVal": null,
+    "leads": "Debt financing (PitchBook)",
+    "fmc": false
+   },
+   {
+    "date": "Jul 2021",
+    "type": "Seed (Series 1)",
+    "amount": "$35.01M",
+    "raisedToDate": "$35.01M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Seed round incl. firstminute Capital (active investor roster)",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$283.01M",
+  "firstminute": {
+   "entryRound": "Seed (2021)",
+   "role": "Active investor (PitchBook roster, 29 active investors)",
+   "ownership": "Undisclosed",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": null,
+   "pbEstimate": "Not disclosed",
+   "pbConfidence": null,
+   "opportunityScore": 84,
+   "exitType": "IPO",
+   "successProb": 86,
+   "ipoProb": 52,
+   "maProb": 34,
+   "noExitProb": 14
+  },
+  "financials": {
+   "revenue": "$18.95M (FY2024), +70.3% YoY",
+   "notes": "Profitable per PitchBook business status; gross profit $10.68M, EBITDA $3.33M FY2024."
+  },
+  "competitors": [
+   {
+    "name": "Appfire Technologies"
+   },
+   {
+    "name": "Constellation Software"
+   },
+   {
+    "name": "Bending Spoons"
+   }
+  ],
+  "signals": {
+   "referringDomains": null,
+   "trend": "Stable",
+   "detail": "Profitable operator; growth is acquisition-led rather than web-signal-led."
+  },
+  "news": [
+   {
+    "headline": "Circeus raises venture round led by EBRD VCIP to accelerate central AI capability and fund further acquisitions",
+    "source": "PitchBook financing status note",
+    "date": "29 Jun 2026",
+    "type": "funding"
+   },
+   {
+    "headline": "Shop Circle extends Series B to $100M to accelerate M&A growth and AI",
+    "source": "EU-Startups",
+    "date": "Sep 2025",
+    "type": "funding",
+    "url": "https://www.eu-startups.com/2025/09/british-software-platform-shop-circle-extends-its-series-b-to-e84-million-to-accelerate-ma/"
+   },
+   {
+    "headline": "Shop Circle raises $60M to encircle e-commerce with an app suite",
+    "source": "TechCrunch",
+    "date": "26 Feb 2025",
+    "type": "major",
+    "url": "https://techcrunch.com/2025/02/26/shop-circle-raises-60m-to-encircle-ecommerce-with-an-app-suite/"
+   }
+  ]
+ },
+ {
+  "id": "frontierai",
+  "name": "Frontier AI",
+  "type": "held",
+  "section": "new2026",
+  "rating": "new",
+  "conviction": 3,
+  "stage": "Seed",
+  "founded": 2019,
+  "hq": "London, United Kingdom",
+  "employees": 5,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "NHS Admin AI Agents / Healthcare Ops",
+  "legalName": "Frontier AI Ltd",
+  "website": "frontierx.ai",
+  "verticals": [
+   "Artificial Intelligence & Machine Learning",
+   "Big Data",
+   "Marketing Tech",
+   "SaaS"
+  ],
+  "customers": [],
+  "growth": "Juno saved 221 staff-days in 8 weeks at East Sussex NHS Trust; ED median time down ~22% (press)",
+  "tearSheet": {
+   "thesis": "AI agents for NHS administrative work. The product, Juno, works alongside NHS admin staff: navigating systems, booking appointments, flagging risks and keeping patients moving through care pathways. Healthcare admin is the rare AI market where the buyer (the NHS) has a mandate to cut backlog, not headcount.",
+   "edge": "Founder credibility is the moat: press reports the company was built by Palantir’s former healthcare lead, who ran deployments across 40 NHS hospitals during Covid. Atomico led the seed — its first institutional money — with firstminute and XYZ alongside.",
+   "signal": "Measured pilot results, not vibes: 221 staff-days saved over eight weeks at East Sussex Healthcare NHS Trust and a ~22% reduction in median emergency-department time (Tech.eu / Atomico, Jun 2026). Seed of $16.59M at $49.87M post closed 18 Jun 2026.",
+   "risk": "Entity-mapping discrepancy (below) needs resolving before the next mark. NHS procurement is slow and political; Palantir’s own NHS history is polarising, which cuts both ways for an ex-Palantir founding story.",
+   "action": "Resolve the PitchBook entity question, then lean in: introduce NHS trust relationships from the LP base and track the Juno rollout beyond East Sussex."
+  },
+  "alerts": [
+   {
+    "type": "warning",
+    "message": "Data discrepancy: PitchBook books this round under \"Frontier AI Ltd\" (contact: Howard Kingston), while Tech.eu, UKTN and Atomico’s own announcement report the identical round (GBP ~9.7-12M, Atomico lead, XYZ + firstminute, 18 Jun 2026, NHS admin AI) under \"Frontier Health\" founded by Rachel Finegold, ex-Palantir. Same deal, two entity records — verify the legal entity before the next valuation mark."
+   },
+   {
+    "type": "info",
+    "message": "New position: $16M seed led by Atomico closed 18 Jun 2026 with firstminute participating; product Juno deploys AI admin support across NHS care pathways."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Rachel Finegold",
+    "title": "Founder & CEO (per press)",
+    "background": "Former Palantir healthcare lead; ran deployments across 40 NHS hospitals during the Covid-19 pandemic (Tech.eu, Jun 2026)."
+   },
+   {
+    "name": "Howard Kingston",
+    "title": "Co-Founder & Co-CEO (per PitchBook)",
+    "background": "Listed as primary contact on the PitchBook profile (Frontier AI Ltd). Entity mapping under review."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Jun 2026",
+    "type": "Seed",
+    "amount": "$16.59M (GBP 12.37M)",
+    "raisedToDate": "$16.89M",
+    "preVal": "GBP 24.8M",
+    "postVal": "$49.87M",
+    "leads": "Atomico; XYZ, Tenacity Capital and firstminute Capital participated",
+    "fmc": true
+   },
+   {
+    "date": "Oct 2025",
+    "type": "Accelerator",
+    "amount": "Undisclosed",
+    "raisedToDate": null,
+    "preVal": null,
+    "postVal": null,
+    "leads": "Endless Frontier Labs",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$16.89M",
+  "firstminute": {
+   "entryRound": "Seed (Jun 2026)",
+   "role": "Participated alongside Atomico (lead)",
+   "ownership": "Undisclosed",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$49.87M",
+   "pbEstimate": "Not scored yet",
+   "pbConfidence": null,
+   "opportunityScore": null,
+   "exitType": null,
+   "successProb": null,
+   "ipoProb": null,
+   "maProb": null,
+   "noExitProb": null
+  },
+  "financials": {
+   "revenue": "Generating revenue (undisclosed)",
+   "notes": "Seed valuation $49.87M post (18 Jun 2026, actual per PitchBook)."
+  },
+  "competitors": [],
+  "signals": {
+   "referringDomains": "22",
+   "trend": "Stable",
+   "detail": "Pre-scale web footprint; watch for NHS pilot announcements."
+  },
+  "news": [
+   {
+    "headline": "Former Palantir healthcare head raises £10M for NHS AI agent startup",
+    "source": "Tech.eu",
+    "date": "18 Jun 2026",
+    "type": "major",
+    "url": "https://tech.eu/2026/06/18/former-palantir-healthcare-head-raises-16m-for-nhs-ai-agent-startup/"
+   },
+   {
+    "headline": "Our investment in Frontier Health: building the operational layer for healthcare",
+    "source": "Atomico",
+    "date": "Jun 2026",
+    "type": "funding",
+    "url": "https://atomico.com/insights/our-investment-in-frontier-health-building-the-operational-layer-for-healthcare"
+   },
+   {
+    "headline": "AI health tech from ex-Palantir lead raises £12m",
+    "source": "UKTN",
+    "date": "19 Jun 2026",
+    "type": "funding",
+    "url": "https://www.uktech.news/medtech/ai-health-tech-from-ex-palantir-lead-raises-12m-20260619"
+   }
+  ]
+ },
+ {
+  "id": "magrathea",
+  "name": "Magrathea",
+  "type": "held",
+  "section": "accelerating",
+  "rating": "add",
+  "conviction": 4,
+  "stage": "Series A",
+  "founded": 2022,
+  "hq": "San Francisco, CA",
+  "employees": 21,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Carbon-Neutral Magnesium / Climate Deep Tech",
+  "legalName": "Magrathea Metals Inc.",
+  "website": "magratheametals.com",
+  "verticals": [
+   "CleanTech",
+   "Climate Tech"
+  ],
+  "customers": [],
+  "growth": "Total backing $100M+ across private capital, government support and commercial partnerships (company, May 2026)",
+  "tearSheet": {
+   "thesis": "Electrolytic production of carbon-neutral magnesium from seawater and brines — a lightweight structural metal with defence, automotive and aerospace demand, produced without the carbon intensity of Chinese Pidgeon-process supply. Backed by the U.S. Department of Energy alongside the round.",
+   "edge": "The register spans three kinds of conviction: climate funds (VoLo Earth, Capricorn), strategic-adjacent names on the PitchBook roster (Sam Altman, Valor Equity Partners, Exor, U.S. DoE), and now an industrial partner — a joint venture with NYSE-listed TETRA Technologies (\"Arkansas Magnesium\") with Commercial Phase 1 engineering underway.",
+   "signal": "Opportunity Score 98/100, the highest of any position in the held book. $24M Series A closed May 2026 at $76M post (1.94x step-up); company states total backing above $100M including government and commercial partnerships. US magnesium supply is a named national-security priority — China controls ~90% of production.",
+   "risk": "Commodity-scale metals production is brutally capital-intensive; the gap between pilot electrolysis and industrial tonnage has killed many green-metals companies. Boston Metal and Stegra are racing adjacent chemistries.",
+   "action": "This is now the highest-scored company firstminute holds. Size the reserve accordingly and track the first commercial offtake agreement — defence primes are the likely first buyers."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Series A: $24M at $76M post-money closed 5 May 2026 (Avila Ventures and others). Opportunity Score 98/100 is the highest in the held book (PitchBook)."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Alexander Grant",
+    "title": "Co-Founder & CEO",
+    "background": "Lithium-extraction chemist turned magnesium-electrolysis pioneer; raised DoE backing for seawater-to-metal production."
+   }
+  ],
+  "funding": [
+   {
+    "date": "May 2026",
+    "type": "Series A",
+    "amount": "$24M",
+    "raisedToDate": "$34M",
+    "preVal": "$54.43M",
+    "postVal": "$76M",
+    "leads": "Co-led by Resource Technology Capital and Balerion Space Ventures; Oxcart, WovenEarth, Audacity, Avila, VoLo Earth, Capricorn and Ora Global participated (press)",
+    "fmc": false
+   },
+   {
+    "date": "Jan 2023",
+    "type": "Grant",
+    "amount": "$180K",
+    "raisedToDate": null,
+    "preVal": null,
+    "postVal": null,
+    "leads": "Grant funding",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$34M",
+  "firstminute": {
+   "entryRound": "Early (roster-verified)",
+   "role": "Active investor alongside Sam Altman, Valor, Exor, U.S. DoE",
+   "ownership": "Undisclosed",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$76M",
+   "pbEstimate": "$85.31M",
+   "pbConfidence": null,
+   "opportunityScore": 98,
+   "exitType": "M&A",
+   "successProb": 94,
+   "ipoProb": 11,
+   "maProb": 83,
+   "noExitProb": 6
+  },
+  "financials": {
+   "revenue": "Generating revenue (undisclosed)",
+   "notes": "Valuation estimate $85.31M with 12.26% estimate growth rate; 1.94x last step-up (PitchBook)."
+  },
+  "competitors": [
+   {
+    "name": "Boston Metal"
+   },
+   {
+    "name": "Stegra"
+   }
+  ],
+  "signals": {
+   "referringDomains": "126",
+   "trend": "Growth",
+   "detail": "Growth rate 95th percentile among PitchBook peers; patent estate of 10 documents across 4 families."
+  },
+  "news": [
+   {
+    "headline": "Magnesium extraction startup Magrathea closes $24M Series A to develop smelter",
+    "source": "Axios Pro Climate",
+    "date": "5 May 2026",
+    "type": "major",
+    "url": "https://www.axios.com/pro/climate-deals/2026/05/05/magrathea-24m-demo-magnesium-extraction"
+   },
+   {
+    "headline": "Magrathea backed by $100M to rebuild American magnesium production",
+    "source": "Magrathea Metals",
+    "date": "May 2026",
+    "type": "funding",
+    "url": "https://magratheametals.com/news/100million"
+   },
+   {
+    "headline": "TETRA and Magrathea Metals to advance domestic magnesium production (Arkansas Magnesium JV)",
+    "source": "Light Metal Age",
+    "date": "Mar 2026",
+    "type": "product",
+    "url": "https://www.lightmetalage.com/news/industry-news/magnesium/tetra-and-magrathea-metals-to-advance-domestic-magnesium-production/"
+   }
+  ]
+ },
+ {
+  "id": "verse",
+  "name": "Verse",
+  "type": "held",
+  "section": "accelerating",
+  "rating": "add",
+  "conviction": 4,
+  "stage": "Series B",
+  "founded": 2022,
+  "hq": "San Francisco, CA",
+  "employees": 36,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "AI Clean-Energy Procurement / Data-Center Power",
+  "legalName": "Verse Enterprises, Inc.",
+  "website": "verse.inc",
+  "verticals": [
+   "Artificial Intelligence & Machine Learning",
+   "CleanTech",
+   "Climate Tech",
+   "SaaS"
+  ],
+  "customers": [
+   "AI data-center operators (target: 100+ sites managed within a year)"
+  ],
+  "growth": "Seed $25M post (Jul 2023) to Series B $200M post (Apr 2026) — 8x in under three years",
+  "tearSheet": {
+   "thesis": "Generative-AI software for procuring and managing clean power, aimed squarely at the defining bottleneck of the AI buildout: getting data centers connected to cheap, clean electricity faster. Sits at the intersection of firstminute\\u2019s AI and climate theses.",
+   "edge": "Two shipping products — Aria (clean-power procurement) and Dispatch Intelligence (on-site battery + flexible-asset orchestration) — that get data centers online up to three years faster by bypassing grid interconnection queues. Dispatch Intelligence is being integrated into Nvidia’s DSX AI Factory reference design for gigascale sites; Nvidia also joined the round.",
+   "signal": "Opportunity Score 86/100 with 95% success probability. $54M Series B led by Bessemer at $200M post (Apr 2026), a 2.09x step-up; GV, Nvidia and Norrsken participated. Stated goal: 100+ data-center sites under management within a year.",
+   "risk": "90% M&A probability implies the exit is a strategic sale to an energy or infrastructure major rather than an IPO-scale outcome; power-procurement software could be commoditised by the hyperscalers building in-house.",
+   "action": "Follow-on candidate at Series C. The Nvidia relationship is the one to develop — trace it for a strategic round before the next raise."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Series B: $54M (B-1/B-2) led by Bessemer at $146M pre-money, closed 24 Apr 2026; GV, Nvidia and Norrsken participated (PitchBook)."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Seyed Madaeni",
+    "title": "Co-Founder, CEO & Board Member",
+    "background": "Ex-utility and energy-markets executive; built the AI procurement platform for data-center power buyers."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Apr 2026",
+    "type": "Series B",
+    "amount": "$54M",
+    "raisedToDate": "$80.25M",
+    "preVal": "$146M",
+    "postVal": "$200M",
+    "leads": "Bessemer Venture Partners; GV, Nvidia, Norrsken VC participated",
+    "fmc": false
+   },
+   {
+    "date": "Jul 2023",
+    "type": "Seed",
+    "amount": "$5.75M",
+    "raisedToDate": "$5.75M",
+    "preVal": null,
+    "postVal": "$25M",
+    "leads": "Seed round incl. firstminute Capital (active investor roster)",
+    "fmc": true
+   }
+  ],
+  "totalRaised": "$80.25M",
+  "firstminute": {
+   "entryRound": "Seed (Jul 2023)",
+   "role": "Active investor (PitchBook roster)",
+   "ownership": "Undisclosed",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$200M",
+   "pbEstimate": "$229.8M",
+   "pbConfidence": null,
+   "opportunityScore": 86,
+   "exitType": "M&A",
+   "successProb": 95,
+   "ipoProb": 5,
+   "maProb": 90,
+   "noExitProb": 5
+  },
+  "financials": {
+   "revenue": "Generating revenue (undisclosed)",
+   "notes": "Valuation estimate $229.8M, +14.9% estimate growth; 2.09x last step-up (PitchBook)."
+  },
+  "competitors": [
+   {
+    "name": "LevelTen Energy"
+   },
+   {
+    "name": "Ascend Analytics"
+   },
+   {
+    "name": "Schneider Electric"
+   }
+  ],
+  "signals": {
+   "referringDomains": "201",
+   "trend": "Rapid growth",
+   "detail": "Growth rate 100th percentile among PitchBook peers; headcount 15 to 36 in two years."
+  },
+  "news": [
+   {
+    "headline": "Nvidia joins $54M bet on startup that gets AI data centres online three years faster",
+    "source": "Tech Funding News",
+    "date": "24 Apr 2026",
+    "type": "major",
+    "url": "https://techfundingnews.com/verse-54m-series-b-nvidia-ai-data-centres-three-years-faster/"
+   },
+   {
+    "headline": "Powering the AI energy revolution with Verse",
+    "source": "Bessemer Venture Partners",
+    "date": "Apr 2026",
+    "type": "funding",
+    "url": "https://www.bvp.com/news/powering-the-ai-energy-revolution-with-verse"
+   },
+   {
+    "headline": "Verse raises $54m in Series B for platform to expedite data center connections",
+    "source": "Data Center Dynamics",
+    "date": "Apr 2026",
+    "type": "funding",
+    "url": "https://www.datacenterdynamics.com/en/news/verse-raises-54m-in-series-b-funding-round-for-platform-to-expedite-data-center-connections/"
+   }
+  ]
+ },
+ {
+  "id": "resembleai",
+  "name": "Resemble AI",
+  "type": "held",
+  "section": "steady",
+  "rating": "hold",
+  "conviction": 3,
+  "stage": "Venture-backed",
+  "founded": 2018,
+  "hq": "Mountain View, CA",
+  "employees": 39,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Deepfake Detection / Generative Voice",
+  "legalName": "Resemble AI, Inc.",
+  "website": "resemble.ai",
+  "verticals": [
+   "Artificial Intelligence & Machine Learning",
+   "AudioTech",
+   "SaaS"
+  ],
+  "customers": [],
+  "growth": "Deepfake incidents in Saudi Arabia up ~600% YoY; global deepfake scam losses >$25B in 2024 (company/press)",
+  "tearSheet": {
+   "thesis": "Multi-modal content authentication and deepfake detection plus generative voice — one of the few teams positioned on both sides of the synthetic-media problem. As election cycles and fraud drive regulation, detection becomes compliance spend, not discretionary tooling.",
+   "edge": "Seven years of voice-synthesis research repurposed into real-time, multi-modal deepfake detection. The strategic register is the distribution: Sony, KDDI, Comcast, Okta, Google AI Futures Fund and Aramco’s Wa’ed — each a channel into a different enterprise vertical and geography.",
+   "signal": "Opportunity Score 94/100 — third-highest in the held book. $13M strategic round closed Dec 2025 with Sony Innovation Fund, Okta Ventures and Google’s AI Futures Fund; Saudi Aramco’s Wa’ed Ventures followed in Mar 2026 to anchor Middle East expansion. Detection is becoming compliance spend: deepfake scams cost >$25B globally in 2024.",
+   "risk": "ElevenLabs dominates generative voice mindshare and capital; detection is an arms race against generators improving monthly. Disclosed revenue is still small relative to the age of the company.",
+   "action": "Hold. The Wa\\u2019ed-backed Middle East push (Mar 2026) and Snowflake accelerator (Apr 2026) are distribution bets — revisit on the first enterprise detection contract at scale."
+  },
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Joined Snowflake Startup Accelerator Spring 2026 cohort (20 Apr 2026); previously raised undisclosed venture funding from Wa\\u2019ed Ventures for Middle East AI-security expansion (PitchBook)."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Saqib Muhammad",
+    "title": "Co-Founder & COO",
+    "background": "Operations lead; scaled the platform from voice cloning to multi-modal deepfake detection."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Dec 2025",
+    "type": "Strategic round",
+    "amount": "$13M",
+    "raisedToDate": "$25.2M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Sony Innovation Fund, Okta Ventures, Google AI Futures Fund, Javelin, Ubiquity",
+    "fmc": false
+   },
+   {
+    "date": "Mar 2026",
+    "type": "Venture",
+    "amount": "Undisclosed",
+    "raisedToDate": "$25.2M",
+    "preVal": null,
+    "postVal": null,
+    "leads": "Wa\\u2019ed Ventures (Aramco)",
+    "fmc": false
+   },
+   {
+    "date": "Jan 2019",
+    "type": "Accelerator",
+    "amount": "$200K",
+    "raisedToDate": null,
+    "preVal": null,
+    "postVal": null,
+    "leads": "Equity-based accelerator",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$25.20M",
+  "firstminute": {
+   "entryRound": "Early (roster-verified)",
+   "role": "Active investor (PitchBook roster, 27 active investors)",
+   "ownership": "Undisclosed",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": null,
+   "pbEstimate": "Not disclosed",
+   "pbConfidence": null,
+   "opportunityScore": 94,
+   "exitType": "M&A",
+   "successProb": 87,
+   "ipoProb": 1,
+   "maProb": 86,
+   "noExitProb": 13
+  },
+  "financials": {
+   "revenue": "Undisclosed (last filed FY2022)",
+   "notes": "Strategic investor base: Sony, KDDI, Comcast, Global Brain, Wa\\u2019ed (PitchBook roster)."
+  },
+  "competitors": [
+   {
+    "name": "ElevenLabs"
+   },
+   {
+    "name": "Respeecher"
+   },
+   {
+    "name": "Papercup"
+   }
+  ],
+  "signals": {
+   "referringDomains": "5,123",
+   "trend": "Stable",
+   "detail": "55K monthly unique visitors; referring domains among the highest in the held book."
+  },
+  "news": [
+   {
+    "headline": "Aramco’s Wa’ed Ventures invests in Resemble AI to expand deepfake detection across the Middle East",
+    "source": "Arab News",
+    "date": "15 Mar 2026",
+    "type": "major",
+    "url": "https://www.arabnews.com/node/2636784/business-economy"
+   },
+   {
+    "headline": "AI threat firm Resemble AI secures $13m funding",
+    "source": "FinTech Global",
+    "date": "9 Dec 2025",
+    "type": "funding",
+    "url": "https://fintech.global/2025/12/09/ai-threat-firm-resemble-ai-secures-13m-funding/"
+   },
+   {
+    "headline": "Resemble AI joins Snowflake Startup Accelerator, Spring 2026 cohort",
+    "source": "PitchBook financing status note",
+    "date": "20 Apr 2026",
+    "type": "product"
+   }
+  ]
+ },
+ {
+  "id": "templum",
+  "name": "Templum",
+  "type": "held",
+  "section": "steady",
+  "rating": "hold",
+  "conviction": 2,
+  "stage": "Series A-5",
+  "founded": 2017,
+  "hq": "Miami Beach, FL",
+  "employees": 45,
+  "businessStatus": "Generating Revenue",
+  "primaryIndustry": "Private Markets Infrastructure / Alternative Trading",
+  "legalName": "Templum, Inc",
+  "website": "templuminc.com",
+  "verticals": [
+   "FinTech",
+   "SaaS"
+  ],
+  "customers": [
+   "SoFi members (private-market window, Mar 2026)"
+  ],
+  "growth": "Nine-year build through five Series A extensions; Goldman Sachs AM joined at the Apr 2026 round",
+  "tearSheet": {
+   "thesis": "Regulated capital-raising and secondary-trading infrastructure for private markets — an alternative trading system with automated onboarding-to-closing workflows. The long thesis: private-market access becomes a product every wealth platform needs to embed.",
+   "edge": "Regulatory assets are the moat: a functioning broker-dealer + ATS approved in 53 US states and territories, with automated onboarding-to-closing workflows. The SoFi deal is the template — embed private-market access into consumer fintech platforms rather than build an audience directly.",
+   "signal": "Distribution is finally converting: a March 2026 partnership gives SoFi’s accredited members access to OpenAI, Perplexity and Colossal Biosciences positions through Templum’s Cosmos Fund. The ATS is approved across 53 US states and territories. Goldman Sachs AM joined the Apr 2026 round.",
+   "risk": "Opportunity Score 53/100 is the lowest in the held book, and the 0.91x step-up marks a modest down-round. Five Series A extensions over nine years is a long road; category winners (Carta, iCapital) are far better capitalised.",
+   "action": "Hold at current exposure; no reserve allocation. The Goldman relationship is the asset — monitor whether it converts into distribution before considering any further capital."
+  },
+  "alerts": [
+   {
+    "type": "warning",
+    "message": "Series A-5 (16 Apr 2026, $13.5M at $94.5M post) was a 0.91x step-up — a modest down round. Lowest Opportunity Score in the held book at 53/100 (PitchBook)."
+   }
+  ],
+  "founders": [
+   {
+    "name": "Christopher Pallotta",
+    "title": "Co-Founder & Co-CEO",
+    "background": "Founded Templum in 2017 to build regulated private-market trading infrastructure; ex-Raptor Group."
+   }
+  ],
+  "funding": [
+   {
+    "date": "Apr 2026",
+    "type": "Series A-5",
+    "amount": "$13.5M",
+    "raisedToDate": "$56.94M",
+    "preVal": "$81M",
+    "postVal": "$94.5M",
+    "leads": "Goldman Sachs Asset Management and undisclosed investors",
+    "fmc": false
+   },
+   {
+    "date": "Oct 2017",
+    "type": "Seed",
+    "amount": "$2.7M",
+    "raisedToDate": "$2.7M",
+    "preVal": null,
+    "postVal": "$5.7M (est.)",
+    "leads": "Seed round",
+    "fmc": false
+   }
+  ],
+  "totalRaised": "$56.94M",
+  "firstminute": {
+   "entryRound": "Early (roster-verified)",
+   "role": "Active investor (PitchBook roster)",
+   "ownership": "Undisclosed",
+   "followOns": [],
+   "leadPartner": "Portfolio team"
+  },
+  "valuationExit": {
+   "postVal": "$94.5M",
+   "pbEstimate": "$109.35M",
+   "pbConfidence": null,
+   "opportunityScore": 53,
+   "exitType": "M&A",
+   "successProb": 85,
+   "ipoProb": 2,
+   "maProb": 83,
+   "noExitProb": 15
+  },
+  "financials": {
+   "revenue": "$0.2M (FY2021, last filed)",
+   "notes": "Valuation estimate $109.35M, +15.7% estimate growth despite the 0.91x step-up (PitchBook)."
+  },
+  "competitors": [
+   {
+    "name": "OneChronos"
+   },
+   {
+    "name": "Trading Technologies"
+   }
+  ],
+  "signals": {
+   "referringDomains": null,
+   "trend": "Stable",
+   "detail": "Institutional fintech; signal is on the cap table (Goldman, SBI, WestCap) rather than web traffic."
+  },
+  "news": [
+   {
+    "headline": "Templum to offer private market investment opportunities in Perplexity AI, OpenAI, and Colossal Biosciences to SoFi members",
+    "source": "Nasdaq / press release",
+    "date": "Mar 2026",
+    "type": "major",
+    "url": "https://www.nasdaq.com/press-release/templum-offer-premier-private-market-investment-opportunities-perplexity-ai-openai"
+   },
+   {
+    "headline": "Templum raises $13.5M Series A-5 at $81M pre-money; Goldman Sachs Asset Management participates",
+    "source": "PitchBook financing status note",
+    "date": "16 Apr 2026",
+    "type": "funding"
+   }
+  ]
+ }
 ]

@@ -407,7 +407,7 @@ function RadarBanner({ items, tab, isMobile }) {
               <p style={{ fontSize: isMobile ? 11 : 11.5, color: '#36475A', lineHeight: 1.5, margin: 0 }}>{it.text}</p>
               {st && (
                 <span title={st.tip} style={{
-                  alignSelf: 'flex-start', marginTop: 8, cursor: 'help',
+                  alignSelf: 'flex-start', marginTop: 8, cursor: 'pointer',
                   fontFamily: 'IBM Plex Mono, monospace', fontSize: 7.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
                   color: st.color, background: '#FFFFFFAA', border: `1px solid ${st.color}33`, borderRadius: 4, padding: '2px 6px',
                 }}>{st.label}</span>
