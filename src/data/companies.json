@@ -24,7 +24,10 @@
    "Uber",
    "Stellantis",
    "Nissan",
-   "Mercedes-Benz"
+   "Mercedes-Benz",
+   "AMD",
+   "Arm",
+   "Qualcomm"
   ],
   "growth": "Series D round of $1.2B+ closed Feb 2026; valuation 3x in under two years",
   "tearSheet": {
@@ -197,10 +200,31 @@
   ],
   "signals": {
    "referringDomains": "1,200+",
-   "trend": "Stable",
-   "detail": "Press-driven traffic from global OEM partnership announcements. Seven global offices, 11 patent families."
+   "trend": "Growth",
+   "detail": "Commercialisation accelerating: robotaxi pilots with Uber (London, Tokyo) and a Stellantis deployment on the Uber network. Series D extended by $60M from AMD, Arm and Qualcomm."
   },
   "news": [
+   {
+    "headline": "Wayve to deploy its AI Driver in Stellantis robotaxis on the Uber network",
+    "source": "TechCrunch",
+    "date": "Jun 2026",
+    "type": "major",
+    "url": "https://techcrunch.com/2026/03/12/uber-wayve-and-nissan-plan-to-launch-a-robotaxi-service-in-tokyo-this-year/"
+   },
+   {
+    "headline": "Wayve, Uber and Nissan to launch a Tokyo robotaxi pilot (Nissan LEAF) in late 2026",
+    "source": "Uber Investor",
+    "date": "Mar 2026",
+    "type": "major",
+    "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Wayve-Uber-and-Nissan-Announce-Collaboration-on-Robotaxis/default.aspx"
+   },
+   {
+    "headline": "Wayve extends its Series D with $60M from AMD, Arm and Qualcomm",
+    "source": "The Next Web",
+    "date": "Feb 2026",
+    "type": "funding",
+    "url": "https://thenextweb.com/news/wayve-60m-series-d-autonomous-driving"
+   },
    {
     "headline": "Wayve secures $1.5B to deploy its global autonomy platform",
     "source": "Wayve",
@@ -415,6 +439,20 @@
   },
   "news": [
    {
+    "headline": "Mistral ships Robostral Navigate, its first embodied-navigation model, as valuation talks near $23B",
+    "source": "tech-insider.org",
+    "date": "Jul 2026",
+    "type": "product",
+    "url": "https://tech-insider.org/au/mistral-robotics-model-valuation-2026/"
+   },
+   {
+    "headline": "Mistral raises $830M in debt to fund a data-center build-out and 13,800 Nvidia chips",
+    "source": "techfundingnews",
+    "date": "Mar 2026",
+    "type": "funding",
+    "url": "https://techfundingnews.com/mistral-ai-3b-euro-20b-valuation-data-centres/"
+   },
+   {
     "headline": "Mistral AI in funding talks at a EUR 20B valuation",
     "source": "The Next Web",
     "date": "Jun 2026",
@@ -459,11 +497,13 @@
    "Enterprise SaaS"
   ],
   "customers": [
+   "Vodafone",
+   "Delivery Hero",
+   "Microsoft",
    "Mercedes-Benz",
-   "Deutsche Telekom",
    "Cisco"
   ],
-  "growth": "6x user growth and 10x revenue growth in 2025; became a unicorn in six years",
+  "growth": "From founder side-project to $100M+ ARR and a $5.2B valuation (SAP, May 2026); ~1.7M monthly active developers.",
   "tearSheet": {
    "thesis": "firstminute's most recent unicorn, reached after the original $1.49M seed co-led with Sequoia. Open-source, agent-native workflow automation now at $5.2B post-money after SAP's strategic investment in May 2026.",
    "edge": "About 1.9M weekly unique visitors driven by a developer community. The open-source model compounds: every integration the community builds strengthens the platform moat. SAP's investment confirms the strategic-acquirer profile.",
@@ -619,10 +659,17 @@
   "signals": {
    "weeklyVisitors": "1.90M",
    "referringDomains": "1,100+",
-   "trend": "Stable (1.8M-2.3M range)",
-   "detail": "Stable in the 1.8M to 2.3M weekly range. Mercedes-Benz partnership on an AI workflow platform; Deutsche Telekom fast-track to AI agents."
+   "trend": "Rapid growth",
+   "detail": "Past $100M ARR with ~1.7M monthly active developers and 3,000+ enterprise customers. Over 80% of workflows built on the platform now involve AI agents."
   },
   "news": [
+   {
+    "headline": "n8n to embed in SAP Joule Studio as its AI orchestration layer; general availability Q3 2026",
+    "source": "The Next Web",
+    "date": "May 2026",
+    "type": "product",
+    "url": "https://thenextweb.com/news/n8n-sap-joule-studio-workflow-automation"
+   },
    {
     "headline": "SAP bets big on AI, invests in n8n at a $5.2B valuation",
     "source": "Trending Topics",
@@ -817,6 +864,13 @@
    "detail": "Traffic grew from about 200K/wk to 600K+ in six months. Referring domains roughly tripled in the same period. Opened a San Francisco office in 14 days as US expansion accelerates."
   },
   "news": [
+   {
+    "headline": "Granola launches Spaces (team workspaces) and personal + enterprise APIs, pushing into the enterprise stack",
+    "source": "TechCrunch",
+    "date": "Mar 2026",
+    "type": "product",
+    "url": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/"
+   },
    {
     "headline": "Granola raises $125M, hits $1.5B valuation as it expands to an enterprise AI app",
     "source": "TechCrunch",
@@ -1991,6 +2045,20 @@
   },
   "news": [
    {
+    "headline": "Omnea launches a Future Founders Fund with Firedrop, backing employees with $250K of seed capital",
+    "source": "GlobeNewswire",
+    "date": "Jun 2026",
+    "type": "product",
+    "url": "https://www.globenewswire.com/news-release/2026/06/30/3320026/0/en/omnea-launches-venture-fund-with-firedrop-to-back-its-employees-as-future-founders.html"
+   },
+   {
+    "headline": "Omnea selected for the Tech Nation Future Fifty 2026 cohort",
+    "source": "Tech Nation",
+    "date": "Jun 2026",
+    "type": "major",
+    "url": "https://www.omnea.co/blog/series-b-announcement"
+   },
+   {
     "headline": "Omnea raises $50M Series B to make procurement every CFO's competitive advantage",
     "source": "PR Newswire",
     "date": "17 Sep 2025",
@@ -2040,7 +2108,12 @@
    "risk": "Capital-intensive physical infrastructure: over $600M raised, including a large Series C. Defence supply chains carry high trust and liability bars. Primarily US-centric, which sits outside firstminute's lead geography, so a financial co-lead would be needed.",
    "action": "Initiate at measured size. Verify current round status and capitalisation. Confirm whether a European defence-manufacturing equivalent exists; the reindustrialisation thesis is compelling but the geography and capital scale require a co-lead."
   },
-  "alerts": [],
+  "alerts": [
+   {
+    "type": "info",
+    "message": "Window opening: Bloomberg reports Hadrian in talks for a new round at ~$7.5B (Jun 2026), quadrupling its $1.6B mark. Hadrian denied one specific $1B/$7.5B report as \"inaccurate\" — verify terms before moving."
+   }
+  ],
   "founders": [
    {
     "name": "Christopher Power",
@@ -2150,10 +2223,24 @@
   ],
   "signals": {
    "referringDomains": "522",
-   "trend": "Stable (500-540 range)",
-   "detail": "Referring domains stable at 500-540. Factory 3 in Mesa, AZ opened in early 2026; an Alabama submarine-parts facility targets the Columbia and Virginia-class nuclear submarine programmes."
+   "trend": "Growth",
+   "detail": "Factory 3 opened in Mesa, Arizona (Jan 2026), a $200M facility targeting 350 jobs. Reportedly in talks for a new round at ~$7.5B — a ~4.7x step-up from the $1.6B Series C mark."
   },
   "news": [
+   {
+    "headline": "Hadrian reportedly in talks for a new round at ~$7.5B valuation",
+    "source": "Bloomberg",
+    "date": "Jun 2026",
+    "type": "major",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-23/startup-hadrian-has-discussed-new-funding-at-7-5-billion-value"
+   },
+   {
+    "headline": "Hadrian opens Factory 3 in Mesa, Arizona — a $200M AI-and-robotics manufacturing hub",
+    "source": "GPEC",
+    "date": "Jan 2026",
+    "type": "product",
+    "url": "https://www.gpec.org/news/press-releases/hadrian-ribbon-cutting-mesa/"
+   },
    {
     "headline": "Hadrian raises $260M to build out automated factories for space and defense parts",
     "source": "TechCrunch",
@@ -2205,7 +2292,7 @@
    "Defense",
    "Government"
   ],
-  "growth": "Grew to roughly 105 employees by 2026; reportedly in talks for a $100M Series A",
+  "growth": "Reportedly raising a $100M Series A at a $500M+ valuation (Jun 2026), riding US export-restriction demand for sovereign, self-hosted AI.",
   "tearSheet": {
    "thesis": "Secure, self-sovereign deployment of language models for organisations that cannot send data to a hyperscaler: banks, government, healthcare, and defence. The EU AI Act and data-residency rules create durable, non-discretionary demand. It sits directly on the speed, scale, and sovereignty thread from Brent's London Tech Week conversation with Peter Kyle.",
    "edge": "Confidential compute, cryptographic attestation, and zero vendor lock-in, running frontier models inside hardware-sealed Trusted Execution Environments. European-native is an advantage with the regulated buyer, not a constraint. David Maisel, founder of Marvel Studios, is an advisor and investor.",
@@ -2294,6 +2381,20 @@
   },
   "news": [
    {
+    "headline": "Prem seeks $100M Series A at a $500M+ valuation as export bans boost sovereign-AI demand",
+    "source": "SiliconANGLE",
+    "date": "Jun 2026",
+    "type": "major",
+    "url": "https://siliconangle.com/2026/06/18/prem-seeks-100m-series-export-bans-boost-sovereign-ai-demand/"
+   },
+   {
+    "headline": "Prem launches Fluso, an encrypted AI workspace that runs agents entirely inside a customer’s own (even air-gapped) infrastructure",
+    "source": "The Next Web",
+    "date": "Jun 2026",
+    "type": "product",
+    "url": "https://thenextweb.com/news/prem-ai-swiss-100m-series-a-private-ai"
+   },
+   {
     "headline": "Prem Labs announces its $14M strategic seed round",
     "source": "Prem",
     "date": "Apr 2024",
@@ -2332,8 +2433,10 @@
    "SMB SaaS"
   ],
   "customers": [
-   "Turnpoint",
+   "ServiceTitan",
+   "Nexstar",
    "1-800-GOT-JUNK?",
+   "Turnpoint",
    "Goettl"
   ],
   "growth": "Surpassed eight figures in ARR in 2025; on track to book $1B in jobs",
@@ -2445,6 +2548,13 @@
    "detail": "Referring domains grew from 200 to 349 over five months. Customers include Turnpoint, 1-800-GOT-JUNK, and Goettl; partnerships with ServiceTitan, Nexstar, and Clover."
   },
   "news": [
+   {
+    "headline": "Avoca scales past 800 customers on partnerships with ServiceTitan and Nexstar; expanding beyond home services into moving, automotive and property management",
+    "source": "The AI Insider",
+    "date": "Apr 2026",
+    "type": "product",
+    "url": "https://theaiinsider.tech/2026/04/29/avoca-closes-125m-at-1b-valuation-to-power-americas-services-economy-with-ai/"
+   },
    {
     "headline": "Avoca raises $125M+ at $1B valuation to power America's services economy with AI",
     "source": "PR Newswire",
